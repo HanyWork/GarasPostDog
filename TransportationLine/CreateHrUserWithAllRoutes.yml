@@ -1,0 +1,15 @@
+info:
+  name: CreateHrUserWithAllRoutes
+  type: http
+  seq: 47
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/CreateHrUserWithAllRoutes"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
