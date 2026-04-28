@@ -1,0 +1,101 @@
+info:
+  name: /Medical/GetMedicalReservationById
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/GetMedicalReservationById"
+  headers:
+    - name: Id
+      value: "11"
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/GetMedicalReservationById"
+      method: GET
+      headers:
+        - name: Id
+          value: "-43611152"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "velit cillum",
+                "ErrorCode": "culpa ut"
+              },
+              {
+                "ErrorMSG": "sint nisi minim",
+                "ErrorCode": "proident culpa aut"
+              }
+            ],
+            "Data": {
+              "ID": -24871771,
+              "DoctorID": -34960893,
+              "DoctorName": "culpa amet labo",
+              "Serial": -52734431,
+              "ReservationDate": "in id",
+              "PatientID": -55817528,
+              "PatientName": "et ea",
+              "PatientTypeID": -88048653,
+              "PatientTypeName": "deseru",
+              "DoctorScheduleID": -71390146,
+              "SpecialtyID": 83454002,
+              "SpecialtyName": "consectetur Duis pariatur",
+              "Room": -35911348,
+              "ExaminationPrice": -5149826.417114586,
+              "consultationPrice": 31491694.034206048,
+              "DoctorIntervalFrom": "esse exercitation",
+              "DoctorIntervalTo": "enim culpa minim",
+              "DayID": -33049576,
+              "DayName": "eu ex esse ut ipsum",
+              "ParentID": 90963612,
+              "FinalAmount": -15280166.552286372,
+              "Type": "Ut Lore",
+              "Active": true,
+              "ParentSalesOfferID": -69976066,
+              "ChildReservationID": 12413360,
+              "ChildSalesofferID": -18229735,
+              "paymentMethodId": 97892459,
+              "paymentMethodName": "deserunt non sed quis anim",
+              "Addons": [
+                {
+                  "ItemName": "deserunt reprehenderit voluptate tempor",
+                  "Cost": 61744505.60237318,
+                  "Image": "amet eu reprehenderit aliqua",
+                  "Qty": -96071614.87622422
+                },
+                {
+                  "ItemName": "ullamco cupidatat occaecat",
+                  "Cost": 53410503.89173052,
+                  "Image": "anim aute ea",
+                  "Qty": 19115975.242207423
+                }
+              ]
+            }
+          }

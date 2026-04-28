@@ -1,0 +1,98 @@
+info:
+  name: /Pos/AddInventoryItemOpeningBalancePerItem
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Pos/AddInventoryItemOpeningBalancePerItem"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "InventoryStoreID": 3010,
+          "RecevingData": "02/23/2023",
+          "SupplierId": 30,
+          "InventoryItemID": 3,
+          "QTY": 5,
+          "ExpData": "02/23/2023",
+          "Serial": "78458*",
+          "PublicId": 1,
+          "Comment": "<string>",
+          "StoreLocationID": null,
+          "CostEGP": 2000,
+          "CurrencyId": 1,
+          "RateToEGP": 2,
+          "InventoryItemCostUpdate": true,
+          "percentage": 555
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Pos/AddInventoryItemOpeningBalancePerItem"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryStoreID": "<integer>",
+            "RecevingData": "<string>",
+            "SupplierId": "<long>",
+            "InventoryItemID": "<long>",
+            "QTY": "<double>",
+            "ExpData": "<string>",
+            "Serial": "<string>",
+            "PublicId": "<integer>",
+            "Comment": "<string>",
+            "StoreLocationID": "<integer>",
+            "CostEGP": "<double>",
+            "CurrencyId": "<integer>",
+            "RateToEGP": "<double>",
+            "InventoryItemCostUpdate": "<boolean>",
+            "percentage": "<double>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

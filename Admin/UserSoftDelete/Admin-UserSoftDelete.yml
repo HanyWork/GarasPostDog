@@ -1,0 +1,85 @@
+info:
+  name: /Admin/UserSoftDelete
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Admin/UserSoftDelete"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: UserId
+      value: "2"
+    - name: Active
+      value: "false"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetRole"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "RoleDataList": [
+              {
+                "ID": "<integer>",
+                "ModuleID": "<integer>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "RoleModuleIDs": [
+                  "<long>",
+                  "<long>"
+                ],
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<integer>",
+                "ModuleID": "<integer>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "RoleModuleIDs": [
+                  "<long>",
+                  "<long>"
+                ],
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ]
+          }

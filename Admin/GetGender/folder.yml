@@ -1,0 +1,7 @@
+info:
+  name: GetGender
+  type: folder
+  seq: 59
+
+request:
+  auth: inherit

@@ -1,0 +1,95 @@
+info:
+  name: /Vehicle/AddEditVehicleModel
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Vehicle/AddEditVehicleModel"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "ID":"1",
+          "VehicleBrandID": "1",
+          "Name": "tt G",
+          "Active": true,
+          "VehicleBodyTypeList": [
+              {
+                  "Name": "Test"
+              },
+              {
+                  "Name": "test6"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Vehicle/AddEditVehicleModel"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<integer>",
+            "VehicleBrandID": "<integer>",
+            "Name": "<string>",
+            "ModelName": "<string>",
+            "Active": "<boolean>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "VehicleBodyTypeList": [
+              {
+                "Name": "<string>"
+              },
+              {
+                "Name": "<string>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

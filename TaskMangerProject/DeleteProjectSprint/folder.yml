@@ -1,0 +1,7 @@
+info:
+  name: DeleteProjectSprint
+  type: folder
+  seq: 12
+
+request:
+  auth: inherit

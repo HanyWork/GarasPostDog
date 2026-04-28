@@ -1,0 +1,76 @@
+info:
+  name: /Project/GetTeamUsersSelect
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Project/GetTeamUsersSelect"
+  headers:
+    - name: SearchKey
+      value: <string>
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Project/GetTeamUsersSelect"
+      method: GET
+      headers:
+        - name: SearchKey
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "TeamUsersSelectResponseDataList": [
+              {
+                "ID": "<long>",
+                "FirstName": "<string>",
+                "MiddleName": "<string>",
+                "LastName": "<string>",
+                "JobTitleID": "<integer>",
+                "DepartmentName": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "FirstName": "<string>",
+                "MiddleName": "<string>",
+                "LastName": "<string>",
+                "JobTitleID": "<integer>",
+                "DepartmentName": "<string>"
+              }
+            ]
+          }

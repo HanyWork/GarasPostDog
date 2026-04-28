@@ -1,0 +1,107 @@
+info:
+  name: /HR/VacationOverTimeAndDeduction/GetVacationOverTimeAndDeductionRates
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/VacationOverTimeAndDeduction/GetVacationOverTimeAndDeductionRates"
+  headers:
+    - name: VacationDayId
+      value: "3"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/VacationOverTimeAndDeduction/GetVacationOverTimeAndDeductionRates"
+      method: GET
+      headers:
+        - name: VacationDayId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<long>",
+                "From": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "To": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "Rate": "<double>",
+                "VacationDayId": "<long>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "From": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "To": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "Rate": "<double>",
+                "VacationDayId": "<long>",
+                "Active": "<boolean>"
+              }
+            ]
+          }

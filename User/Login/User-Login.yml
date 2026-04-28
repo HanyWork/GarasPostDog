@@ -1,0 +1,142 @@
+info:
+  name: /User/Login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/User/Login"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+          // "EMAIL": "system@system.com",
+          // "PASSWORD": "4321",
+          // "COMPANYNAME": "marinapltq"
+          //  "EMAIL": "bmagdy@theperitigroupeg.com",
+          //  "PASSWORD": "123",
+          //  "CompanyName": "PERITI"
+          //  "EMAIL": "asamir@theperitigroupeg.com",
+          //  "PASSWORD": "123",
+          //  "CompanyName": "PERITI"
+
+          // "Email": "system@system.com",
+          // "Password": "0987",
+          // "CompanyName": "VETANOIA"
+
+      "Email": "system@system.com",
+          "Password": "4321",
+          "CompanyName": "garastest"
+
+          //   "Email": "system@system.com",
+          // "Password": "4321",
+          // "CompanyName": "sanpeter"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "var jsonData = res.getBody();\r
+
+        bru.setEnvVar(\"UserToken\", jsonData[\"Data\"]);"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/User/Login"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "email": "<string>",
+            "password": "<string>",
+            "companyName": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "companyInfo": "<string>",
+            "companyImg": "<string>",
+            "specialityList": [
+              {
+                "id": "<long>",
+                "name": "<string>"
+              },
+              {
+                "id": "<long>",
+                "name": "<string>"
+              }
+            ],
+            "departmentName": "<string>",
+            "branchName": "<string>",
+            "branchID": "<integer>",
+            "notificationCount": "<integer>",
+            "taskCount": "<integer>",
+            "jobtitle": "<string>",
+            "roleList": [
+              {
+                "roleID": "<integer>",
+                "roleName": "<string>"
+              },
+              {
+                "roleID": "<integer>",
+                "roleName": "<string>"
+              }
+            ],
+            "groupList": [
+              {
+                "groupID": "<long>",
+                "groupName": "<string>"
+              },
+              {
+                "groupID": "<long>",
+                "groupName": "<string>"
+              }
+            ],
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "data": "<string>",
+            "userID": "<string>",
+            "userIDNO": "<long>",
+            "userImageURL": "<string>",
+            "userName": "<string>",
+            "countryId": "<long>",
+            "countryName": "<string>"
+          }

@@ -1,0 +1,59 @@
+info:
+  name: AddTransportationDirection
+  type: http
+  seq: 31
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/AddTransportationDirection"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: TransportationVehicleRouteId
+      value: "4"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Data\": [\r
+
+      \        {\r
+
+      \            \"RouteDirection\": \"سان\",\r
+
+      \            \"Active\": true,\r
+
+      \            \"Description\": \"محطة سان \",\r
+
+      \            \"Latitude\": 31.25544,\r
+
+      \            \"Longtitud\": 29.25254\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"RouteDirection\": \"محمد نجيب\",\r
+
+      \            \"Active\": true,\r
+
+      \            \"Description\": \"محمد نجيب بحر \",\r
+
+      \            \"Latitude\": 31.25544,\r
+
+      \            \"Longtitud\": 29.25254\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

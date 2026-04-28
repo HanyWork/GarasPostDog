@@ -1,0 +1,34 @@
+info:
+  name: /SalesOffer/GetSalesOfferListDDLForRelease
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/GetSalesOfferListDDLForRelease"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: proauto
+    - name: ClientId
+      value: "2"
+    - name: SearchKey
+      value: "#3-"
+      disabled: true
+    - name: StatusIsOpenFilter
+      value: "true"
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: NumberOfItemsPerPage
+      value: "20"
+    - name: CurrentPage
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

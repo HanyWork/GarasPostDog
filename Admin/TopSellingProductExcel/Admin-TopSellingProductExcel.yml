@@ -1,0 +1,71 @@
+info:
+  name: /Admin/TopSellingProductExcel
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/TopSellingProductExcel"
+  headers:
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Year
+      value: "2022"
+    - name: BranchId
+      value: ""
+      disabled: true
+    - name: SalesPersonId
+      value: ""
+      disabled: true
+    - name: Month
+      value: ""
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/TopSellingProductExcel"
+      method: GET
+      headers:
+        - name: Month
+          value: "-87663751"
+        - name: Year
+          value: "-87663751"
+        - name: SalesPersonId
+          value: "-66479459"
+        - name: BranchId
+          value: "-87663751"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": false,
+            "Errors": [
+              {
+                "ErrorMSG": "dolore laborum est",
+                "ErrorCode": "ipsum et sit culpa"
+              },
+              {
+                "ErrorMSG": "ullamco qui",
+                "ErrorCode": "exercitation"
+              }
+            ],
+            "Message": "nostrud in est ut"
+          }

@@ -1,0 +1,72 @@
+info:
+  name: /Inventory/InventoryItemMatrialAddingAndExternalOrder/ReverseInventoryAddingOrder
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItemMatrialAddingAndExternalOrder/ReverseInventoryAddingOrder"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: '{"AddingOrderId":"30661","IsReverse":true}'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItemMatrialAddingAndExternalOrder/ReverseInventoryAddingOrder?UserID=<long>"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      params:
+        - name: UserID
+          value: <long>
+          type: query
+      body:
+        type: json
+        data: |-
+          {
+            "AddingOrderId": "<long>",
+            "IsReverse": "<boolean>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

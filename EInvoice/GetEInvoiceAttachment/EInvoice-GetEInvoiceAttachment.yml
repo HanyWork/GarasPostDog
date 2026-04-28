@@ -1,0 +1,77 @@
+info:
+  name: /EInvoice/GetEInvoiceAttachment
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/EInvoice/GetEInvoiceAttachment"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EInvoice/GetEInvoiceAttachment"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "EInvoiceAttachmentList": [
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "File": "<binary>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>",
+                "AttachmentPath": "<string>",
+                "Type": "<string>"
+              },
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "File": "<binary>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>",
+                "AttachmentPath": "<string>",
+                "Type": "<string>"
+              }
+            ]
+          }

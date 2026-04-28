@@ -1,0 +1,22 @@
+info:
+  name: /HR/ProjectInvoice/DeleteProjectInvoiceCollected
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/ProjectInvoice/DeleteProjectInvoiceCollected"
+  headers:
+    - name: ProjectInvoiceCollectedId
+      value: "8"
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

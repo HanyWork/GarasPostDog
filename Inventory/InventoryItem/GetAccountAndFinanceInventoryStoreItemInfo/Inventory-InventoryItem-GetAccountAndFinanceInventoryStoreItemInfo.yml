@@ -1,0 +1,88 @@
+info:
+  name: /Inventory/InventoryItem/GetAccountAndFinanceInventoryStoreItemInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/GetAccountAndFinanceInventoryStoreItemInfo"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: InventoryItemID
+      value: "174"
+    - name: InventoryItemCode
+      value: <string>
+      disabled: true
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/GetAccountAndFinanceInventoryStoreItemInfo"
+      method: GET
+      headers:
+        - name: InventoryItemID
+          value: <long>
+        - name: InventoryItemCode
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryItemInfo": {
+              "ID": "<long>",
+              "ItemName": "<string>",
+              "ItemCode": "<string>",
+              "CommericalName": "<string>",
+              "PartNumber": "<string>",
+              "MarketName": "<string>",
+              "Type": "<string>",
+              "Description": "<string>",
+              "Details": "<string>",
+              "Category": "<string>",
+              "CategoryId": "<integer>",
+              "PurchasingUnit": "<string>",
+              "RequestionUnit": "<string>",
+              "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+              "MaxBlanace": "<double>",
+              "MinBalance": "<double>",
+              "PriceCalculationMethod": "<string>",
+              "Amount": "<double>",
+              "Active": "<boolean>",
+              "ItemImage": "<string>",
+              "Cost1": "<double>",
+              "Cost2": "<double>",
+              "Cost3": "<double>",
+              "RequestionUOMShortName": "<string>"
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

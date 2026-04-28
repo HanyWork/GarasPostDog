@@ -1,0 +1,133 @@
+info:
+  name: /ProjectProgress/AddNew
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectProgress/AddNew"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: ProjectId
+        type: text
+        value: "1"
+      - name: ProgressTypeId
+        type: text
+        value: "1"
+      - name: DeliveryTypeId
+        type: text
+        value: "1"
+      - name: ProgressStatusId
+        type: text
+        value: "1"
+      - name: Date
+        type: text
+        value: 2024-7-21
+      - name: Comment
+        type: text
+        value: ""
+      - name: ProgressUsers[0].HrUserId
+        type: text
+        value: "5"
+      - name: ProgressUsers[0].DateFrom
+        type: text
+        value: 2025-1-1
+      - name: ProgressUsers[0].DateTo
+        type: text
+        value: 2025-1-5
+      - name: ProgressUsers[0].HoursNum
+        type: text
+        value: "5"
+      - name: ProgressUsers[0].Evaluation
+        type: text
+        value: "80.0"
+      - name: ProgressUsers[0].Comment
+        type: text
+        value: Test
+      - name: ProgressUsers[0].InventoryItemCategoryId
+        type: text
+        value: "2050"
+      - name: Attachment
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Desktop/AlterDatabaseForHR.txt
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectProgress/AddNew"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: ProjectId
+            type: text
+            value: <long>
+          - name: ProgressTypeId
+            type: text
+            value: <integer>
+          - name: DeliveryTypeId
+            type: text
+            value: <integer>
+          - name: ProgressStatusId
+            type: text
+            value: <integer>
+          - name: Date
+            type: text
+            value: <dateTime>
+          - name: Attachment
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

@@ -1,0 +1,81 @@
+info:
+  name: /Admin/AddEditDepartment
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Admin/AddEditDepartment"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  body:
+    type: json
+    data: |-
+      {
+        "id": 1047,
+        "branchID": 4,
+        "name": "Tesssssssst",
+        "description": "Test",
+        "active": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/AddEditDepartment"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<integer>",
+            "branchID": "<integer>",
+            "name": "<string>",
+            "branchName": "<string>",
+            "description": "<string>",
+            "active": "<boolean>",
+            "createdBy": "<string>",
+            "modifiedBy": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

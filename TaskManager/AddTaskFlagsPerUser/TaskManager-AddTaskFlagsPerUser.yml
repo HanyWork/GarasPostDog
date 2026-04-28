@@ -1,0 +1,105 @@
+info:
+  name: /TaskManager/AddTaskFlagsPerUser
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/AddTaskFlagsPerUser"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "TaskID":30087,
+          "Read":true,
+          "Star":true,
+          "Flag":true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/AddTaskFlagsPerUser"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "TaskID": "<long>",
+            "UserID": "<long>",
+            "Status": "<string>",
+            "Priority": "<string>",
+            "NeedApproval": "<boolean>",
+            "CreatorAttachement": "<string>",
+            "Read": "<boolean>",
+            "Flag": "<boolean>",
+            "Star": "<boolean>",
+            "GetTaskDetailsList": [
+              {
+                "TaskID": "<long>",
+                "RecieverUserID": "<long>",
+                "IsFinished": "<boolean>",
+                "CommentReply": "<string>",
+                "ApprovalComment": "<string>",
+                "Approval": "<boolean>",
+                "Active": "<boolean>",
+                "CreatorAttach": "<string>",
+                "ReplyAttach": "<string>"
+              },
+              {
+                "TaskID": "<long>",
+                "RecieverUserID": "<long>",
+                "IsFinished": "<boolean>",
+                "CommentReply": "<string>",
+                "ApprovalComment": "<string>",
+                "Approval": "<boolean>",
+                "Active": "<boolean>",
+                "CreatorAttach": "<string>",
+                "ReplyAttach": "<string>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

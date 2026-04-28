@@ -1,0 +1,7 @@
+info:
+  name: GetTermsAndConditions
+  type: folder
+  seq: 45
+
+request:
+  auth: inherit

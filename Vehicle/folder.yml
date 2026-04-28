@@ -1,0 +1,7 @@
+info:
+  name: Vehicle
+  type: folder
+  seq: 34
+
+request:
+  auth: inherit

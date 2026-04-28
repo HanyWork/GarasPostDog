@@ -1,0 +1,7 @@
+info:
+  name: GetMaintenanceByDay
+  type: folder
+  seq: 3
+
+request:
+  auth: inherit

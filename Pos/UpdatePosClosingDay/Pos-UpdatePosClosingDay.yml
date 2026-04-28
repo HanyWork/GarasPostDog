@@ -1,0 +1,89 @@
+info:
+  name: /Pos/UpdatePosClosingDay
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Pos/UpdatePosClosingDay"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      [
+        {
+          "Id": 10,
+          "Notes": "تعبان يا كابتن",
+          "ClosingDayAmount": 500
+        }
+      //   ,
+      //   {
+      //     "Id": 6,
+      //     "Notes": "تعبان يا كابتن",
+      //     "ClosingDayAmount": 700
+      //   }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Pos/Update"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          [
+            {
+              "Id": "<long>",
+              "Notes": "<string>",
+              "ClosingDayAmount": "<double>"
+            },
+            {
+              "Id": "<long>",
+              "Notes": "<string>",
+              "ClosingDayAmount": "<double>"
+            }
+          ]
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

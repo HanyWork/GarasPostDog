@@ -1,0 +1,92 @@
+info:
+  name: /Purchasing/PurchaseOrder/AddShippmentDocuments
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Purchasing/PurchaseOrder/AddShippmentDocuments"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  body:
+    type: multipart-form
+    data:
+      - name: PurchasePOShipmentID
+        type: text
+        value: "1"
+      - name: Documents[0].Id
+        type: text
+        value: "21456"
+      - name: Documents[0].FileContent
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/Scripts to run.txt
+      - name: Documents[0].Category
+        type: text
+        value: ""
+        disabled: true
+      - name: Documents[0].ReceivedIn
+        type: text
+        value: 2024-11-03
+      - name: Documents[0].Amount
+        type: text
+        value: "600"
+      - name: Documents[0].CurrencyID
+        type: text
+        value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Purchasing/PurchaseOrder/AddShippmentDocuments"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Documents
+            type: text
+            value: "[object Object],[object Object]"
+          - name: PurchasePOShipmentID
+            type: text
+            value: <long>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

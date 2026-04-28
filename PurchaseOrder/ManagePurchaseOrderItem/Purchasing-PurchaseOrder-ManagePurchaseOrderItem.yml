@@ -1,0 +1,80 @@
+info:
+  name: /Purchasing/PurchaseOrder/ManagePurchaseOrderItem
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Purchasing/PurchaseOrder/ManagePurchaseOrderItem"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: |-
+      {
+          "Id": "33549",
+          "IsDelete": true,
+          "ApplyOnPR": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Purchasing/PurchaseOrder/ManagePurchaseOrderItem?UserID=<long>"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      params:
+        - name: UserID
+          value: <long>
+          type: query
+      body:
+        type: json
+        data: |-
+          {
+            "Id": "<long>",
+            "IsDelete": "<boolean>",
+            "ApplyOnPR": "<boolean>",
+            "InventoryItemId": "<long>",
+            "Quantity": "<double>",
+            "Reason": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

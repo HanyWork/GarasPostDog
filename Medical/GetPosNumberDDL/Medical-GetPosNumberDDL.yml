@@ -1,0 +1,65 @@
+info:
+  name: /Medical/GetPosNumberDDL
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/GetPosNumberDDL"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: HasPos
+      value: "true"
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/GetPosNumerDDL"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "sunt",
+                "ErrorCode": "aliqua amet"
+              },
+              {
+                "ErrorMSG": "nisi do",
+                "ErrorCode": "laboris aliqua ex consequat"
+              }
+            ],
+            "Data": [
+              {
+                "ID": -44879770,
+                "Name": "sunt ex"
+              },
+              {
+                "ID": -37641824,
+                "Name": "esse aute"
+              }
+            ]
+          }

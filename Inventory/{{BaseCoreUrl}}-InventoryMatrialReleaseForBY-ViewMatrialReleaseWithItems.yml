@@ -1,0 +1,22 @@
+info:
+  name: "{{BaseCoreUrl}}/InventoryMatrialReleaseForBY/ViewMatrialReleaseWithItems"
+  type: http
+  seq: 44
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/InventoryMatrialReleaseForBY/ViewMatrialReleaseWithItems"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+    - name: MatrialReleaseId
+      value: "45"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

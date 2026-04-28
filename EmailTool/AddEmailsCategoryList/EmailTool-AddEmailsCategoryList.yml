@@ -1,0 +1,105 @@
+info:
+  name: /EmailTool/AddEmailsCategoryList
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/EmailTool/AddEmailsCategoryList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: json
+    data: |-
+      {
+        "EmailsList": [
+          {
+            "EmailID": 722,
+            "CategoryList": [
+              {
+                "CategoryTypeID": 1,
+                "TypeID": 1
+              }
+            ]
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EmailTool/AddEmailsCategoryList"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "EmailsList": [
+              {
+                "EmailID": "<long>",
+                "CategoryList": [
+                  {
+                    "CategoryTypeID": "<long>",
+                    "TypeID": "<long>"
+                  },
+                  {
+                    "CategoryTypeID": "<long>",
+                    "TypeID": "<long>"
+                  }
+                ]
+              },
+              {
+                "EmailID": "<long>",
+                "CategoryList": [
+                  {
+                    "CategoryTypeID": "<long>",
+                    "TypeID": "<long>"
+                  },
+                  {
+                    "CategoryTypeID": "<long>",
+                    "TypeID": "<long>"
+                  }
+                ]
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

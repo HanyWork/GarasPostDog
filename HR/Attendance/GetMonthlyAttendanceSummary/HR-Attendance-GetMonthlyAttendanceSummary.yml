@@ -1,0 +1,108 @@
+info:
+  name: /HR/Attendance/GetMonthlyAttendanceSummary
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetMonthlyAttendanceSummary"
+  headers:
+    - name: year
+      value: "2025"
+    - name: month
+      value: "5"
+    - name: BranchId
+      value: "4"
+    - name: DepartmentId
+      value: "2039"
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetMonthlyAttendanceSummary"
+      method: GET
+      headers:
+        - name: year
+          value: <integer>
+        - name: month
+          value: <integer>
+        - name: BranchId
+          value: <integer>
+        - name: DepartmentId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "AttendanceSummary": [
+                {
+                  "Date": {
+                    "Year": "<integer>",
+                    "Month": "<integer>",
+                    "Day": "<integer>",
+                    "DayOfWeek": 5,
+                    "DayOfYear": "<integer>",
+                    "DayNumber": "<integer>"
+                  },
+                  "DayIs": "<string>",
+                  "WeekDayName": "<string>",
+                  "AttendanceNum": "<integer>",
+                  "AttendancePercentage": "<double>",
+                  "AbsenceNum": "<integer>"
+                },
+                {
+                  "Date": {
+                    "Year": "<integer>",
+                    "Month": "<integer>",
+                    "Day": "<integer>",
+                    "DayOfWeek": 1,
+                    "DayOfYear": "<integer>",
+                    "DayNumber": "<integer>"
+                  },
+                  "DayIs": "<string>",
+                  "WeekDayName": "<string>",
+                  "AttendanceNum": "<integer>",
+                  "AttendancePercentage": "<double>",
+                  "AbsenceNum": "<integer>"
+                }
+              ],
+              "UsersNumbers": "<integer>",
+              "WorkingDaysMumber": "<integer>",
+              "WorkingDaysPerWeek": "<integer>",
+              "OffDaysPerWeek": "<integer>"
+            }
+          }

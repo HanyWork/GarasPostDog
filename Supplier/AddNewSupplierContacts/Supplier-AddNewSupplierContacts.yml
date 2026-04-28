@@ -1,0 +1,191 @@
+info:
+  name: /Supplier/AddNewSupplierContacts
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Supplier/AddNewSupplierContacts"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "SupplierId": "60604",
+          "SupplierAddresses": [
+              {
+                  "ID": null,
+                  "CountryID": 1,
+                  "CountryName": "",
+                  "GovernorateID": 1,
+                  "GovernorateName": "",
+                  "Address": "hi",
+                  "CreatedBy": "",
+                  "ModifiedBy": "",
+                  "BuildingNumber": "",
+                  "Floor": "",
+                  "Description": "",
+                  "AreaID": 1,
+                  "AreaName": ""
+              }
+          ],
+          "SupplierLandLines": [
+              {
+                  "ID": null,
+                  "LandLine": "",
+                  "CreatedBy": "",
+                  "ModifiedBy": ""
+              }
+          ],
+          "SupplierMobiles": [
+              {
+                  "ID": null,
+                  "Mobile": "",
+                  "CreatedBy": "",
+                  "ModifiedBy": ""
+              }
+          ],
+          "SupplierFaxes": [
+             {
+                  "ID": null,
+                  "Fax": "",
+                  "CreatedBy": "",
+                  "ModifiedBy": ""
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Supplier/AddNewSupplierContacts"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "SupplierId": "<long>",
+            "SupplierAddresses": [
+              {
+                "ID": "<long>",
+                "CountryID": "<integer>",
+                "CountryName": "<string>",
+                "GovernorateID": "<integer>",
+                "GovernorateName": "<string>",
+                "Address": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "BuildingNumber": "<string>",
+                "Floor": "<string>",
+                "Description": "<string>",
+                "AreaID": "<long>",
+                "AreaName": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "CountryID": "<integer>",
+                "CountryName": "<string>",
+                "GovernorateID": "<integer>",
+                "GovernorateName": "<string>",
+                "Address": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "BuildingNumber": "<string>",
+                "Floor": "<string>",
+                "Description": "<string>",
+                "AreaID": "<long>",
+                "AreaName": "<string>"
+              }
+            ],
+            "SupplierLandLines": [
+              {
+                "ID": "<long>",
+                "LandLine": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "LandLine": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "SupplierMobiles": [
+              {
+                "ID": "<long>",
+                "Mobile": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "Mobile": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "SupplierFaxes": [
+              {
+                "ID": "<long>",
+                "Fax": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "Fax": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

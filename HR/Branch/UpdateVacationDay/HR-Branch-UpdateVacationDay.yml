@@ -1,0 +1,157 @@
+info:
+  name: /HR/Branch/UpdateVacationDay
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Branch/UpdateVacationDay"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "12"
+      - name: ArName
+        type: text
+        value: Agaza
+      - name: EngName
+        type: text
+        value: Vacation
+      - name: OtherName
+        type: text
+        value: Agaza
+      - name: Reason
+        type: text
+        value: Reason
+      - name: IsPaid
+        type: text
+        value: "false"
+      - name: IsDeducted
+        type: text
+        value: "false"
+      - name: AllowOverTime
+        type: text
+        value: "false"
+      - name: AllowDelayingDeduction
+        type: text
+        value: "false"
+      - name: AllowAutomaticCalculations
+        type: text
+        value: "false"
+      - name: From
+        type: text
+        value: 2024-5-15
+      - name: To
+        type: text
+        value: 2024-5-20
+      - name: BranchId
+        type: text
+        value: "2"
+      - name: OverTimeDeductionRates[0].Id
+        type: text
+        value: "5"
+      - name: OverTimeDeductionRates[0].From
+        type: text
+        value: 9:00 AM
+      - name: OverTimeDeductionRates[0].To
+        type: text
+        value: 12:00 PM
+      - name: OverTimeDeductionRates[0].VacationDayId
+        type: text
+        value: "12"
+      - name: OverTimeDeductionRates[0].Rate
+        type: text
+        value: "1.4"
+      - name: OverTimeDeductionRates[0].Active
+        type: text
+        value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/VacationDay/UpdateVacationDay"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: ArName
+            type: text
+            value: <string>
+          - name: EngName
+            type: text
+            value: <string>
+          - name: OtherName
+            type: text
+            value: <string>
+          - name: Reason
+            type: text
+            value: <string>
+          - name: IsPaid
+            type: text
+            value: <boolean>
+          - name: IsDeducted
+            type: text
+            value: <boolean>
+          - name: AllowOverTime
+            type: text
+            value: <boolean>
+          - name: AllowDelayingDeduction
+            type: text
+            value: <boolean>
+          - name: AllowAutomaticCalculations
+            type: text
+            value: <boolean>
+          - name: From
+            type: text
+            value: <dateTime>
+          - name: To
+            type: text
+            value: <dateTime>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

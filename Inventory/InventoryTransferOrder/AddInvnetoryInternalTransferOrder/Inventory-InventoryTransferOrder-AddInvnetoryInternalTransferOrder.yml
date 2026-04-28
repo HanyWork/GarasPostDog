@@ -1,0 +1,135 @@
+info:
+  name: /Inventory/InventoryTransferOrder/AddInvnetoryInternalTransferOrder
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryTransferOrder/AddInvnetoryInternalTransferOrder"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: elite
+  body:
+    type: json
+    data: "{\r
+
+      \    \"FromInventoryStorID\": \"3042\",\r
+
+      \    \"ToInventoryStorID\": \"3043\",\r
+
+      \    \"ReceivingDate\": \"08/04/2025\",\r
+
+      \    \"InternalTransferOrderItemList\": [\r
+
+      \        {\r
+
+      \            \"InventoryItemID\": \"22154\",\r
+
+      \            \"TransferredQTY\": \"1\",\r
+
+      \            \"Comment\": \"\",\r
+
+      \            \"IsFIFO\": true\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryTransferOrder/AddInvnetoryInternalTransferOrder"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "FromInventoryStorID": "<integer>",
+            "ToInventoryStorID": "<integer>",
+            "ReceivingDate": "<string>",
+            "InternalTransferOrderItemList": [
+              {
+                "InventoryItemID": "<long>",
+                "TransferredQTY": "<double>",
+                "Comment": "<string>",
+                "StoreLocationID": "<integer>",
+                "expDate": "<string>",
+                "serial": "<string>",
+                "StockQTY": "<double>",
+                "IsFIFO": "<boolean>",
+                "StockBalanceList": [
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  }
+                ]
+              },
+              {
+                "InventoryItemID": "<long>",
+                "TransferredQTY": "<double>",
+                "Comment": "<string>",
+                "StoreLocationID": "<integer>",
+                "expDate": "<string>",
+                "serial": "<string>",
+                "StockQTY": "<double>",
+                "IsFIFO": "<boolean>",
+                "StockBalanceList": [
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  }
+                ]
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

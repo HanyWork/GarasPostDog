@@ -1,0 +1,203 @@
+info:
+  name: /ProjectsDetails/AddEditManagementOfRentOffer
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectsDetails/AddEditManagementOfRentOffer"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: multipart-form
+    data:
+      - name: OfferID
+        type: text
+        value: "352179"
+      - name: ProjectID
+        type: text
+        value: "245822"
+      - name: ManagementOfRentOrderID
+        type: text
+        value: "10086"
+      - name: ReleaseDate
+        type: text
+        value: 2024/3/14
+      - name: PlannedReceivingDate
+        type: text
+        value: 2024/3/14
+      - name: ActualReceivingDate
+        type: text
+        value: 2024/3/14
+      - name: CostOfExtraDays
+        type: text
+        value: "54.5"
+      - name: ExtraRequired
+        type: text
+        value: <double>
+        disabled: true
+      - name: Discount
+        type: text
+        value: <double>
+        disabled: true
+      - name: TotalRequiredExtraCost
+        type: text
+        value: <double>
+        disabled: true
+      - name: DamageOrPenaltiesStatus
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: DamageOrPenaltiesDesc
+        type: text
+        value: <string>
+        disabled: true
+      - name: DamageOrPenaltiesCost
+        type: text
+        value: <double>
+        disabled: true
+      - name: FinFeedBackConfirmed
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: FinFeedBackReplyDate
+        type: text
+        value: <string>
+        disabled: true
+      - name: FinFeedBackUserID
+        type: text
+        value: <long>
+        disabled: true
+      - name: FinFeedBackUserName
+        type: text
+        value: <string>
+        disabled: true
+      - name: RentStatus
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: RentAttachment
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/aaaaaa.pdf
+      - name: AttachmentCategory
+        type: text
+        value: <string>
+        disabled: true
+      - name: AttachmentDescription
+        type: text
+        value: test Des3
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectsDetails/AddEditManagementOfRentOffer"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: OfferID
+            type: text
+            value: <long>
+          - name: ProjectID
+            type: text
+            value: <integer>
+          - name: ManagementOfRentOrderID
+            type: text
+            value: <long>
+          - name: ReleaseDate
+            type: text
+            value: <string>
+          - name: PlannedReceivingDate
+            type: text
+            value: <string>
+          - name: ActualReceivingDate
+            type: text
+            value: <string>
+          - name: CostOfExtraDays
+            type: text
+            value: <double>
+          - name: ExtraRequired
+            type: text
+            value: <double>
+          - name: Discount
+            type: text
+            value: <double>
+          - name: TotalRequiredExtraCost
+            type: text
+            value: <double>
+          - name: DamageOrPenaltiesStatus
+            type: text
+            value: <boolean>
+          - name: DamageOrPenaltiesDesc
+            type: text
+            value: <string>
+          - name: DamageOrPenaltiesCost
+            type: text
+            value: <double>
+          - name: FinFeedBackConfirmed
+            type: text
+            value: <boolean>
+          - name: FinFeedBackReplyDate
+            type: text
+            value: <string>
+          - name: FinFeedBackUserID
+            type: text
+            value: <long>
+          - name: FinFeedBackUserName
+            type: text
+            value: <string>
+          - name: RentStatus
+            type: text
+            value: <boolean>
+          - name: RentAttachment
+            type: text
+            value: <string>,<string>
+          - name: AttachmentCategory
+            type: text
+            value: <string>
+          - name: AttachmentDescription
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

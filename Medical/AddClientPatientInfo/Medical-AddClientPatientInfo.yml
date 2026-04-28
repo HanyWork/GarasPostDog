@@ -1,0 +1,88 @@
+info:
+  name: /Medical/AddClientPatientInfo
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddClientPatientInfo"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: |-
+      {
+        "ClientName": "name1",
+        "ClientType": "type1",
+        "salesPersonID": "1",
+        "Email": "a@a.com",
+        "ClientMobile": "0121545",
+        "FollowUpPeriod": "1",
+        "IdentityNumber": "27458419854",
+        "NationalityId": "1",
+        "Gender": "male",
+        "BirthDate": "2000-05-05"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/AddClientPatientInfo"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ClientName": "<string>",
+            "ClientType": "<string>",
+            "salesPersonID": "<long>",
+            "Email": "<string>",
+            "ClientMobile": "<string>",
+            "FollowUpPeriod": "<integer>",
+            "IdentityNumber": "<long>",
+            "NationalityId": "<long>",
+            "Gender": "<string>",
+            "BirthDate": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

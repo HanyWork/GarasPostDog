@@ -1,0 +1,116 @@
+info:
+  name: /EmailTool/GetAllEmailsForUserDB
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/EmailTool/GetAllEmailsForUserDB"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserName
+      value: patric
+      disabled: true
+    - name: KeyWord
+      value: 7amada
+      disabled: true
+    - name: dateFrom
+      value: ""
+      disabled: true
+    - name: dateTo
+      value: ""
+      disabled: true
+    - name: emailTypeID
+      value: "5"
+      description: inbox,sent,Archive....
+    - name: EmailCategoryTypeID
+      value: "5"
+      description: Task,Project,Inventory......
+      disabled: true
+    - name: currentPage
+      value: "1"
+    - name: itemsPerPage
+      value: "200"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EmailTool/GetAllEmailsForUserDB"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "emailsList": [
+                {
+                  "ID": "<long>",
+                  "EmailId": "<string>",
+                  "EmailBody": "<string>",
+                  "EmailSubject": "<string>",
+                  "EmailSender": "<string>",
+                  "UserId": "<long>",
+                  "UserName": "<string>",
+                  "HasAttatchment": "<boolean>",
+                  "AttachmentList": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "EmailCcList": [
+                    "<string>",
+                    "<string>"
+                  ]
+                },
+                {
+                  "ID": "<long>",
+                  "EmailId": "<string>",
+                  "EmailBody": "<string>",
+                  "EmailSubject": "<string>",
+                  "EmailSender": "<string>",
+                  "UserId": "<long>",
+                  "UserName": "<string>",
+                  "HasAttatchment": "<boolean>",
+                  "AttachmentList": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "EmailCcList": [
+                    "<string>",
+                    "<string>"
+                  ]
+                }
+              ]
+            }
+          }

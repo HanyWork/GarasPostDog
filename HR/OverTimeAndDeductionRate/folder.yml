@@ -1,0 +1,7 @@
+info:
+  name: OverTimeAndDeductionRate
+  type: folder
+  seq: 39
+
+request:
+  auth: inherit

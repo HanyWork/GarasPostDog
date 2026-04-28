@@ -1,0 +1,76 @@
+info:
+  name: /User/LoginForClient
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/User/LoginForClient"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+  body:
+    type: json
+    data: |-
+      {
+          "UserName": "+974 55555555",
+          "Password": "000",
+          "CompanyName": "stmark"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/User/LoginForClient"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "userName": "<string>",
+            "password": "<string>",
+            "companyName": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "data": "<string>",
+            "clientID": "<long>",
+            "clientIDEnc": "<string>",
+            "clientImageURL": "<string>",
+            "clientName": "<string>",
+            "maintenanceID": "<long>",
+            "clientMobile": "<string>"
+          }

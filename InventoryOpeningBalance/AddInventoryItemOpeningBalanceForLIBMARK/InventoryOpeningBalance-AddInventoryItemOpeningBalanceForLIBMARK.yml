@@ -1,0 +1,145 @@
+info:
+  name: /InventoryOpeningBalance/AddInventoryItemOpeningBalanceForLIBMARK
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/InventoryOpeningBalance/AddInventoryItemOpeningBalanceForLIBMARK"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: libmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "InventoryItemOpeningBalanceHeadList": [
+              {
+                  "InventoryStoreID": "2005",
+                  "RecevingData": "2025-07-14",
+                  "ItemList": [
+                      {
+                          "InventoryItemID": "1",
+                          "QTY": "1",
+                          "Serial": "1111111", // pages NO
+                          "StoreLocationID": "5",
+                          "PublicId": "666666606" 
+                      }
+                  ]
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/InventoryOpeningBalance/AddInventoryItemOpeningBalanceForLIBMARK"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryItemOpeningBalanceHeadList": [
+              {
+                "InventoryStoreID": "<integer>",
+                "RecevingData": "<string>",
+                "ItemList": [
+                  {
+                    "InventoryItemID": "<long>",
+                    "QTY": "<double>",
+                    "ExpData": "<string>",
+                    "Serial": "<string>",
+                    "PublicId": "<integer>",
+                    "Comment": "<string>",
+                    "StoreLocationID": "<integer>",
+                    "CostEGP": "<double>",
+                    "CurrencyId": "<integer>",
+                    "RateToEGP": "<double>"
+                  },
+                  {
+                    "InventoryItemID": "<long>",
+                    "QTY": "<double>",
+                    "ExpData": "<string>",
+                    "Serial": "<string>",
+                    "PublicId": "<integer>",
+                    "Comment": "<string>",
+                    "StoreLocationID": "<integer>",
+                    "CostEGP": "<double>",
+                    "CurrencyId": "<integer>",
+                    "RateToEGP": "<double>"
+                  }
+                ]
+              },
+              {
+                "InventoryStoreID": "<integer>",
+                "RecevingData": "<string>",
+                "ItemList": [
+                  {
+                    "InventoryItemID": "<long>",
+                    "QTY": "<double>",
+                    "ExpData": "<string>",
+                    "Serial": "<string>",
+                    "PublicId": "<integer>",
+                    "Comment": "<string>",
+                    "StoreLocationID": "<integer>",
+                    "CostEGP": "<double>",
+                    "CurrencyId": "<integer>",
+                    "RateToEGP": "<double>"
+                  },
+                  {
+                    "InventoryItemID": "<long>",
+                    "QTY": "<double>",
+                    "ExpData": "<string>",
+                    "Serial": "<string>",
+                    "PublicId": "<integer>",
+                    "Comment": "<string>",
+                    "StoreLocationID": "<integer>",
+                    "CostEGP": "<double>",
+                    "CurrencyId": "<integer>",
+                    "RateToEGP": "<double>"
+                  }
+                ]
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

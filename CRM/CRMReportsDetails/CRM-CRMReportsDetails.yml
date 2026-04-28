@@ -1,0 +1,329 @@
+info:
+  name: /CRM/CRMReportsDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/CRM/CRMReportsDetails"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Month
+      value: "3"
+      disabled: true
+    - name: Year
+      value: "2023"
+      disabled: true
+    - name: BranchId
+      value: ""
+      disabled: true
+    - name: ClientId
+      value: "2"
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "20"
+    - name: CompanyName
+      value: marinaplt
+    - name: ContactType
+      value: send
+      disabled: true
+    - name: ReminderDate
+      value: " 2024-10-17"
+      disabled: true
+    - name: EndDate
+      value: " 2024-10-17"
+    - name: StartDate
+      value: 2024-1-1
+    - name: ReportCreator
+      value: "30871"
+      disabled: true
+    - name: SalesPersonId
+      value: "6"
+      disabled: true
+    - name: ThroughName
+      value: ""
+      disabled: true
+    - name: CRMReortReasonId
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/CRM/CRMReportsDetails"
+      method: GET
+      headers:
+        - name: StartDate
+          value: <dateTime>
+        - name: EndDate
+          value: <dateTime>
+        - name: SalesPersonId
+          value: <long>
+        - name: ReportCreator
+          value: <long>
+        - name: ContactType
+          value: <string>
+        - name: ThroughName
+          value: <string>
+        - name: CRMUserId
+          value: <long>
+        - name: BranchId
+          value: <integer>
+        - name: ClientId
+          value: <long>
+        - name: CRMId
+          value: <long>
+        - name: CurrentPage
+          value: <integer>
+        - name: NumberOfItemsPerPage
+          value: <integer>
+        - name: ReminderDate
+          value: <dateTime>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "FilteredClientId": "<long>",
+            "FilteredClientName": "<string>",
+            "FilteredMonth": "<integer>",
+            "FilteredYear": "<integer>",
+            "FilteredSalesPersonId": "<long>",
+            "FilteredBranchId": "<integer>",
+            "FilteredReportCreator": "<long>",
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            },
+            "CrmReports": [
+              {
+                "ID": "<long>",
+                "ClientID": "<long>",
+                "ClientName": "<string>",
+                "ClientAddress": "<string>",
+                "ClientStatus": "<string>",
+                "ClientCalssification": "<string>",
+                "SalesName": "<string>",
+                "ReportDate": "<string>",
+                "CreationDate": "<string>",
+                "ThroughID": "<integer>",
+                "ThroughName": "<string>",
+                "FromTime": "<double>",
+                "ToTime": "<double>",
+                "Location": "<string>",
+                "Reason": "<string>",
+                "Comment": "<string>",
+                "SalesReportCreator": "<string>",
+                "LinesCount": "<integer>",
+                "LineId": "<long>",
+                "CRMUserId": "<long>",
+                "CRMUserName": "<string>",
+                "CRMIsRecieved": "<boolean>",
+                "CRMContactName": "<string>",
+                "CRMContactMethod": "<string>",
+                "IsNew": "<boolean>",
+                "NewClientName": "<string>",
+                "NewClientAddress": "<string>",
+                "NewClientTele": "<string>",
+                "ContactPersonName": "<string>",
+                "ContactPersonMobile": "<string>",
+                "ContactType": "<string>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FilePath": "<string>",
+                "ReviewComment": "<string>",
+                "ReviewedBy": "<long>",
+                "ReviewedByName": "<string>",
+                "ReviewDate": "<string>",
+                "IsReviewed": "<boolean>",
+                "Review": "<double>",
+                "ReminderDate": "<string>",
+                "Latitude": "<double>",
+                "Longitude": "<double>",
+                "RelatedToInventoryItemId": "<long>",
+                "RelatedToInventoryItemName": "<string>",
+                "RelatedToSalesOfferProductId": "<long>",
+                "RelatedToSalesOfferProductName": "<string>",
+                "RelatedToProjectProductId": "<long>",
+                "RelatedToProjectProductName": "<string>",
+                "RelatedToSalesOfferId": "<long>",
+                "RelatedToSalesOfferSerial": "<string>",
+                "RelatedToSalesOfferName": "<string>",
+                "RelatedToProjectId": "<long>",
+                "RelatedToProjectSerial": "<string>",
+                "RelatedToProjectName": "<string>",
+                "Hint": "<string>",
+                "ClientSalesPersonName": "<string>",
+                "ClientClassificationId": "<integer>",
+                "SalesReportLineExpenses": [
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "FileName": "<string>",
+                      "FileExtension": "<string>",
+                      "FileContent": "<string>",
+                      "FilePath": "<string>",
+                      "Category": "<string>",
+                      "Active": "<boolean>"
+                    }
+                  },
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "FileName": "<string>",
+                      "FileExtension": "<string>",
+                      "FileContent": "<string>",
+                      "FilePath": "<string>",
+                      "Category": "<string>",
+                      "Active": "<boolean>"
+                    }
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "ClientID": "<long>",
+                "ClientName": "<string>",
+                "ClientAddress": "<string>",
+                "ClientStatus": "<string>",
+                "ClientCalssification": "<string>",
+                "SalesName": "<string>",
+                "ReportDate": "<string>",
+                "CreationDate": "<string>",
+                "ThroughID": "<integer>",
+                "ThroughName": "<string>",
+                "FromTime": "<double>",
+                "ToTime": "<double>",
+                "Location": "<string>",
+                "Reason": "<string>",
+                "Comment": "<string>",
+                "SalesReportCreator": "<string>",
+                "LinesCount": "<integer>",
+                "LineId": "<long>",
+                "CRMUserId": "<long>",
+                "CRMUserName": "<string>",
+                "CRMIsRecieved": "<boolean>",
+                "CRMContactName": "<string>",
+                "CRMContactMethod": "<string>",
+                "IsNew": "<boolean>",
+                "NewClientName": "<string>",
+                "NewClientAddress": "<string>",
+                "NewClientTele": "<string>",
+                "ContactPersonName": "<string>",
+                "ContactPersonMobile": "<string>",
+                "ContactType": "<string>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FilePath": "<string>",
+                "ReviewComment": "<string>",
+                "ReviewedBy": "<long>",
+                "ReviewedByName": "<string>",
+                "ReviewDate": "<string>",
+                "IsReviewed": "<boolean>",
+                "Review": "<double>",
+                "ReminderDate": "<string>",
+                "Latitude": "<double>",
+                "Longitude": "<double>",
+                "RelatedToInventoryItemId": "<long>",
+                "RelatedToInventoryItemName": "<string>",
+                "RelatedToSalesOfferProductId": "<long>",
+                "RelatedToSalesOfferProductName": "<string>",
+                "RelatedToProjectProductId": "<long>",
+                "RelatedToProjectProductName": "<string>",
+                "RelatedToSalesOfferId": "<long>",
+                "RelatedToSalesOfferSerial": "<string>",
+                "RelatedToSalesOfferName": "<string>",
+                "RelatedToProjectId": "<long>",
+                "RelatedToProjectSerial": "<string>",
+                "RelatedToProjectName": "<string>",
+                "Hint": "<string>",
+                "ClientSalesPersonName": "<string>",
+                "ClientClassificationId": "<integer>",
+                "SalesReportLineExpenses": [
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "FileName": "<string>",
+                      "FileExtension": "<string>",
+                      "FileContent": "<string>",
+                      "FilePath": "<string>",
+                      "Category": "<string>",
+                      "Active": "<boolean>"
+                    }
+                  },
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "FileName": "<string>",
+                      "FileExtension": "<string>",
+                      "FileContent": "<string>",
+                      "FilePath": "<string>",
+                      "Category": "<string>",
+                      "Active": "<boolean>"
+                    }
+                  }
+                ]
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

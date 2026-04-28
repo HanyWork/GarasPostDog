@@ -1,0 +1,75 @@
+info:
+  name: /HR/GetTeamsIndex
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/GetTeamsIndex"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/GetTeamsIndex"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "teamList": [
+              {
+                "id": "<long>",
+                "departmentID": "<integer>",
+                "name": "<string>",
+                "departmentName": "<string>",
+                "active": "<boolean>",
+                "description": "<string>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>"
+              },
+              {
+                "id": "<long>",
+                "departmentID": "<integer>",
+                "name": "<string>",
+                "departmentName": "<string>",
+                "active": "<boolean>",
+                "description": "<string>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,7 @@
+info:
+  name: AddInventoryStore
+  type: folder
+  seq: 84
+
+request:
+  auth: inherit

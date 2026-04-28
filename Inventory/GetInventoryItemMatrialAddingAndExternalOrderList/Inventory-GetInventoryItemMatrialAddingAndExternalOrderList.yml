@@ -1,0 +1,121 @@
+info:
+  name: /Inventory/GetInventoryItemMatrialAddingAndExternalOrderList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItemMatrialAddingAndExternalOrder/GetInventoryItemMatrialAddingAndExternalOrderList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: InventoryItemID
+      value: "9741"
+      disabled: true
+    - name: ToInventoryStoreID
+      value: "3"
+      disabled: true
+    - name: FromSupplierID
+      value: "1"
+      disabled: true
+    - name: CreatorUserID
+      value: "1"
+      disabled: true
+    - name: SupplierItemSerial
+      value: "765425644"
+      disabled: true
+    - name: OrderType
+      value: AddingOrder
+      disabled: true
+    - name: ReceiveDateFrom
+      value: 6-27-2022
+      disabled: true
+    - name: ReceiveDateTo
+      value: 8-20-2022
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/GetInventoryItemMatrialAddingAndExternalOrderList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "InventoryMtrialAddingOrderByDateList": [
+              {
+                "DateMonth": "<string>",
+                "InventoryMatrialAddingOrderInfoList": [
+                  {
+                    "AddingOrderNo": "<string>",
+                    "SupplierName": "<string>",
+                    "StoreName": "<string>",
+                    "RecivingDate": "<string>",
+                    "CreationDate": "<string>",
+                    "CreatorName": "<string>"
+                  },
+                  {
+                    "AddingOrderNo": "<string>",
+                    "SupplierName": "<string>",
+                    "StoreName": "<string>",
+                    "RecivingDate": "<string>",
+                    "CreationDate": "<string>",
+                    "CreatorName": "<string>"
+                  }
+                ]
+              },
+              {
+                "DateMonth": "<string>",
+                "InventoryMatrialAddingOrderInfoList": [
+                  {
+                    "AddingOrderNo": "<string>",
+                    "SupplierName": "<string>",
+                    "StoreName": "<string>",
+                    "RecivingDate": "<string>",
+                    "CreationDate": "<string>",
+                    "CreatorName": "<string>"
+                  },
+                  {
+                    "AddingOrderNo": "<string>",
+                    "SupplierName": "<string>",
+                    "StoreName": "<string>",
+                    "RecivingDate": "<string>",
+                    "CreationDate": "<string>",
+                    "CreatorName": "<string>"
+                  }
+                ]
+              }
+            ]
+          }

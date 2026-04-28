@@ -1,0 +1,75 @@
+info:
+  name: /Admin/GetTermsAndConditions
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/GetTermsAndConditions"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetTermsAndConditions"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "termsAndConditionsList": [
+              {
+                "id": "<integer>",
+                "name": "<string>",
+                "termsAndConditionsName": "<string>",
+                "description": "<string>",
+                "active": "<boolean>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>",
+                "termsCategoryID": "<integer>"
+              },
+              {
+                "id": "<integer>",
+                "name": "<string>",
+                "termsAndConditionsName": "<string>",
+                "description": "<string>",
+                "active": "<boolean>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>",
+                "termsCategoryID": "<integer>"
+              }
+            ]
+          }

@@ -1,0 +1,98 @@
+info:
+  name: /ProjectsDetails/AddEditVisitsScheduleOfMaintenanceAttachment
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectsDetails/AddEditVisitsScheduleOfMaintenanceAttachment"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+  body:
+    type: multipart-form
+    data:
+      - name: AttachmentId
+        type: text
+        value: "24"
+        description: 0 -> create new Attachment , another existing ID foe edite
+      - name: ManagementOfMaintenanceOrderId
+        type: text
+        value: "20035"
+      - name: VisitsScheduleOfMaintenanceId
+        type: text
+        value: "4"
+      - name: Active
+        type: text
+        value: "false"
+      - name: Category
+        type: text
+        value: test
+      - name: VisitsScheduleAttachment
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/cccccccc.pdf
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectsDetails/AddEditVisitsScheduleOfMaintenanceAttachment"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: AttachmentId
+            type: text
+            value: <long>
+          - name: ManagementOfMaintenanceOrderId
+            type: text
+            value: <long>
+          - name: VisitsScheduleOfMaintenanceId
+            type: text
+            value: <long>
+          - name: Active
+            type: text
+            value: <boolean>
+          - name: Category
+            type: text
+            value: <string>
+          - name: VisitsScheduleAttachment
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

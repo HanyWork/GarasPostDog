@@ -1,0 +1,51 @@
+info:
+  name: /EmailTool/send
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/EmailTool/send"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: userEmail
+      value: garas@sasclearance.com
+  body:
+    type: json
+    data: |-
+      {
+        "Subject": "test sublect",
+        "Content": "email content",
+        "RecipientEmail": "patrickatef1234@gmail.com"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EmailTool/send"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Subject": "<string>",
+            "Content": "<string>",
+            "RecipientEmail": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""

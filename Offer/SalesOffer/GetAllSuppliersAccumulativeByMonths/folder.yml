@@ -1,0 +1,7 @@
+info:
+  name: GetAllSuppliersAccumulativeByMonths
+  type: folder
+  seq: 37
+
+request:
+  auth: inherit

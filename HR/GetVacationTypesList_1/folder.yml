@@ -1,0 +1,7 @@
+info:
+  name: GetVacationTypesList_1
+  type: folder
+  seq: 36
+
+request:
+  auth: inherit

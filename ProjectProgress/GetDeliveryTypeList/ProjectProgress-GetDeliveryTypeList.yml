@@ -1,0 +1,317 @@
+info:
+  name: /ProjectProgress/GetDeliveryTypeList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/ProjectProgress/GetDeliveryTypeList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectProgress/GetDeliveryTypeList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Type": "<string>",
+                "Id": "<integer>",
+                "Active": "<boolean>",
+                "ProjectProgresses": [
+                  {
+                    "Id": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProjectId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressTypeId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "DeliveryTypeId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressStatusId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Date": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "AttachmentPath": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Comment": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Active": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreatedBy": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreationDate": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedBy": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedDate": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "RelatedProgressPercent": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreatedByNavigation": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "DeliveryType": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedByNavigation": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressStatus": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressType": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Project": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                  },
+                  {
+                    "Id": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProjectId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressTypeId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "DeliveryTypeId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressStatusId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Date": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "AttachmentPath": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Comment": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Active": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreatedBy": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreationDate": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedBy": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedDate": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "RelatedProgressPercent": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreatedByNavigation": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "DeliveryType": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedByNavigation": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressStatus": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressType": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Project": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "<string>",
+                "Id": "<integer>",
+                "Active": "<boolean>",
+                "ProjectProgresses": [
+                  {
+                    "Id": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProjectId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressTypeId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "DeliveryTypeId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressStatusId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Date": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "AttachmentPath": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Comment": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Active": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreatedBy": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreationDate": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedBy": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedDate": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "RelatedProgressPercent": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreatedByNavigation": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "DeliveryType": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedByNavigation": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressStatus": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressType": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Project": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                  },
+                  {
+                    "Id": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProjectId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressTypeId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "DeliveryTypeId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressStatusId": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Date": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "AttachmentPath": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Comment": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Active": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreatedBy": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreationDate": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedBy": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedDate": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "RelatedProgressPercent": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "CreatedByNavigation": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "DeliveryType": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ModifiedByNavigation": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressStatus": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "ProgressType": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "Project": {
+                      "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                  }
+                ]
+              }
+            ]
+          }

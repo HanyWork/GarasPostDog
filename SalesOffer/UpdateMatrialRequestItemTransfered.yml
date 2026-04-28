@@ -1,0 +1,35 @@
+info:
+  name: UpdateMatrialRequestItemTransfered
+  type: http
+  seq: 36
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/UpdateMatrialRequestItemTransfered"
+  headers:
+    - name: CompanyName
+      value: elite
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"MatrialRequestIdsList\": [\r
+
+      \        1,\r
+
+      \        2,\r
+
+      \        3\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

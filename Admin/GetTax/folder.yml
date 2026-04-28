@@ -1,0 +1,7 @@
+info:
+  name: GetTax
+  type: folder
+  seq: 65
+
+request:
+  auth: inherit

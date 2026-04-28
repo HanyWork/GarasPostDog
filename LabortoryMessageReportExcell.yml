@@ -1,0 +1,27 @@
+info:
+  name: LabortoryMessageReportExcell
+  type: http
+  seq: 51
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/api/Laboratory/LabortoryMessageReportExcell"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+    - name: FromDate
+      value: 2025-01-01
+    - name: ToDate
+      value: 2025-01-12
+    - name: Name
+      value: "%D9%85%D9%8A%D9%86%D8%A7"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

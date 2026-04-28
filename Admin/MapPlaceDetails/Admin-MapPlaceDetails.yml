@@ -1,0 +1,58 @@
+info:
+  name: /Admin/MapPlaceDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/MapPlaceDetails"
+  headers:
+    - name: Url
+      value: https://maps.googleapis.com/maps/api/place/details/json?placeid=ElNTaWRpIEJlc2hyIE1vc3F1ZSwg2LPZitiv2Yog2KjYtNixINmC2KjZhNmK2Iwg2YLYs9mFINir2KfZhiDYp9mE2YXZhtiq2LLYqdiMINmF2LXYsSIuKiwKFAoSCTkDZgS72vUUEUuIKJ44YxgIEhQKEgmz2ujGvdr1FBGQ0qWtfDLqtw&key=AIzaSyBKAKP9VxKKNAwWSjhx_G5sXYR7kTtGy2M&language=ar
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/MapPlaceDetails"
+      method: GET
+      headers:
+        - name: Url
+          value: occaecat dolor elit proident exercitation
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ResponseBody": "aute cillum sed est",
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "nulla",
+                "ErrorCode": "in in nostrud Excepteur"
+              },
+              {
+                "ErrorMSG": "dolor incididunt minim",
+                "ErrorCode": "qui laborum dolore"
+              }
+            ]
+          }

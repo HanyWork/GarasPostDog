@@ -1,0 +1,24 @@
+info:
+  name: /HR/ProjectInvoice/GetProjectInvoices
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/ProjectInvoice/GetProjectInvoices"
+  headers:
+    - name: projectId
+      value: "41"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

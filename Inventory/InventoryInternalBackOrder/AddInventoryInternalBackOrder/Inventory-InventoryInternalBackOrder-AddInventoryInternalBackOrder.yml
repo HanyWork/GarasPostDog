@@ -1,0 +1,114 @@
+info:
+  name: /Inventory/InventoryInternalBackOrder/AddInventoryInternalBackOrder
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryInternalBackOrder/AddInventoryInternalBackOrder"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "OperationType": "Internal Back Order",
+          "FromUserID": "1",
+          "InventoryStoreID": "1004",
+          "RecivingDate": "12/25/2024",
+          "Cutoday": true,
+          "InternalBackOrderItemList": [
+              {
+                  "InventoryItemID": "493",
+                  "PojectID": "21014",
+                  "ReqQTY": "1",
+                  "MatrialReleaseID": "12520",
+                  "Comment": "تابتلابت",
+                  "StoreLocationID": "3",
+                  "ExpDate": "11/22/2024",
+                  "Serial": "456"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryInternalBackOrder/AddInventoryInternalBackOrder"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "OperationType": "<string>",
+            "FromUserID": "<long>",
+            "InventoryStoreID": "<integer>",
+            "RecivingDate": "<string>",
+            "Cutoday": "<boolean>",
+            "InternalBackOrderItemList": [
+              {
+                "InventoryItemID": "<long>",
+                "PojectID": "<long>",
+                "ReqQTY": "<double>",
+                "Comment": "<string>",
+                "MatrialReleaseID": "<long>",
+                "InventoryStorItemMRItemID": "<long>",
+                "StoreLocationID": "<integer>",
+                "ExpDate": "<string>",
+                "Serial": "<string>"
+              },
+              {
+                "InventoryItemID": "<long>",
+                "PojectID": "<long>",
+                "ReqQTY": "<double>",
+                "Comment": "<string>",
+                "MatrialReleaseID": "<long>",
+                "InventoryStorItemMRItemID": "<long>",
+                "StoreLocationID": "<integer>",
+                "ExpDate": "<string>",
+                "Serial": "<string>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

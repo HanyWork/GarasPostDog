@@ -1,0 +1,82 @@
+info:
+  name: /Inventory/InventoryItemCategory/GetInventoryCategoryStoreItem
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItemCategory/GetInventoryCategoryStoreItem"
+  headers:
+    - name: InventoryItemCategoryID
+      value: "10"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItemCategory/GetInventoryCategoryStoreItem"
+      method: GET
+      headers:
+        - name: InventoryItemCategoryID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "InventoryItemCategoryList": [
+              {
+                "ID": "<integer>",
+                "Count": "<integer>",
+                "RemainBalanceCostwithMainCu": "<double>",
+                "RemainBalanceCostwithEgp": "<double>",
+                "RateToEGP": "<double>",
+                "FinalBalance": "<double>",
+                "POInvoiceTotalCost": "<double>"
+              },
+              {
+                "ID": "<integer>",
+                "Count": "<integer>",
+                "RemainBalanceCostwithMainCu": "<double>",
+                "RemainBalanceCostwithEgp": "<double>",
+                "RateToEGP": "<double>",
+                "FinalBalance": "<double>",
+                "POInvoiceTotalCost": "<double>"
+              }
+            ],
+            "InventoryItemCategorySumm": {
+              "Count": "<integer>",
+              "SumOfRemainBalanceCostwithMainCu": "<double>",
+              "SumOfRemainBalanceCostwithEgp": "<double>"
+            }
+          }

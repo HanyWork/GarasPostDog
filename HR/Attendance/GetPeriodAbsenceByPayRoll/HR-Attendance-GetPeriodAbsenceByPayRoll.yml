@@ -1,0 +1,77 @@
+info:
+  name: /HR/Attendance/GetPeriodAbsenceByPayRoll
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetPeriodAbsenceByPayRoll"
+  headers:
+    - name: payRollID
+      value: "1"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetPeriodAbsenceByPayRoll"
+      method: GET
+      headers:
+        - name: payRollID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "ID": "<long>",
+                "HrUserId": "<long>",
+                "AbsenceTypeID": "<long>",
+                "AbsenceTypeName": "<string>",
+                "IsApprovedAbsence": "<boolean>",
+                "ApprovedByUserID": "<long>",
+                "ApprovedByUserName": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "HrUserId": "<long>",
+                "AbsenceTypeID": "<long>",
+                "AbsenceTypeName": "<string>",
+                "IsApprovedAbsence": "<boolean>",
+                "ApprovedByUserID": "<long>",
+                "ApprovedByUserName": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,93 @@
+info:
+  name: /Inventory/InventoryItem/RemainInventoryItemRequestedQTYReport
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/RemainInventoryItemRequestedQTYReport"
+  headers:
+    - name: FileExtension
+      value: <string>
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/RemainInventoryItemRequestedQTYReport"
+      method: GET
+      headers:
+        - name: FileExtension
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryItemId": "<long>",
+            "Message": "<string>",
+            "OpenProjectsRemainRequestedItem": [
+              {
+                "ProjectId": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "RemainRequestedQty": "<double>"
+              },
+              {
+                "ProjectId": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "RemainRequestedQty": "<double>"
+              }
+            ],
+            "TotalOpenProfjectsRemainRequestedItemsQty": "<double>",
+            "OpenSalesOffersRequestedItem": [
+              {
+                "SalesOfferId": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "RequestedQty": "<double>"
+              },
+              {
+                "SalesOfferId": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "RequestedQty": "<double>"
+              }
+            ],
+            "TotalOpenSalesOffersRequestedItemsQty": "<double>",
+            "TotalInventoryItemRequestedQty": "<double>",
+            "TotalStocksAvailableItemsQty": "<double>",
+            "TotalStocksHoldItemsQty": "<double>",
+            "TotalAvailableItemsQty": "<double>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

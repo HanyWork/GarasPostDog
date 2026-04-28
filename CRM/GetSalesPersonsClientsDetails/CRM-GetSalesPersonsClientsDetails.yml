@@ -1,0 +1,71 @@
+info:
+  name: /CRM/GetSalesPersonsClientsDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/CRM/GetSalesPersonsClientsDetails"
+  headers:
+    - name: Month
+      value: "1"
+    - name: Year
+      value: "2022"
+    - name: BranchId
+      value: "4"
+    - name: WithProjectExtraModifications
+      value: "true"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/CRM/GetSalesPersonsClientsDetails"
+      method: GET
+      headers:
+        - name: Month
+          value: <integer>
+        - name: Year
+          value: <integer>
+        - name: SalesPersonId
+          value: <long>
+        - name: BranchId
+          value: <integer>
+        - name: WithProjectExtraModifications
+          value: <boolean>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

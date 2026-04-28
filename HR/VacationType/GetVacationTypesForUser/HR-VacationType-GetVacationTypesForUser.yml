@@ -1,0 +1,85 @@
+info:
+  name: /HR/VacationType/GetVacationTypesForUser
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/VacationType/GetVacationTypesForUser"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+    - name: HrUserId
+      value: "80"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/VacationType/GetVacationTypesForUser?HrUserId=<long>"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: HrUserId
+          value: <long>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<long>",
+                "ContractID": "<long>",
+                "ContractLeaveSettingID": "<integer>",
+                "Active": "<boolean>",
+                "LeaveAllowed": "<string>",
+                "Balance": "<integer>",
+                "Used": "<integer>",
+                "Remain": "<integer>",
+                "HrUserId": "<long>",
+                "Comment": "<string>"
+              },
+              {
+                "Id": "<long>",
+                "ContractID": "<long>",
+                "ContractLeaveSettingID": "<integer>",
+                "Active": "<boolean>",
+                "LeaveAllowed": "<string>",
+                "Balance": "<integer>",
+                "Used": "<integer>",
+                "Remain": "<integer>",
+                "HrUserId": "<long>",
+                "Comment": "<string>"
+              }
+            ]
+          }

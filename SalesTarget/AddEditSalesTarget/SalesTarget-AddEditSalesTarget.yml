@@ -1,0 +1,83 @@
+info:
+  name: /SalesTarget/AddEditSalesTarget
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/SalesTarget/AddEditSalesTarget"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "Id":1,
+          "Year": 2024,
+          "Target": 3000,
+          "FromDate": "01/01/2024",
+          "ToDate": "01/01/2025",
+          "CurrencyId": 1,
+          "CanEdit": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesTarget/AddEditSalesTarget"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "Id": "<integer>",
+            "Year": "<integer>",
+            "FromDate": "<string>",
+            "ToDate": "<string>",
+            "Target": "<double>",
+            "CurrencyId": "<integer>",
+            "CanEdit": "<boolean>",
+            "Active": "<boolean>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

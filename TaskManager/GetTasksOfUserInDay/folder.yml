@@ -1,0 +1,7 @@
+info:
+  name: GetTasksOfUserInDay
+  type: folder
+  seq: 51
+
+request:
+  auth: inherit

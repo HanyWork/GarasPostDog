@@ -1,0 +1,7 @@
+info:
+  name: AddTaskApplicationOpen
+  type: folder
+  seq: 42
+
+request:
+  auth: inherit

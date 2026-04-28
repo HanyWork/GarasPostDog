@@ -1,0 +1,33 @@
+info:
+  name: AddNewPatient
+  type: http
+  seq: 46
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddNewPatient"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Name\": \"John Doe\",\r
+
+      \    \"NationalId\": \"1234567895\",\r
+
+      \    \"Mobile\": \"01050554948\"\r
+
+      \  //\"SalesPersonId\": 42\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

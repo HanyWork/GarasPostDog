@@ -1,0 +1,7 @@
+info:
+  name: GetPurchasePOInvoiceTaxIncludedType
+  type: folder
+  seq: 27
+
+request:
+  auth: inherit

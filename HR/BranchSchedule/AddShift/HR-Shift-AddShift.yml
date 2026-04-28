@@ -1,0 +1,101 @@
+info:
+  name: /HR/Shift/AddShift
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/BranchSchedule/AddShift"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: From
+        type: text
+        value: 10:30 PM
+      - name: To
+        type: text
+        value: 01:30 AM
+      - name: ShiftNumber
+        type: text
+        value: "2"
+      - name: WeekDayId
+        type: text
+        value: "1"
+      - name: BranchId
+        type: text
+        value: "2"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Shift/AddShift"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: From
+            type: text
+            value: "[object Object]"
+          - name: To
+            type: text
+            value: "[object Object]"
+          - name: ShiftNumber
+            type: text
+            value: <integer>
+          - name: WeekDayId
+            type: text
+            value: <integer>
+          - name: BranchId
+            type: text
+            value: <integer>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

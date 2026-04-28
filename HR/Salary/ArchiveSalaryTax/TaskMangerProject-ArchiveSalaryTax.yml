@@ -1,0 +1,29 @@
+info:
+  name: /TaskMangerProject/ArchiveSalaryTax
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Salary/ArchiveSalaryTax"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "8"
+      - name: IsArchived
+        type: text
+        value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

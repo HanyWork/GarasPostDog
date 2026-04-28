@@ -1,0 +1,57 @@
+info:
+  name: GetMedicalReservationList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/GetMedicalReservationList"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+    - name: DoctorID
+      value: "11"
+      disabled: true
+    - name: Serial
+      value: ""
+      disabled: true
+    - name: StartDate
+      value: 2025-02-05
+      disabled: true
+    - name: EndDate
+      value: 2025-02-20
+      disabled: true
+    - name: PatientID
+      value: "10334"
+      disabled: true
+    - name: PatientTypeID
+      value: ""
+      disabled: true
+    - name: SpecialtyID
+      value: "10068"
+      disabled: true
+    - name: Room
+      value: ""
+      disabled: true
+    - name: ParentID
+      value: "1"
+      disabled: true
+    - name: DoctorScheduleID
+      value: "1"
+      disabled: true
+    - name: currentPage
+      value: "1"
+    - name: numberOfItemsPerPage
+      value: "100"
+    - name: ReservationTyps
+      value: Consultation,Examination
+      description: list of string with comma separation
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

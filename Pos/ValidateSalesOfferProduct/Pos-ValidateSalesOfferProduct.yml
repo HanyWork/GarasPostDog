@@ -1,0 +1,206 @@
+info:
+  name: /Pos/ValidateSalesOfferProduct
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Pos/ValidateSalesOfferProduct"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "InventoryStoreId": "2020",
+          "Product": {
+              "Quantity": 1,
+              "Active": true,
+              "InventoryItemId": "393",
+              "InventoryItemCategoryId": "2065",
+              "ItemPrice": 10,
+              "InvoicePayerClientId": "10334",
+              "FinalPrice": 10,
+              "DiscountPercentage": 0,
+              "DiscountValue": 0,
+              "ItemPricingComment": "",
+              "ProfitPercentage": "0",
+              "SalesOfferProductAttachments": []
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Pos/ValidateSalesOfferProduct"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "Product": {
+              "Id": 13184235,
+              "ParentOfferProductId": -91852848,
+              "ProductId": -82010130,
+              "OfferId": -5320133,
+              "ProductGroupId": 98888778,
+              "Quantity": -358489.9073419273,
+              "ReturnedQty": 85832171.23225263,
+              "RemainQty": 21875121.953770414,
+              "ReleasedQty": 94022603.99921048,
+              "ReleasedPercentage": "eu esse officia Lorem aliquip",
+              "ProfitPercentage": "velit sint",
+              "InventoryItemId": 54596928,
+              "InventoryItemName": "ad Lorem",
+              "InventoryItemCode": "laboris sint",
+              "CommercialName": "labore ex commodo",
+              "InventoryItemUOM": "sint est aliquip",
+              "InventoryItemPartNO": "nulla proident",
+              "InventoryItemCategoryId": -78454065,
+              "InventoryItemCategoryName": "magna consectetur",
+              "ItemPrice": -41888667.46445954,
+              "ItemPricingComment": "in adipisicing Excepteur volupta",
+              "ConfirmReceivingQuantity": 50287604.99431172,
+              "ConfirmReceivingComment": "Excepteur quis ut in aliqua",
+              "InvoicePayerClientId": 82558178,
+              "InvoicePayerClientName": "deserunt cupidatat",
+              "DiscountPercentage": 33616063.77841033,
+              "DiscountValue": 70887599.0905146,
+              "TaxPercentage": 50266298.17734566,
+              "TaxValue": 42240423.617613435,
+              "FinalPrice": 42405446.67020592,
+              "FinalPriceWithoutTax": -2101311.706717193,
+              "TotalTaxValue": -26292041.823342815,
+              "CreatedBy": "deserunt occaecat Duis",
+              "ModifiedBy": "nostrud pari",
+              "Active": false,
+              "SalesOfferProductTaxsList": [
+                {
+                  "ID": -84309176,
+                  "TaxID": -88691642,
+                  "Percentage": 63586641.51948568,
+                  "Value": 85309926.62321606,
+                  "TaxName": "",
+                  "TaxCode": "reprehenderi",
+                  "ParentTaxID": -19926839,
+                  "ParentTax": {
+                    "Id": 47804607,
+                    "TaxPercentage": 64275270.99358174,
+                    "TaxValue": 99231227.93318674,
+                    "TaxName": "dolore officia",
+                    "TaxCode": "sed ullamco eu",
+                    "TaxType": "Excepteur Ut",
+                    "InvoicePayerClientId": -24865541,
+                    "InvoicePayerClientName": "Ut eiusmod tempor id",
+                    "Description": "ullamco exercitation amet",
+                    "CreatedBy": "aliqua sint nostrud",
+                    "ModifiedBy": "velit nulla",
+                    "Active": false,
+                    "IsPercentage": true,
+                    "TaxChildList": [
+                      {
+                        "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                      },
+                      {
+                        "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "ID": -17719663,
+                  "TaxID": -70801099,
+                  "Percentage": -8986852.82355833,
+                  "Value": -39788967.61926163,
+                  "TaxName": "est",
+                  "TaxCode": "consequat velit",
+                  "ParentTaxID": 65589220,
+                  "ParentTax": {
+                    "Id": 95236478,
+                    "TaxPercentage": -99419787.4466185,
+                    "TaxValue": 43293199.514948845,
+                    "TaxName": "quis Duis sunt",
+                    "TaxCode": "tempor consectetur minim",
+                    "TaxType": "tempor sit irure cupidatat",
+                    "InvoicePayerClientId": 78430085,
+                    "InvoicePayerClientName": "Ut irure tempor Lorem",
+                    "Description": "culpa Duis reprehenderit et qui",
+                    "CreatedBy": "veniam Duis commodo",
+                    "ModifiedBy": "ex esse sint ut",
+                    "Active": true,
+                    "IsPercentage": true,
+                    "TaxChildList": [
+                      {
+                        "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                      },
+                      {
+                        "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "SalesOfferProductAttachments": [
+                {
+                  "Id": 98068483,
+                  "FileName": "ad tempor",
+                  "FileExtension": "nisi dolore irure",
+                  "FileContent": "cillum",
+                  "FilePath": "minim dolore occaecat",
+                  "Category": "proident",
+                  "Active": false
+                },
+                {
+                  "Id": 70400304,
+                  "FileName": "pariatur aliquip sit",
+                  "FileExtension": "dolore consectetur cons",
+                  "FileContent": "esse in et",
+                  "FilePath": "non deserunt sit",
+                  "Category": "in adipisicing sit",
+                  "Active": true
+                }
+              ]
+            },
+            "InventoryStoreId": 91051039
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "non dolore culpa",
+                "ErrorCode": "irure mollit"
+              },
+              {
+                "ErrorMSG": "Excepteur velit Lorem",
+                "ErrorCode": "amet laboris dolor laborum cillum"
+              }
+            ]
+          }

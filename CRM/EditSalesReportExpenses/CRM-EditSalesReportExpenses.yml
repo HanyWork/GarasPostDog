@@ -1,0 +1,109 @@
+info:
+  name: /CRM/EditSalesReportExpenses
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/CRM/EditSalesReportExpenses"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: " 1"
+      - name: Amount
+        type: text
+        value: " 25"
+      - name: Type
+        type: text
+        value: " Purchasing(TO Supplier)"
+      - name: CurrencyId
+        type: text
+        value: " 1"
+      - name: Comment
+        type: text
+        value: " dafda"
+      - name: AttachmentObj.File
+        type: file
+        value:
+          - /D:/a11.png
+      - name: AttachmentObj.Active
+        type: text
+        value: " true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/CRM/EditSalesReportExpenses?creator=<long>&CompanyName=<string>"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      params:
+        - name: creator
+          value: <long>
+          type: query
+        - name: CompanyName
+          value: <string>
+          type: query
+      body:
+        type: json
+        data: |-
+          {
+            "Id": "<long>",
+            "DailyReportLineID": "<long>",
+            "Amount": "<double>",
+            "Type": "<string>",
+            "CurrencyId": "<integer>",
+            "CurrencyName": "<string>",
+            "Comment": "<string>",
+            "FilePath": "<string>",
+            "AttachmentObj": {
+              "Id": "<long>",
+              "Active": "<boolean>",
+              "File": "<binary>",
+              "FilePath": "<string>"
+            }
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

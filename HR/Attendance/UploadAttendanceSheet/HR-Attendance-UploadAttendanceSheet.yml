@@ -1,0 +1,96 @@
+info:
+  name: /HR/Attendance/UploadAttendanceSheet
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Attendance/UploadAttendanceSheet"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: AttendanceSheet
+        type: file
+        value:
+          - /C:/Users/Vetanoia/Downloads/AttendanceSheet.xlsx
+      - name: date
+        type: text
+        value: 2024-7-3
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/UploadAttendanceSheet?creator=<long>&CompanyName=<string>"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      params:
+        - name: creator
+          value: <long>
+          type: query
+        - name: CompanyName
+          value: <string>
+          type: query
+      body:
+        type: multipart-form
+        data:
+          - name: ContentType
+            type: text
+            value: <string>
+          - name: ContentDisposition
+            type: text
+            value: <string>
+          - name: Headers
+            type: text
+            value: "[object Object]"
+          - name: Length
+            type: text
+            value: <long>
+          - name: Name
+            type: text
+            value: <string>
+          - name: FileName
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<integer>"
+          }

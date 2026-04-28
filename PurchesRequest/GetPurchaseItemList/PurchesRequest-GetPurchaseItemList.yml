@@ -1,0 +1,181 @@
+info:
+  name: /PurchesRequest/GetPurchaseItemList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/PurchesRequest/GetPurchaseItemList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: SupplierInvoiceSerial
+      value: "8769748"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PurchesRequest/GetPurchaseItemList?SupplierInvoiceSerial=<string>"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: SupplierInvoiceSerial
+          value: <string>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "PurchasePOItemList": [
+              {
+                "ID": "<long>",
+                "PurchasePOID": "<long>",
+                "PurchaseRequestItemID": "<long>",
+                "InventoryItemID": "<long>",
+                "InventoryMatrialRequestItemID": "<long>",
+                "UOMID": "<integer>",
+                "UOMShortName": "<string>",
+                "FromStoreName": "<string>",
+                "ProjectID": "<long>",
+                "ProjectName": "<string>",
+                "FabricationOrderNumber": "<string>",
+                "FabricationOrderID": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "Comment": "<string>",
+                "POType": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                "EstimatedCost": "<string>",
+                "EstimatedUnitCost": "<double>",
+                "CurrencyID": "<integer>",
+                "StockQTY": "<integer>",
+                "RecivedQuantity": "<double>",
+                "RecivedQuantityUOP": "<double>",
+                "PurchasedQuantity": "<double>",
+                "PurchasedUOMShortName": "<string>",
+                "ReqQuantity": "<double>",
+                "RemainQty": "<double>",
+                "PRNotes": "<string>",
+                "PRNO": "<string>",
+                "PRItemComment": "<string>",
+                "MRNO": "<string>",
+                "IsChecked": "<boolean>",
+                "SupplierInvoiceSerial": "<string>",
+                "RateToEgp": "<double>",
+                "PartNumber": "<string>",
+                "RequstionUOMID": "<integer>",
+                "RequstionUOMShortName": "<string>",
+                "PurchasingUOMID": "<integer>",
+                "PurchasingUOMShortName": "<string>",
+                "ActualLocalUnitPrice": "<double>",
+                "ActualUnitPrice": "<double>",
+                "ActualLocalUnitPriceUOR": "<double>",
+                "ActualUnitPriceUOR": "<double>",
+                "TotalLocalActualPrice": "<double>",
+                "TotalActualPriceUOR": "<double>",
+                "FinalLocalUnitCostUOR": "<double>",
+                "FinalUnitCostUOR": "<double>",
+                "TotalFinalLocalUnitCost": "<double>",
+                "TotalFinalUnitCost": "<double>",
+                "TotalActualPrice": "<double>",
+                "InvoiceComments": "<string>",
+                "CurrencyName": "<string>",
+                "ActualUnitPriceUnit": "<string>",
+                "InventoryMaterialRequestId": "<long>",
+                "MaterialAddingOrdersIds": [
+                  "<long>",
+                  "<long>"
+                ]
+              },
+              {
+                "ID": "<long>",
+                "PurchasePOID": "<long>",
+                "PurchaseRequestItemID": "<long>",
+                "InventoryItemID": "<long>",
+                "InventoryMatrialRequestItemID": "<long>",
+                "UOMID": "<integer>",
+                "UOMShortName": "<string>",
+                "FromStoreName": "<string>",
+                "ProjectID": "<long>",
+                "ProjectName": "<string>",
+                "FabricationOrderNumber": "<string>",
+                "FabricationOrderID": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "Comment": "<string>",
+                "POType": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                "EstimatedCost": "<string>",
+                "EstimatedUnitCost": "<double>",
+                "CurrencyID": "<integer>",
+                "StockQTY": "<integer>",
+                "RecivedQuantity": "<double>",
+                "RecivedQuantityUOP": "<double>",
+                "PurchasedQuantity": "<double>",
+                "PurchasedUOMShortName": "<string>",
+                "ReqQuantity": "<double>",
+                "RemainQty": "<double>",
+                "PRNotes": "<string>",
+                "PRNO": "<string>",
+                "PRItemComment": "<string>",
+                "MRNO": "<string>",
+                "IsChecked": "<boolean>",
+                "SupplierInvoiceSerial": "<string>",
+                "RateToEgp": "<double>",
+                "PartNumber": "<string>",
+                "RequstionUOMID": "<integer>",
+                "RequstionUOMShortName": "<string>",
+                "PurchasingUOMID": "<integer>",
+                "PurchasingUOMShortName": "<string>",
+                "ActualLocalUnitPrice": "<double>",
+                "ActualUnitPrice": "<double>",
+                "ActualLocalUnitPriceUOR": "<double>",
+                "ActualUnitPriceUOR": "<double>",
+                "TotalLocalActualPrice": "<double>",
+                "TotalActualPriceUOR": "<double>",
+                "FinalLocalUnitCostUOR": "<double>",
+                "FinalUnitCostUOR": "<double>",
+                "TotalFinalLocalUnitCost": "<double>",
+                "TotalFinalUnitCost": "<double>",
+                "TotalActualPrice": "<double>",
+                "InvoiceComments": "<string>",
+                "CurrencyName": "<string>",
+                "ActualUnitPriceUnit": "<string>",
+                "InventoryMaterialRequestId": "<long>",
+                "MaterialAddingOrdersIds": [
+                  "<long>",
+                  "<long>"
+                ]
+              }
+            ]
+          }

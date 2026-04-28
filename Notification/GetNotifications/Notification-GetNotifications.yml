@@ -1,0 +1,99 @@
+info:
+  name: /Notification/GetNotifications
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Notification/GetNotifications"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: NumberOfItemsPerPage
+      value: "1000"
+    - name: CurrentPage
+      value: "1"
+    - name: new
+      value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Notification/GetNotifications"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "userNotificationsList": [
+              {
+                "id": "<long>",
+                "toUserID": "<long>",
+                "toUserName": "<string>",
+                "toUserPhoto": "<string>",
+                "title": "<string>",
+                "createdBy": "<string>",
+                "description": "<string>",
+                "date": "<string>",
+                "url": "<string>",
+                "new": "<boolean>",
+                "fromUserID": "<long>",
+                "fromUserName": "<string>",
+                "fromUserPhoto": "<string>",
+                "notificationProcessID": "<integer>"
+              },
+              {
+                "id": "<long>",
+                "toUserID": "<long>",
+                "toUserName": "<string>",
+                "toUserPhoto": "<string>",
+                "title": "<string>",
+                "createdBy": "<string>",
+                "description": "<string>",
+                "date": "<string>",
+                "url": "<string>",
+                "new": "<boolean>",
+                "fromUserID": "<long>",
+                "fromUserName": "<string>",
+                "fromUserPhoto": "<string>",
+                "notificationProcessID": "<integer>"
+              }
+            ],
+            "paginationHeader": {
+              "currentPage": "<integer>",
+              "totalPages": "<integer>",
+              "itemsPerPage": "<integer>",
+              "totalItems": "<integer>"
+            }
+          }

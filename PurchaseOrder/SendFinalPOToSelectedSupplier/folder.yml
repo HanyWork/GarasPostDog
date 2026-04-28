@@ -1,0 +1,7 @@
+info:
+  name: SendFinalPOToSelectedSupplier
+  type: folder
+  seq: 9
+
+request:
+  auth: inherit

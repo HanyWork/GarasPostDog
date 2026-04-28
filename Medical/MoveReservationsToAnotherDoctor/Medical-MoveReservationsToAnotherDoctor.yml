@@ -1,0 +1,78 @@
+info:
+  name: /Medical/MoveReservationsToAnotherDoctor
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/MoveReservationsToAnotherDoctor"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: |-
+      {
+        "OldDoctoreID": 87,
+        "NewDoctorID": 11,
+        "From": "2025-05-14",
+        "To": "2025-05-14",
+        "DoctorScheduleId": "10"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/MoveReservationsToAnotherDoctor"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "OldDoctoreID": "<long>",
+            "NewDoctorID": "<long>",
+            "From": "<string>",
+            "To": "<string>",
+            "DoctorScheduleId": "<long>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

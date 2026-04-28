@@ -1,0 +1,82 @@
+info:
+  name: /TaskManager/GetTaskUnitRateServiceList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskUnitRateServiceList"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: TaskID
+      value: "20135"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskUnitRateServiceList"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<integer>",
+                "ServiceName": "<string>",
+                "Rate": "<double>",
+                "Quantity": "<double>",
+                "Total": "<double>",
+                "TaskID": "<long>",
+                "UOMID": "<integer>"
+              },
+              {
+                "Id": "<integer>",
+                "ServiceName": "<string>",
+                "Rate": "<double>",
+                "Quantity": "<double>",
+                "Total": "<double>",
+                "TaskID": "<long>",
+                "UOMID": "<integer>"
+              }
+            ]
+          }

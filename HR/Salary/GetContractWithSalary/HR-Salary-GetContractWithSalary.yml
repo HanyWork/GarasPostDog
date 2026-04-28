@@ -1,0 +1,93 @@
+info:
+  name: /HR/Salary/GetContractWithSalary
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Salary/GetContractWithSalary"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+    - name: HrUserId
+      value: "154"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Salary/GetContractWithSalary?HrUserId=<long>"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: HrUserId
+          value: <long>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "Contract": {
+                "Id": "<integer>",
+                "ContactTypeID": "<integer>",
+                "StartDate": "<string>",
+                "EndDate": "<string>",
+                "IsCurrent": "<boolean>",
+                "IsAllowOverTime": "<boolean>",
+                "ISAutomatic": "<boolean>",
+                "FreeWorkingHours": "<boolean>",
+                "AllowBreakDeduction": "<boolean>",
+                "AllowLocationTracking": "<boolean>",
+                "Diameter": "<float>",
+                "AllowComissions": "<boolean>",
+                "ComissionRate": "<double>",
+                "ComissionPercentage": "<double>",
+                "AllowOvertime": "<boolean>",
+                "AutomaticPerWorkingHours": "<boolean>",
+                "AllowedWithApproval": "<boolean>",
+                "HrUserId": "<long>"
+              },
+              "Salary": {
+                "Id": "<integer>",
+                "ContractId": "<long>",
+                "CurrencyId": "<integer>",
+                "TotalGross": "<double>",
+                "TotalNet": "<double>",
+                "TotalIncome": "<double>",
+                "MultiplyingFactor": "<double>",
+                "PaymentMethodId": "<integer>",
+                "PaymentStrategyId": "<integer>",
+                "HrUserId": "<long>"
+              }
+            }
+          }

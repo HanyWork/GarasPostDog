@@ -1,0 +1,108 @@
+info:
+  name: /HR/ProjectInvoice/AddProjectInvoiceCollected
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/ProjectInvoice/AddProjectInvoiceCollected"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: ProjectInvoiceId
+        type: text
+        value: "4"
+      - name: Amount
+        type: text
+        value: "1000"
+      - name: Status
+        type: text
+        value: Collected
+        description: Pending,Collected
+      - name: Comment
+        type: text
+        value: <string>
+      - name: Date
+        type: text
+        value: 2024-07-21
+      - name: PaymentMethodId
+        type: text
+        value: "1"
+      - name: Attachment
+        type: text
+        value: <string>
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/ProjectInvoice/AddProjectInvoiceCollected"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ProjectInvoiceId
+            type: text
+            value: <long>
+          - name: Amount
+            type: text
+            value: <double>
+          - name: Status
+            type: text
+            value: <string>
+          - name: Comment
+            type: text
+            value: <string>
+          - name: Date
+            type: text
+            value: <string>
+          - name: PaymentMethodId
+            type: text
+            value: <integer>
+          - name: Attachment
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

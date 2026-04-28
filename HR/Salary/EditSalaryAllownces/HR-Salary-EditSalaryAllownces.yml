@@ -1,0 +1,104 @@
+info:
+  name: /HR/Salary/EditSalaryAllownces
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Salary/EditSalaryAllownces"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: |-
+      {
+          "salaryAllowncesList": [
+              {
+                  "ID": 0,
+                  "SalaryId": 41,
+                  "AllowanceTypeID": 2,
+                  "Percentage": 25,
+                  "Amount": 500,
+                  "Active": true
+              },
+              {
+                  "ID": 0,
+                  "SalaryId": 41,
+                  "AllowanceTypeID": 2,
+                  "Percentage": 36,
+                  "Amount": 87285,
+                  "Active": true
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Salary/EditSalaryAllownces"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "salaryAllowncesList": [
+              {
+                "ID": "<integer>",
+                "SalaryId": "<long>",
+                "AllowanceTypeID": "<integer>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<integer>",
+                "SalaryId": "<long>",
+                "AllowanceTypeID": "<integer>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

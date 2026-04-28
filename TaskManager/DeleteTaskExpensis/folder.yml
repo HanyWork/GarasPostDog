@@ -1,0 +1,7 @@
+info:
+  name: DeleteTaskExpensis
+  type: folder
+  seq: 20
+
+request:
+  auth: inherit

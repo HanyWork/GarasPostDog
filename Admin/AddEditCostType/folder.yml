@@ -1,0 +1,7 @@
+info:
+  name: AddEditCostType
+  type: folder
+  seq: 88
+
+request:
+  auth: inherit

@@ -1,0 +1,94 @@
+info:
+  name: /Offer/InternalTicket/EditSalesOfferForInternalTicket
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Offer/InternalTicket/EditSalesOfferForInternalTicket"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "Id": 129340,
+          //"StartDate": "exercitation et ex nulla",
+          //"EndDate": "ut ullamco sed",
+          "SalesPersonId": 20053,
+          //"BranchId": 74547654,
+          "ClientId": 10360,
+          "ContactPersonMobile": "01254875456",
+          "ContactPersonEmail": "a@A.com",
+          "ContactPersonName": "name",
+          "ProductsList": [
+              {
+                  "ID": 3636,
+                  "InventoryItemID": 299,
+                  "InventoryItewmCategoryID": 2050,
+                  "ItemPricingComment": "test"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/InternalTicket/EditSalesOfferForInternalTicket"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "Id": 11957194,
+            "StartDate": "exercitation et ex nulla",
+            "EndDate": "ut ullamco sed",
+            "SalesPersonId": 29765842,
+            "BranchId": 74547654,
+            "ClientId": 18990356,
+            "ContactPersonMobile": "deserunt",
+            "ContactPersonEmail": "laborum qui ullamco laboris",
+            "ContactPersonName": "ullamco"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": false,
+            "Errors": [
+              {
+                "ErrorMSG": "consectetur",
+                "ErrorCode": "ut est"
+              },
+              {
+                "ErrorMSG": "sint",
+                "ErrorCode": "esse"
+              }
+            ],
+            "ID": -94573344
+          }

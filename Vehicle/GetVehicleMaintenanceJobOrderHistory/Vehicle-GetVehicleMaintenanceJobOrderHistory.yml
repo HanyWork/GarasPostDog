@@ -1,0 +1,128 @@
+info:
+  name: /Vehicle/GetVehicleMaintenanceJobOrderHistory
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Vehicle/GetVehicleMaintenanceJobOrderHistory"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: proauto
+    - name: SalesOfferId
+      value: "20122"
+      disabled: true
+    - name: ClientVehicleId
+      value: "30384"
+      disabled: true
+    - name: ClientId
+      value: "20336"
+      disabled: true
+    - name: MaintenanceCreationFrom
+      value: ""
+      disabled: true
+    - name: MaintenanceCreationTo
+      value: ""
+      disabled: true
+    - name: Year
+      value: ""
+      disabled: true
+    - name: Month
+      value: ""
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "10"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Vehicle/GetVehicleMaintenanceJobOrderHistory"
+      method: GET
+      headers:
+        - name: filters
+          value: ClientId,<long>,ClientVehicleId,<long>,SalesOfferId,<long>,SearchedKey,<string>,Month,<integer>,Year,<integer>,MaintenanceCreationFrom,<string>,MaintenanceCreationTo,<string>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "VehicleMaintenanceJobOrderHistories": [
+              {
+                "Id": "<long>",
+                "CurrentMaintenanceTypeId": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "VehicleMaintenanceTypeName": "<string>",
+                "CuurentOpenJobOrderId": "<long>",
+                "JobOrderProjectId": "<long>",
+                "JobOrderProjectName": "<string>",
+                "ClientVehicleId": "<long>",
+                "CurentOpenJobOrderMilage": "<integer>",
+                "NextVisitForId": "<long>",
+                "NextVisitForName": "<string>",
+                "NextVisitMilage": "<integer>",
+                "NextVisitDate": "<string>",
+                "NextVisitComment": "<string>",
+                "CreatedBy": "<string>",
+                "CreationDate": "<string>",
+                "ModifiedBy": "<string>"
+              },
+              {
+                "Id": "<long>",
+                "CurrentMaintenanceTypeId": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "VehicleMaintenanceTypeName": "<string>",
+                "CuurentOpenJobOrderId": "<long>",
+                "JobOrderProjectId": "<long>",
+                "JobOrderProjectName": "<string>",
+                "ClientVehicleId": "<long>",
+                "CurentOpenJobOrderMilage": "<integer>",
+                "NextVisitForId": "<long>",
+                "NextVisitForName": "<string>",
+                "NextVisitMilage": "<integer>",
+                "NextVisitDate": "<string>",
+                "NextVisitComment": "<string>",
+                "CreatedBy": "<string>",
+                "CreationDate": "<string>",
+                "ModifiedBy": "<string>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

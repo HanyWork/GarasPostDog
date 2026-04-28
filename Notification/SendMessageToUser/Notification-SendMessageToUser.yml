@@ -1,0 +1,83 @@
+info:
+  name: /Notification/SendMessageToUser
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/Notification/SendMessageToUser"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+  body:
+    type: json
+    data: |-
+      {
+        "UserIDSList": [
+          "<long>",
+          "<long>"
+        ],
+        "Title": "<string>",
+        "Description": "<string>",
+        "URL": "<string>",
+        "SenderName": "<string>",
+        "SenderImg": "<string>",
+        "SenderImg2": "<string>"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Notification/SendMessageToUser"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "UserIDSList": [
+              "<long>",
+              "<long>"
+            ],
+            "Title": "<string>",
+            "Description": "<string>",
+            "URL": "<string>",
+            "SenderName": "<string>",
+            "SenderImg": "<string>",
+            "SenderImg2": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

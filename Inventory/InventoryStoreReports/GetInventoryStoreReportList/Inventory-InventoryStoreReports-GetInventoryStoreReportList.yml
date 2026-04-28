@@ -1,0 +1,121 @@
+info:
+  name: /Inventory/InventoryStoreReports/GetInventoryStoreReportList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryStoreReports/GetInventoryStoreReportList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryStoreReports/GetInventoryStoreReportList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "DataLList": [
+              {
+                "ID": "<long>",
+                "ReportSubject": "<string>",
+                "ReportDesc": "<string>",
+                "StoreID": "<long>",
+                "StoreName": "<string>",
+                "DateFrom": "<string>",
+                "DateTo": "<string>",
+                "Status": "<string>",
+                "Approval": "<string>",
+                "OperationType": "<string>",
+                "IsFinished": "<boolean>",
+                "AttachemtsList": [
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "ReportSubject": "<string>",
+                "ReportDesc": "<string>",
+                "StoreID": "<long>",
+                "StoreName": "<string>",
+                "DateFrom": "<string>",
+                "DateTo": "<string>",
+                "Status": "<string>",
+                "Approval": "<string>",
+                "OperationType": "<string>",
+                "IsFinished": "<boolean>",
+                "AttachemtsList": [
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  }
+                ]
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

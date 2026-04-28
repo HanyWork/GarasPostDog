@@ -1,0 +1,166 @@
+info:
+  name: /AccountAndFinance/GetAccountsMovement
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/GetAccountsMovement"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: AccountID
+      value: "32"
+    - name: CalcWithoutPrivate
+      value: "true"
+    - name: OrderByCreationDate
+      value: "true"
+    - name: FromDate
+      value: 2022-08-05
+    - name: DateTo
+      value: 2025-08-06
+    - name: ClientId
+      value: "30770"
+    - name: SupplierId
+      value: "1"
+      disabled: true
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/GetAccountsMovement"
+      method: GET
+      headers:
+        - name: header
+          value: AccountID,<string>,ClientId,<long>,SupplierId,<long>,CalcWithoutPrivate,<boolean>,OrderByCreationDate,<boolean>,FromDate,<string>,DateTo,<string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "DateFrom": "<string>",
+            "DateTo": "<string>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "GetAccountMovementList": [
+              {
+                "AccountID": "<long>",
+                "CreationDate": "<string>",
+                "EntryDate": "<string>",
+                "DateFrom": "<string>",
+                "DateTo": "<string>",
+                "Serial": "<string>",
+                "AccountName": "<string>",
+                "AccountCode": "<string>",
+                "AccountCategory": "<string>",
+                "AccountType": "<string>",
+                "Currency": "<string>",
+                "Credit": "<double>",
+                "Debit": "<double>",
+                "Accumulative": "<double>",
+                "DailyJournalId": "<long>",
+                "Description": "<string>",
+                "Document": "<string>",
+                "FromOrTo": "<string>",
+                "CreatedBy": "<string>",
+                "MethodName": "<string>",
+                "ReleatedAccount": "<string>",
+                "ReleatedAccountList": [
+                  "<string>",
+                  "<string>"
+                ],
+                "ClientID": "<long>",
+                "ClientName": "<string>",
+                "ProjectID": "<long>",
+                "ProjectName": "<string>",
+                "SupplierID": "<long>",
+                "SupplierName": "<string>",
+                "POID": "<long>",
+                "AccountDescription": "<string>",
+                "AccountEntryComment": "<string>",
+                "RateToLocalCU": "<double>",
+                "CreditOtherCU": "<double>",
+                "DebitOtherCU": "<double>",
+                "AmountOtherCU": "<double>",
+                "ACCOtherCU": "<double>"
+              },
+              {
+                "AccountID": "<long>",
+                "CreationDate": "<string>",
+                "EntryDate": "<string>",
+                "DateFrom": "<string>",
+                "DateTo": "<string>",
+                "Serial": "<string>",
+                "AccountName": "<string>",
+                "AccountCode": "<string>",
+                "AccountCategory": "<string>",
+                "AccountType": "<string>",
+                "Currency": "<string>",
+                "Credit": "<double>",
+                "Debit": "<double>",
+                "Accumulative": "<double>",
+                "DailyJournalId": "<long>",
+                "Description": "<string>",
+                "Document": "<string>",
+                "FromOrTo": "<string>",
+                "CreatedBy": "<string>",
+                "MethodName": "<string>",
+                "ReleatedAccount": "<string>",
+                "ReleatedAccountList": [
+                  "<string>",
+                  "<string>"
+                ],
+                "ClientID": "<long>",
+                "ClientName": "<string>",
+                "ProjectID": "<long>",
+                "ProjectName": "<string>",
+                "SupplierID": "<long>",
+                "SupplierName": "<string>",
+                "POID": "<long>",
+                "AccountDescription": "<string>",
+                "AccountEntryComment": "<string>",
+                "RateToLocalCU": "<double>",
+                "CreditOtherCU": "<double>",
+                "DebitOtherCU": "<double>",
+                "AmountOtherCU": "<double>",
+                "ACCOtherCU": "<double>"
+              }
+            ],
+            "AccumulativePerAccountList": [
+              {
+                "AccountId": "<long>",
+                "Accumulative": "<double>"
+              },
+              {
+                "AccountId": "<long>",
+                "Accumulative": "<double>"
+              }
+            ]
+          }

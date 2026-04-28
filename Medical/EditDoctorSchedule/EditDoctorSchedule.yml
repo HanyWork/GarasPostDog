@@ -1,0 +1,78 @@
+info:
+  name: EditDoctorSchedule
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/EditDoctorSchedule"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+      description: all parameters a not mandatory
+  body:
+    type: json
+    data: "// {\r
+
+      //     \"ID\": \"4\",\r
+
+      //     \"Capacity\": \"20\",\r
+
+      //     \"IntervalFrom\": \"11:00:00\",\r
+
+      //     \"IntervalTo\": \"12:00:00\",\r
+
+      //     \"ConsultationPrice\": \"150\",\r
+
+      //     \"StatusID\": \"1\",\r
+
+      //     \"EndDate\": \"2026-05-08\",\r
+
+      //     \"RoomId\": \"3\",\r
+
+      //     \"PercentageTypeID\": \"1\",\r
+
+      //     \"ExaminationPrice\": \"200\",\r
+
+      //     \"WeekDayID\": \"1\",\r
+
+      //     \"HoldQuantity\": \"5\"\r
+
+      // }\r
+
+      {\r
+
+      \    \"ID\": \"8\",\r
+
+      \    \"Capacity\": \"120\",\r
+
+      \    \"IntervalFrom\": \"00:00:00\",\r
+
+      \    \"IntervalTo\": \"22:00:00\",\r
+
+      \    \"ConsultationPrice\": \"200\",\r
+
+      \    \"StatusID\": \"1\",\r
+
+      \    \"EndDate\": \"2026-05-28\",\r
+
+      \    \"RoomId\": \"2\",\r
+
+      \    \"PercentageTypeID\": \"1\",\r
+
+      \    \"ExaminationPrice\": \"800\",\r
+
+      \    \"WeekDayID\": \"5\",\r
+
+      \    \"HoldQuantity\": \"0\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,99 @@
+info:
+  name: /HR/BranchSetting/AddBranchSetting
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/BranchSetting/AddBranchSetting"
+  headers:
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+  body:
+    type: multipart-form
+    data:
+      - name: AllowOverTimeInWeekends
+        type: text
+        value: "true"
+      - name: AllowDelayingDeduction
+        type: text
+        value: "true"
+      - name: AllowAutomaticOvertime
+        type: text
+        value: "false"
+      - name: Active
+        type: text
+        value: "true"
+      - name: BranchId
+        type: text
+        value: "1"
+      - name: ApplySettingdForAll
+        type: text
+        value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/BranchSetting/AddBranchSetting"
+      method: POST
+      headers:
+        - name: branchId
+          value: <integer>
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: AllowOverTimeInWeekends
+            type: text
+            value: <boolean>
+          - name: AllowDelayingDeduction
+            type: text
+            value: <boolean>
+          - name: AllowAutomaticOvertime
+            type: text
+            value: <boolean>
+          - name: Active
+            type: text
+            value: <boolean>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              "<long>",
+              "<long>"
+            ]
+          }

@@ -1,0 +1,323 @@
+info:
+  name: /PoInvoice/GetPoInvoiceData
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/PoInvoice/GetPoInvoiceData"
+  headers:
+    - name: POID
+      value: "158433"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PoInvoice/GetPoInvoiceData"
+      method: GET
+      headers:
+        - name: POID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "PODailyJournalEntryDetails": {
+              "CountOfJournalEntry": "<integer>",
+              "SumAmountOfJounralEntry": "<double>",
+              "SumPlusAmountSupplierAccounts": "<double>",
+              "SumMinusAmountSupplierAccounts": "<double>",
+              "ListOfJounralEntries": [
+                "<long>",
+                "<long>"
+              ]
+            },
+            "PurchasePaymentMethodDDL": [
+              {
+                "ID": "<integer>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<integer>",
+                "Name": "<string>"
+              }
+            ],
+            "CurrencyDDL": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "PoInvoiceTypesDDL": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "PoInvoiceTaxIncludedTypesDDL": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "PoInvoiceExtraFeesTypesDDL": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "PurchasePO": {
+              "Result": "<boolean>",
+              "Errors": [
+                {
+                  "ErrorMSG": "<string>",
+                  "ErrorCode": "<string>"
+                },
+                {
+                  "ErrorMSG": "<string>",
+                  "ErrorCode": "<string>"
+                }
+              ],
+              "PurchasePOItemList": [
+                {
+                  "ID": "<long>",
+                  "PurchasePOID": "<long>",
+                  "PurchaseRequestItemID": "<long>",
+                  "InventoryItemID": "<long>",
+                  "InventoryMatrialRequestItemID": "<long>",
+                  "UOMID": "<integer>",
+                  "UOMShortName": "<string>",
+                  "FromStoreName": "<string>",
+                  "ProjectID": "<long>",
+                  "ProjectName": "<string>",
+                  "FabricationOrderNumber": "<string>",
+                  "FabricationOrderID": "<long>",
+                  "InventoryItemName": "<string>",
+                  "InventoryItemCode": "<string>",
+                  "Comment": "<string>",
+                  "POType": "<string>",
+                  "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                  "EstimatedCost": "<string>",
+                  "EstimatedUnitCost": "<double>",
+                  "CurrencyID": "<integer>",
+                  "StockQTY": "<integer>",
+                  "RecivedQuantity": "<double>",
+                  "RecivedQuantityUOP": "<double>",
+                  "PurchasedQuantity": "<double>",
+                  "PurchasedUOMShortName": "<string>",
+                  "ReqQuantity": "<double>",
+                  "RemainQty": "<double>",
+                  "PRNotes": "<string>",
+                  "PRNO": "<string>",
+                  "PRItemComment": "<string>",
+                  "MRNO": "<string>",
+                  "IsChecked": "<boolean>",
+                  "SupplierInvoiceSerial": "<string>",
+                  "RateToEgp": "<double>",
+                  "PartNumber": "<string>",
+                  "RequstionUOMID": "<integer>",
+                  "RequstionUOMShortName": "<string>",
+                  "PurchasingUOMID": "<integer>",
+                  "PurchasingUOMShortName": "<string>",
+                  "ActualLocalUnitPrice": "<double>",
+                  "ActualUnitPrice": "<double>",
+                  "ActualLocalUnitPriceUOR": "<double>",
+                  "ActualUnitPriceUOR": "<double>",
+                  "TotalLocalActualPrice": "<double>",
+                  "TotalActualPriceUOR": "<double>",
+                  "FinalLocalUnitCostUOR": "<double>",
+                  "FinalUnitCostUOR": "<double>",
+                  "TotalFinalLocalUnitCost": "<double>",
+                  "TotalFinalUnitCost": "<double>",
+                  "TotalActualPrice": "<double>",
+                  "InvoiceComments": "<string>",
+                  "CurrencyName": "<string>",
+                  "ActualUnitPriceUnit": "<string>",
+                  "InventoryMaterialRequestId": "<long>",
+                  "MaterialAddingOrdersIds": [
+                    "<long>",
+                    "<long>"
+                  ]
+                },
+                {
+                  "ID": "<long>",
+                  "PurchasePOID": "<long>",
+                  "PurchaseRequestItemID": "<long>",
+                  "InventoryItemID": "<long>",
+                  "InventoryMatrialRequestItemID": "<long>",
+                  "UOMID": "<integer>",
+                  "UOMShortName": "<string>",
+                  "FromStoreName": "<string>",
+                  "ProjectID": "<long>",
+                  "ProjectName": "<string>",
+                  "FabricationOrderNumber": "<string>",
+                  "FabricationOrderID": "<long>",
+                  "InventoryItemName": "<string>",
+                  "InventoryItemCode": "<string>",
+                  "Comment": "<string>",
+                  "POType": "<string>",
+                  "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                  "EstimatedCost": "<string>",
+                  "EstimatedUnitCost": "<double>",
+                  "CurrencyID": "<integer>",
+                  "StockQTY": "<integer>",
+                  "RecivedQuantity": "<double>",
+                  "RecivedQuantityUOP": "<double>",
+                  "PurchasedQuantity": "<double>",
+                  "PurchasedUOMShortName": "<string>",
+                  "ReqQuantity": "<double>",
+                  "RemainQty": "<double>",
+                  "PRNotes": "<string>",
+                  "PRNO": "<string>",
+                  "PRItemComment": "<string>",
+                  "MRNO": "<string>",
+                  "IsChecked": "<boolean>",
+                  "SupplierInvoiceSerial": "<string>",
+                  "RateToEgp": "<double>",
+                  "PartNumber": "<string>",
+                  "RequstionUOMID": "<integer>",
+                  "RequstionUOMShortName": "<string>",
+                  "PurchasingUOMID": "<integer>",
+                  "PurchasingUOMShortName": "<string>",
+                  "ActualLocalUnitPrice": "<double>",
+                  "ActualUnitPrice": "<double>",
+                  "ActualLocalUnitPriceUOR": "<double>",
+                  "ActualUnitPriceUOR": "<double>",
+                  "TotalLocalActualPrice": "<double>",
+                  "TotalActualPriceUOR": "<double>",
+                  "FinalLocalUnitCostUOR": "<double>",
+                  "FinalUnitCostUOR": "<double>",
+                  "TotalFinalLocalUnitCost": "<double>",
+                  "TotalFinalUnitCost": "<double>",
+                  "TotalActualPrice": "<double>",
+                  "InvoiceComments": "<string>",
+                  "CurrencyName": "<string>",
+                  "ActualUnitPriceUnit": "<string>",
+                  "InventoryMaterialRequestId": "<long>",
+                  "MaterialAddingOrdersIds": [
+                    "<long>",
+                    "<long>"
+                  ]
+                }
+              ],
+              "AccountantApprovalStatus": "<string>",
+              "Status": "<string>",
+              "CreationDate": "<string>",
+              "RequestDate": "<string>",
+              "SupplierName": "<string>",
+              "SupplierId": "<long>",
+              "POTypeName": "<string>",
+              "PONumber": "<long>",
+              "POApprovedCount": "<integer>",
+              "POApprovedRequiredCount": "<integer>",
+              "POInvoiceAmount": "<double>",
+              "POPaidAmount": "<double>"
+            },
+            "PurchasePOInvoice": {
+              "Id": "<long>",
+              "POID": "<long>",
+              "InvoiceDate": "<string>",
+              "InvoiceCollectionDueDate": "<string>",
+              "InvoiceAttachementID": "<long>",
+              "TotalInvoicePrice": "<double>",
+              "PurchasePOInvoiceTypeID": "<long>",
+              "PurchasePOInvoiceTypeName": "<string>",
+              "TotalInvoiceCost": "<double>",
+              "IsClosed": "<boolean>",
+              "IsFinalPriced": "<boolean>",
+              "IsSentToACC": "<boolean>",
+              "TransactionId": "<integer>"
+            },
+            "PoInvoiceTaxIncludedList": [
+              {
+                "Id": "<long>",
+                "POInvoiceID": "<long>",
+                "POTaxIncludedTypeID": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "RateToEGP": "<double>",
+                "CurrencyID": "<integer>"
+              },
+              {
+                "Id": "<long>",
+                "POInvoiceID": "<long>",
+                "POTaxIncludedTypeID": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "RateToEGP": "<double>",
+                "CurrencyID": "<integer>"
+              }
+            ],
+            "PoInvoiceExtraFeesList": [
+              {
+                "Id": "<long>",
+                "POInvoiceID": "<long>",
+                "POInvoiceExtraFeesTypeID": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "RateToEGP": "<double>",
+                "CurrencyID": "<integer>",
+                "POItemId": "<long>",
+                "Comment": "<string>"
+              },
+              {
+                "Id": "<long>",
+                "POInvoiceID": "<long>",
+                "POInvoiceExtraFeesTypeID": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "RateToEGP": "<double>",
+                "CurrencyID": "<integer>",
+                "POItemId": "<long>",
+                "Comment": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

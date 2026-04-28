@@ -1,0 +1,74 @@
+info:
+  name: /Pos/AddMedicalOpenBalanceForPOS
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Pos/AddMedicalOpenBalanceForPOS"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: |-
+      {
+        "OpeningBalance": 121212,
+        "PosNumberId": 3,
+        "Type": "POS"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Pos/AddMedicalOpenBalanceForPOS"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "OpeningBalance": -15605513.477143914,
+            "PosNumberId": -88059519,
+            "Type": "c"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "mollit pariatur eiusmod Lorem irure",
+                "ErrorCode": "nostrud i"
+              },
+              {
+                "ErrorMSG": "Excepteur nisi ex adipisicing",
+                "ErrorCode": "minim nisi irure"
+              }
+            ],
+            "ID": 14981830
+          }

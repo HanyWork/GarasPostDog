@@ -1,0 +1,126 @@
+info:
+  name: /Medical/AddReservationForMultiTickests
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddReservationForMultiTickests"
+  headers:
+    - name: NumberOfTickets
+      value: "5"
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: |-
+      {
+          "DoctorID": 11,
+          "Serial": 8,
+          "ReservationDate": "2025-05-30",
+          "PatientID": 10334,
+          "PatientTypeID": 1,
+          "DoctorScheduleID": 10005,
+          //"TeamID": 1,//specialty
+          "RoomId": 1,
+          "Capacity": 4,
+          "Active": true,
+          "PaymentMethodId":1,
+          "CardNumber" : "784656",
+          //"ParentID": "1",
+          "Type" : "Addons",
+          "InventoryItemAndCategoryList": [
+          {
+            "InventoryItemId": 299,
+            "InventoryItemCategoryID": 2050,
+            "ItemPrice": 5,
+            "Quantity": 2
+          },
+          {
+            "InventoryItemId": 300,
+            "InventoryItemCategoryID": 2050,
+            "ItemPrice": 10,
+            "Quantity": 5
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/AddReservationForMultiTickests"
+      method: POST
+      headers:
+        - name: NumberOfTickets
+          value: "-22019326"
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "DoctorID": 97361839,
+            "Serial": 69981433,
+            "ReservationDate": "dolore id",
+            "PatientID": -32971297,
+            "PatientTypeID": 96326114,
+            "DoctorScheduleID": -34150676,
+            "Type": "in",
+            "ParentID": 52435593,
+            "FinalAmount": -79410174.30502169,
+            "Active": true,
+            "CardNumber": 99014228,
+            "PaymentMethodId": -91507772,
+            "InventoryItemAndCategoryList": [
+              {
+                "InventoryItemId": 18469752,
+                "InventoryItemCategoryID": -26077805,
+                "ItemPrice": 22000448.53363186,
+                "Quantity": -70046309
+              },
+              {
+                "InventoryItemId": -61376310,
+                "InventoryItemCategoryID": -45172625,
+                "ItemPrice": 13309853.420915559,
+                "Quantity": 60268512
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": false,
+            "Errors": [
+              {
+                "ErrorMSG": "nostrud occaecat magna Duis enim",
+                "ErrorCode": "consectetur aliqua et ullamco sint"
+              },
+              {
+                "ErrorMSG": "do consectetur",
+                "ErrorCode": "ipsum officia sit ut"
+              }
+            ],
+            "ID": 27052166
+          }

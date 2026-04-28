@@ -1,0 +1,20 @@
+info:
+  name: AlterAddUsersAttendance
+  type: http
+  seq: 36
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/api/Transportation/AlterAddUsersAttendance"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

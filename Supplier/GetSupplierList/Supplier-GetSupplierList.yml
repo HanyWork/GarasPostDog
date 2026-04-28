@@ -1,0 +1,78 @@
+info:
+  name: /Supplier/GetSupplierList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Supplier/GetSupplierList"
+  headers:
+    - name: GovernorateID
+      value: <integer>
+      disabled: true
+    - name: Import
+      value: <string>
+      disabled: true
+    - name: SearchKey
+      value: <string>
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Supplier/GetSupplierList"
+      method: POST
+      headers:
+        - name: GovernorateID
+          value: <integer>
+        - name: Import
+          value: <string>
+        - name: SearchKey
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "DDLList": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

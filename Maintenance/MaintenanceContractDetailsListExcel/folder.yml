@@ -1,0 +1,7 @@
+info:
+  name: MaintenanceContractDetailsListExcel
+  type: folder
+  seq: 45
+
+request:
+  auth: inherit

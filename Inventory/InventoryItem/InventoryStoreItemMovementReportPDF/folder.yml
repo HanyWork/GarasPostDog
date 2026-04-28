@@ -1,0 +1,7 @@
+info:
+  name: InventoryStoreItemMovementReportPDF
+  type: folder
+  seq: 17
+
+request:
+  auth: inherit

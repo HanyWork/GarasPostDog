@@ -1,0 +1,97 @@
+info:
+  name: /PurchesRequest/AddMatrialDirectPR
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Purchasing/PurchesRequest/AddMatrialDirectPR"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "RequestgDate": "01/15/2025",
+          "CreatorId": "1",
+          "ToUserId": "3",
+          "InventoryStoreID": "1006",
+          "DirectPRItemList": [
+              {
+                  "InventoryItemID": "2",
+                  "ReqQTY": "20",
+                  "DirectPrNotes": "",
+                  "Comment": "sdf"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PurchesRequest/AddMatrialDirectPR"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "DirectPRItemList": [
+              {
+                "InventoryItemID": "<long>",
+                "ReqQTY": "<double>",
+                "Comment": "<string>",
+                "DirectPrNotes": "<string>"
+              },
+              {
+                "InventoryItemID": "<long>",
+                "ReqQTY": "<double>",
+                "Comment": "<string>",
+                "DirectPrNotes": "<string>"
+              }
+            ],
+            "RequestgDate": "<string>",
+            "LoginUserID": "<long>",
+            "FromPODirect": "<boolean>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

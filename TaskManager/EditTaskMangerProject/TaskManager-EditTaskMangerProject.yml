@@ -1,0 +1,229 @@
+info:
+  name: /TaskManager/EditTaskMangerProject
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/EditTaskMangerProject"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "74"
+      - name: ProjectName
+        type: text
+        value: Sophia_Infrastructure
+      - name: ClientID
+        type: text
+        value: "10335"
+      - name: ProjectDescription
+        type: text
+        value: infa for oil and gas industrywwwwwqweewq
+      - name: Budget
+        type: text
+        value: "150000"
+      - name: CurrencyID
+        type: text
+        value: "2"
+      - name: ProjectLocation
+        type: text
+        value: sophia_Alex
+      - name: ContactPersonID
+        type: text
+        value: "1"
+        disabled: true
+      - name: StartDate
+        type: text
+        value: 2016-06-09
+      - name: EndDate
+        type: text
+        value: 2024-06-09
+      - name: Billable
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: PriorityID
+        type: text
+        value: "2"
+      - name: TimeTracking
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: CostTypeID
+        type: text
+        value: "1"
+      - name: Active
+        type: text
+        value: "true"
+      - name: Closed
+        type: text
+        value: "false"
+        disabled: true
+      - name: Revision
+        type: text
+        value: "1"
+        disabled: true
+      - name: ProjectContactPersonName
+        type: text
+        value: name
+      - name: ProjectContactPersonMob
+        type: text
+        value: +20 0998
+      - name: ProjectContactPersonHome
+        type: text
+        value: +20 099888
+      - name: ProjectContactPersonEmail
+        type: text
+        value: b.magdy2@gmail.com
+      - name: ProjectContactPersonAddress
+        type: text
+        value: test
+      - name: ProjectContactPersonCountryId
+        type: text
+        value: "1"
+      - name: ProjectContactPersonGovernorateID
+        type: text
+        value: "1"
+      - name: ProjectContactPersonAreaId
+        type: text
+        value: "1"
+      - name: AttachmentList[0].ID
+        type: text
+        value: "16"
+      - name: AttachmentList[0].Active
+        type: text
+        value: "true"
+      - name: AttachmentList[0].FileContent
+        type: file
+        value:
+          - /C:/Users/Vetanoia04/Downloads/12.png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/EditTaskMangerProject"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: ProjectName
+            type: text
+            value: <string>
+          - name: ClientID
+            type: text
+            value: <long>
+          - name: ProjectDescription
+            type: text
+            value: <string>
+          - name: Budget
+            type: text
+            value: <double>
+          - name: CurrencyID
+            type: text
+            value: <integer>
+          - name: AttachmentList
+            type: text
+            value: <string>,<string>
+          - name: ProjectLocation
+            type: text
+            value: <string>
+          - name: ContactPersonID
+            type: text
+            value: <long>
+          - name: StartDate
+            type: text
+            value: <string>
+          - name: EndDate
+            type: text
+            value: <string>
+          - name: Billable
+            type: text
+            value: <boolean>
+          - name: PriorityID
+            type: text
+            value: <integer>
+          - name: TimeTracking
+            type: text
+            value: <boolean>
+          - name: Active
+            type: text
+            value: <boolean>
+          - name: Closed
+            type: text
+            value: <boolean>
+          - name: Revision
+            type: text
+            value: <integer>
+          - name: ProjectContactPersonName
+            type: text
+            value: <string>
+          - name: ProjectContactPersonMob
+            type: text
+            value: <string>
+          - name: ProjectContactPersonHome
+            type: text
+            value: <string>
+          - name: ProjectContactPersonEmail
+            type: text
+            value: <string>
+          - name: ProjectContactPersonAddress
+            type: text
+            value: <string>
+          - name: ProjectContactPersonCountryId
+            type: text
+            value: <integer>
+          - name: ProjectContactPersonGovernorateID
+            type: text
+            value: <integer>
+          - name: ProjectContactPersonAreaId
+            type: text
+            value: <long>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

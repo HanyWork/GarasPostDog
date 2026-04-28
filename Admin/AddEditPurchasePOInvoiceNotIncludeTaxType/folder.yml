@@ -1,0 +1,7 @@
+info:
+  name: AddEditPurchasePOInvoiceNotIncludeTaxType
+  type: folder
+  seq: 30
+
+request:
+  auth: inherit

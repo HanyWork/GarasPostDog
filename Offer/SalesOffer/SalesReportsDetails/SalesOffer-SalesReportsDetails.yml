@@ -1,0 +1,292 @@
+info:
+  name: /SalesOffer/SalesReportsDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/SalesReportsDetails"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Month
+      value: ""
+      disabled: true
+    - name: Year
+      value: ""
+      disabled: true
+    - name: BranchId
+      value: ""
+      disabled: true
+    - name: SalesPersonId
+      value: "30868"
+      disabled: true
+    - name: ClientId
+      value: "36055"
+      disabled: true
+    - name: CurrentPage
+      value: ""
+      disabled: true
+    - name: NumberOfItemsPerPage
+      value: ""
+      disabled: true
+    - name: ThroughName
+      value: meeting
+      description: Phone or Email or Whatsapp or Meeting or Other
+    - name: CompanyName
+      value: marinaplt
+    - name: ReminderDate
+      value: 2025-1-1
+      disabled: true
+    - name: StartDate
+      value: 2018-1-1
+    - name: EndDate
+      value: 2024-1-1
+    - name: ReportCreator
+      value: "30886"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesOffer/SalesReportsDetails"
+      method: GET
+      headers:
+        - name: filters
+          value: StartDate,<string>,EndDate,<string>,SalesPersonId,<long>,ReportCreator,<long>,BranchId,<integer>,ClientId,<integer>,ThroughName,<string>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>,ReminderDate,<string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "FilteredClientId": "<long>",
+            "FilteredClientName": "<string>",
+            "FilteredMonth": "<integer>",
+            "FilteredYear": "<integer>",
+            "FilteredSalesPersonId": "<long>",
+            "FilteredBranchId": "<integer>",
+            "SalesReports": [
+              {
+                "ID": "<long>",
+                "ClientID": "<long>",
+                "ClientName": "<string>",
+                "ClientAddress": "<string>",
+                "ClientStatus": "<string>",
+                "ClientCalssification": "<string>",
+                "SalesName": "<string>",
+                "ReportDate": "<string>",
+                "CreationDate": "<string>",
+                "ThroughID": "<integer>",
+                "ThroughName": "<string>",
+                "FromTime": "<double>",
+                "ToTime": "<double>",
+                "Location": "<string>",
+                "Reason": "<string>",
+                "Comment": "<string>",
+                "SalesReportCreator": "<string>",
+                "LinesCount": "<integer>",
+                "LineId": "<long>",
+                "CRMUserId": "<long>",
+                "CRMUserName": "<string>",
+                "CRMIsRecieved": "<boolean>",
+                "CRMContactName": "<string>",
+                "CRMContactMethod": "<string>",
+                "IsNew": "<boolean>",
+                "NewClientName": "<string>",
+                "NewClientAddress": "<string>",
+                "NewClientTele": "<string>",
+                "ContactPersonName": "<string>",
+                "ContactPersonMobile": "<string>",
+                "ContactType": "<string>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FilePath": "<string>",
+                "ReviewComment": "<string>",
+                "ReviewedBy": "<long>",
+                "ReviewedByName": "<string>",
+                "ReviewDate": "<string>",
+                "IsReviewed": "<boolean>",
+                "Review": "<double>",
+                "ReminderDate": "<string>",
+                "Latitude": "<double>",
+                "Longitude": "<double>",
+                "RelatedToInventoryItemId": "<long>",
+                "RelatedToInventoryItemName": "<string>",
+                "RelatedToSalesOfferProductId": "<long>",
+                "RelatedToSalesOfferProductName": "<string>",
+                "RelatedToProjectProductId": "<long>",
+                "RelatedToProjectProductName": "<string>",
+                "RelatedToSalesOfferId": "<long>",
+                "RelatedToSalesOfferSerial": "<string>",
+                "RelatedToSalesOfferName": "<string>",
+                "RelatedToProjectId": "<long>",
+                "RelatedToProjectSerial": "<string>",
+                "RelatedToProjectName": "<string>",
+                "Hint": "<string>",
+                "ClientSalesPersonName": "<string>",
+                "ClientClassificationId": "<integer>",
+                "SalesReportLineExpenses": [
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "Active": "<boolean>",
+                      "File": "<binary>",
+                      "FilePath": "<string>"
+                    }
+                  },
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "Active": "<boolean>",
+                      "File": "<binary>",
+                      "FilePath": "<string>"
+                    }
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "ClientID": "<long>",
+                "ClientName": "<string>",
+                "ClientAddress": "<string>",
+                "ClientStatus": "<string>",
+                "ClientCalssification": "<string>",
+                "SalesName": "<string>",
+                "ReportDate": "<string>",
+                "CreationDate": "<string>",
+                "ThroughID": "<integer>",
+                "ThroughName": "<string>",
+                "FromTime": "<double>",
+                "ToTime": "<double>",
+                "Location": "<string>",
+                "Reason": "<string>",
+                "Comment": "<string>",
+                "SalesReportCreator": "<string>",
+                "LinesCount": "<integer>",
+                "LineId": "<long>",
+                "CRMUserId": "<long>",
+                "CRMUserName": "<string>",
+                "CRMIsRecieved": "<boolean>",
+                "CRMContactName": "<string>",
+                "CRMContactMethod": "<string>",
+                "IsNew": "<boolean>",
+                "NewClientName": "<string>",
+                "NewClientAddress": "<string>",
+                "NewClientTele": "<string>",
+                "ContactPersonName": "<string>",
+                "ContactPersonMobile": "<string>",
+                "ContactType": "<string>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FilePath": "<string>",
+                "ReviewComment": "<string>",
+                "ReviewedBy": "<long>",
+                "ReviewedByName": "<string>",
+                "ReviewDate": "<string>",
+                "IsReviewed": "<boolean>",
+                "Review": "<double>",
+                "ReminderDate": "<string>",
+                "Latitude": "<double>",
+                "Longitude": "<double>",
+                "RelatedToInventoryItemId": "<long>",
+                "RelatedToInventoryItemName": "<string>",
+                "RelatedToSalesOfferProductId": "<long>",
+                "RelatedToSalesOfferProductName": "<string>",
+                "RelatedToProjectProductId": "<long>",
+                "RelatedToProjectProductName": "<string>",
+                "RelatedToSalesOfferId": "<long>",
+                "RelatedToSalesOfferSerial": "<string>",
+                "RelatedToSalesOfferName": "<string>",
+                "RelatedToProjectId": "<long>",
+                "RelatedToProjectSerial": "<string>",
+                "RelatedToProjectName": "<string>",
+                "Hint": "<string>",
+                "ClientSalesPersonName": "<string>",
+                "ClientClassificationId": "<integer>",
+                "SalesReportLineExpenses": [
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "Active": "<boolean>",
+                      "File": "<binary>",
+                      "FilePath": "<string>"
+                    }
+                  },
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "Active": "<boolean>",
+                      "File": "<binary>",
+                      "FilePath": "<string>"
+                    }
+                  }
+                ]
+              }
+            ],
+            "FilteredReportCreator": "<long>",
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

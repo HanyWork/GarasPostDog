@@ -1,0 +1,138 @@
+info:
+  name: /TaskManager/AddTaskUserReply
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/AddTaskUserReply"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "TaskID" : 20175,
+          "Name": "test card task ",
+          "Description": "test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task test card task ",
+          "ExpireDate": "2024-12-28 00:04:42.000",
+          "TaskUser": "A System System",
+          "BranchId": "4",
+          "TaskTypeID": 1,
+          "TaskCategory": "Project",
+          "TaskSubject": "test card task test card task test card task test card task test card task test card task test card task ",
+          "TaskPage": "http://localhost:53688/#/indexTask?UserToken=UVM3TXhLJTJmJTJid1ZlMGhkbnA0S25rSGclM2QlM2Q=&IP=NDEuMzUuMTM2LjM=&WB=Q2hyb21pdW0gRWRnZQ==&CmpNo=Z2FyYXN0ZXN0",
+          "Status": "Open",
+          "Priority": "Medium",
+          "NeedApproval": true,
+          "AddGroupIDsData": [
+              {
+                  "GroupID": "20024",
+                  "PermissionLevelID": 6
+              },
+              {
+                  "GroupID": "20023",
+                  "PermissionLevelID": 6
+              }
+          ],
+          "AddUserIDData": [
+              {
+                  "UserID": "3",
+                  "PermissionLevelID": 6
+              },
+              {
+                  "UserID": "10003",
+                  "PermissionLevelID": 6
+              },
+              {
+                  "UserID": "10004",
+                  "PermissionLevelID": 6
+              },
+              {
+                  "UserID": "10008",
+                  "PermissionLevelID": 6
+              },
+              {
+                  "UserID": "1",
+                  "PermissionLevelID": 6
+              }
+          ],
+          "Flag": false,
+          "GroupReply": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/AddTaskUserReply"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "taskID": "<long>",
+            "recieverUserID": "<long>",
+            "isFinished": "<boolean>",
+            "commentReply": "<string>",
+            "approvalComment": "<string>",
+            "creatorName": "<string>",
+            "creatorPhoto": "<string>",
+            "taskStatus": "<string>",
+            "approval": "<boolean>",
+            "active": "<boolean>",
+            "creatorAttach": "<string>",
+            "replyAttach": "<string>",
+            "createdBy": "<long>",
+            "creatorFileName": "<string>",
+            "creatorFileExtension": "<string>",
+            "creatorFileContent": "<string>",
+            "replyFileName": "<string>",
+            "replyFileExtension": "<string>",
+            "replyFileContent": "<string>",
+            "creationDate": "<string>",
+            "modifiedBy": "<long>",
+            "modifiedDate": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

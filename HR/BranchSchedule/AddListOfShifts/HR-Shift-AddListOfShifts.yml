@@ -1,0 +1,115 @@
+info:
+  name: /HR/Shift/AddListOfShifts
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/BranchSchedule/AddListOfShifts"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: multipart-form
+    data:
+      - name: shiftDtos[0].From
+        type: text
+        value: 12:00 PM
+      - name: shiftDtos[0].To
+        type: text
+        value: 6:00 PM
+      - name: shiftDtos[0].ShiftNumber
+        type: text
+        value: "1"
+      - name: shiftDtos[0].WeekDayId
+        type: text
+        value: "3"
+      - name: shiftDtos[0].BranchId
+        type: text
+        value: "4"
+      - name: shiftDtos[1].From
+        type: text
+        value: 12:00 PM
+      - name: shiftDtos[1].To
+        type: text
+        value: 6:00 PM
+      - name: shiftDtos[1].ShiftNumber
+        type: text
+        value: "1"
+      - name: shiftDtos[1].WeekDayId
+        type: text
+        value: "4"
+      - name: shiftDtos[1].BranchId
+        type: text
+        value: "4"
+      - name: ApplyShiftsForAll
+        type: text
+        value: "true"
+        disabled: true
+      - name: shiftDtos[2].From
+        type: text
+        value: 12:00 PM
+      - name: shiftDtos[2].To
+        type: text
+        value: 6:00 PM
+      - name: shiftDtos[2].ShiftNumber
+        type: text
+        value: "1"
+      - name: shiftDtos[2].WeekDayId
+        type: text
+        value: "5"
+      - name: shiftDtos[2].BranchId
+        type: text
+        value: "4"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Shift/AddListOfShifts"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: shiftDtos
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

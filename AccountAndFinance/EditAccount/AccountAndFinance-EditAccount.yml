@@ -1,0 +1,100 @@
+info:
+  name: /AccountAndFinance/EditAccount
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/AccountAndFinance/EditAccount"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: json
+    data: |-
+      {
+          "ID":20529,
+          "AccountName":"test Gerges",
+          "HaveChild":false,
+          "Active":true,
+          "ParentCategoryId":1,
+          "AccountCategoryId":1,
+          "CurrencyId":1,
+          "AccountType":"Credit",
+          "HaveAdvancedSetting":true,
+          "AdvanciedTypeID":34,
+          "AdvancedSettingName":"test",
+          "AdvancedSettingLocation":"test",
+          "AdvancedSettingDescription":"test",
+          "AdvancedSettingKeepersList":[1]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/EditAccount"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "AccountName": "<string>",
+            "Description": "<string>",
+            "ParentCategoryId": "<long>",
+            "AccountType": "<string>",
+            "AccountCategoryId": "<integer>",
+            "CurrencyId": "<integer>",
+            "Active": "<boolean>",
+            "HaveChild": "<boolean>",
+            "HaveAdvancedSetting": "<boolean>",
+            "AdvanciedTypeID": "<long>",
+            "AdvancedSettingName": "<string>",
+            "AdvancedSettingLocation": "<string>",
+            "AdvancedSettingDescription": "<string>",
+            "AdvancedSettingKeepersList": [
+              "<long>",
+              "<long>"
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

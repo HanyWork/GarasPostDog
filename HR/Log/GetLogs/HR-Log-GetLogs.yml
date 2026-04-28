@@ -1,0 +1,104 @@
+info:
+  name: /HR/Log/GetLogs
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Log/GetLogs"
+  headers:
+    - name: ActionName
+      value: " Edits"
+      disabled: true
+    - name: TableName
+      value: " "
+      disabled: true
+    - name: ColumnName
+      value: " "
+      disabled: true
+    - name: LogDate
+      value: " 2024-4-3"
+      disabled: true
+    - name: OldValue
+      value: no
+      disabled: true
+    - name: NewValue
+      value: ggggggggggggggg
+      disabled: true
+    - name: CreatedBy
+      value: ""
+      disabled: true
+    - name: PageNumber
+      value: "1"
+    - name: PageSize
+      value: "6"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Log/GetContract"
+      method: GET
+      headers:
+        - name: filters
+          value: ActionName,<string>,TableId,<integer>,TableName,<string>,ColumnName,<string>,LogDate,<string>,OldValue,<string>,NewValue,<string>,CreatedBy,<long>,PageNumber,<integer>,PageSize,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<integer>",
+                "ActionName": "<string>",
+                "TableId": "<integer>",
+                "TableName": "<string>",
+                "ColumnName": "<string>",
+                "LogDate": "<string>",
+                "OldValue": "<string>",
+                "NewValue": "<string>",
+                "CreatedBy": "<long>"
+              },
+              {
+                "Id": "<integer>",
+                "ActionName": "<string>",
+                "TableId": "<integer>",
+                "TableName": "<string>",
+                "ColumnName": "<string>",
+                "LogDate": "<string>",
+                "OldValue": "<string>",
+                "NewValue": "<string>",
+                "CreatedBy": "<long>"
+              }
+            ]
+          }

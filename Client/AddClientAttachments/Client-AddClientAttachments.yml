@@ -1,0 +1,189 @@
+info:
+  name: /Client/AddClientAttachments
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Client/AddClientAttachments"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  body:
+    type: multipart-form
+    data:
+      - name: ClientId
+        type: text
+        value: "306736"
+      - name: CreatedBy
+        type: text
+        value: JFp7UYIKFWypVNu2LYAVzQ==
+      - name: TaxCardAttachment.Id
+        type: text
+        value: "40224"
+        disabled: true
+      - name: TaxCardAttachment.FileContent
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Downloads/exchelsheetsApis.xlsx
+      - name: TaxCardAttachment.Active
+        type: text
+        value: "false"
+      - name: CommercialRecordAttachment.Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: CommercialRecordAttachment.FileContent
+        type: file
+        value: []
+        disabled: true
+      - name: CommercialRecordAttachment.Active
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: LicenseAttachements[0].Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: LicenseAttachements[0].FileContent
+        type: file
+        value: []
+        disabled: true
+      - name: LicenseAttachements[0].Active
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: BussinessCardsAttachments[0].Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: BussinessCardsAttachments[0].FileContent
+        type: file
+        value: []
+        disabled: true
+      - name: BussinessCardsAttachments[0].Active
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: BrochuresAttachments[0].Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: BrochuresAttachments[0].FileContent
+        type: file
+        value: []
+        disabled: true
+      - name: BrochuresAttachments[0].Active
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: OtherAttachments[0].Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: OtherAttachments[0].FileContent
+        type: file
+        value: []
+        disabled: true
+      - name: OtherAttachments[0].Active
+        type: text
+        value: <boolean>
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Client/AddClientAttachments"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ClientId
+            type: text
+            value: <long>
+          - name: CreatedBy
+            type: text
+            value: <string>
+          - name: TaxCardAttachment.Id
+            type: text
+            value: <long>
+          - name: TaxCardAttachment.FileName
+            type: text
+            value: <string>
+          - name: TaxCardAttachment.FileExtension
+            type: text
+            value: <string>
+          - name: TaxCardAttachment.FileContent
+            type: file
+            value: []
+          - name: TaxCardAttachment.Active
+            type: text
+            value: <boolean>
+          - name: CommercialRecordAttachment.Id
+            type: text
+            value: <long>
+          - name: CommercialRecordAttachment.FileName
+            type: text
+            value: <string>
+          - name: CommercialRecordAttachment.FileExtension
+            type: text
+            value: <string>
+          - name: CommercialRecordAttachment.FileContent
+            type: file
+            value: []
+          - name: CommercialRecordAttachment.Active
+            type: text
+            value: <boolean>
+          - name: LicenseAttachements
+            type: text
+            value: "[object Object],[object Object]"
+          - name: BussinessCardsAttachments
+            type: text
+            value: "[object Object],[object Object]"
+          - name: BrochuresAttachments
+            type: text
+            value: "[object Object],[object Object]"
+          - name: OtherAttachments
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

@@ -1,0 +1,314 @@
+info:
+  name: /Offer/SalesOffer/AddSalesOfferPricingDetails
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/AddSalesOfferPricingDetails"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "SalesOfferId": "<long>",
+        "SalesOfferTaxList": [
+          {
+            "Id": "<long>",
+            "TaxPercentage": "<double>",
+            "TaxValue": "<double>",
+            "TaxName": "<string>",
+            "TaxCode": "<string>",
+            "TaxType": "<string>",
+            "InvoicePayerClientId": "<long>",
+            "InvoicePayerClientName": "<string>",
+            "Description": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Active": "<boolean>",
+            "IsPercentage": "<boolean>",
+            "TaxChildList": [
+              {
+                "value": "<Circular reference to #/components/schemas/GetTax detected>"
+              },
+              {
+                "value": "<Circular reference to #/components/schemas/GetTax detected>"
+              }
+            ]
+          },
+          {
+            "Id": "<long>",
+            "TaxPercentage": "<double>",
+            "TaxValue": "<double>",
+            "TaxName": "<string>",
+            "TaxCode": "<string>",
+            "TaxType": "<string>",
+            "InvoicePayerClientId": "<long>",
+            "InvoicePayerClientName": "<string>",
+            "Description": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Active": "<boolean>",
+            "IsPercentage": "<boolean>",
+            "TaxChildList": [
+              {
+                "value": "<Circular reference to #/components/schemas/GetTax detected>"
+              },
+              {
+                "value": "<Circular reference to #/components/schemas/GetTax detected>"
+              }
+            ]
+          }
+        ],
+        "SalesOfferExtraCostList": [
+          {
+            "Id": "<long>",
+            "ExtraCostTypeId": "<long>",
+            "Amount": "<double>",
+            "InvoicePayerClientId": "<long>",
+            "InvoicePayerClientName": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Active": "<boolean>"
+          },
+          {
+            "Id": "<long>",
+            "ExtraCostTypeId": "<long>",
+            "Amount": "<double>",
+            "InvoicePayerClientId": "<long>",
+            "InvoicePayerClientName": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Active": "<boolean>"
+          }
+        ],
+        "SalesOfferDiscountList": [
+          {
+            "Id": "<long>",
+            "DiscountPercentage": "<double>",
+            "DiscountValue": "<double>",
+            "DiscountApproved": "<boolean>",
+            "ClientApproveDiscount": "<boolean>",
+            "DiscountApprovedBy": "<long>",
+            "DiscountApprovedByName": "<string>",
+            "InvoicePayerClientId": "<long>",
+            "InvoicePayerClientName": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Active": "<boolean>"
+          },
+          {
+            "Id": "<long>",
+            "DiscountPercentage": "<double>",
+            "DiscountValue": "<double>",
+            "DiscountApproved": "<boolean>",
+            "ClientApproveDiscount": "<boolean>",
+            "DiscountApprovedBy": "<long>",
+            "DiscountApprovedByName": "<string>",
+            "InvoicePayerClientId": "<long>",
+            "InvoicePayerClientName": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Active": "<boolean>"
+          }
+        ],
+        "SalesOfferTermsAndConditionsList": [
+          {
+            "Id": "<long>",
+            "SalesOfferId": "<long>",
+            "TermName": "<string>",
+            "TermCategoryName": "<string>",
+            "TermDescription": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Active": "<boolean>"
+          },
+          {
+            "Id": "<long>",
+            "SalesOfferId": "<long>",
+            "TermName": "<string>",
+            "TermCategoryName": "<string>",
+            "TermDescription": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Active": "<boolean>"
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/AddSalesOfferPricingDetails"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "SalesOfferId": "<long>",
+            "SalesOfferTaxList": [
+              {
+                "Id": "<long>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "TaxName": "<string>",
+                "TaxCode": "<string>",
+                "TaxType": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "Description": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "IsPercentage": "<boolean>",
+                "TaxChildList": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  }
+                ]
+              },
+              {
+                "Id": "<long>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "TaxName": "<string>",
+                "TaxCode": "<string>",
+                "TaxType": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "Description": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "IsPercentage": "<boolean>",
+                "TaxChildList": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  }
+                ]
+              }
+            ],
+            "SalesOfferExtraCostList": [
+              {
+                "Id": "<long>",
+                "ExtraCostTypeId": "<long>",
+                "Amount": "<double>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "ExtraCostTypeId": "<long>",
+                "Amount": "<double>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "SalesOfferDiscountList": [
+              {
+                "Id": "<long>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "DiscountApproved": "<boolean>",
+                "ClientApproveDiscount": "<boolean>",
+                "DiscountApprovedBy": "<long>",
+                "DiscountApprovedByName": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "DiscountApproved": "<boolean>",
+                "ClientApproveDiscount": "<boolean>",
+                "DiscountApprovedBy": "<long>",
+                "DiscountApprovedByName": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "SalesOfferTermsAndConditionsList": [
+              {
+                "Id": "<long>",
+                "SalesOfferId": "<long>",
+                "TermName": "<string>",
+                "TermCategoryName": "<string>",
+                "TermDescription": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "SalesOfferId": "<long>",
+                "TermName": "<string>",
+                "TermCategoryName": "<string>",
+                "TermDescription": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

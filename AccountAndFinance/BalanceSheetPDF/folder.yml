@@ -1,0 +1,7 @@
+info:
+  name: BalanceSheetPDF
+  type: folder
+  seq: 47
+
+request:
+  auth: inherit

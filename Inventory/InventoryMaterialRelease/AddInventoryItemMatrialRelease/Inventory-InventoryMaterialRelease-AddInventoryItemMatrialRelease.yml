@@ -1,0 +1,151 @@
+info:
+  name: /Inventory/InventoryMaterialRelease/AddInventoryItemMatrialRelease
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryMaterialRelease/AddInventoryItemMatrialRelease"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: json
+    data: '{"MatrialReleaseOrderId": 0, "MatrialRequestOrderId": 10052, "RequestDate": "12/20/2023", "MatrialReleaseItemList": [{"ID": 0, "MatrialRequestItemID": 10595, "NewRecivedQTY": 4, "RemQTY": 4, "NewComment":"" , "IsFIFO": true}, {"ID": 0, "MatrialRequestItemID": 10596, "NewRecivedQTY": 1, "RemQTY": 1, "NewComment": "", "IsFIFO": true}], "IsFinish": true, "IsRenew": true}'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryMaterialRelease/AddInventoryItemMatrialRelease"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "MatrialReleaseItemList": [
+              {
+                "ID": "<long>",
+                "MatrialRequestItemID": "<long>",
+                "InventoryItemID": "<long>",
+                "ItemName": "<string>",
+                "Comment": "<string>",
+                "ParentItemComment": "<string>",
+                "ItemCode": "<string>",
+                "ReqQTY": "<double>",
+                "RecivedQTY": "<double>",
+                "RemQTY": "<double>",
+                "UOM": "<string>",
+                "ProjectName": "<string>",
+                "ProjectID": "<long>",
+                "FabOrderName": "<string>",
+                "StoreLocationID": "<integer>",
+                "StoreLocationName": "<string>",
+                "NewComment": "<string>",
+                "NewRecivedQTY": "<double>",
+                "ExpirationDate": "<string>",
+                "Serial": "<string>",
+                "IsFIFO": "<boolean>",
+                "StockQTY": "<double>",
+                "InventoryStoreItemIDsList": [
+                  "<long>",
+                  "<long>"
+                ],
+                "StockBalanceList": [
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "MatrialRequestItemID": "<long>",
+                "InventoryItemID": "<long>",
+                "ItemName": "<string>",
+                "Comment": "<string>",
+                "ParentItemComment": "<string>",
+                "ItemCode": "<string>",
+                "ReqQTY": "<double>",
+                "RecivedQTY": "<double>",
+                "RemQTY": "<double>",
+                "UOM": "<string>",
+                "ProjectName": "<string>",
+                "ProjectID": "<long>",
+                "FabOrderName": "<string>",
+                "StoreLocationID": "<integer>",
+                "StoreLocationName": "<string>",
+                "NewComment": "<string>",
+                "NewRecivedQTY": "<double>",
+                "ExpirationDate": "<string>",
+                "Serial": "<string>",
+                "IsFIFO": "<boolean>",
+                "StockQTY": "<double>",
+                "InventoryStoreItemIDsList": [
+                  "<long>",
+                  "<long>"
+                ],
+                "StockBalanceList": [
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  }
+                ]
+              }
+            ],
+            "IsFinish": "<boolean>",
+            "IsRenew": "<boolean>",
+            "RequestType": "<string>",
+            "RequestDate": "<string>",
+            "MatrialRequestOrderId": "<long>",
+            "MatrialReleaseOrderId": "<long>",
+            "CreationDate": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

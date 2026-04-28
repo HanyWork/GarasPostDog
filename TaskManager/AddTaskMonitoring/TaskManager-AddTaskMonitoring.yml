@@ -1,0 +1,106 @@
+info:
+  name: /TaskManager/AddTaskMonitoring
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/AddTaskMonitoring"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: TaskMonitorList[0].TaskId
+        type: text
+        value: "20053"
+      - name: TaskMonitorList[0].UserId
+        type: text
+        value: "20032"
+      - name: TaskMonitorList[0].CreationDateTime
+        type: text
+        value: 2024-11-7
+      - name: TaskMonitorList[0].TabName
+        type: text
+        value: test
+        disabled: true
+      - name: TaskMonitorList[0].Img
+        type: file
+        value:
+          - /D:/a9.png
+      - name: TaskMonitorList[0].AppName
+        type: text
+        value: test
+        disabled: true
+      - name: TaskMonitorList[1].TaskId
+        type: text
+        value: "20054"
+      - name: TaskMonitorList[1].UserId
+        type: text
+        value: "20070"
+      - name: TaskMonitorList[1].CreationDateTime
+        type: text
+        value: 2024-11-7
+      - name: TaskMonitorList[1].TabName
+        type: text
+        value: test
+      - name: TaskMonitorList[1].AppName
+        type: text
+        value: test
+      - name: TaskMonitorList[1].Img
+        type: file
+        value:
+          - /D:/a11.png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/AddTaskMonitoring"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: TaskMonitorList
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

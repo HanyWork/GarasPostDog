@@ -1,0 +1,93 @@
+info:
+  name: /CRM/GetSalesReportListStatistics
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/CRM/GetSalesReportListStatistics"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: SalesPersonId
+      value: ""
+      disabled: true
+    - name: BranchId
+      value: ""
+      disabled: true
+    - name: CreationFrom
+      value: 2023-1-1
+    - name: CreationTo
+      value: 2024-1-1
+    - name: IsReviewed
+      value: ""
+      disabled: true
+    - name: HaveCRM
+      value: ""
+      disabled: true
+    - name: Status
+      value: Not Filled,Completed
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/CRM/GetSalesReportListStatistics"
+      method: GET
+      headers:
+        - name: SalesPersonId
+          value: <long>
+        - name: BranchId
+          value: <integer>
+        - name: CreationFrom
+          value: <dateTime>
+        - name: CreationTo
+          value: <dateTime>
+        - name: IsReviewed
+          value: <boolean>
+        - name: NotApproved
+          value: <boolean>
+        - name: HaveCRM
+          value: <boolean>
+        - name: CurrentPage
+          value: <integer>
+        - name: NumberOfItemsPerPage
+          value: <integer>
+        - name: Status
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ReviewAvg": "<string>",
+            "CreatedReport": "<integer>",
+            "WorkingDays": "<integer>",
+            "ForSalesPersonsCount": "<integer>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

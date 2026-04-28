@@ -1,0 +1,108 @@
+info:
+  name: /Client/CheckClientExistance
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Client/CheckClientExistance"
+  headers:
+    - name: ClientName
+      value: OLAM FOOD INGREDIENTS
+    - name: ClientEnglishName
+      value: <string>
+      disabled: true
+    - name: ClientMobile
+      value: <string>
+      disabled: true
+    - name: ClientPhone
+      value: <string>
+      disabled: true
+    - name: ClientFax
+      value: <string>
+      disabled: true
+    - name: ClientEmail
+      value: <string>
+      disabled: true
+    - name: ClientWebsite
+      value: <string>
+      disabled: true
+    - name: ContactPersonMobile
+      value: <string>
+      disabled: true
+    - name: IsExact
+      value: "false"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Client/CheckClientExistance"
+      method: GET
+      headers:
+        - name: ClientName
+          value: <string>
+        - name: ClientEnglishName
+          value: <string>
+        - name: ClientMobile
+          value: <string>
+        - name: ClientPhone
+          value: <string>
+        - name: ClientFax
+          value: <string>
+        - name: ClientEmail
+          value: <string>
+        - name: ClientWebsite
+          value: <string>
+        - name: ContactPersonMobile
+          value: <string>
+        - name: IsExact
+          value: <boolean>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ClientsList": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "ClientsCount": "<integer>",
+            "IsExist": "<boolean>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

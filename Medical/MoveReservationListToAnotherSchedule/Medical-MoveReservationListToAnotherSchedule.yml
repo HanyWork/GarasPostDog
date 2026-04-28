@@ -1,0 +1,87 @@
+info:
+  name: /Medical/MoveReservationListToAnotherSchedule
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/MoveReservationListToAnotherSchedule"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: |-
+      {
+        "ReservationsWithSerialList": [
+          {
+            "ReservationID": 5,
+            "Serial": 5
+          },
+          {
+            "ReservationID": 6,
+            "Serial": 7
+          }
+        ],
+        "OldScheduleID": 4,
+        "NewScheduleID": 6,
+        "NewReservationDate": "2025-05-20"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/MoveReservationListToAnotherSchedule"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ReservationsIDList": [
+              "<long>",
+              "<long>"
+            ],
+            "OldScheduleID": "<long>",
+            "NewScheduleID": "<long>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

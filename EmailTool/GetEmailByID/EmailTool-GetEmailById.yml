@@ -1,0 +1,25 @@
+info:
+  name: /EmailTool/GetEmailById
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/EmailTool/GetEmailById"
+  headers:
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: emailID
+      value: dfh34
+    - name: Id
+      value: "1"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

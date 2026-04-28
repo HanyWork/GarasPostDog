@@ -1,0 +1,82 @@
+info:
+  name: /SalesOffer/GetClientFromSalesOfferReport
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/GetClientFromSalesOfferReport"
+  headers:
+    - name: ClientId
+      value: "238"
+      disabled: true
+    - name: From
+      value: 2024-1-1
+    - name: To
+      value: 2025-1-1
+    - name: SupplierId
+      value: ""
+      disabled: true
+    - name: BranchId
+      value: ""
+      disabled: true
+    - name: CalcWithoutPrivate
+      value: "true"
+    - name: OrderByCreationDate
+      value: "true"
+    - name: AdvancedTypeId
+      value: "30"
+      disabled: true
+    - name: AccountCategoryId
+      value: "5"
+      disabled: true
+    - name: AccountIds
+      value: 6,7,8
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: proauto
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesOffer/GetClientFromSalesOfferReport"
+      method: GET
+      headers:
+        - name: filters
+          value: OfferStatus,<string>,ProductType,<string>,ClientName,<string>,ProjectName,<string>,From,<dateTime>,To,<dateTime>,SalesPersonId,<long>,BranchId,<integer>,CalcWithoutPrivate,<boolean>,OrderByCreationDate,<boolean>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

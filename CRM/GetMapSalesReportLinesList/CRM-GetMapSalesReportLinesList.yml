@@ -1,0 +1,97 @@
+info:
+  name: /CRM/GetMapSalesReportLinesList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/CRM/GetMapSalesReportLinesList"
+  headers:
+    - name: SalesReportId
+      value: "50268"
+    - name: SalesPersonId
+      value: "6"
+    - name: BranchId
+      value: "5"
+    - name: CreationFrom
+      value: 2018-10-9
+    - name: CreationTo
+      value: 2018-10-11
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/CRM/GetMapSalesReportLinesList"
+      method: GET
+      headers:
+        - name: SalesReportId
+          value: <long>
+        - name: SalesPersonId
+          value: <long>
+        - name: BranchId
+          value: <integer>
+        - name: CreationFrom
+          value: <dateTime>
+        - name: CreationTo
+          value: <dateTime>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "MapSalesReportLines": [
+              {
+                "LineId": "<long>",
+                "ReportId": "<long>",
+                "ReportDate": "<string>",
+                "SalesPersonId": "<long>",
+                "SalesPersonName": "<string>",
+                "SalesPersonImage": "<string>",
+                "Longiude": "<string>",
+                "Latitude": "<string>",
+                "LocationName": "<string>"
+              },
+              {
+                "LineId": "<long>",
+                "ReportId": "<long>",
+                "ReportDate": "<string>",
+                "SalesPersonId": "<long>",
+                "SalesPersonName": "<string>",
+                "SalesPersonImage": "<string>",
+                "Longiude": "<string>",
+                "Latitude": "<string>",
+                "LocationName": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

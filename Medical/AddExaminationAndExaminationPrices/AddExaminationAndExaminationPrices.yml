@@ -1,0 +1,33 @@
+info:
+  name: AddExaminationAndExaminationPrices
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddExaminationAndExaminationPrices"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: "{\r
+
+      \    \"DoctorID\":\"11\",\r
+
+      \    \"SpecialityID\":\"2\",\r
+
+      \    \"ExaminationPrice\":\"151.2\",\r
+
+      \    \"consultationPrice\":\"100.5\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

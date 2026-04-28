@@ -1,0 +1,105 @@
+info:
+  name: /EInvoice/GetEInvoiceSetting
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/EInvoice/GetEInvoiceSetting"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EInvoice/GetEInvoiceSetting"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "EInvoiceSettingList": [
+              {
+                "ID": "<integer>",
+                "ClientIdProduction": "<string>",
+                "Clientsecret1Production": "<string>",
+                "Clientsecret2Production": "<string>",
+                "ClientIdTest": "<string>",
+                "Clientsecret1Test": "<string>",
+                "Clientsecret2Test": "<string>",
+                "RegistrationNumber": "<string>",
+                "IssuerType": "<string>",
+                "ActivityCode1": "<string>",
+                "ActivityCode2": "<string>",
+                "ActivityCode3": "<string>",
+                "ItemCodeType": "<string>",
+                "IssureName": "<string>",
+                "Path": "<string>",
+                "CompanyName": "<string>",
+                "PinCode": "<string>",
+                "Active": "<boolean>",
+                "IsSignature": "<boolean>",
+                "IsProduction": "<boolean>",
+                "ItemTypeEINVOICE": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>"
+              },
+              {
+                "ID": "<integer>",
+                "ClientIdProduction": "<string>",
+                "Clientsecret1Production": "<string>",
+                "Clientsecret2Production": "<string>",
+                "ClientIdTest": "<string>",
+                "Clientsecret1Test": "<string>",
+                "Clientsecret2Test": "<string>",
+                "RegistrationNumber": "<string>",
+                "IssuerType": "<string>",
+                "ActivityCode1": "<string>",
+                "ActivityCode2": "<string>",
+                "ActivityCode3": "<string>",
+                "ItemCodeType": "<string>",
+                "IssureName": "<string>",
+                "Path": "<string>",
+                "CompanyName": "<string>",
+                "PinCode": "<string>",
+                "Active": "<boolean>",
+                "IsSignature": "<boolean>",
+                "IsProduction": "<boolean>",
+                "ItemTypeEINVOICE": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,213 @@
+info:
+  name: /AccountAndFinance/GetDailyJournalEntryDataInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/GetDailyJournalEntryDataInfo"
+  headers:
+    - name: DailyJournalEntryID
+      value: "17"
+    - name: Active
+      value: "true"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/GetDailyJournalEntryDataInfo"
+      method: GET
+      headers:
+        - name: DailyJournalEntryID
+          value: "0"
+        - name: Active
+          value: "true"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "ID": "<long>",
+              "Active": "<boolean>",
+              "DocumentNumber": "<string>",
+              "Serial": "<string>",
+              "Status": "<boolean>",
+              "CreationDate": "<dateTime>",
+              "EntryDate": "<dateTime>",
+              "CreationUser": "<string>",
+              "CreationUserImg": "<string>",
+              "Description": "<string>",
+              "AmountTranaction": "<double>",
+              "ParentEntryId": "<long>",
+              "ParentEntrySerial": "<string>",
+              "ChildEntryId": "<long>",
+              "ChildEntrySerial": "<string>",
+              "IsPublic": "<boolean>",
+              "AccountEntryList": [
+                {
+                  "AccountID": "<long>",
+                  "AccountName": "<string>",
+                  "Amount": "<double>",
+                  "CurrencyID": "<integer>",
+                  "CurrencyName": "<string>",
+                  "CategoryID": "<string>",
+                  "CategoryName": "<string>",
+                  "IncOrExTypeID": "<long>",
+                  "IncOrExTypeName": "<string>",
+                  "MethodTypeID": "<long>",
+                  "MethodTypeName": "<string>",
+                  "AccountTypeName": "<string>",
+                  "SignOfAccount": "<string>",
+                  "ClinetID": "<long>",
+                  "ClinetName": "<string>",
+                  "ProjectID": "<long>",
+                  "OfferID": "<long>",
+                  "ProjectName": "<string>",
+                  "SupplierID": "<long>",
+                  "SupplierName": "<string>",
+                  "PurchasePOID": "<long>",
+                  "PurchasePOName": "<string>",
+                  "ClientAccountId": "<long>",
+                  "SupplierAccountId": "<long>",
+                  "AdvanciedTypeID": "<long>",
+                  "Comment": "<string>",
+                  "FromAccount": "<boolean>",
+                  "RateToAnotherCU": "<double>",
+                  "AmountAnotherCU": "<double>"
+                },
+                {
+                  "AccountID": "<long>",
+                  "AccountName": "<string>",
+                  "Amount": "<double>",
+                  "CurrencyID": "<integer>",
+                  "CurrencyName": "<string>",
+                  "CategoryID": "<string>",
+                  "CategoryName": "<string>",
+                  "IncOrExTypeID": "<long>",
+                  "IncOrExTypeName": "<string>",
+                  "MethodTypeID": "<long>",
+                  "MethodTypeName": "<string>",
+                  "AccountTypeName": "<string>",
+                  "SignOfAccount": "<string>",
+                  "ClinetID": "<long>",
+                  "ClinetName": "<string>",
+                  "ProjectID": "<long>",
+                  "OfferID": "<long>",
+                  "ProjectName": "<string>",
+                  "SupplierID": "<long>",
+                  "SupplierName": "<string>",
+                  "PurchasePOID": "<long>",
+                  "PurchasePOName": "<string>",
+                  "ClientAccountId": "<long>",
+                  "SupplierAccountId": "<long>",
+                  "AdvanciedTypeID": "<long>",
+                  "Comment": "<string>",
+                  "FromAccount": "<boolean>",
+                  "RateToAnotherCU": "<double>",
+                  "AmountAnotherCU": "<double>"
+                }
+              ],
+              "Old": "<boolean>",
+              "EntryDateSTR": "<string>",
+              "CreationDateSTR": "<string>",
+              "EntryAccountList": [
+                {
+                  "AccountID": "<long>",
+                  "AccountName": "<string>",
+                  "Amount": "<double>",
+                  "CurrencyID": "<integer>",
+                  "CurrencyName": "<string>",
+                  "CategoryID": "<string>",
+                  "CategoryName": "<string>",
+                  "IncOrExTypeID": "<long>",
+                  "IncOrExTypeName": "<string>",
+                  "MethodTypeID": "<long>",
+                  "MethodTypeName": "<string>",
+                  "AccountTypeName": "<string>",
+                  "SignOfAccount": "<string>",
+                  "ClinetID": "<long>",
+                  "ClinetName": "<string>",
+                  "ProjectID": "<long>",
+                  "OfferID": "<long>",
+                  "ProjectName": "<string>",
+                  "SupplierID": "<long>",
+                  "SupplierName": "<string>",
+                  "PurchasePOID": "<long>",
+                  "PurchasePOName": "<string>",
+                  "ClientAccountId": "<long>",
+                  "SupplierAccountId": "<long>",
+                  "AdvanciedTypeID": "<long>",
+                  "Comment": "<string>",
+                  "FromAccount": "<boolean>",
+                  "RateToAnotherCU": "<double>",
+                  "AmountAnotherCU": "<double>"
+                },
+                {
+                  "AccountID": "<long>",
+                  "AccountName": "<string>",
+                  "Amount": "<double>",
+                  "CurrencyID": "<integer>",
+                  "CurrencyName": "<string>",
+                  "CategoryID": "<string>",
+                  "CategoryName": "<string>",
+                  "IncOrExTypeID": "<long>",
+                  "IncOrExTypeName": "<string>",
+                  "MethodTypeID": "<long>",
+                  "MethodTypeName": "<string>",
+                  "AccountTypeName": "<string>",
+                  "SignOfAccount": "<string>",
+                  "ClinetID": "<long>",
+                  "ClinetName": "<string>",
+                  "ProjectID": "<long>",
+                  "OfferID": "<long>",
+                  "ProjectName": "<string>",
+                  "SupplierID": "<long>",
+                  "SupplierName": "<string>",
+                  "PurchasePOID": "<long>",
+                  "PurchasePOName": "<string>",
+                  "ClientAccountId": "<long>",
+                  "SupplierAccountId": "<long>",
+                  "AdvanciedTypeID": "<long>",
+                  "Comment": "<string>",
+                  "FromAccount": "<boolean>",
+                  "RateToAnotherCU": "<double>",
+                  "AmountAnotherCU": "<double>"
+                }
+              ],
+              "CostCenterStatus": "<boolean>",
+              "CostCenter": {},
+              "BeneficiaryToUser": {}
+            }
+          }

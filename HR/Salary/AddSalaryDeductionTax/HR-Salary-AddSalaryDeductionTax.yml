@@ -1,0 +1,83 @@
+info:
+  name: /HR/Salary/AddSalaryDeductionTax
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Salary/AddSalaryDeductionTax"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: json
+    data: |-
+      {
+        "SalaryDeductionTaxList": [
+          {
+              "SalaryId": 3,
+              "TaxName": "test1",
+              "Percentage": 10.5,
+              "Amount": 11,
+              "Active": true,
+              "DeductionTypeId": 2,
+              "SalaryTaxId": 3
+          },
+          {
+              "SalaryId": 3,
+              "TaxName": "test2",
+              "Percentage": 10.5,
+              "Amount": 22,
+              "Active": true,
+              "DeductionTypeId": 2,
+              "SalaryTaxId": 3
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Salary/AddSalaryDeductionTax"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

@@ -1,0 +1,175 @@
+info:
+  name: /ProjectCheque/AddNew
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectCheque/AddNew"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: multipart-form
+    data:
+      - name: ClientName
+        type: text
+        value: "امبى "
+      - name: SalesPersonName
+        type: text
+        value: "امبى "
+      - name: ProjectName
+        type: text
+        value: "1111111111111"
+      - name: ProjectNumber
+        type: text
+        value: ""
+      - name: ProjectId
+        type: text
+        value: "1"
+      - name: ChequeDate
+        type: text
+        value: 8/1/2024
+      - name: ChequeChashingStatusId
+        type: text
+        value: "2"
+      - name: IsCrossedCheque
+        type: text
+        value: "true"
+      - name: ChequeAmount
+        type: text
+        value: "4000"
+      - name: CurrencyId
+        type: text
+        value: "1"
+      - name: Bank
+        type: text
+        value: بنك الامارات دبي - جنيه
+      - name: BankBranch
+        type: text
+        value: gggg
+      - name: RejectCause
+        type: text
+        value: vcxvxcv
+      - name: Notes
+        type: text
+        value: gdgfdfg
+      - name: Attachment
+        type: file
+        value: []
+        disabled: true
+      - name: ChequeNumber
+        type: text
+        value: "888999"
+      - name: WithdrawDate
+        type: text
+        value: 12/1/2024
+      - name: WithdrawedBy
+        type: text
+        value: ""
+      - name: MaintenanceForID
+        type: text
+        value: ""
+        disabled: true
+      - name: MaintenanceOrderID
+        type: text
+        value: ""
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectCheque/AddNew"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: ClientName
+            type: text
+            value: <string>
+          - name: SalesPersonName
+            type: text
+            value: <string>
+          - name: ProjectName
+            type: text
+            value: <string>
+          - name: ProjectNumber
+            type: text
+            value: <string>
+          - name: ProjectId
+            type: text
+            value: <long>
+          - name: ChequeDate
+            type: text
+            value: <dateTime>
+          - name: ChequeChashingStatusId
+            type: text
+            value: <integer>
+          - name: IsCrossedCheque
+            type: text
+            value: <boolean>
+          - name: ChequeAmount
+            type: text
+            value: <double>
+          - name: CurrencyId
+            type: text
+            value: <integer>
+          - name: Bank
+            type: text
+            value: <string>
+          - name: BankBranch
+            type: text
+            value: <string>
+          - name: RejectCause
+            type: text
+            value: <string>
+          - name: Notes
+            type: text
+            value: <string>
+          - name: Attachment
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

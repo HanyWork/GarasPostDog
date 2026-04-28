@@ -1,0 +1,165 @@
+info:
+  name: /Patient/EditPatient
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Patient/EditPatient"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: multipart-form
+    data:
+      - name: PatientId
+        type: text
+        value: "2"
+      - name: FirstName
+        type: text
+        value: Michael
+      - name: MiddleName
+        type: text
+        value: Gerges
+      - name: LastName
+        type: text
+        value: Morkos
+      - name: DateOfBirth
+        type: text
+        value: 1-8-1999
+      - name: Gender
+        type: text
+        value: Male
+      - name: Email
+        type: text
+        value: gergesabdo99@gmail.com
+      - name: Mobile
+        type: text
+        value: "01050554948"
+      - name: Active
+        type: text
+        value: "true"
+      - name: Insurances[0].Name
+        type: text
+        value: Gr
+      - name: Insurances[0].IncuranceNo
+        type: text
+        value: "4"
+      - name: Insurances[0].ExpireDate
+        type: text
+        value: 1-8-2024
+      - name: Insurances[0].Active
+        type: text
+        value: "true"
+      - name: Insurances[0].Id
+        type: text
+        value: "4"
+      - name: Photo
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Pictures/Screenshots/Screenshot (1).png
+      - name: CountryId
+        type: text
+        value: "1"
+      - name: AreaId
+        type: text
+        value: "1"
+      - name: CityId
+        type: text
+        value: "1"
+        disabled: true
+      - name: Address
+        type: text
+        value: test
+      - name: Description
+        type: text
+        value: test des.
+      - name: CtreationDate
+        type: text
+        value: ""
+      - name: Mobile2
+        type: text
+        value: ""
+      - name: LandLine
+        type: text
+        value: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Patient/EditPatient"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: PatientId
+            type: text
+            value: <long>
+          - name: FirstName
+            type: text
+            value: <string>
+          - name: MiddleName
+            type: text
+            value: <string>
+          - name: LastName
+            type: text
+            value: <string>
+          - name: DateOfBirth
+            type: text
+            value: <dateTime>
+          - name: Gender
+            type: text
+            value: <string>
+          - name: Photo
+            type: text
+            value: <string>
+          - name: Email
+            type: text
+            value: <string>
+          - name: Mobile
+            type: text
+            value: <string>
+          - name: Insurances
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

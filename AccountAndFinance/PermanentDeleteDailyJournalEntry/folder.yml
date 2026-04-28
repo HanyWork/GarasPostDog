@@ -1,0 +1,7 @@
+info:
+  name: PermanentDeleteDailyJournalEntry
+  type: folder
+  seq: 23
+
+request:
+  auth: inherit

@@ -1,0 +1,60 @@
+info:
+  name: /AccountAndFinance/GetCalcProjectDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/GetCalcProjectDetails"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+    - name: ProjectId
+      value: "26"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/GetCalcProjectDetails"
+      method: GET
+      headers:
+        - name: ProjectId
+          value: "0"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "totalAmount": "<double>",
+            "totalCollected": "<double>",
+            "remain": "<double>"
+          }

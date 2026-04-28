@@ -1,0 +1,409 @@
+info:
+  name: /Inventory/InventoryTransferOrder/AddInvnetoryInternalTransferOrderItemsPOS
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryTransferOrder/AddInvnetoryInternalTransferOrderItemsPOS"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: json
+    data: "{\r
+
+      \    \"TransferOrderId\": 10920,\r
+
+      \    \"InternalTransferOrderItemList\": [\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"299\",\r
+
+      \        //     \"TransferredQTY\": \"12\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        {\r
+
+      \            \"InventoryItemID\": \"301\",\r
+
+      \            \"TransferredQTY\": \"55\",\r
+
+      \            \"Comment\": \"\",\r
+
+      \            \"IsFIFO\": false\r
+
+      \        }\r
+
+      \        // ,\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"305\",\r
+
+      \        //     \"TransferredQTY\": \"250\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"311\",\r
+
+      \        //     \"TransferredQTY\": \"50\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"352\",\r
+
+      \        //     \"TransferredQTY\": \"60\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"373\",\r
+
+      \        //     \"TransferredQTY\": \"6\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"460\",\r
+
+      \        //     \"TransferredQTY\": \"40\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"313\",\r
+
+      \        //     \"TransferredQTY\": \"50\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"321\",\r
+
+      \        //     \"TransferredQTY\": \"110\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"335\",\r
+
+      \        //     \"TransferredQTY\": \"30\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"640\",\r
+
+      \        //     \"TransferredQTY\": \"162\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"353\",\r
+
+      \        //     \"TransferredQTY\": \"20\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"332\",\r
+
+      \        //     \"TransferredQTY\": \"72\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"392\",\r
+
+      \        //     \"TransferredQTY\": \"200\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"391\",\r
+
+      \        //     \"TransferredQTY\": \"24\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"408\",\r
+
+      \        //     \"TransferredQTY\": \"10\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"456\",\r
+
+      \        //     \"TransferredQTY\": \"10\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"747\",\r
+
+      \        //     \"TransferredQTY\": \"10\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"333\",\r
+
+      \        //     \"TransferredQTY\": \"36\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"356\",\r
+
+      \        //     \"TransferredQTY\": \"50\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"719\",\r
+
+      \        //     \"TransferredQTY\": \"10\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"411\",\r
+
+      \        //     \"TransferredQTY\": \"10\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"509\",\r
+
+      \        //     \"TransferredQTY\": \"10\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //     \"InventoryItemID\": \"367\",\r
+
+      \        //     \"TransferredQTY\": \"10\",\r
+
+      \        //     \"Comment\": \"\",\r
+
+      \        //     \"IsFIFO\": false\r
+
+      \        // }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryTransferOrder/AddInvnetoryInternalTransferOrder"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "FromInventoryStorID": "<integer>",
+            "ToInventoryStorID": "<integer>",
+            "ReceivingDate": "<string>",
+            "InternalTransferOrderItemList": [
+              {
+                "InventoryItemID": "<long>",
+                "TransferredQTY": "<double>",
+                "Comment": "<string>",
+                "StoreLocationID": "<integer>",
+                "expDate": "<string>",
+                "serial": "<string>",
+                "StockQTY": "<double>",
+                "IsFIFO": "<boolean>",
+                "StockBalanceList": [
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  }
+                ]
+              },
+              {
+                "InventoryItemID": "<long>",
+                "TransferredQTY": "<double>",
+                "Comment": "<string>",
+                "StoreLocationID": "<integer>",
+                "expDate": "<string>",
+                "serial": "<string>",
+                "StockQTY": "<double>",
+                "IsFIFO": "<boolean>",
+                "StockBalanceList": [
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  }
+                ]
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

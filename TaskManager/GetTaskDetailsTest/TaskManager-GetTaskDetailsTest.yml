@@ -1,0 +1,237 @@
+info:
+  name: /TaskManager/GetTaskDetailsTest
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskDetailsTest"
+  headers:
+    - name: TaskID
+      value: "20166"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskDetailsTest"
+      method: GET
+      headers:
+        - name: TaskID
+          value: "0"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "IsTaskCreator": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "TaskUsers": [
+              {
+                "UserID": "<long>",
+                "UserName": "<string>",
+                "UserPhoto": "<string>",
+                "IsCreator": "<boolean>",
+                "JobTitle": "<string>",
+                "Flag": "<boolean>"
+              },
+              {
+                "UserID": "<long>",
+                "UserName": "<string>",
+                "UserPhoto": "<string>",
+                "IsCreator": "<boolean>",
+                "JobTitle": "<string>",
+                "Flag": "<boolean>"
+              }
+            ],
+            "TaskGroups": [
+              {
+                "GroupID": "<long>",
+                "IsGroup": "<boolean>",
+                "GroupName": "<string>",
+                "TaskGroupUsersList": [
+                  {
+                    "UserID": "<long>",
+                    "UserName": "<string>",
+                    "UserPhoto": "<string>",
+                    "IsCreator": "<boolean>",
+                    "JobTitle": "<string>",
+                    "Flag": "<boolean>"
+                  },
+                  {
+                    "UserID": "<long>",
+                    "UserName": "<string>",
+                    "UserPhoto": "<string>",
+                    "IsCreator": "<boolean>",
+                    "JobTitle": "<string>",
+                    "Flag": "<boolean>"
+                  }
+                ],
+                "Flag": "<boolean>"
+              },
+              {
+                "GroupID": "<long>",
+                "IsGroup": "<boolean>",
+                "GroupName": "<string>",
+                "TaskGroupUsersList": [
+                  {
+                    "UserID": "<long>",
+                    "UserName": "<string>",
+                    "UserPhoto": "<string>",
+                    "IsCreator": "<boolean>",
+                    "JobTitle": "<string>",
+                    "Flag": "<boolean>"
+                  },
+                  {
+                    "UserID": "<long>",
+                    "UserName": "<string>",
+                    "UserPhoto": "<string>",
+                    "IsCreator": "<boolean>",
+                    "JobTitle": "<string>",
+                    "Flag": "<boolean>"
+                  }
+                ],
+                "Flag": "<boolean>"
+              }
+            ],
+            "TaskUsersAndGroups": [
+              {
+                "UserID": "<long>",
+                "UserName": "<string>",
+                "UserPhoto": "<string>",
+                "IsCreator": "<boolean>",
+                "JobTitle": "<string>",
+                "Flag": "<boolean>"
+              },
+              {
+                "UserID": "<long>",
+                "UserName": "<string>",
+                "UserPhoto": "<string>",
+                "IsCreator": "<boolean>",
+                "JobTitle": "<string>",
+                "Flag": "<boolean>"
+              }
+            ],
+            "TaskData": {
+              "ID": "<long>",
+              "Active": "<boolean>",
+              "IsFinished": "<boolean>",
+              "NeedApproval": "<boolean>",
+              "IsTaskOwner": "<boolean>",
+              "Piriority": "<string>",
+              "Status": "<string>",
+              "Name": "<string>",
+              "Description": "<string>",
+              "ExpireDate": "<string>",
+              "CreationDate": "<string>",
+              "CreatoreName": "<string>",
+              "TaskCategory": "<string>",
+              "GroupReply": "<boolean>",
+              "TaskPage": "<string>",
+              "TaskUser": "<string>",
+              "TaskTypeName": "<string>",
+              "TaskSubject": "<string>",
+              "BranchName": "<string>",
+              "CreatorPhoto": "<string>",
+              "TaskStatus": "<string>",
+              "TaskCount": "<integer>",
+              "RejectedNo": "<integer>",
+              "TaskCreatorCount": "<integer>",
+              "TaskTypeID": "<integer>",
+              "CreatedBy": "<long>",
+              "taskAttachements": "<string>",
+              "ScreenMonitoring": "<boolean>",
+              "AllowTime": "<boolean>",
+              "ProjectBudget": "<double>",
+              "Currency": "<string>",
+              "Weight": "<double>",
+              "TaskUserGroupList": [
+                {
+                  "ID": "<long>",
+                  "TaskID": "<long>",
+                  "UserGroupID": "<long>",
+                  "IsGroup": "<boolean>",
+                  "Read": "<boolean>",
+                  "Flag": "<boolean>",
+                  "Star": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "TaskID": "<long>",
+                  "UserGroupID": "<long>",
+                  "IsGroup": "<boolean>",
+                  "Read": "<boolean>",
+                  "Flag": "<boolean>",
+                  "Star": "<boolean>"
+                }
+              ],
+              "ProjectManagers": [
+                {
+                  "Id": "<long>",
+                  "Name": "<string>"
+                },
+                {
+                  "Id": "<long>",
+                  "Name": "<string>"
+                }
+              ],
+              "ProjectAdmins": [
+                {
+                  "Id": "<long>",
+                  "Name": "<string>"
+                },
+                {
+                  "Id": "<long>",
+                  "Name": "<string>"
+                }
+              ],
+              "ApprovedProgressTotalHours": "<double>",
+              "PendingProgressTotalHours": "<double>",
+              "RejectedProgressTotalHours": "<double>",
+              "CheckIn": {
+                "Hour": "<integer>",
+                "Minute": "<integer>",
+                "Second": "<integer>",
+                "Millisecond": "<integer>",
+                "Microsecond": "<integer>",
+                "Nanosecond": "<integer>",
+                "Ticks": "<long>"
+              },
+              "ApprovedTaskExpenses": "<double>",
+              "PendingTaskExpenses": "<double>",
+              "RejectedTaskExpenses": "<double>",
+              "ProjectId": "<long>",
+              "ProjectWorkFlowId": "<long>",
+              "ProjectSprintId": "<long>",
+              "UnitRateService": "<boolean>"
+            }
+          }

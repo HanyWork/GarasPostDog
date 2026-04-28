@@ -1,0 +1,7 @@
+info:
+  name: GetTopDepartmentsOrCategories
+  type: folder
+  seq: 27
+
+request:
+  auth: inherit

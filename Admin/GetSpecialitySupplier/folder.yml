@@ -1,0 +1,7 @@
+info:
+  name: GetSpecialitySupplier
+  type: folder
+  seq: 39
+
+request:
+  auth: inherit

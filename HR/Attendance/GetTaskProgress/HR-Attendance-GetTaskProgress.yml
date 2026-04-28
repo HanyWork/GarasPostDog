@@ -1,0 +1,70 @@
+info:
+  name: /HR/Attendance/GetTaskProgress
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetTaskProgress"
+  headers:
+    - name: ProgressId
+      value: "2"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetTaskProgress"
+      method: GET
+      headers:
+        - name: ProgressId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "Id": "<long>",
+              "UserImage": "<string>",
+              "UserName": "<string>",
+              "HrUserId": "<long>",
+              "progressrate": "<double>",
+              "progressnote": "<string>",
+              "ApprovedById": "<long>",
+              "ApprovedByImage": "<string>",
+              "ApprovedByName": "<string>",
+              "Date": "<string>",
+              "TotalHours": "<double>"
+            }
+          }

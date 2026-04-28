@@ -1,0 +1,69 @@
+info:
+  name: /Admin/GetShippingMethod
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/GetShippingMethod"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetShippingMethod"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "shippingMethodList": [
+              {
+                "id": "<long>",
+                "name": "<string>",
+                "active": "<boolean>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>"
+              },
+              {
+                "id": "<long>",
+                "name": "<string>",
+                "active": "<boolean>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>"
+              }
+            ]
+          }

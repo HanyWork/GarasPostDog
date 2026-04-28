@@ -1,0 +1,7 @@
+info:
+  name: GetTaskBrowserTabs
+  type: folder
+  seq: 44
+
+request:
+  auth: inherit

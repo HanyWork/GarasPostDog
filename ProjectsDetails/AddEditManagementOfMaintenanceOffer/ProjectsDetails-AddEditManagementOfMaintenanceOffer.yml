@@ -1,0 +1,93 @@
+info:
+  name: /ProjectsDetails/AddEditManagementOfMaintenanceOffer
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectsDetails/AddEditManagementOfMaintenanceOffer"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: json
+    data: |-
+      {
+        "OfferID": "50487",
+        "ProjectID": "10044",
+        "NumberOfVisits": "3",
+        "StartDate": "2024/3/14",
+        "EndDate": "2024/3/18",
+        "PlannedDate": [
+          "2024/3/15",
+          "2024/3/16",
+          "2024/3/17"
+        ],
+        "DifferenceDate": "4",
+        "ExtraPlannedDate": "2024/3/14",
+        "ManagementOfMaintenanceOrderID": "0"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectsDetails/AddEditManagementOfMaintenanceOffer"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "OfferID": "<long>",
+            "ProjectID": "<integer>",
+            "NumberOfVisits": "<integer>",
+            "StartDate": "<string>",
+            "EndDate": "<string>",
+            "PlannedDate": [
+              "<string>",
+              "<string>"
+            ],
+            "DifferenceDate": "<integer>",
+            "ExtraPlannedDate": "<string>",
+            "ManagementOfMaintenanceOrderID": "<long>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

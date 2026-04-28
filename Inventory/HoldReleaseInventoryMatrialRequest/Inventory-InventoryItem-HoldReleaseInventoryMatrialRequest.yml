@@ -1,0 +1,113 @@
+info:
+  name: /Inventory/InventoryItem/HoldReleaseInventoryMatrialRequest
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/HoldReleaseInventoryMatrialRequest"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "MatrialRequestId": "286412",
+          "MatrialRequestItemList": [
+              {
+                  "MatrialRequestItemID": "434921",
+                  "InventoryItemID": "3755",
+                  "ReqQTY": "300",
+                  "InventoryStoreItemIDsList":null
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/HoldReleaseInventoryMatrialRequest"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "FromUserId": "<long>",
+            "MatrialRequestId": "<long>",
+            "HoldReason": "<string>",
+            "IsFinish": "<boolean>",
+            "MatrialRequestItemList": [
+              {
+                "InventoryItemID": "<long>",
+                "ReqQTY": "<double>",
+                "Comment": "<string>",
+                "PojectID": "<long>",
+                "FabOrderID": "<long>",
+                "FabOrderItemID": "<long>",
+                "FromBOM": "<boolean>",
+                "OfferItemID": "<long>",
+                "InventoryStoreItemIDsList": [
+                  "<long>",
+                  "<long>"
+                ]
+              },
+              {
+                "InventoryItemID": "<long>",
+                "ReqQTY": "<double>",
+                "Comment": "<string>",
+                "PojectID": "<long>",
+                "FabOrderID": "<long>",
+                "FabOrderItemID": "<long>",
+                "FromBOM": "<boolean>",
+                "OfferItemID": "<long>",
+                "InventoryStoreItemIDsList": [
+                  "<long>",
+                  "<long>"
+                ]
+              }
+            ],
+            "RequestTypeID": "<long>",
+            "InventoryStoreID": "<integer>",
+            "RequestDate": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

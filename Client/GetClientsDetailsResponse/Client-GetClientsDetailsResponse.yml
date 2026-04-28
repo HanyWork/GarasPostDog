@@ -1,0 +1,80 @@
+info:
+  name: /Client/GetClientsDetailsResponse
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Client/GetClientsDetailsResponse"
+  headers:
+    - name: ClientId
+      value: "30012"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Client/GetClientsDetailsResponse"
+      method: POST
+      headers:
+        - name: ClientId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SalesPersonId": "<long>",
+            "SalesPersonName": "<string>",
+            "LastReportDate": "<string>",
+            "ClientStatus": "<string>",
+            "ClientCalssification": "<string>",
+            "ClientClassificationId": "<integer>",
+            "LastSalesReportDate": "<string>",
+            "LastCRMReportDate": "<string>",
+            "LastCRMReportId": "<long>",
+            "LastSalesReportId": "<long>",
+            "LastSalesReportLineId": "<long>",
+            "ContactPersonsList": [
+              {
+                "Id": "<long>",
+                "Name": "<string>",
+                "Mobile": "<string>"
+              },
+              {
+                "Id": "<long>",
+                "Name": "<string>",
+                "Mobile": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

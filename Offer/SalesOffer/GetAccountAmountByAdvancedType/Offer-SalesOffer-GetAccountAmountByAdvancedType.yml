@@ -1,0 +1,70 @@
+info:
+  name: /Offer/SalesOffer/GetAccountAmountByAdvancedType
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/Offer/SalesOffer/GetAccountAmountByAdvancedType"
+  headers:
+    - name: Year
+      value: <integer>
+    - name: ByEntryDate
+      value: <boolean>
+    - name: AccountCategoryId
+      value: <long>
+    - name: AdvancedTypeId
+      value: <long>
+    - name: BranchId
+      value: <integer>
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/GetAccountAmountByAdvancedType"
+      method: GET
+      headers:
+        - name: Year
+          value: <integer>
+        - name: ByEntryDate
+          value: <boolean>
+        - name: AccountCategoryId
+          value: <long>
+        - name: AdvancedTypeId
+          value: <long>
+        - name: BranchId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

@@ -1,0 +1,163 @@
+info:
+  name: /HR/Department/GetBranchDepartments
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Department/GetBranchDepartments"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: BERITI
+    - name: BranchId
+      value: "4"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Department/GetBranchDepartments"
+      method: GET
+      headers:
+        - name: BranchId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<integer>",
+                "Name": "<string>",
+                "BranchId": "<integer>",
+                "Active": "<boolean>",
+                "Teams": [
+                  {
+                    "Id": "<long>",
+                    "Name": "<string>",
+                    "DepartmentId": "<integer>",
+                    "Active": "<boolean>",
+                    "HrUsers": [
+                      {
+                        "Id": "<long>",
+                        "FirstName": "<string>",
+                        "MiddleName": "<string>",
+                        "LastName": "<string>",
+                        "ImgPath": "<string>"
+                      },
+                      {
+                        "Id": "<long>",
+                        "FirstName": "<string>",
+                        "MiddleName": "<string>",
+                        "LastName": "<string>",
+                        "ImgPath": "<string>"
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "<long>",
+                    "Name": "<string>",
+                    "DepartmentId": "<integer>",
+                    "Active": "<boolean>",
+                    "HrUsers": [
+                      {
+                        "Id": "<long>",
+                        "FirstName": "<string>",
+                        "MiddleName": "<string>",
+                        "LastName": "<string>",
+                        "ImgPath": "<string>"
+                      },
+                      {
+                        "Id": "<long>",
+                        "FirstName": "<string>",
+                        "MiddleName": "<string>",
+                        "LastName": "<string>",
+                        "ImgPath": "<string>"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Id": "<integer>",
+                "Name": "<string>",
+                "BranchId": "<integer>",
+                "Active": "<boolean>",
+                "Teams": [
+                  {
+                    "Id": "<long>",
+                    "Name": "<string>",
+                    "DepartmentId": "<integer>",
+                    "Active": "<boolean>",
+                    "HrUsers": [
+                      {
+                        "Id": "<long>",
+                        "FirstName": "<string>",
+                        "MiddleName": "<string>",
+                        "LastName": "<string>",
+                        "ImgPath": "<string>"
+                      },
+                      {
+                        "Id": "<long>",
+                        "FirstName": "<string>",
+                        "MiddleName": "<string>",
+                        "LastName": "<string>",
+                        "ImgPath": "<string>"
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "<long>",
+                    "Name": "<string>",
+                    "DepartmentId": "<integer>",
+                    "Active": "<boolean>",
+                    "HrUsers": [
+                      {
+                        "Id": "<long>",
+                        "FirstName": "<string>",
+                        "MiddleName": "<string>",
+                        "LastName": "<string>",
+                        "ImgPath": "<string>"
+                      },
+                      {
+                        "Id": "<long>",
+                        "FirstName": "<string>",
+                        "MiddleName": "<string>",
+                        "LastName": "<string>",
+                        "ImgPath": "<string>"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }

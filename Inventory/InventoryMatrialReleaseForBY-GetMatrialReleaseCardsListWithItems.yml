@@ -1,0 +1,102 @@
+info:
+  name: /InventoryMatrialReleaseForBY/GetMatrialReleaseCardsListWithItems
+  type: http
+  seq: 43
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/InventoryMatrialReleaseForBY/GetMatrialReleaseCardsListWithItems"
+  headers:
+    - name: UserId
+      value: "1"
+    - name: FromDate
+      value: 7/5/2024
+      disabled: true
+    - name: ToDate
+      value: <string>
+      disabled: true
+    - name: Accept
+      value: text/plain
+      disabled: true
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/InventoryMatrialReleaseForBY/GetMatrialReleaseCardsListWithItems"
+      method: GET
+      headers:
+        - name: UserId
+          value: <long>
+        - name: FromDate
+          value: <string>
+        - name: ToDate
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<long>",
+                "CreationDate": "<string>",
+                "MatrialReleaseItemList": [
+                  {
+                    "Id": "<long>",
+                    "ItemName": "<string>",
+                    "Qty": "<double>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "ItemName": "<string>",
+                    "Qty": "<double>"
+                  }
+                ]
+              },
+              {
+                "Id": "<long>",
+                "CreationDate": "<string>",
+                "MatrialReleaseItemList": [
+                  {
+                    "Id": "<long>",
+                    "ItemName": "<string>",
+                    "Qty": "<double>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "ItemName": "<string>",
+                    "Qty": "<double>"
+                  }
+                ]
+              }
+            ]
+          }

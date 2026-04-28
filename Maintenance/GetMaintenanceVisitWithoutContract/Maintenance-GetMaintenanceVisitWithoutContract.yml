@@ -1,0 +1,92 @@
+info:
+  name: /Maintenance/GetMaintenanceVisitWithoutContract
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Maintenance/GetMaintenanceVisitWithoutContract"
+  headers:
+    - name: MaintenanceVisitId
+      value: "22243"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/GetMaintenanceVisitWithoutContract"
+      method: GET
+      headers:
+        - name: MaintenanceVisitId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "VisitsScheduleOfMaintenance": {
+              "ID": "<long>",
+              "ManagementOfMaintenanceOrderID": "<long>",
+              "Serial": "<string>",
+              "PlannedDate": "<string>",
+              "VisitDate": "<string>",
+              "ConfirmedDate": "<string>",
+              "ClientProblem": "<string>",
+              "MaintenanceVisitType": "<string>",
+              "Status": "<boolean>",
+              "MaintenanceForID": "<long>",
+              "AssignedToID": "<long>",
+              "AssignedToName": "<string>",
+              "DepartmentName": "<string>",
+              "MaintenanceProblemAttachments": [
+                {
+                  "Id": "<long>",
+                  "FileName": "<string>",
+                  "FileExtension": "<string>",
+                  "FileContent": "<string>",
+                  "FilePath": "<string>",
+                  "Category": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "Id": "<long>",
+                  "FileName": "<string>",
+                  "FileExtension": "<string>",
+                  "FileContent": "<string>",
+                  "FilePath": "<string>",
+                  "Category": "<string>",
+                  "Active": "<boolean>"
+                }
+              ]
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

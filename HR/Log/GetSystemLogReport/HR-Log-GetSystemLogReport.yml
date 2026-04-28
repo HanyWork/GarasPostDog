@@ -1,0 +1,66 @@
+info:
+  name: /HR/Log/GetSystemLogReport
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Log/GetSystemLogReport"
+  headers:
+    - name: UserId
+      value: <long>
+      disabled: true
+    - name: TableName
+      value: Project
+      description: Project, Task, HrUser
+    - name: RelatedToId
+      value: "72"
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Log/GetSystemLogReport"
+      method: GET
+      headers:
+        - name: UserId
+          value: <long>
+        - name: TableName
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

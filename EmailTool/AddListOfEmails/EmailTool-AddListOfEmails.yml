@@ -1,0 +1,102 @@
+info:
+  name: /EmailTool/AddListOfEmails
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/EmailTool/AddListOfEmails"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Emails[0].EmailID
+        type: text
+        value: dfh34
+      - name: Emails[0].EmailBody
+        type: text
+        value: <htm>test Body<html>
+      - name: Emails[0].EmailSubject
+        type: text
+        value: test subject
+      - name: Emails[0].EmailSender
+        type: text
+        value: testSender@gmail.com
+      - name: Emails[0].AttachmentList[0].Id
+        type: text
+        value: "0"
+      - name: Emails[0].AttachmentList[0].Content
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/Img.jpg
+      - name: Emails[0].AttachmentList[1].Id
+        type: text
+        value: "0"
+      - name: Emails[0].AttachmentList[1].Content
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/OIP.jpg
+      - name: Emails[0].EmailCcList[0].EmailCc
+        type: text
+        value: testCc@gmail.com
+      - name: Emails[0].EmailCcList[1].EmailCc
+        type: text
+        value: testCc2@gmail.com
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EmailTool/AddListOfEmails"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Emails
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": [
+              "<long>",
+              "<long>"
+            ]
+          }

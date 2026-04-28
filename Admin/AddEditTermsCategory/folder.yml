@@ -1,0 +1,7 @@
+info:
+  name: AddEditTermsCategory
+  type: folder
+  seq: 80
+
+request:
+  auth: inherit

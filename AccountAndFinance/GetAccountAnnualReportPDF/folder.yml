@@ -1,0 +1,7 @@
+info:
+  name: GetAccountAnnualReportPDF
+  type: folder
+  seq: 45
+
+request:
+  auth: inherit

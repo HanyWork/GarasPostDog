@@ -1,0 +1,7 @@
+info:
+  name: GetContractDetails
+  type: folder
+  seq: 11
+
+request:
+  auth: inherit

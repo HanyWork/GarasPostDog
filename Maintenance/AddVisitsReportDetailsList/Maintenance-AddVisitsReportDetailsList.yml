@@ -1,0 +1,278 @@
+info:
+  name: /Maintenance/AddVisitsReportDetailsList
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Maintenance/AddVisitsReportDetailsList"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: ID
+        type: text
+        value: "53375"
+      - name: MaintVisitID
+        type: text
+        value: "70154"
+      - name: ReportDate
+        type: text
+        value: 2025-09-03
+        disabled: true
+      - name: ClientAddress
+        type: text
+        value: .
+      - name: DefectDescription
+        type: text
+        value: done
+      - name: WorkDescription
+        type: text
+        value: switch is off now I torn on,now OKAY is working now
+      - name: File
+        type: file
+        value:
+          - /D:/a10.png
+      - name: ProbelmImage
+        type: file
+        value: []
+        disabled: true
+      - name: CollectedAmount
+        type: text
+        value: "2000"
+      - name: ByUser
+        type: text
+        value: A System System
+      - name: ByUserID
+        type: text
+        value: "1"
+      - name: ClientPRStatus
+        type: text
+        value: "true"
+        disabled: true
+      - name: InstallationPRStatus
+        type: text
+        value: "true"
+        disabled: true
+      - name: FabricationPRStatus
+        type: text
+        value: "true"
+        disabled: true
+      - name: DesignPRStatus
+        type: text
+        value: "true"
+        disabled: true
+      - name: ProductLifePRStatus
+        type: text
+        value: "true"
+        disabled: true
+      - name: MaintenanceTeamPRStatus
+        type: text
+        value: "true"
+        disabled: true
+      - name: InternalPartComments
+        type: text
+        value: test
+        disabled: true
+      - name: Finished
+        type: text
+        value: "true"
+      - name: CRMFeedbackStatus
+        type: text
+        value: "true"
+        disabled: true
+      - name: CRMFeedback
+        type: text
+        value: test
+        disabled: true
+      - name: CRMCommitment
+        type: text
+        value: test
+        disabled: true
+      - name: CRMFeedbackComments
+        type: text
+        value: test
+        disabled: true
+      - name: ClientCommentsAndFeedback
+        type: text
+        value: wwww
+      - name: ClientSatisfactionRate
+        type: text
+        value: "88"
+      - name: ClientSignature
+        type: text
+        value: test
+        disabled: true
+      - name: NextVisitDate
+        type: text
+        value: 2025-10-03
+      - name: CurrentMileageCounter
+        type: text
+        value: "500"
+      - name: GetUsersWorkHoursAndEvaluationList[0].UserID
+        type: text
+        value: "20055"
+      - name: GetUsersWorkHoursAndEvaluationList[0].HourNum
+        type: text
+        value: "0.13"
+      - name: GetUsersWorkHoursAndEvaluationList[0].TimeFrom
+        type: text
+        value: 2025-09-03T20:48
+      - name: GetUsersWorkHoursAndEvaluationList[0].TimeTo
+        type: text
+        value: 2025-09-03T20:56
+      - name: GetUsersWorkHoursAndEvaluationList[0].Comment
+        type: text
+        value: .
+      - name: GetUsersWorkHoursAndEvaluationList[0].Evaluation
+        type: text
+        value: ""
+        disabled: true
+      - name: GetUsersWorkHoursAndEvaluationList[0].UserName
+        type: text
+        value: Team2 .
+      - name: GetUsersWorkHoursAndEvaluationList[0].ID
+        type: text
+        value: "42708"
+      - name: GetUsersWorkHoursAndEvaluationList[0].IsDeleted
+        type: text
+        value: "false"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/AddVisitsReportDetailsList"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ID
+            type: text
+            value: <long>
+          - name: MaintVisitID
+            type: text
+            value: <long>
+          - name: ReportDate
+            type: text
+            value: <string>
+          - name: ClientAddress
+            type: text
+            value: <string>
+          - name: DefectDescription
+            type: text
+            value: <string>
+          - name: WorkDescription
+            type: text
+            value: <string>
+          - name: File
+            type: file
+            value: []
+          - name: ProbelmImage
+            type: file
+            value: []
+          - name: CollectedAmount
+            type: text
+            value: <double>
+          - name: ByUser
+            type: text
+            value: <string>
+          - name: ByUserID
+            type: text
+            value: <long>
+          - name: ClientPRStatus
+            type: text
+            value: <boolean>
+          - name: InstallationPRStatus
+            type: text
+            value: <boolean>
+          - name: FabricationPRStatus
+            type: text
+            value: <boolean>
+          - name: DesignPRStatus
+            type: text
+            value: <boolean>
+          - name: ProductLifePRStatus
+            type: text
+            value: <boolean>
+          - name: MaintenanceTeamPRStatus
+            type: text
+            value: <boolean>
+          - name: InternalPartComments
+            type: text
+            value: <string>
+          - name: Finished
+            type: text
+            value: <boolean>
+          - name: CRMFeedbackStatus
+            type: text
+            value: <boolean>
+          - name: CRMFeedback
+            type: text
+            value: <string>
+          - name: CRMCommitment
+            type: text
+            value: <string>
+          - name: CRMFeedbackComments
+            type: text
+            value: <string>
+          - name: ClientCommentsAndFeedback
+            type: text
+            value: <string>
+          - name: ClientSatisfactionRate
+            type: text
+            value: <double>
+          - name: ClientSignature
+            type: text
+            value: <string>
+          - name: NextVisitDate
+            type: text
+            value: <string>
+          - name: CurrentMileageCounter
+            type: text
+            value: <double>
+          - name: GetUsersWorkHoursAndEvaluationList
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

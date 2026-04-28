@@ -1,0 +1,35 @@
+info:
+  name: UpdateTransportationDirection
+  type: http
+  seq: 39
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/UpdateTransportationDirection"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Id\": 3,\r
+
+      \    \"TransportationVehicleRouteId\": 4,\r
+
+      \    \"RouteDirection\": \"السرايا\",\r
+
+      \    \"Active\": true,\r
+
+      \    \"Description\": \"فندق المحروسة\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

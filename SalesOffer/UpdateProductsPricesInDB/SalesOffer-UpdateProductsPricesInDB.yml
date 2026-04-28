@@ -1,0 +1,60 @@
+info:
+  name: /SalesOffer/UpdateProductsPricesInDB
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/SalesOffer/UpdateProductsPricesInDB"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: piaroma
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: OfferID
+      value: "40400"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesOffer/UpdateProductsPricesInDB?OfferID=<long>"
+      method: POST
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: OfferID
+          value: <long>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<boolean>"
+          }

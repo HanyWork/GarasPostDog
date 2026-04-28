@@ -1,0 +1,65 @@
+info:
+  name: /Medical/AddMedicalDoctorPercentageType
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddMedicalDoctorPercentageType"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PercentageType\":\"hi\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/AddMedicalDoctorPercentageType?percentageType=fugiat veniam ullamco"
+      method: POST
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: percentageType
+          value: fugiat veniam ullamco
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "sed laborum qui mi",
+                "ErrorCode": "qui id"
+              },
+              {
+                "ErrorMSG": "mollit cupidatat aute tempor",
+                "ErrorCode": "dolor Ut amet ea"
+              }
+            ],
+            "ID": 19328152
+          }

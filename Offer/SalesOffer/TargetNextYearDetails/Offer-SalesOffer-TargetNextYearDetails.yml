@@ -1,0 +1,169 @@
+info:
+  name: /Offer/SalesOffer/TargetNextYearDetails
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/TargetNextYearDetails"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          
+          "SalesTarget":{
+          "ID":"1",
+          "Year":"2020",
+          "Target":"3000"
+          },
+            "SalesTargetBranchList":[
+                  {
+                      "ID":"20135",
+                      "TargetID":"1",
+                      "BranchID":"4",
+                      "Percentage":"50",
+                      "Amount":"1000"
+                  },
+                  {
+                      "ID":"20136",
+                      "TargetID":"1",
+                      "BranchID":"5",
+                      "Percentage":"50",
+                      "Amount":"2000"
+                  }
+
+          ],
+          "SalesTargetProductList":[
+                   {
+                      "ID":"10027",
+                      "TargetID":"1",
+                      "ProductID":"1",
+                      "BranchID":"4",
+                      "Percentage":"50",
+                      "Amount":"1000"
+                   }, 
+                   {
+                       "ID":"10028",
+                      "TargetID":"1",
+                      "ProductID":"2",
+                      "BranchID":"4",
+                      "Percentage":"50",
+                      "Amount":"2000"
+                   }
+                 
+          ]
+          
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/TargetNextYearDetails"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "SalesTarget": {
+              "ID": "<integer>",
+              "Year": "<integer>",
+              "Target": "<double>"
+            },
+            "SalesTargetBranchList": [
+              {
+                "ID": "<long>",
+                "TargetID": "<integer>",
+                "BranchID": "<integer>",
+                "Percentage": "<float>",
+                "Amount": "<double>",
+                "CurrencyID": "<integer>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "TargetID": "<integer>",
+                "BranchID": "<integer>",
+                "Percentage": "<float>",
+                "Amount": "<double>",
+                "CurrencyID": "<integer>",
+                "Active": "<boolean>"
+              }
+            ],
+            "SalesTargetProductList": [
+              {
+                "ID": "<long>",
+                "TargetID": "<integer>",
+                "BranchID": "<integer>",
+                "ProductID": "<integer>",
+                "Percentage": "<float>",
+                "Amount": "<double>",
+                "CurrencyID": "<integer>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "TargetID": "<integer>",
+                "BranchID": "<integer>",
+                "ProductID": "<integer>",
+                "Percentage": "<float>",
+                "Amount": "<double>",
+                "CurrencyID": "<integer>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

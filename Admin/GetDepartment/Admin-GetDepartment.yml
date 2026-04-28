@@ -1,0 +1,81 @@
+info:
+  name: /Admin/GetDepartment
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/GetDepartment"
+  headers:
+    - name: DepartmentName
+      value: <string>
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+    - name: BranchId
+      value: "5"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetDepartment"
+      method: GET
+      headers:
+        - name: DepartmentName
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "departmentResponseList": [
+              {
+                "id": "<integer>",
+                "branchID": "<integer>",
+                "name": "<string>",
+                "branchName": "<string>",
+                "description": "<string>",
+                "active": "<boolean>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>"
+              },
+              {
+                "id": "<integer>",
+                "branchID": "<integer>",
+                "name": "<string>",
+                "branchName": "<string>",
+                "description": "<string>",
+                "active": "<boolean>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>"
+              }
+            ]
+          }

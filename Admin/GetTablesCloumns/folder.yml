@@ -1,0 +1,7 @@
+info:
+  name: GetTablesCloumns
+  type: folder
+  seq: 69
+
+request:
+  auth: inherit

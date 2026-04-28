@@ -1,0 +1,7 @@
+info:
+  name: GetSalaryDeductiionTaxList
+  type: folder
+  seq: 21
+
+request:
+  auth: inherit

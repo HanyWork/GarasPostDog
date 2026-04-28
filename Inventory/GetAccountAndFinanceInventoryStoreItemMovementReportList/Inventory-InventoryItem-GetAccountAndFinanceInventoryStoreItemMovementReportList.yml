@@ -1,0 +1,128 @@
+info:
+  name: /Inventory/InventoryItem/GetAccountAndFinanceInventoryStoreItemMovementReportList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/GetAccountAndFinanceInventoryStoreItemMovementReportList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: FromDate
+      value: 7-27-2017
+      disabled: true
+    - name: ToDate
+      value: 7-30-2022
+      disabled: true
+    - name: InventoryItemID
+      value: "9741"
+    - name: NumberOfItemsPerPage
+      value: "20"
+    - name: CurrentPage
+      value: "1"
+    - name: InventoryStoreID
+      value: "9741"
+      disabled: true
+    - name: PriorityID
+      value: "3"
+      disabled: true
+    - name: InventoryItemCategoryID
+      value: "496"
+      disabled: true
+    - name: LowAfterNOMonths
+      value: "4"
+      disabled: true
+    - name: Exported
+      value: Exported
+      disabled: true
+    - name: SortBy
+      value: ""
+      description: |2-
+        
+                                if (headers["SortBy"] != null && headers["SortBy"] != "")
+                                {
+                                    if (headers["SortBy"] == "ItemName")
+                                    {
+                                        InventoryStoreItemListDBGrouped = InventoryStoreItemListDBGrouped.OrderBy(x => x.Key.InventoryItemName);
+                                    }
+                                    else if (headers["SortBy"] == "LowStockAfter")
+                                    {
+                                        InventoryStoreItemListDBGrouped = InventoryStoreItemListDBGrouped.OrderByDescending(x => x.Key.LowStockAfter);
+                                    }
+                                    else if (headers["SortBy"] == "AverageUnitPrice")
+                                    {
+                                        InventoryStoreItemListDBGrouped = InventoryStoreItemListDBGrouped.OrderByDescending(x => x.Key.AverageUnitPrice);
+                                    }
+                                    else if (headers["SortBy"] == "MaxUnitPrice")
+                                    {
+                                        InventoryStoreItemListDBGrouped = InventoryStoreItemListDBGrouped.OrderByDescending(x => x.Key.MaxUnitPrice);
+
+                                    }
+                                    else if (headers["SortBy"] == "LastUnitPrice")
+                                    {
+                                        InventoryStoreItemListDBGrouped = InventoryStoreItemListDBGrouped.OrderByDescending(x => x.Key.LastUnitPrice);
+                                    }
+                                    else if (headers["SortBy"] == "StockBalance")
+                                    {
+                                        InventoryStoreItemListDBGrouped = InventoryStoreItemListDBGrouped.OrderByDescending(x => x.Key.StockBalance);
+                                    }
+                                }
+      disabled: true
+    - name: SearchKey
+      value: ""
+      disabled: true
+    - name: ItemSerial
+      value: ""
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/GetAccountAndFinanceInventoryStoreItemMovementReportList"
+      method: GET
+      headers:
+        - name: filters
+          value: InventoryStoreID,<long>,PriorityID,<long>,InventoryItemID,<long>,InventoryItemCategoryID,<long>,LowAfterNOMonths,<long>,FromDate,<string>,ToDate,<string>,Exported,<string>,ItemSerial,<string>,SearchKey,<string>,SortBy,<string>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            },
+            "NoOfMonth": "<double>"
+          }

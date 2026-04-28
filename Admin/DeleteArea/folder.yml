@@ -1,0 +1,7 @@
+info:
+  name: DeleteArea
+  type: folder
+  seq: 82
+
+request:
+  auth: inherit

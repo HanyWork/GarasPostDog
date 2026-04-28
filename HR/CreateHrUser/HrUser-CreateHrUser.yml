@@ -1,0 +1,176 @@
+info:
+  name: /HrUser/CreateHrUser
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HrUser/CreateHrUser"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: multipart-form
+    data:
+      - name: FirstName
+        type: text
+        value: Gerges382
+      - name: ARFirstName
+        type: text
+        value: ابتثس
+      - name: MiddleName
+        type: text
+        value: test22
+      - name: ARMiddleName
+        type: text
+        value: عربي
+      - name: LastName
+        type: text
+        value: test6
+      - name: ARLastName
+        type: text
+        value: عربي
+      - name: Email
+        type: text
+        value: Test2Gerges82070@gmail.com
+      - name: Mobile
+        type: text
+        value: "015012411272"
+      - name: Active
+        type: text
+        value: "true"
+      - name: Photo
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Pictures/Screenshots/Screenshot (1).png
+        disabled: true
+      - name: Gender
+        type: text
+        value: Male
+      - name: DateOfBirth
+        type: text
+        value: 2024-02-08 00:00:00.000
+        disabled: true
+      - name: LandLine
+        type: text
+        value: "8154224"
+      - name: HrNationalityId
+        type: text
+        value: ""
+        disabled: true
+      - name: JobTitleID
+        type: text
+        value: "8"
+      - name: BranchID
+        type: text
+        value: "4"
+      - name: DepartmentID
+        type: text
+        value: "2"
+      - name: IsUser
+        type: text
+        value: "true"
+      - name: TeamId
+        type: text
+        value: "1"
+        disabled: true
+      - name: Latitude
+        type: text
+        value: ""
+        disabled: true
+      - name: Longtitud
+        type: text
+        value: ""
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HrUser/CreateHrUser"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: FirstName
+            type: text
+            value: <string>
+          - name: ARFirstName
+            type: text
+            value: <string>
+          - name: MiddleName
+            type: text
+            value: <string>
+          - name: ARMiddleName
+            type: text
+            value: <string>
+          - name: LastName
+            type: text
+            value: <string>
+          - name: ARLastName
+            type: text
+            value: <string>
+          - name: Email
+            type: text
+            value: <email>
+          - name: Mobile
+            type: text
+            value: (702)69491356
+          - name: Active
+            type: text
+            value: <boolean>
+          - name: Photo
+            type: text
+            value: <string>
+          - name: Gender
+            type: text
+            value: <string>
+          - name: DateOfBirth
+            type: text
+            value: <dateTime>
+          - name: LandLine
+            type: text
+            value: <string>
+          - name: HrNationalityId
+            type: text
+            value: <integer>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

@@ -1,0 +1,102 @@
+info:
+  name: /HR/ProjectInvoice/AddNewProjectInvoice
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/ProjectInvoice/AddNewProjectInvoice"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: InvoiceId
+        type: text
+        value: "1"
+      - name: ProjectId
+        type: text
+        value: "48"
+      - name: WorkingHoursIds[0]
+        type: text
+        value: "162"
+      - name: WorkingHoursIds[0]
+        type: text
+        value: "38"
+        disabled: true
+      - name: TaskExpensisIds[0]
+        type: text
+        value: "38"
+      - name: UnitServiceIds[0]
+        type: text
+        value: "1"
+      - name: Attachment
+        type: file
+        value: []
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/ProjectInvoice/AddNewProjectInvoice"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ProjectId
+            type: text
+            value: <long>
+          - name: Attachment
+            type: text
+            value: <string>
+          - name: WorkingHoursIds
+            type: text
+            value: <long>,<long>
+          - name: TaskExpensisIds
+            type: text
+            value: <long>,<long>
+          - name: UnitServiceIds
+            type: text
+            value: <long>,<long>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

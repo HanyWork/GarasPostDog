@@ -1,0 +1,258 @@
+info:
+  name: /ProjectCheque/AddNewList
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectCheque/AddNewList"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: dto[0].ClientName
+        type: text
+        value: ""
+        disabled: true
+      - name: dto[0].SalesPersonName
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[0].ProjectName
+        type: text
+        value: test 4
+        disabled: true
+      - name: dto[0].ProjectNumber
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[0].ProjectId
+        type: text
+        value: "20061"
+      - name: dto[0].ChequeDate
+        type: text
+        value: 2024-7-8
+      - name: dto[0].ChequeChashingStatusId
+        type: text
+        value: "2"
+      - name: dto[0].IsCrossedCheque
+        type: text
+        value: "true"
+      - name: dto[0].ChequeAmount
+        type: text
+        value: "1000"
+      - name: dto[0].CurrencyId
+        type: text
+        value: "5"
+      - name: dto[0].Bank
+        type: text
+        value: Test
+      - name: dto[0].BankBranch
+        type: text
+        value: Test Branch
+      - name: dto[0].ChequeNumber
+        type: text
+        value: "123456"
+      - name: dto[0].MaintenanceForID
+        type: text
+        value: "20057"
+      - name: dto[0].MaintenanceOrderID
+        type: text
+        value: "20047"
+      - name: dto[0].RejectCause
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[0].Notes
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[0].Attachment
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[0].WithdrawedBy
+        type: text
+        value: "1"
+      - name: dto[0].WithdrawDate
+        type: text
+        value: 2025-01-22
+      - name: dto[1].ClientName
+        type: text
+        value: ""
+        disabled: true
+      - name: dto[1].SalesPersonName
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[1].ProjectName
+        type: text
+        value: test 1
+      - name: dto[1].ProjectNumber
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[1].ProjectId
+        type: text
+        value: "20061"
+      - name: dto[1].ChequeDate
+        type: text
+        value: 2024-7-8
+      - name: dto[1].ChequeChashingStatusId
+        type: text
+        value: "2"
+      - name: dto[1].IsCrossedCheque
+        type: text
+        value: "true"
+      - name: dto[1].ChequeAmount
+        type: text
+        value: "1000"
+      - name: dto[1].CurrencyId
+        type: text
+        value: "5"
+      - name: dto[1].Bank
+        type: text
+        value: Test
+      - name: dto[1].BankBranch
+        type: text
+        value: Test Branch
+      - name: dto[1].ChequeNumber
+        type: text
+        value: "123456"
+      - name: dto[1].RejectCause
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[1].Notes
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[1].Attachment
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[1].WithdrawedBy
+        type: text
+        value: "1"
+      - name: dto[1].WithdrawDate
+        type: text
+        value: 2025-01-22
+      - name: dto[2].ClientName
+        type: text
+        value: Gerges Test2
+        disabled: true
+      - name: dto[2].SalesPersonName
+        type: text
+        value: Gerges Test
+        disabled: true
+      - name: dto[2].ProjectName
+        type: text
+        value: Gerges Test
+        disabled: true
+      - name: dto[2].ProjectNumber
+        type: text
+        value: Gerges Test
+        disabled: true
+      - name: dto[2].ProjectId
+        type: text
+        value: "2"
+        disabled: true
+      - name: dto[2].ChequeDate
+        type: text
+        value: 2024-7-8
+        disabled: true
+      - name: dto[2].ChequeChashingStatusId
+        type: text
+        value: "2"
+        disabled: true
+      - name: dto[2].IsCrossedCheque
+        type: text
+        value: "true"
+        disabled: true
+      - name: dto[2].ChequeAmount
+        type: text
+        value: "1000"
+        disabled: true
+      - name: dto[2].CurrencyId
+        type: text
+        value: "5"
+        disabled: true
+      - name: dto[2].Bank
+        type: text
+        value: Test
+        disabled: true
+      - name: dto[2].BankBranch
+        type: text
+        value: Test Branch
+        disabled: true
+      - name: dto[2].ChequeNumber
+        type: text
+        value: "123456"
+        disabled: true
+      - name: dto[2].RejectCause
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[2].Notes
+        type: text
+        value: <string>
+        disabled: true
+      - name: dto[2].Attachment
+        type: text
+        value: <string>
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectCheque/AddNewList"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: dto
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

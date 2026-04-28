@@ -1,0 +1,7 @@
+info:
+  name: AddEditTermsAndConditions
+  type: folder
+  seq: 46
+
+request:
+  auth: inherit

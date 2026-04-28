@@ -1,0 +1,83 @@
+info:
+  name: /AccountAndFinance/UpdateEntrySupplierAccount
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/AccountAndFinance/UpdateEntrySupplierAccount"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: json
+    data: |-
+      {
+          "SupplierAccountId": 8,
+          "EntryId": 17,
+          "AccountId": 10262,
+          "SupplierId": 1,
+          "POId": 10,
+          "Amount": 5000,
+          "AmountSign": "plus"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/UpdateEntrySupplierAccount"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "SupplierAccountId": "<long>",
+            "SupplierId": "<long>",
+            "EntryId": "<long>",
+            "POId": "<long>",
+            "AccountId": "<long>",
+            "AmountSign": "<string>",
+            "Amount": "<double>",
+            "Description": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,71 @@
+info:
+  name: /AccountAndFinance/SalesOfferItemsReport
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/SalesOfferItemsReport"
+  headers:
+    - name: Accept
+      value: text/plainarina
+    - name: CompanyName
+      value: proauto
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Month
+      value: "3"
+      disabled: true
+    - name: Year
+      value: "2019"
+      disabled: true
+    - name: SalesPersonId
+      value: "10024"
+      disabled: true
+    - name: From
+      value: 1-1-2024
+    - name: To
+      value: 31-12-2024
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/SalesOfferItemsReport?CompanyName=<string>"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: CompanyName
+          value: <string>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Message": "<string>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

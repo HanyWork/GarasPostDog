@@ -1,0 +1,76 @@
+info:
+  name: AddTransportationEmployee
+  type: http
+  seq: 32
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/AddTransportationEmployee"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: TransportationVehicleRouteId
+      value: ""
+    - name: TransportationVehicleRouteDirectionId
+      value: ""
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Data\": [\r
+
+      \        {\r
+
+      \            \"hrUserId\": 12,\r
+
+      \            \"transportationVehicleRouteDirectionId\": -10035,\r
+
+      \            \"active\": true,\r
+
+      \            \"fromDate\": \"2025-08-04\",\r
+
+      \            //\"toDate\": \"2025-05-21\",\r
+
+      \            \"durationLatitude\": 31.252555,\r
+
+      \            \"durationLongtitud\": 320144788,\r
+
+      \            \"period\": \"Both\"\r
+
+      \        }\r
+
+      \        // },\r
+
+      \        // {\r
+
+      \        //    \"hrUserId\": 71822394,\r
+
+      \        //     \"transportationVehicleRouteDirectionId\": -62361528,\r
+
+      \        //     \"active\": false,\r
+
+      \        //     \"fromDate\": \"2025-08-94\",\r
+
+      \        //     \"toDate\": \"2025-05-21\",\r
+
+      \        //     \"durationLatitude\": 31.252555,\r
+
+      \        //     \"durationLongtitud\": 320144788,\r
+
+      \        //     \"period\": \"AM\"\r
+
+      \        // }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

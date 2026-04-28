@@ -1,0 +1,202 @@
+info:
+  name: /RoyalTent/MainVariablesRoyalTentExcel
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/RoyalTent/MainVariablesRoyalTentExcel"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Iron
+      value: "700"
+    - name: Kemer
+      value: "450"
+    - name: Aluminium
+      value: "10000"
+    - name: RegularPaintForAluminum
+      value: "50000"
+    - name: WoodPaint
+      value: "2000"
+    - name: BFC
+      value: ""
+      disabled: true
+    - name: Jotamastic87Grey
+      value: ""
+      disabled: true
+    - name: Jotamastic80Grey
+      value: ""
+      disabled: true
+    - name: HardTopXPWhiteBlackGrey
+      value: ""
+      disabled: true
+    - name: HardTopXPColor
+      value: ""
+      disabled: true
+    - name: Thinner17
+      value: ""
+      disabled: true
+    - name: Thinner10
+      value: ""
+      disabled: true
+    - name: IronMash
+      value: "2582"
+    - name: Thinner
+      value: ""
+      disabled: true
+    - name: PaintDoko
+      value: "5450"
+    - name: KimaBoxCMB
+      value: ""
+      disabled: true
+    - name: WeldingWire
+      value: ""
+      disabled: true
+    - name: WaterTrackByMeter
+      value: ""
+      disabled: true
+    - name: OrdinaryConcreteBase
+      value: ""
+      disabled: true
+    - name: SikaCMB
+      value: ""
+      disabled: true
+    - name: PolyCarbonate10Min
+      value: ""
+      disabled: true
+    - name: PergolaMotor
+      value: ""
+      disabled: true
+    - name: RemoteControl
+      value: "50000"
+    - name: FrontAccessorskitWithAluminumCover
+      value: ""
+      disabled: true
+    - name: BackAccessorskit
+      value: ""
+      disabled: true
+    - name: RemoteControlForEngine
+      value: ""
+      disabled: true
+    - name: Powerkey
+      value: "30000"
+    - name: LEDBulbsWithCover
+      value: ""
+      disabled: true
+    - name: GoldenPaintForAluminum
+      value: ""
+      disabled: true
+    - name: RegularPaintForAluminum
+      value: "12"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/RoyalTent/MainVariablesRoyalTentExcel"
+      method: GET
+      headers:
+        - name: Iron
+          value: <double>
+        - name: Kemer
+          value: <double>
+        - name: Aluminium
+          value: <double>
+        - name: WoodPaint
+          value: <double>
+        - name: BFC
+          value: <double>
+        - name: PergolaSior
+          value: <double>
+        - name: Jotamastic87Grey
+          value: <double>
+        - name: Jotamastic80Grey
+          value: <double>
+        - name: HardTopXPWhiteBlackGrey
+          value: <double>
+        - name: HardTopXPColor
+          value: <double>
+        - name: Thinner17
+          value: <double>
+        - name: Thinner10
+          value: <double>
+        - name: IronMash
+          value: <double>
+        - name: Thinner
+          value: <double>
+        - name: PaintDoko
+          value: <double>
+        - name: KimaBoxCMB
+          value: <double>
+        - name: WeldingWire
+          value: <double>
+        - name: WaterTrackByMeter
+          value: <double>
+        - name: OrdinaryConcreteBase
+          value: <double>
+        - name: SikaCMB
+          value: <double>
+        - name: PolyCarbonate10Min
+          value: <double>
+        - name: PergolaMotor
+          value: <double>
+        - name: RemoteControl
+          value: <double>
+        - name: FrontAccessorskitWithAluminumCover
+          value: <double>
+        - name: BackAccessorskit
+          value: <double>
+        - name: RemoteControlForEngine
+          value: <double>
+        - name: Powerkey
+          value: <double>
+        - name: LEDBulbsWithCover
+          value: <double>
+        - name: GoldenPaintForAluminum
+          value: <double>
+        - name: RegularPaintForAluminum
+          value: <double>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Message": "<string>",
+            "MainVariablesList": [
+              {
+                "Name": "<string>",
+                "Value": "<double>"
+              },
+              {
+                "Name": "<string>",
+                "Value": "<double>"
+              }
+            ],
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

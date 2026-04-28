@@ -1,0 +1,87 @@
+info:
+  name: /ProjectPayment/EditProjectPaymentTerms
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectPayment/EditProjectPaymentTerms"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  body:
+    type: json
+    data: |-
+      {
+        "ID": 1,
+        "ProjectID": 53,
+        "PaymentTermID": 1,
+        "Percentage": 42,
+
+        "CurrencyID": 1,
+        "DueDate": "2024-07-04",
+        "Collected": 45,
+        "CollectionDate": "2024-07-02",
+        "Active":false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectPayment/EditProjectPaymentTerms"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "ProjectID": "<long>",
+            "PaymentTermID": "<integer>",
+            "Percentage": "<double>",
+            "Amount": "<double>",
+            "CurrencyID": "<integer>",
+            "DueDate": "<string>",
+            "Collected": "<double>",
+            "CollectionDate": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

@@ -1,0 +1,301 @@
+info:
+  name: /Pos/AddNewSalesOfferWithReleaseForPOS
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Pos/AddNewSalesOfferWithReleaseForPOS"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "SalesOffer": {
+              "InventoryStoreId": "2019",
+              "BranchId": "4",
+              "ClientComment": "0.18291785859163168",
+              "Completed": false,
+              "ClientId": "10334",
+              "OfferAmount": "12",
+              "FinalOfferPrice": "12",
+              "IsHospitality": false
+          },
+          "SalesOfferProductList": [
+              {
+                  "Quantity": 1,
+                  "Active": true,
+                  "InventoryItemId": "1252",
+                  "InventoryItemCategoryId": "2063",
+                  "ItemPrice": 12,
+                  "FinalPrice": 12
+              }
+          ],
+          "SalesOfferAttachmentList": []
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Pos/AddNewSalesOfferWithReleaseForPOS"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "SalesOffer": {
+              "Id": "<long>",
+              "RentStartDate": "<string>",
+              "RentEndDate": "<string>",
+              "StartDate": "<string>",
+              "EndDate": "<string>",
+              "SalesPersonId": "<long>",
+              "BranchId": "<integer>",
+              "ClientApprovalDate": "<string>",
+              "OfferExpirationDate": "<string>",
+              "ProjectStartDate": "<string>",
+              "ProjectEndDate": "<string>",
+              "ReminderDate": "<string>",
+              "SendingOfferDate": "<string>",
+              "CreatedBy": "<string>",
+              "ParentSalesOfferID": "<long>",
+              "OfferType": "<string>",
+              "ParentInvoiceID": "<long>",
+              "InventoryStoreId": "<integer>",
+              "Note": "<string>",
+              "TechnicalInfo": "<string>",
+              "ProjectData": "<string>",
+              "FinancialInfo": "<string>",
+              "PricingComment": "<string>",
+              "OfferAmount": "<double>",
+              "Status": "<string>",
+              "Completed": "<boolean>",
+              "SendingOfferConfirmation": "<boolean>",
+              "SendingOfferBy": "<string>",
+              "SendingOfferTo": "<string>",
+              "SendingOfferComment": "<string>",
+              "ClientApprove": "<boolean>",
+              "ClientComment": "<string>",
+              "VersionNumber": "<integer>",
+              "ClientId": "<long>",
+              "ProductType": "<string>",
+              "ProjectName": "<string>",
+              "ProjectLocation": "<string>",
+              "ContactPersonMobile": "<string>",
+              "ContactPersonEmail": "<string>",
+              "ContactPersonName": "<string>",
+              "ContractType": "<string>",
+              "ClientNeedsDiscount": "<boolean>",
+              "RejectionReason": "<string>",
+              "NeedsInvoice": "<boolean>",
+              "NeedsExtraCost": "<boolean>",
+              "OfferExpirationPeriod": "<integer>",
+              "ExtraOrDiscountPriceBySalesPerson": "<double>",
+              "FinalOfferPrice": "<double>"
+            },
+            "SalesOfferProductList": [
+              {
+                "Id": "<long>",
+                "ParentOfferProductId": "<long>",
+                "ProductId": "<long>",
+                "OfferId": "<long>",
+                "ProductGroupId": "<integer>",
+                "Quantity": "<double>",
+                "ReturnedQty": "<double>",
+                "RemainQty": "<double>",
+                "ReleasedQty": "<double>",
+                "ReleasedPercentage": "<string>",
+                "ProfitPercentage": "<string>",
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "InventoryItemUOM": "<string>",
+                "InventoryItemPartNO": "<string>",
+                "InventoryItemCategoryId": "<integer>",
+                "InventoryItemCategoryName": "<string>",
+                "ItemPrice": "<double>",
+                "ItemPricingComment": "<string>",
+                "ConfirmReceivingQuantity": "<double>",
+                "ConfirmReceivingComment": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "FinalPrice": "<double>",
+                "FinalPriceWithoutTax": "<double>",
+                "TotalTaxValue": "<double>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "SalesOfferProductAttachments": [
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "Id": "<long>",
+                "ParentOfferProductId": "<long>",
+                "ProductId": "<long>",
+                "OfferId": "<long>",
+                "ProductGroupId": "<integer>",
+                "Quantity": "<double>",
+                "ReturnedQty": "<double>",
+                "RemainQty": "<double>",
+                "ReleasedQty": "<double>",
+                "ReleasedPercentage": "<string>",
+                "ProfitPercentage": "<string>",
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "InventoryItemUOM": "<string>",
+                "InventoryItemPartNO": "<string>",
+                "InventoryItemCategoryId": "<integer>",
+                "InventoryItemCategoryName": "<string>",
+                "ItemPrice": "<double>",
+                "ItemPricingComment": "<string>",
+                "ConfirmReceivingQuantity": "<double>",
+                "ConfirmReceivingComment": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "FinalPrice": "<double>",
+                "FinalPriceWithoutTax": "<double>",
+                "TotalTaxValue": "<double>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "SalesOfferProductAttachments": [
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  }
+                ]
+              }
+            ],
+            "SalesOfferTaxList": [
+              {
+                "Id": "<long>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "TaxName": "<string>",
+                "TaxCode": "<string>",
+                "TaxType": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "Description": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "IsPercentage": "<boolean>",
+                "TaxChildList": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  }
+                ]
+              },
+              {
+                "Id": "<long>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "TaxName": "<string>",
+                "TaxCode": "<string>",
+                "TaxType": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "Description": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "IsPercentage": "<boolean>",
+                "TaxChildList": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  }
+                ]
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

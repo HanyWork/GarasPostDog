@@ -1,0 +1,60 @@
+info:
+  name: /AccountAndFinance/BalanceSheetPDF
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/BalanceSheetPDF"
+  headers:
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: FromDate
+      value: 2022-01-1
+    - name: ToDate
+      value: 2022-12-31
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/BalanceSheetPDF"
+      method: GET
+      headers:
+        - name: header
+          value: CalcWithoutPrivate,<boolean>,FromDate,<string>,ToDate,<string>,CompanyName,<string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Message": "<string>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

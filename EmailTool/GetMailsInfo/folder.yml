@@ -1,0 +1,7 @@
+info:
+  name: GetMailsInfo
+  type: folder
+  seq: 16
+
+request:
+  auth: inherit

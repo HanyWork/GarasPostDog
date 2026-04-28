@@ -1,0 +1,76 @@
+info:
+  name: /HR/Attendance/RequestAbsenceForUser
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Attendance/RequestAbsenceForUser"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  body:
+    type: json
+    data: |-
+      // {
+      //     "date": "2024-06-20T18:25:43.511Z",
+      //     "AbsenceTypeId": 11,
+      //     "HrUserId": 171,
+      //     "AbsenceCause": "تعبان يا كابتن تعبااااااااااااااااااااااااان"
+      // }
+      {"From":"2025-06-24","To":"2025-06-25","AbsenceTypeId":"21","HrUserId":"77","AbsenceCause":""}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/RequestAbsenceForUser"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "date": "<dateTime>",
+            "Reason": "<string>",
+            "AbsenceTypeId": "<integer>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

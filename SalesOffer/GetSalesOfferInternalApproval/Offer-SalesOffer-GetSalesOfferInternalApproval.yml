@@ -1,0 +1,93 @@
+info:
+  name: /Offer/SalesOffer/GetSalesOfferInternalApproval
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/GetSalesOfferInternalApproval"
+  headers:
+    - name: SalesOfferId
+      value: "319737"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/GetSalesOfferInternalApproval"
+      method: GET
+      headers:
+        - name: SalesOfferId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SalesOfferInternalApprovals": [
+              {
+                "Id": "<long>",
+                "SalesOfferId": "<long>",
+                "Type": "<string>",
+                "UserId": "<string>",
+                "UserName": "<string>",
+                "GroupId": "<long>",
+                "GroupName": "<string>",
+                "ByUserId": "<string>",
+                "ByUserName": "<string>",
+                "Reply": "<string>",
+                "Comment": "<string>",
+                "Date": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "SalesOfferId": "<long>",
+                "Type": "<string>",
+                "UserId": "<string>",
+                "UserName": "<string>",
+                "GroupId": "<long>",
+                "GroupName": "<string>",
+                "ByUserId": "<string>",
+                "ByUserName": "<string>",
+                "Reply": "<string>",
+                "Comment": "<string>",
+                "Date": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

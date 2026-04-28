@@ -1,0 +1,118 @@
+info:
+  name: /Inventory/GetInventoryItemList Copy
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/GetInventoryItemList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: SearchKey
+      value: "%D9%85%D8%B3%D9%85+%D9%81%D8%B1%D9%8A%D8%B2%D8%A9+2+6"
+      disabled: true
+    - name: Type
+      value: OpeningBalance
+      disabled: true
+    - name: HaveOpeningBalance
+      value: "false"
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "2000"
+    - name: PriorityID
+      value: "1"
+      disabled: true
+    - name: InventoryItemCategoryID
+      value: "1"
+      disabled: true
+    - name: MinBalance
+      value: "10"
+      disabled: true
+    - name: MaxBalance
+      value: "20"
+      disabled: true
+    - name: SearchCode
+      value: "82"
+      disabled: true
+    - name: GetNotActive
+      value: "true"
+      disabled: true
+    - name: PublicNo
+      value: ""
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/GetInventoryItemList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ddlList": [
+              {
+                "id": "<long>",
+                "name": "<string>",
+                "itemCode": "<string>",
+                "partNo": "<string>",
+                "serialCounter": "<long>",
+                "uop": "<string>",
+                "uor": "<string>",
+                "exchangeFactor": "<double>",
+                "haveOpeningBalance": "<boolean>"
+              },
+              {
+                "id": "<long>",
+                "name": "<string>",
+                "itemCode": "<string>",
+                "partNo": "<string>",
+                "serialCounter": "<long>",
+                "uop": "<string>",
+                "uor": "<string>",
+                "exchangeFactor": "<double>",
+                "haveOpeningBalance": "<boolean>"
+              }
+            ],
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "paginationHeader": {
+              "currentPage": "<integer>",
+              "totalPages": "<integer>",
+              "itemsPerPage": "<integer>",
+              "totalItems": "<integer>"
+            },
+            "totalItemCount": "<long>"
+          }

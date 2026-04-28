@@ -1,0 +1,7 @@
+info:
+  name: ProductFabricatorDDL
+  type: folder
+  seq: 42
+
+request:
+  auth: inherit

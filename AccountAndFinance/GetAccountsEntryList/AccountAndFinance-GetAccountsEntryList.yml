@@ -1,0 +1,84 @@
+info:
+  name: /AccountAndFinance/GetAccountsEntryList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/GetAccountsEntryList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: AdvancedTypeId
+      value: "2"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/GetAccountsEntryList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "AccountList": [
+              {
+                "ID": "<long>",
+                "AccountName": "<string>",
+                "CategoryID": "<long>",
+                "CategoryName": "<string>",
+                "AccountNumber": "<string>",
+                "AccountTypeName": "<string>",
+                "AdvancedTypeId": "<long>",
+                "AdvancedTypeName": "<string>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "HaveChild": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "AccountName": "<string>",
+                "CategoryID": "<long>",
+                "CategoryName": "<string>",
+                "AccountNumber": "<string>",
+                "AccountTypeName": "<string>",
+                "AdvancedTypeId": "<long>",
+                "AdvancedTypeName": "<string>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "HaveChild": "<boolean>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

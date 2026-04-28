@@ -1,0 +1,7 @@
+info:
+  name: GetSalaryDudectionTaxListForHrUser
+  type: folder
+  seq: 30
+
+request:
+  auth: inherit

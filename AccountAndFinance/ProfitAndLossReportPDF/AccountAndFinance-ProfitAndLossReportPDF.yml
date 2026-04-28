@@ -1,0 +1,66 @@
+info:
+  name: /AccountAndFinance/ProfitAndLossReportPDF
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/ProfitAndLossReportPDF"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: FromDate
+      value: 2022-01-1
+      disabled: true
+    - name: DateTo
+      value: 2023-12-31
+      disabled: true
+    - name: CalcWithoutPrivate
+      value: "true"
+    - name: OrderByCreationDate
+      value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/ProfitAndLossReportPDF"
+      method: GET
+      headers:
+        - name: header
+          value: calcWithoutPrivate,<boolean>,fromDate,<string>,toDate,<string>,companyName,<string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "message": "<string>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

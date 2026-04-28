@@ -1,0 +1,39 @@
+info:
+  name: AddDeduction
+  type: http
+  seq: 37
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/AddDeduction"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"Id\": 0,\r
+
+      \  \"SupplierId\": \"string\",\r
+
+      \  \"Serial\": \"string\",\r
+
+      \  \"TransportationVehicleRouteId\": \"2025-07-16T10:37:32.521Z\",\r
+
+      \  \"Date\": \"2025-07-16T10:37:32.521Z\",\r
+
+      \  \"DeductPerRound\": \"2025-07-16T10:37:32.521Z\",\r
+
+      \  \"Cause\": 0\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,191 @@
+info:
+  name: /SalesOffer/AddEditRejectedSupplierOffer
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Offer//SalesOffer/AddEditRejectedSupplierOffer"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  body:
+    type: json
+    data: |-
+      {
+          "PrSupplierOffer": {
+              "PoId": "16",
+              "SupplierId": "12",
+              "Status": "Closed",
+              "Comment": ""
+          },
+          "PrSupplierOfferItems": [
+              {
+                  "MrItemId": "28",
+                  "PrItemId": "138",
+                  "PoItemId": "135",
+                  "InventoryItemId": "544",
+                  "UOMId": "1",
+                  "Comment": "test",
+                  "ReqQuantity": "600",
+                  "EstimatedCost": "3000",
+                  "TotalEstimatedCost": "3000",
+                  "CurrencyId": "1",
+                  "RateToEGP": "2",
+                  "Status": ""
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesOffer/AddEditRejectedSupplierOffer"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "PrSupplierOffer": {
+              "Id": "<long>",
+              "PrId": "<long>",
+              "PoId": "<long>",
+              "SupplierId": "<long>",
+              "SupplierName": "<string>",
+              "Status": "<string>",
+              "Comment": "<string>"
+            },
+            "PrSupplierOfferItems": [
+              {
+                "Id": "<long>",
+                "PRSupplierOfferId": "<long>",
+                "RequstionUOMShortName": "<string>",
+                "RequstionUOMId": "<integer>",
+                "PurchasingUOMShortName": "<string>",
+                "PurchasingUOMId": "<integer>",
+                "ConversionRate": "<double>",
+                "PrId": "<long>",
+                "PoId": "<long>",
+                "MrItemId": "<long>",
+                "PrItemId": "<long>",
+                "PoItemId": "<long>",
+                "InventoryItemId": "<long>",
+                "InventoryItemCode": "<string>",
+                "InventoryItemName": "<string>",
+                "InventoryItemPartNo": "<string>",
+                "UOMId": "<integer>",
+                "UOMName": "<string>",
+                "Comment": "<string>",
+                "ReqQuantity": "<double>",
+                "RecivedQuantity": "<double>",
+                "EstimatedCost": "<double>",
+                "TotalEstimatedCost": "<double>",
+                "CurrencyId": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "Status": "<string>",
+                "PrItemRejectedHistory": [
+                  {
+                    "Id": "<long>",
+                    "SupplierName": "<string>",
+                    "TotalEstimatedCost": "<double>",
+                    "CurrencyName": "<string>",
+                    "RateToEGP": "<double>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "SupplierName": "<string>",
+                    "TotalEstimatedCost": "<double>",
+                    "CurrencyName": "<string>",
+                    "RateToEGP": "<double>"
+                  }
+                ]
+              },
+              {
+                "Id": "<long>",
+                "PRSupplierOfferId": "<long>",
+                "RequstionUOMShortName": "<string>",
+                "RequstionUOMId": "<integer>",
+                "PurchasingUOMShortName": "<string>",
+                "PurchasingUOMId": "<integer>",
+                "ConversionRate": "<double>",
+                "PrId": "<long>",
+                "PoId": "<long>",
+                "MrItemId": "<long>",
+                "PrItemId": "<long>",
+                "PoItemId": "<long>",
+                "InventoryItemId": "<long>",
+                "InventoryItemCode": "<string>",
+                "InventoryItemName": "<string>",
+                "InventoryItemPartNo": "<string>",
+                "UOMId": "<integer>",
+                "UOMName": "<string>",
+                "Comment": "<string>",
+                "ReqQuantity": "<double>",
+                "RecivedQuantity": "<double>",
+                "EstimatedCost": "<double>",
+                "TotalEstimatedCost": "<double>",
+                "CurrencyId": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "Status": "<string>",
+                "PrItemRejectedHistory": [
+                  {
+                    "Id": "<long>",
+                    "SupplierName": "<string>",
+                    "TotalEstimatedCost": "<double>",
+                    "CurrencyName": "<string>",
+                    "RateToEGP": "<double>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "SupplierName": "<string>",
+                    "TotalEstimatedCost": "<double>",
+                    "CurrencyName": "<string>",
+                    "RateToEGP": "<double>"
+                  }
+                ]
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

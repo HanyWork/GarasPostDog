@@ -1,0 +1,74 @@
+info:
+  name: /HR/Attendance/UpdatePayRollStatus
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Attendance/UpdatePayRollStatus"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: AllUsers
+        type: text
+        value: "true"
+        disabled: true
+      - name: usersList[0]
+        type: text
+        value: "11"
+        disabled: true
+      - name: branchId
+        type: text
+        value: "77"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/UpdatePayRollStatus"
+      method: POST
+      headers:
+        - name: AllUsers
+          value: <boolean>
+        - name: usersList
+          value: <long>,<long>
+        - name: branchId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

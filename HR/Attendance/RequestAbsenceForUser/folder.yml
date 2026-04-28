@@ -1,0 +1,7 @@
+info:
+  name: RequestAbsenceForUser
+  type: folder
+  seq: 12
+
+request:
+  auth: inherit

@@ -1,0 +1,7 @@
+info:
+  name: GetMatrialReleaseItemList_1
+  type: folder
+  seq: 12
+
+request:
+  auth: inherit

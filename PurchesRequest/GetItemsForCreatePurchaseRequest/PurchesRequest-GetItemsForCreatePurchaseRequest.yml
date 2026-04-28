@@ -1,0 +1,147 @@
+info:
+  name: /PurchesRequest/GetItemsForCreatePurchaseRequest
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/PurchesRequest/GetItemsForCreatePurchaseRequest"
+  headers:
+    - name: MatrialRequestID
+      value: <long>
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PurchesRequest/GetItemsForCreatePurchaseRequest"
+      method: GET
+      headers:
+        - name: MatrialRequestID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryItemInfo": {
+              "ID": "<long>",
+              "InventoryMatrialRequestOrderID": "<long>",
+              "FromUserName": "<string>",
+              "ToUserName": "<string>",
+              "UserDept": "<string>",
+              "RequestType": "<string>",
+              "RequestTypeId": "<long>",
+              "RequestDate": "<string>",
+              "FromStoreId": "<integer>",
+              "FromStore": "<string>",
+              "CreationDate": "<string>",
+              "ReNew": "<boolean>",
+              "TotalRemainQty": "<double>",
+              "TotalRecieved": "<double>",
+              "MatrialReleaseInfoList": [
+                {
+                  "ID": "<long>",
+                  "MatrialRequestItemID": "<long>",
+                  "InventoryItemID": "<long>",
+                  "ItemName": "<string>",
+                  "Comment": "<string>",
+                  "ParentItemComment": "<string>",
+                  "ItemCode": "<string>",
+                  "ReqQTY": "<double>",
+                  "RecivedQTY": "<double>",
+                  "RemQTY": "<double>",
+                  "UOM": "<string>",
+                  "ProjectName": "<string>",
+                  "ProjectID": "<long>",
+                  "FabOrderName": "<string>",
+                  "StoreLocationID": "<integer>",
+                  "StoreLocationName": "<string>",
+                  "NewComment": "<string>",
+                  "NewRecivedQTY": "<double>",
+                  "ExpirationDate": "<string>",
+                  "Serial": "<string>",
+                  "IsFIFO": "<boolean>",
+                  "StockQTY": "<double>",
+                  "InventoryStoreItemIDsList": [
+                    "<long>",
+                    "<long>"
+                  ],
+                  "StockBalanceList": [
+                    {
+                      "ID": "<long>",
+                      "StockBalance": "<double>"
+                    },
+                    {
+                      "ID": "<long>",
+                      "StockBalance": "<double>"
+                    }
+                  ]
+                },
+                {
+                  "ID": "<long>",
+                  "MatrialRequestItemID": "<long>",
+                  "InventoryItemID": "<long>",
+                  "ItemName": "<string>",
+                  "Comment": "<string>",
+                  "ParentItemComment": "<string>",
+                  "ItemCode": "<string>",
+                  "ReqQTY": "<double>",
+                  "RecivedQTY": "<double>",
+                  "RemQTY": "<double>",
+                  "UOM": "<string>",
+                  "ProjectName": "<string>",
+                  "ProjectID": "<long>",
+                  "FabOrderName": "<string>",
+                  "StoreLocationID": "<integer>",
+                  "StoreLocationName": "<string>",
+                  "NewComment": "<string>",
+                  "NewRecivedQTY": "<double>",
+                  "ExpirationDate": "<string>",
+                  "Serial": "<string>",
+                  "IsFIFO": "<boolean>",
+                  "StockQTY": "<double>",
+                  "InventoryStoreItemIDsList": [
+                    "<long>",
+                    "<long>"
+                  ],
+                  "StockBalanceList": [
+                    {
+                      "ID": "<long>",
+                      "StockBalance": "<double>"
+                    },
+                    {
+                      "ID": "<long>",
+                      "StockBalance": "<double>"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

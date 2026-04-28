@@ -1,0 +1,92 @@
+info:
+  name: /HR/Attendance/DownloadAttendanceSheet
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Attendance/DownloadAttendanceSheet"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: AllUsers
+        type: text
+        value: "false"
+        disabled: true
+      - name: usersList[0]
+        type: text
+        value: "1"
+        disabled: true
+      - name: branchId
+        type: text
+        value: "1026"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/DownloadAttendanceSheet?AllUsers=<boolean>&branchId=<integer>&creator=<long>&CompanyName=<string>"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      params:
+        - name: AllUsers
+          value: <boolean>
+          type: query
+        - name: branchId
+          value: <integer>
+          type: query
+        - name: creator
+          value: <long>
+          type: query
+        - name: CompanyName
+          value: <string>
+          type: query
+      body:
+        type: json
+        data: |-
+          [
+            "<long>",
+            "<long>"
+          ]
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

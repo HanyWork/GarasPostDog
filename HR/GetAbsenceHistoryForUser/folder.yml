@@ -1,0 +1,7 @@
+info:
+  name: GetAbsenceHistoryForUser
+  type: folder
+  seq: 43
+
+request:
+  auth: inherit

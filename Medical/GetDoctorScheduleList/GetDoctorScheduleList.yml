@@ -1,0 +1,39 @@
+info:
+  name: GetDoctorScheduleList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/GetDoctorScheduleList"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+    - name: SpecialtyID
+      value: "15"
+      disabled: true
+    - name: DoctorID
+      value: "253"
+      disabled: true
+    - name: DateFrom
+      value: 2030-05-29
+    - name: DateTo
+      value: 2031-06-22
+    - name: BranchID
+      value: "4"
+    - name: DayDate
+      value: 2025-07-06
+      disabled: true
+    - name: currentPage
+      value: "1"
+    - name: numberOfItemsPerPage
+      value: "10"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

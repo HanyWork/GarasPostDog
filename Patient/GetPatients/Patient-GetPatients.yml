@@ -1,0 +1,131 @@
+info:
+  name: /Patient/GetPatients
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Patient/GetPatients"
+  headers:
+    - name: firstname
+      value: 2KjZiti0
+      disabled: true
+    - name: lastname
+      value: <string>
+      disabled: true
+    - name: DOB
+      value: 2000-01-01
+      disabled: true
+    - name: phone
+      value: "012"
+    - name: IncuranceNo
+      value: <string>
+      disabled: true
+    - name: GetAll
+      value: "true"
+    - name: CurrentPage
+      value: "1"
+    - name: PageSize
+      value: "1000"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: LIbmark
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Patient/GetPatients"
+      method: GET
+      headers:
+        - name: firstname
+          value: <string>
+        - name: lastname
+          value: <string>
+        - name: DOB
+          value: <dateTime>
+        - name: phone
+          value: <string>
+        - name: IncuranceNo
+          value: <string>
+        - name: GetAll
+          value: <boolean>
+        - name: CurrentPage
+          value: "1"
+        - name: PageSize
+          value: "1000"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<long>",
+                "FirstName": "<string>",
+                "MiddleName": "<string>",
+                "LastName": "<string>",
+                "DateOfBirth": "<dateTime>",
+                "Gender": "<string>",
+                "Photo": "<string>",
+                "Email": "<string>",
+                "userId": "<long>",
+                "Mobile": "<string>",
+                "Insurance": {
+                  "Id": "<long>",
+                  "UserPatientId": "<long>",
+                  "Name": "<string>",
+                  "IncuranceNo": "<string>",
+                  "ExpireDate": "<dateTime>",
+                  "Active": "<boolean>"
+                }
+              },
+              {
+                "Id": "<long>",
+                "FirstName": "<string>",
+                "MiddleName": "<string>",
+                "LastName": "<string>",
+                "DateOfBirth": "<dateTime>",
+                "Gender": "<string>",
+                "Photo": "<string>",
+                "Email": "<string>",
+                "userId": "<long>",
+                "Mobile": "<string>",
+                "Insurance": {
+                  "Id": "<long>",
+                  "UserPatientId": "<long>",
+                  "Name": "<string>",
+                  "IncuranceNo": "<string>",
+                  "ExpireDate": "<dateTime>",
+                  "Active": "<boolean>"
+                }
+              }
+            ]
+          }

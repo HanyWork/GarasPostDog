@@ -1,0 +1,98 @@
+info:
+  name: /User/GetUserData
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/User/GetUserData"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: vetanoia
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/User/GetUserData"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "companyInfo": "<string>",
+            "companyImg": "<string>",
+            "specialityList": [
+              {
+                "id": "<long>",
+                "name": "<string>"
+              },
+              {
+                "id": "<long>",
+                "name": "<string>"
+              }
+            ],
+            "departmentName": "<string>",
+            "branchName": "<string>",
+            "branchID": "<integer>",
+            "notificationCount": "<integer>",
+            "taskCount": "<integer>",
+            "jobtitle": "<string>",
+            "roleList": [
+              {
+                "roleID": "<integer>",
+                "roleName": "<string>"
+              },
+              {
+                "roleID": "<integer>",
+                "roleName": "<string>"
+              }
+            ],
+            "groupList": [
+              {
+                "groupID": "<long>",
+                "groupName": "<string>"
+              },
+              {
+                "groupID": "<long>",
+                "groupName": "<string>"
+              }
+            ],
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "data": "<string>",
+            "userID": "<string>",
+            "userIDNO": "<long>",
+            "userImageURL": "<string>",
+            "userName": "<string>",
+            "countryId": "<long>",
+            "countryName": "<string>"
+          }

@@ -1,0 +1,84 @@
+info:
+  name: /ProjectCheque/AddBankChequeTemplate
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectCheque/AddBankChequeTemplate"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: multipart-form
+    data:
+      - name: BankName
+        type: text
+        value: HSBC
+        description: "(Required) "
+      - name: Template
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Downloads/My cheque/My cheque/HSBC Qatar.jpeg
+        description: "(Required) "
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectCheque/AddBankChequeTemplate"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: BankName
+            type: text
+            value: <string>
+            description: "(Required) "
+          - name: Template
+            type: file
+            value: []
+            description: "(Required) "
+          - name: Id
+            type: text
+            value: <integer>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<integer>"
+          }

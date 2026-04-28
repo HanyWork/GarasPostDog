@@ -1,0 +1,688 @@
+info:
+  name: /Offer/SalesOffer/AddNewSalesOffer
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/AddNewSalesOffer"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "SalesOffer": {
+              "Id": "72277",
+              "StartDate": "07-26-2025",
+              "EndDate": "07-26-2025",
+              "SalesPersonId": "10009",
+              "BranchId": "4",
+              "ClientApprovalDate": "07-28-2025",
+              "ClientApprove": true,
+              "ProjectEndDate": "07-28-2025",
+              "ProjectStartDate": "07-28-2025",
+              "ExtraOrDiscountPriceBySalesPerson": "0",
+              "ClientComment": "",
+              "Status": "Pricing",
+              "Active": true,
+              "Completed": false,
+              "TechnicalInfo": "N/A",
+              "FinancialInfo": "N/A",
+              "ProjectData": "",
+              "ClientId": "61150",
+              "ProductType": "",
+              "SendingOfferConfirmation": false,
+              "SendingOfferDate": "7/26/2025",
+              "RejectionReason": "N/A",
+              "ContactPersonMobile": "01200024460",
+              "ContactPersonEmail": "N/A",
+              "ContactPersonName": "اماني ابراهيم محمد ابراهيم ",
+              "OfferType": "New Job Order",
+              "OfferAmount": "1",
+              "FinalOfferPrice": "1"
+          },
+          "SalesOfferProductList": [
+              {
+                  "Id": "71910",
+                  "Quantity": 1,
+                  "Active": true,
+                  "InventoryItemId": "10215",
+                  "InventoryItemCategoryId": "2018",
+                  "ItemPrice": 1,
+                  "InvoicePayerClientId": "61150",
+                  "FinalPrice": 1,
+                  "DiscountPercentage": 0,
+                  "DiscountValue": 0,
+                  "ItemPricingComment": "مصنعيات ميكانيكا",
+                  "ProfitPercentage": "0.00000",
+                  "SalesOfferProductAttachments": [],
+                  "SalesOfferProductTaxsList": []
+              }
+          ],
+          "SalesOfferAttachmentList": []
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/AddNewSalesOffer"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "SalesOffer": {
+              "Id": "<long>",
+              "StartDate": "<string>",
+              "EndDate": "<string>",
+              "Note": "<string>",
+              "SalesPersonId": "<long>",
+              "SalesPersonName": "<string>",
+              "Status": "<string>",
+              "Completed": "<boolean>",
+              "TechnicalInfo": "<string>",
+              "ProjectData": "<string>",
+              "ProjectID": "<long>",
+              "FinancialInfo": "<string>",
+              "PricingComment": "<string>",
+              "OfferAmount": "<double>",
+              "SendingOfferConfirmation": "<boolean>",
+              "SendingOfferDate": "<string>",
+              "SendingOfferBy": "<string>",
+              "SendingOfferTo": "<string>",
+              "SendingOfferComment": "<string>",
+              "ClientApprove": "<boolean>",
+              "ClientComment": "<string>",
+              "VersionNumber": "<integer>",
+              "ClientApprovalDate": "<string>",
+              "ClientId": "<long>",
+              "ClientName": "<string>",
+              "ProductType": "<string>",
+              "ProjectName": "<string>",
+              "ProjectLocation": "<string>",
+              "ContactPersonMobile": "<string>",
+              "ContactPersonEmail": "<string>",
+              "ContactPersonName": "<string>",
+              "ProjectStartDate": "<string>",
+              "ProjectEndDate": "<string>",
+              "BranchId": "<integer>",
+              "OfferType": "<string>",
+              "ContractType": "<string>",
+              "OfferSerial": "<string>",
+              "ClientNeedsDiscount": "<boolean>",
+              "RejectionReason": "<string>",
+              "NeedsInvoice": "<boolean>",
+              "NeedsExtraCost": "<boolean>",
+              "OfferExpirationDate": "<string>",
+              "OfferExpirationPeriod": "<integer>",
+              "ExtraOrDiscountPriceBySalesPerson": "<double>",
+              "FinalOfferPrice": "<double>",
+              "TotalExtraCostAmount": "<double>",
+              "TotalDiscountAmount": "<double>",
+              "TotalTaxAmount": "<double>",
+              "ReminderDate": "<string>",
+              "CreationDate": "<string>",
+              "GrossProfitPercentage": "<double>",
+              "GrossProfitValue": "<double>",
+              "ReleaseStatus": "<string>",
+              "PercentReleased": "<double>",
+              "SalesOfferProductsCount": "<integer>",
+              "SalesOfferProductsQuantity": "<double>",
+              "HasJournalEntryId": "<long>",
+              "SalesOfferInvoices": [
+                {
+                  "Id": "<long>",
+                  "Serial": "<string>",
+                  "Revision": "<integer>",
+                  "InvoiceDate": "<string>",
+                  "InvoiceType": "<string>",
+                  "PayerClientId": "<long>",
+                  "PayerClientName": "<string>",
+                  "IsClosed": "<boolean>",
+                  "CreationType": "<string>",
+                  "InvoiceFor": "<string>",
+                  "eInvoiceId": "<string>",
+                  "eInvoiceStatus": "<string>",
+                  "eInvoiceReason": "<string>",
+                  "eInvoiceAcceptDate": "<string>",
+                  "eInvoiceJsonBody": "<string>",
+                  "eInvoiceRequestToSend": "<boolean>",
+                  "SalesOfferId": "<long>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>",
+                  "TotalInvoiceAmount": "<double>",
+                  "InvoiceItemsList": [
+                    {
+                      "Id": "<long>",
+                      "InvoiceIe": "<long>",
+                      "SalesOfferProductId": "<long>",
+                      "Comment": "<string>",
+                      "eInvoiceId": "<string>",
+                      "eInvoiceStatus": "<string>",
+                      "eInvoiceAcceptDate": "<string>",
+                      "Qty": "<double>",
+                      "ItemPrice": "<double>",
+                      "ItemName": "<string>",
+                      "ItemDescription": "<string>",
+                      "ItemTotalTax": "<double>"
+                    },
+                    {
+                      "Id": "<long>",
+                      "InvoiceIe": "<long>",
+                      "SalesOfferProductId": "<long>",
+                      "Comment": "<string>",
+                      "eInvoiceId": "<string>",
+                      "eInvoiceStatus": "<string>",
+                      "eInvoiceAcceptDate": "<string>",
+                      "Qty": "<double>",
+                      "ItemPrice": "<double>",
+                      "ItemName": "<string>",
+                      "ItemDescription": "<string>",
+                      "ItemTotalTax": "<double>"
+                    }
+                  ]
+                },
+                {
+                  "Id": "<long>",
+                  "Serial": "<string>",
+                  "Revision": "<integer>",
+                  "InvoiceDate": "<string>",
+                  "InvoiceType": "<string>",
+                  "PayerClientId": "<long>",
+                  "PayerClientName": "<string>",
+                  "IsClosed": "<boolean>",
+                  "CreationType": "<string>",
+                  "InvoiceFor": "<string>",
+                  "eInvoiceId": "<string>",
+                  "eInvoiceStatus": "<string>",
+                  "eInvoiceReason": "<string>",
+                  "eInvoiceAcceptDate": "<string>",
+                  "eInvoiceJsonBody": "<string>",
+                  "eInvoiceRequestToSend": "<boolean>",
+                  "SalesOfferId": "<long>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>",
+                  "TotalInvoiceAmount": "<double>",
+                  "InvoiceItemsList": [
+                    {
+                      "Id": "<long>",
+                      "InvoiceIe": "<long>",
+                      "SalesOfferProductId": "<long>",
+                      "Comment": "<string>",
+                      "eInvoiceId": "<string>",
+                      "eInvoiceStatus": "<string>",
+                      "eInvoiceAcceptDate": "<string>",
+                      "Qty": "<double>",
+                      "ItemPrice": "<double>",
+                      "ItemName": "<string>",
+                      "ItemDescription": "<string>",
+                      "ItemTotalTax": "<double>"
+                    },
+                    {
+                      "Id": "<long>",
+                      "InvoiceIe": "<long>",
+                      "SalesOfferProductId": "<long>",
+                      "Comment": "<string>",
+                      "eInvoiceId": "<string>",
+                      "eInvoiceStatus": "<string>",
+                      "eInvoiceAcceptDate": "<string>",
+                      "Qty": "<double>",
+                      "ItemPrice": "<double>",
+                      "ItemName": "<string>",
+                      "ItemDescription": "<string>",
+                      "ItemTotalTax": "<double>"
+                    }
+                  ]
+                }
+              ],
+              "ParentSalesOfferID": "<long>",
+              "ParentSalesOfferSerial": "<string>",
+              "CreatorName": "<string>",
+              "ModifierName": "<string>",
+              "ChildrenSalesOfferList": [
+                {
+                  "SalesOfferId": "<long>",
+                  "SalesOfferSerial": "<string>"
+                },
+                {
+                  "SalesOfferId": "<long>",
+                  "SalesOfferSerial": "<string>"
+                }
+              ],
+              "CreatedBy": "<string>",
+              "ModifiedBy": "<string>",
+              "ModifiedDate": "<string>",
+              "Active": "<boolean>",
+              "ClientVehicleId": "<long>",
+              "ClientVehicleName": "<string>",
+              "VehicleChassisNumber": "<string>",
+              "VehicleModelName": "<string>",
+              "ClientTaxCard": "<string>",
+              "ClientAddress": [
+                {
+                  "ID": "<long>",
+                  "CountryID": "<integer>",
+                  "CountryName": "<string>",
+                  "GovernorateID": "<integer>",
+                  "GovernorateName": "<string>",
+                  "Address": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "BuildingNumber": "<string>",
+                  "Floor": "<string>",
+                  "Description": "<string>",
+                  "AreaID": "<long>",
+                  "AreaName": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "CountryID": "<integer>",
+                  "CountryName": "<string>",
+                  "GovernorateID": "<integer>",
+                  "GovernorateName": "<string>",
+                  "Address": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "BuildingNumber": "<string>",
+                  "Floor": "<string>",
+                  "Description": "<string>",
+                  "AreaID": "<long>",
+                  "AreaName": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ProjectSerial": "<string>",
+              "ProjectStatus": "<string>",
+              "BranchName": "<string>",
+              "ProjectExtraModifications": "<double>",
+              "RentStartDate": "<string>",
+              "RentEndDate": "<string>",
+              "ParentInvoiceID": "<long>",
+              "LinkedSalesOfferId": "<long>",
+              "MaintenanceType": "<string>"
+            },
+            "SalesOfferProductList": [
+              {
+                "Id": "<long>",
+                "ParentOfferProductId": "<long>",
+                "ProductId": "<long>",
+                "OfferId": "<long>",
+                "ProductGroupId": "<integer>",
+                "Quantity": "<double>",
+                "ReturnedQty": "<double>",
+                "RemainQty": "<double>",
+                "ReleasedQty": "<double>",
+                "ReleasedPercentage": "<string>",
+                "ProfitPercentage": "<string>",
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "CommercialName": "<string>",
+                "InventoryItemUOM": "<string>",
+                "InventoryItemPartNO": "<string>",
+                "InventoryItemCategoryId": "<integer>",
+                "InventoryItemCategoryName": "<string>",
+                "ItemPrice": "<double>",
+                "ItemPricingComment": "<string>",
+                "ConfirmReceivingQuantity": "<double>",
+                "ConfirmReceivingComment": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "FinalPrice": "<double>",
+                "FinalPriceWithoutTax": "<double>",
+                "TotalTaxValue": "<double>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "SalesOfferProductTaxsList": [
+                  {
+                    "ID": "<long>",
+                    "TaxID": "<long>",
+                    "Percentage": "<double>",
+                    "Value": "<double>",
+                    "TaxName": "<string>",
+                    "TaxCode": "<string>",
+                    "ParentTaxID": "<long>",
+                    "ParentTax": {
+                      "Id": "<long>",
+                      "TaxPercentage": "<double>",
+                      "TaxValue": "<double>",
+                      "TaxName": "<string>",
+                      "TaxCode": "<string>",
+                      "TaxType": "<string>",
+                      "InvoicePayerClientId": "<long>",
+                      "InvoicePayerClientName": "<string>",
+                      "Description": "<string>",
+                      "CreatedBy": "<string>",
+                      "ModifiedBy": "<string>",
+                      "Active": "<boolean>",
+                      "IsPercentage": "<boolean>",
+                      "TaxChildList": [
+                        {
+                          "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                        },
+                        {
+                          "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaxID": "<long>",
+                    "Percentage": "<double>",
+                    "Value": "<double>",
+                    "TaxName": "<string>",
+                    "TaxCode": "<string>",
+                    "ParentTaxID": "<long>",
+                    "ParentTax": {
+                      "Id": "<long>",
+                      "TaxPercentage": "<double>",
+                      "TaxValue": "<double>",
+                      "TaxName": "<string>",
+                      "TaxCode": "<string>",
+                      "TaxType": "<string>",
+                      "InvoicePayerClientId": "<long>",
+                      "InvoicePayerClientName": "<string>",
+                      "Description": "<string>",
+                      "CreatedBy": "<string>",
+                      "ModifiedBy": "<string>",
+                      "Active": "<boolean>",
+                      "IsPercentage": "<boolean>",
+                      "TaxChildList": [
+                        {
+                          "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                        },
+                        {
+                          "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "SalesOfferProductAttachments": [
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "Id": "<long>",
+                "ParentOfferProductId": "<long>",
+                "ProductId": "<long>",
+                "OfferId": "<long>",
+                "ProductGroupId": "<integer>",
+                "Quantity": "<double>",
+                "ReturnedQty": "<double>",
+                "RemainQty": "<double>",
+                "ReleasedQty": "<double>",
+                "ReleasedPercentage": "<string>",
+                "ProfitPercentage": "<string>",
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "CommercialName": "<string>",
+                "InventoryItemUOM": "<string>",
+                "InventoryItemPartNO": "<string>",
+                "InventoryItemCategoryId": "<integer>",
+                "InventoryItemCategoryName": "<string>",
+                "ItemPrice": "<double>",
+                "ItemPricingComment": "<string>",
+                "ConfirmReceivingQuantity": "<double>",
+                "ConfirmReceivingComment": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "FinalPrice": "<double>",
+                "FinalPriceWithoutTax": "<double>",
+                "TotalTaxValue": "<double>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "SalesOfferProductTaxsList": [
+                  {
+                    "ID": "<long>",
+                    "TaxID": "<long>",
+                    "Percentage": "<double>",
+                    "Value": "<double>",
+                    "TaxName": "<string>",
+                    "TaxCode": "<string>",
+                    "ParentTaxID": "<long>",
+                    "ParentTax": {
+                      "Id": "<long>",
+                      "TaxPercentage": "<double>",
+                      "TaxValue": "<double>",
+                      "TaxName": "<string>",
+                      "TaxCode": "<string>",
+                      "TaxType": "<string>",
+                      "InvoicePayerClientId": "<long>",
+                      "InvoicePayerClientName": "<string>",
+                      "Description": "<string>",
+                      "CreatedBy": "<string>",
+                      "ModifiedBy": "<string>",
+                      "Active": "<boolean>",
+                      "IsPercentage": "<boolean>",
+                      "TaxChildList": [
+                        {
+                          "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                        },
+                        {
+                          "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaxID": "<long>",
+                    "Percentage": "<double>",
+                    "Value": "<double>",
+                    "TaxName": "<string>",
+                    "TaxCode": "<string>",
+                    "ParentTaxID": "<long>",
+                    "ParentTax": {
+                      "Id": "<long>",
+                      "TaxPercentage": "<double>",
+                      "TaxValue": "<double>",
+                      "TaxName": "<string>",
+                      "TaxCode": "<string>",
+                      "TaxType": "<string>",
+                      "InvoicePayerClientId": "<long>",
+                      "InvoicePayerClientName": "<string>",
+                      "Description": "<string>",
+                      "CreatedBy": "<string>",
+                      "ModifiedBy": "<string>",
+                      "Active": "<boolean>",
+                      "IsPercentage": "<boolean>",
+                      "TaxChildList": [
+                        {
+                          "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                        },
+                        {
+                          "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "SalesOfferProductAttachments": [
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  }
+                ]
+              }
+            ],
+            "SalesOfferTaxList": [
+              {
+                "Id": "<long>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "TaxName": "<string>",
+                "TaxCode": "<string>",
+                "TaxType": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "Description": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "IsPercentage": "<boolean>",
+                "TaxChildList": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  }
+                ]
+              },
+              {
+                "Id": "<long>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "TaxName": "<string>",
+                "TaxCode": "<string>",
+                "TaxType": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "Description": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "IsPercentage": "<boolean>",
+                "TaxChildList": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                  }
+                ]
+              }
+            ],
+            "SalesOfferExtraCostList": [
+              {
+                "Id": "<long>",
+                "ExtraCostTypeId": "<long>",
+                "Amount": "<double>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "ExtraCostTypeId": "<long>",
+                "Amount": "<double>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "SalesOfferAttachmentList": [
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

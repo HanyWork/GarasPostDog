@@ -1,0 +1,71 @@
+info:
+  name: /Inventory/GetPurchaseForStore
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/GetPurchaseForStore"
+  headers:
+    - name: inventoryStoreID
+      value: "2020"
+    - name: DateFrom
+      value: 2024-09-01
+    - name: DateTo
+      value: 2024-09-25
+    - name: internalTransferFlag
+      value: <boolean>
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/GetPurchaseForStore"
+      method: GET
+      headers:
+        - name: inventoryStoreID
+          value: <integer>
+        - name: DateFrom
+          value: <string>
+        - name: DateTo
+          value: <string>
+        - name: internalTransferFlag
+          value: <boolean>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

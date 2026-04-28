@@ -1,0 +1,173 @@
+info:
+  name: /Offer/SalesOffer/GetSalesOfferProductsDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/GetSalesOfferProductsDetails"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: SalesOfferId
+      value: "40125"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/GetSalesOfferProductsDetails?SalesOfferId=<long>"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: SalesOfferId
+          value: <long>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SalesOfferProducts": [
+              {
+                "Id": "<long>",
+                "ParentOfferProductId": "<long>",
+                "ProductId": "<long>",
+                "OfferId": "<long>",
+                "ProductGroupId": "<integer>",
+                "Quantity": "<double>",
+                "ReturnedQty": "<double>",
+                "RemainQty": "<double>",
+                "ReleasedQty": "<double>",
+                "ReleasedPercentage": "<string>",
+                "ProfitPercentage": "<string>",
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "InventoryItemUOM": "<string>",
+                "InventoryItemPartNO": "<string>",
+                "InventoryItemCategoryId": "<integer>",
+                "InventoryItemCategoryName": "<string>",
+                "ItemPrice": "<double>",
+                "ItemPricingComment": "<string>",
+                "ConfirmReceivingQuantity": "<double>",
+                "ConfirmReceivingComment": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "FinalPrice": "<double>",
+                "FinalPriceWithoutTax": "<double>",
+                "TotalTaxValue": "<double>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "SalesOfferProductAttachments": [
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "Id": "<long>",
+                "ParentOfferProductId": "<long>",
+                "ProductId": "<long>",
+                "OfferId": "<long>",
+                "ProductGroupId": "<integer>",
+                "Quantity": "<double>",
+                "ReturnedQty": "<double>",
+                "RemainQty": "<double>",
+                "ReleasedQty": "<double>",
+                "ReleasedPercentage": "<string>",
+                "ProfitPercentage": "<string>",
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "InventoryItemUOM": "<string>",
+                "InventoryItemPartNO": "<string>",
+                "InventoryItemCategoryId": "<integer>",
+                "InventoryItemCategoryName": "<string>",
+                "ItemPrice": "<double>",
+                "ItemPricingComment": "<string>",
+                "ConfirmReceivingQuantity": "<double>",
+                "ConfirmReceivingComment": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "FinalPrice": "<double>",
+                "FinalPriceWithoutTax": "<double>",
+                "TotalTaxValue": "<double>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "SalesOfferProductAttachments": [
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "FileName": "<string>",
+                    "FileExtension": "<string>",
+                    "FileContent": "<string>",
+                    "FilePath": "<string>",
+                    "Category": "<string>",
+                    "Active": "<boolean>"
+                  }
+                ]
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

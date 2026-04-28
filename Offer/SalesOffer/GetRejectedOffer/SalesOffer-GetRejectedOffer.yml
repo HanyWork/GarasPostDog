@@ -1,0 +1,182 @@
+info:
+  name: /SalesOffer/GetRejectedOffer
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/GetRejectedOffer"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: SupplierOfferId
+      value: "5"
+      disabled: true
+    - name: PoId
+      value: "16"
+      disabled: true
+    - name: PrId
+      value: ""
+      disabled: true
+    - name: Status
+      value: Rejected
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesOffer/GetRejectedOffer"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "PrOffers": [
+              {
+                "PrOfferId": "<long>",
+                "SupplierId": "<long>",
+                "SupplierName": "<string>"
+              },
+              {
+                "PrOfferId": "<long>",
+                "SupplierId": "<long>",
+                "SupplierName": "<string>"
+              }
+            ],
+            "PrSupplierOffer": {
+              "Id": "<long>",
+              "PrId": "<long>",
+              "PoId": "<long>",
+              "SupplierId": "<long>",
+              "SupplierName": "<string>",
+              "Status": "<string>",
+              "Comment": "<string>"
+            },
+            "PrSupplierOfferItems": [
+              {
+                "Id": "<long>",
+                "PRSupplierOfferId": "<long>",
+                "RequstionUOMShortName": "<string>",
+                "RequstionUOMId": "<integer>",
+                "PurchasingUOMShortName": "<string>",
+                "PurchasingUOMId": "<integer>",
+                "ConversionRate": "<double>",
+                "PrId": "<long>",
+                "PoId": "<long>",
+                "MrItemId": "<long>",
+                "PrItemId": "<long>",
+                "PoItemId": "<long>",
+                "InventoryItemId": "<long>",
+                "InventoryItemCode": "<string>",
+                "InventoryItemName": "<string>",
+                "InventoryItemPartNo": "<string>",
+                "UOMId": "<integer>",
+                "UOMName": "<string>",
+                "Comment": "<string>",
+                "ReqQuantity": "<double>",
+                "RecivedQuantity": "<double>",
+                "EstimatedCost": "<double>",
+                "TotalEstimatedCost": "<double>",
+                "CurrencyId": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "Status": "<string>",
+                "PrItemRejectedHistory": [
+                  {
+                    "Id": "<long>",
+                    "SupplierName": "<string>",
+                    "TotalEstimatedCost": "<double>",
+                    "CurrencyName": "<string>",
+                    "RateToEGP": "<double>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "SupplierName": "<string>",
+                    "TotalEstimatedCost": "<double>",
+                    "CurrencyName": "<string>",
+                    "RateToEGP": "<double>"
+                  }
+                ]
+              },
+              {
+                "Id": "<long>",
+                "PRSupplierOfferId": "<long>",
+                "RequstionUOMShortName": "<string>",
+                "RequstionUOMId": "<integer>",
+                "PurchasingUOMShortName": "<string>",
+                "PurchasingUOMId": "<integer>",
+                "ConversionRate": "<double>",
+                "PrId": "<long>",
+                "PoId": "<long>",
+                "MrItemId": "<long>",
+                "PrItemId": "<long>",
+                "PoItemId": "<long>",
+                "InventoryItemId": "<long>",
+                "InventoryItemCode": "<string>",
+                "InventoryItemName": "<string>",
+                "InventoryItemPartNo": "<string>",
+                "UOMId": "<integer>",
+                "UOMName": "<string>",
+                "Comment": "<string>",
+                "ReqQuantity": "<double>",
+                "RecivedQuantity": "<double>",
+                "EstimatedCost": "<double>",
+                "TotalEstimatedCost": "<double>",
+                "CurrencyId": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "Status": "<string>",
+                "PrItemRejectedHistory": [
+                  {
+                    "Id": "<long>",
+                    "SupplierName": "<string>",
+                    "TotalEstimatedCost": "<double>",
+                    "CurrencyName": "<string>",
+                    "RateToEGP": "<double>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "SupplierName": "<string>",
+                    "TotalEstimatedCost": "<double>",
+                    "CurrencyName": "<string>",
+                    "RateToEGP": "<double>"
+                  }
+                ]
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,22 @@
+info:
+  name: InsertDataInDailyJournalEntry
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/api/ExcelUsa/InsertDataInDailyJournalEntry"
+  headers:
+    - name: UserID
+      value: JFp7UYIKFWypVNu2LYAVzQ==
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

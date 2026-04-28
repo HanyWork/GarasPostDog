@@ -1,0 +1,122 @@
+info:
+  name: /Inventory/InventoryMaterialRequest/AddInventoryStoreWithMatrialRequest
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryMaterialRequest/AddInventoryStoreWithMatrialRequest"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: elite
+  body:
+    type: json
+    data: |-
+      {
+          "MatrialRequestId": "32452",
+          "RequestTypeID": "1",
+          "InventoryStoreID": "2017",
+          "RequestDate": "08/07/2025",
+          "IsFinish": false,
+          "FromUserId": "10013",
+          "MatrialRequestItemList": [
+              {
+                  "MatrialRequestItemID":"40247",
+                  "InventoryItemID": "22154",
+                  "PojectID": "41415",
+                  "ReqQTY": "8",
+                  "Comment": "asa",
+                  "FromBOM": false,
+                  "InventoryStoreItemIDsList": []
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryMaterialRequest/AddInventoryStoreWithMatrialRequest"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "MatrialRequestId": "<long>",
+            "RequestTypeID": "<long>",
+            "InventoryStoreID": "<integer>",
+            "FromUserId": "<long>",
+            "RequestDate": "<string>",
+            "IsFinish": "<boolean>",
+            "HoldReason": "<string>",
+            "MatrialRequestItemList": [
+              {
+                "InventoryItemID": "<long>",
+                "ReqQTY": "<double>",
+                "Comment": "<string>",
+                "PojectID": "<long>",
+                "FabOrderID": "<long>",
+                "FabOrderItemID": "<long>",
+                "FromBOM": "<boolean>",
+                "OfferItemID": "<long>",
+                "InventoryStoreItemIDsList": [
+                  "<long>",
+                  "<long>"
+                ]
+              },
+              {
+                "InventoryItemID": "<long>",
+                "ReqQTY": "<double>",
+                "Comment": "<string>",
+                "PojectID": "<long>",
+                "FabOrderID": "<long>",
+                "FabOrderItemID": "<long>",
+                "FromBOM": "<boolean>",
+                "OfferItemID": "<long>",
+                "InventoryStoreItemIDsList": [
+                  "<long>",
+                  "<long>"
+                ]
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

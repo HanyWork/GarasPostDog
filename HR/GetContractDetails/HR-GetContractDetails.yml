@@ -1,0 +1,86 @@
+info:
+  name: /HR/GetContractDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/GetContractDetails"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: userId
+      value: "11"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/GetContractDetails"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "contract": {
+              "id": "<long>",
+              "userID": "<long>",
+              "contactTypeID": "<integer>",
+              "startDate": "<string>",
+              "endDate": "<string>",
+              "probationPeriod": "<integer>",
+              "noticedByEmployee": "<integer>",
+              "noticedByCompany": "<integer>",
+              "isCurrent": "<boolean>",
+              "isAllowOverTime": "<boolean>",
+              "isAutomatic": "<boolean>",
+              "leaveEmployees": [
+                {
+                  "id": "<long>",
+                  "contractLeaveSettingID": "<integer>",
+                  "leaveAllowed": "<string>",
+                  "balance": "<integer>",
+                  "used": "<integer>",
+                  "remain": "<integer>"
+                },
+                {
+                  "id": "<long>",
+                  "contractLeaveSettingID": "<integer>",
+                  "leaveAllowed": "<string>",
+                  "balance": "<integer>",
+                  "used": "<integer>",
+                  "remain": "<integer>"
+                }
+              ]
+            },
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

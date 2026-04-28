@@ -1,0 +1,72 @@
+info:
+  name: /Inventory/InventoryItem/GetInventoryStoreList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/GetInventoryStoreList"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: userId
+      value: "1"
+    - name: Type
+      value: OpeningBalance
+      disabled: true
+    - name: StoreId
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/GetInventoryStoreList"
+      method: GET
+      headers:
+        - name: Type
+          value: <string>
+        - name: userId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "DDLList": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

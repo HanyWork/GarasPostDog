@@ -1,0 +1,7 @@
+info:
+  name: EditEmployeeGroup
+  type: folder
+  seq: 73
+
+request:
+  auth: inherit

@@ -1,0 +1,217 @@
+info:
+  name: /Maintenance/AddManagementOfMaintenanceOrder
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Maintenance/AddManagementOfMaintenanceOrder"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: ID
+        type: text
+        value: "2"
+      - name: MaintenanceForID
+        type: text
+        value: "2"
+      - name: ProjectID
+        type: text
+        value: "50"
+        disabled: true
+      - name: StartDate
+        type: text
+        value: 2024-06-19
+      - name: EndDate
+        type: text
+        value: 2024-07-09
+      - name: WarrentyCertificateAttachmentContent
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/OIP.jpg
+        disabled: true
+      - name: WarrentyCertificateAttachmentExtension
+        type: text
+        value: <string>
+        disabled: true
+      - name: ContractAttachementContent
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/OIP.jpg
+        disabled: true
+      - name: ContractAttachementName
+        type: text
+        value: <string>
+        disabled: true
+      - name: ContractAttachementExtension
+        type: text
+        value: <string>
+        disabled: true
+      - name: NumberOfVisits
+        type: text
+        value: "20"
+      - name: ContractPrice
+        type: text
+        value: "20"
+      - name: CurrencyID
+        type: text
+        value: "5"
+      - name: RateToLocalCu
+        type: text
+        value: "1500"
+      - name: ContractType
+        type: text
+        value: Maintenance
+      - name: ClosingContractType
+        type: text
+        value: After Period Time
+      - name: ClosingMileageCounter
+        type: text
+        value: <double>
+        disabled: true
+      - name: CurrentMileageCounter
+        type: text
+        value: "20"
+      - name: ContractNumber
+        type: text
+        value: test1
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/AddManagementOfMaintenanceOrder"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ID
+            type: text
+            value: <long>
+          - name: MaintenanceOfferID
+            type: text
+            value: <long>
+          - name: MaintenanceForID
+            type: text
+            value: <long>
+          - name: ProjectID
+            type: text
+            value: <long>
+          - name: StartDate
+            type: text
+            value: <string>
+          - name: EndDate
+            type: text
+            value: <string>
+          - name: WarrentyCertificateAttachmentContent
+            type: file
+            value: []
+          - name: WarrentyCertificateAttachmentName
+            type: text
+            value: <string>
+          - name: WarrentyCertificateAttachmentExtension
+            type: text
+            value: <string>
+          - name: ContractAttachementContent
+            type: file
+            value: []
+          - name: ContractAttachementName
+            type: text
+            value: <string>
+          - name: ContractAttachementExtension
+            type: text
+            value: <string>
+          - name: ProjectName
+            type: text
+            value: <string>
+          - name: NumberOfVisits
+            type: text
+            value: <integer>
+          - name: ContractPrice
+            type: text
+            value: <double>
+          - name: CurrencyID
+            type: text
+            value: <integer>
+          - name: CurrencyName
+            type: text
+            value: <string>
+          - name: Active
+            type: text
+            value: <boolean>
+          - name: RateToLocalCu
+            type: text
+            value: <double>
+          - name: ContractAttachement
+            type: text
+            value: <string>
+          - name: WarrentyCertificateAttachment
+            type: text
+            value: <string>
+          - name: ContractStatus
+            type: text
+            value: <string>
+          - name: ClosingReason
+            type: text
+            value: <string>
+          - name: CreatedBy
+            type: text
+            value: <string>
+          - name: ContractType
+            type: text
+            value: <string>
+          - name: ClosingContractType
+            type: text
+            value: <string>
+          - name: ClosingMileageCounter
+            type: text
+            value: <double>
+          - name: CurrentMileageCounter
+            type: text
+            value: <double>
+          - name: ContractNumber
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

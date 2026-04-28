@@ -1,0 +1,7 @@
+info:
+  name: GetSalesPersonsClientsDetailsExcel
+  type: folder
+  seq: 33
+
+request:
+  auth: inherit

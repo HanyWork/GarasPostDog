@@ -1,0 +1,7 @@
+info:
+  name: GetInventoryItemHoldDetails
+  type: folder
+  seq: 23
+
+request:
+  auth: inherit

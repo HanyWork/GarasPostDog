@@ -1,0 +1,41 @@
+info:
+  name: ApproveTransportationVehicle
+  type: http
+  seq: 29
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/ApproveTransportationVehicle"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Id
+      value: "1"
+    - name: Approve
+      value: "true"
+  params:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+      type: query
+      disabled: true
+    - name: UserToken
+      value: "{{UserToken}}"
+      type: query
+      disabled: true
+    - name: Id
+      value: ""
+      type: query
+      disabled: true
+    - name: Approve
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

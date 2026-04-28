@@ -1,0 +1,7 @@
+info:
+  name: ProjectInvoice
+  type: folder
+  seq: 44
+
+request:
+  auth: inherit

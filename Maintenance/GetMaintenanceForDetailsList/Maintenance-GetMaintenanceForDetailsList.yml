@@ -1,0 +1,209 @@
+info:
+  name: /Maintenance/GetMaintenanceForDetailsList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Maintenance/GetMaintenanceForDetailsList"
+  headers:
+    - name: ClientID
+      value: "20048"
+      disabled: true
+    - name: ProductBrand
+      value: test
+      disabled: true
+    - name: ProductFabricator
+      value: test
+      disabled: true
+    - name: SearchKey
+      value: ""
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "1000"
+    - name: AreaID
+      value: "1"
+      disabled: true
+    - name: FromDate
+      value: 2023-1-1
+      disabled: true
+    - name: ToDate
+      value: 2023-3-1
+      disabled: true
+    - name: ContractStatus
+      value: ExpireSoon
+    - name: WeekNum
+      value: "1"
+      disabled: true
+    - name: Radius
+      value: "1"
+      disabled: true
+    - name: WithInDayNo
+      value: "7"
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: ContractType
+      value: Warranty
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/GetMaintenanceForDetailsList"
+      method: GET
+      headers:
+        - name: FromDate
+          value: <dateTime>
+        - name: ToDate
+          value: <dateTime>
+        - name: ClientID
+          value: <long>
+        - name: CategoryID
+          value: <long>
+        - name: AreaID
+          value: <long>
+        - name: AreaIdsString
+          value: <string>
+        - name: Latitude
+          value: <double>
+        - name: Longitude
+          value: <double>
+        - name: Radius
+          value: <double>
+        - name: WithInDayNo
+          value: <integer>
+        - name: ContractType
+          value: <string>
+        - name: WeekNum
+          value: <integer>
+        - name: MaintenanceType
+          value: <string>
+        - name: ProductBrand
+          value: <string>
+        - name: ProductFabricator
+          value: <string>
+        - name: SearchKey
+          value: <string>
+        - name: CurrentPage
+          value: <integer>
+        - name: NumberOfItemsPerPage
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            },
+            "MaintenanceForDetailsList": [
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "Brand": "<string>",
+                "ProductName": "<string>",
+                "ProductType": "<string>",
+                "Fabricator": "<string>",
+                "Serial": "<string>",
+                "ClientID": "<long>",
+                "ClientName": "<string>",
+                "ContactPersonName": "<string>",
+                "ClientLogo": "<string>",
+                "ProjectName": "<string>",
+                "ProjectLocation": "<string>",
+                "InventoryCategory": "<string>",
+                "LastVisitDate": "<string>",
+                "NextPlannedDate": "<string>",
+                "NextVisitId": "<long>",
+                "StartDate": "<string>",
+                "EndDate": "<string>",
+                "Cost": "<double>",
+                "Latitude": "<double>",
+                "Longitude": "<double>",
+                "Location": "<string>",
+                "RemainNoVisit": "<integer>",
+                "NumberOfVisitsWithOutContract": "<double>",
+                "CostVisitsWithOutContract": "<double>",
+                "ManagementMaintenanctOrderID": "<double>",
+                "ClientSatisfactionRate": "<double>",
+                "ContractDetailsList": {
+                  "ManagementMaintenanctOrderID": "<long>",
+                  "StartDate": "<string>",
+                  "EndDate": "<string>",
+                  "Cost": "<double>",
+                  "RemainNoVisit": "<integer>"
+                }
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "Brand": "<string>",
+                "ProductName": "<string>",
+                "ProductType": "<string>",
+                "Fabricator": "<string>",
+                "Serial": "<string>",
+                "ClientID": "<long>",
+                "ClientName": "<string>",
+                "ContactPersonName": "<string>",
+                "ClientLogo": "<string>",
+                "ProjectName": "<string>",
+                "ProjectLocation": "<string>",
+                "InventoryCategory": "<string>",
+                "LastVisitDate": "<string>",
+                "NextPlannedDate": "<string>",
+                "NextVisitId": "<long>",
+                "StartDate": "<string>",
+                "EndDate": "<string>",
+                "Cost": "<double>",
+                "Latitude": "<double>",
+                "Longitude": "<double>",
+                "Location": "<string>",
+                "RemainNoVisit": "<integer>",
+                "NumberOfVisitsWithOutContract": "<double>",
+                "CostVisitsWithOutContract": "<double>",
+                "ManagementMaintenanctOrderID": "<double>",
+                "ClientSatisfactionRate": "<double>",
+                "ContractDetailsList": {
+                  "ManagementMaintenanctOrderID": "<long>",
+                  "StartDate": "<string>",
+                  "EndDate": "<string>",
+                  "Cost": "<double>",
+                  "RemainNoVisit": "<integer>"
+                }
+              }
+            ]
+          }

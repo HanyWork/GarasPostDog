@@ -1,0 +1,27 @@
+info:
+  name: GetItemMarketList
+  type: http
+  seq: 47
+
+http:
+  method: GET
+  url: https://libmarkapi.garassolutions.com/InventoryMatrialReleaseForBY/GetItemMarketList?UserToken={{UserToken}}&CompanyName={{CompanyName}}
+  headers:
+    - name: CompanyName
+      value: libmark
+    - name: usertoken
+      value: IvXgwJHXFy6rhJJQcyLJAA%3d%3d
+  params:
+    - name: UserToken
+      value: "{{UserToken}}"
+      type: query
+    - name: CompanyName
+      value: "{{CompanyName}}"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

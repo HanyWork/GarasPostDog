@@ -1,0 +1,73 @@
+info:
+  name: /JobTitle/GetJobTitleById
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/JobTitle/GetJobTitleById"
+  headers:
+    - name: JobTitleId
+      value: "22"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/JobTitle/GetJobTitleById"
+      method: GET
+      headers:
+        - name: JobTitleId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "Id": "<integer>",
+              "Name": "<string>",
+              "HourlyRate": "<double>",
+              "Currency": "<integer>",
+              "usersInJobTile": [
+                {
+                  "Name": "<string>",
+                  "ImgPath": "<string>"
+                },
+                {
+                  "Name": "<string>",
+                  "ImgPath": "<string>"
+                }
+              ]
+            }
+          }

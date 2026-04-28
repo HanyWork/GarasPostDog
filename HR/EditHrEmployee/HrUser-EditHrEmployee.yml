@@ -1,0 +1,219 @@
+info:
+  name: /HrUser/EditHrEmployee
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HrUser/EditHrEmployee"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: multipart-form
+    data:
+      - name: HrUserId
+        type: text
+        value: "211"
+      - name: systemEmail
+        type: text
+        value: sdfsd@sdffs0c.com
+      - name: password
+        type: text
+        value: "1234"
+        disabled: true
+      - name: confirmPassword
+        type: text
+        value: "1234"
+        disabled: true
+      - name: IsUser
+        type: text
+        value: "false"
+      - name: FirstName
+        type: text
+        value: dfmnmnb
+      - name: ARFirstName
+        type: text
+        value: dfmnmnb
+      - name: MiddleName
+        type: text
+        value: ""
+      - name: ARMiddleName
+        type: text
+        value: ""
+      - name: LastName
+        type: text
+        value: sdfsdf
+      - name: ARLastName
+        type: text
+        value: sdfsdf
+      - name: Email
+        type: text
+        value: sdfsd@sdffs0c.com
+      - name: Mobile
+        type: text
+        value: "0"
+      - name: Active
+        type: text
+        value: "true"
+      - name: Photo
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/OIP.jpg
+        disabled: true
+      - name: Gender
+        type: text
+        value: male
+        disabled: true
+      - name: DateOfBirth
+        type: text
+        value: 2013-05-02
+      - name: LandLine
+        type: text
+        value: "5555225"
+        disabled: true
+      - name: NationalityId
+        type: text
+        value: <long>
+        disabled: true
+      - name: BranchID
+        type: text
+        value: "1"
+      - name: DepartmentID
+        type: text
+        value: "1007"
+      - name: JobTitleID
+        type: text
+        value: "4"
+      - name: IsDeleted
+        type: text
+        value: "true"
+        disabled: true
+      - name: TeamId
+        type: text
+        value: "17"
+        disabled: true
+      - name: Latitude
+        type: text
+        value: ""
+        disabled: true
+      - name: Longtitud
+        type: text
+        value: ""
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HrUser/EditHrEmployee"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: HrUserId
+            type: text
+            value: <long>
+          - name: systemEmail
+            type: text
+            value: <string>
+          - name: password
+            type: text
+            value: <string>
+          - name: confirmPassword
+            type: text
+            value: <string>
+          - name: IsUser
+            type: text
+            value: <boolean>
+          - name: FirstName
+            type: text
+            value: <string>
+          - name: ARFirstName
+            type: text
+            value: <string>
+          - name: MiddleName
+            type: text
+            value: <string>
+          - name: ARMiddleName
+            type: text
+            value: <string>
+          - name: LastName
+            type: text
+            value: <string>
+          - name: ARLastName
+            type: text
+            value: <string>
+          - name: Email
+            type: text
+            value: <string>
+          - name: Mobile
+            type: text
+            value: <string>
+          - name: Active
+            type: text
+            value: <boolean>
+          - name: Photo
+            type: text
+            value: <string>
+          - name: Gender
+            type: text
+            value: <string>
+          - name: DateOfBirth
+            type: text
+            value: <dateTime>
+          - name: LandLine
+            type: text
+            value: <string>
+          - name: NationalityId
+            type: text
+            value: <long>
+          - name: BranchID
+            type: text
+            value: <integer>
+          - name: DepartmentID
+            type: text
+            value: <integer>
+          - name: JobTitleID
+            type: text
+            value: <integer>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

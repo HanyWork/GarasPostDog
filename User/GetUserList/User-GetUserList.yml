@@ -1,0 +1,131 @@
+info:
+  name: /User/GetUserList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://localhost:7178/User/GetUserList
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+    - name: RoleID
+      value: "167"
+      disabled: true
+    - name: BranchId
+      value: ""
+      disabled: true
+    - name: GroupId
+      value: ""
+      disabled: true
+    - name: NotActiveUser
+      value: "true"
+    - name: WithTeam
+      value: "true"
+    - name: JobTitleId
+      value: "1"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/User/GetUserList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ddlList": [
+              {
+                "id": "<long>",
+                "name": "<string>",
+                "email": "<string>",
+                "jobTitleName": "<string>",
+                "department": "<string>",
+                "branchId": "<integer>",
+                "branchName": "<string>",
+                "image": "<string>",
+                "roleList": [
+                  {
+                    "roleID": "<integer>",
+                    "roleName": "<string>"
+                  },
+                  {
+                    "roleID": "<integer>",
+                    "roleName": "<string>"
+                  }
+                ],
+                "groupList": [
+                  {
+                    "groupID": "<long>",
+                    "groupName": "<string>"
+                  },
+                  {
+                    "groupID": "<long>",
+                    "groupName": "<string>"
+                  }
+                ]
+              },
+              {
+                "id": "<long>",
+                "name": "<string>",
+                "email": "<string>",
+                "jobTitleName": "<string>",
+                "department": "<string>",
+                "branchId": "<integer>",
+                "branchName": "<string>",
+                "image": "<string>",
+                "roleList": [
+                  {
+                    "roleID": "<integer>",
+                    "roleName": "<string>"
+                  },
+                  {
+                    "roleID": "<integer>",
+                    "roleName": "<string>"
+                  }
+                ],
+                "groupList": [
+                  {
+                    "groupID": "<long>",
+                    "groupName": "<string>"
+                  },
+                  {
+                    "groupID": "<long>",
+                    "groupName": "<string>"
+                  }
+                ]
+              }
+            ],
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

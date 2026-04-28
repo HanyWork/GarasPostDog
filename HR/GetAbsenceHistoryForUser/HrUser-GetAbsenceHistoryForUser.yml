@@ -1,0 +1,125 @@
+info:
+  name: /HrUser/GetAbsenceHistoryForUser
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HrUser/GetAbsenceHistoryForUser"
+  headers:
+    - name: HrUserId
+      value: "177"
+    - name: AbsenceTypeId
+      value: "2"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HrUser/GetAbsenceHistoryForUser"
+      method: GET
+      headers:
+        - name: request
+          value: HrUserId,<long>,AbsenceTypeId,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "PastAbsence": [
+                {
+                  "Id": "<long>",
+                  "HrUserId": "<long>",
+                  "HrUserName": "<string>",
+                  "AbsenceName": "<string>",
+                  "Date": {
+                    "Year": "<integer>",
+                    "Month": "<integer>",
+                    "Day": "<integer>",
+                    "DayOfWeek": 2,
+                    "DayOfYear": "<integer>",
+                    "DayNumber": "<integer>"
+                  },
+                  "AbsenceCause": "<string>"
+                },
+                {
+                  "Id": "<long>",
+                  "HrUserId": "<long>",
+                  "HrUserName": "<string>",
+                  "AbsenceName": "<string>",
+                  "Date": {
+                    "Year": "<integer>",
+                    "Month": "<integer>",
+                    "Day": "<integer>",
+                    "DayOfWeek": 1,
+                    "DayOfYear": "<integer>",
+                    "DayNumber": "<integer>"
+                  },
+                  "AbsenceCause": "<string>"
+                }
+              ],
+              "PlannedAbsencee": [
+                {
+                  "Id": "<long>",
+                  "HrUserId": "<long>",
+                  "HrUserName": "<string>",
+                  "AbsenceName": "<string>",
+                  "Date": {
+                    "Year": "<integer>",
+                    "Month": "<integer>",
+                    "Day": "<integer>",
+                    "DayOfWeek": 2,
+                    "DayOfYear": "<integer>",
+                    "DayNumber": "<integer>"
+                  },
+                  "AbsenceCause": "<string>"
+                },
+                {
+                  "Id": "<long>",
+                  "HrUserId": "<long>",
+                  "HrUserName": "<string>",
+                  "AbsenceName": "<string>",
+                  "Date": {
+                    "Year": "<integer>",
+                    "Month": "<integer>",
+                    "Day": "<integer>",
+                    "DayOfWeek": 0,
+                    "DayOfYear": "<integer>",
+                    "DayNumber": "<integer>"
+                  },
+                  "AbsenceCause": "<string>"
+                }
+              ]
+            }
+          }

@@ -1,0 +1,27 @@
+info:
+  name: /User/GetUserWithJobTitleDDL
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/User/GetUserWithJobTitleDDL"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+    - name: UserName
+      value: mina
+      disabled: true
+    - name: BranchID
+      value: "2"
+    - name: projectId
+      value: "6"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

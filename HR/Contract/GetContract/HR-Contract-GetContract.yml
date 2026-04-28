@@ -1,0 +1,78 @@
+info:
+  name: /HR/Contract/GetContract
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Contract/GetContract"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+    - name: HrUserId
+      value: "154"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Contract/GetContract?HrUserId=<long>"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: HrUserId
+          value: <long>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "ContactTypeID": "<integer>",
+              "StartDate": "<dateTime>",
+              "EndDate": "<dateTime>",
+              "IsCurrent": "<boolean>",
+              "IsAllowOverTime": "<boolean>",
+              "ISAutomatic": "<boolean>",
+              "FreeWorkingHours": "<boolean>",
+              "AllowBreakDeduction": "<boolean>",
+              "AllowLocationTracking": "<boolean>",
+              "Diameter": "<float>",
+              "AllowComissions": "<boolean>",
+              "ComissionRate": "<double>",
+              "ComissionPercentage": "<double>",
+              "AllowOvertime": "<boolean>",
+              "AutomaticPerWorkingHours": "<boolean>",
+              "AllowedWithApproval": "<boolean>",
+              "HrUserId": "<long>"
+            }
+          }

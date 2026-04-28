@@ -1,0 +1,169 @@
+info:
+  name: /Offer/SalesOffer/ValidateProductsPrices
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/Offer/SalesOffer/ValidateProductsPrices"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+  body:
+    type: json
+    data: |-
+      [
+        {
+          "ItemPrice": "<double>",
+          "Quantity": "<double>",
+          "DiscountPercentage": "<double>",
+          "DiscountValue": "<double>",
+          "PriceAfterTax": "<double>",
+          "OfferTaxes": [
+            {
+              "Id": "<long>",
+              "TaxPercentage": "<double>",
+              "TaxValue": "<double>",
+              "TaxName": "<string>",
+              "TaxCode": "<string>",
+              "TaxType": "<string>",
+              "InvoicePayerClientId": "<long>",
+              "InvoicePayerClientName": "<string>",
+              "Description": "<string>",
+              "CreatedBy": "<string>",
+              "ModifiedBy": "<string>",
+              "Active": "<boolean>",
+              "IsPercentage": "<boolean>",
+              "TaxChildList": [
+                {
+                  "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                },
+                {
+                  "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                }
+              ]
+            },
+            {
+              "Id": "<long>",
+              "TaxPercentage": "<double>",
+              "TaxValue": "<double>",
+              "TaxName": "<string>",
+              "TaxCode": "<string>",
+              "TaxType": "<string>",
+              "InvoicePayerClientId": "<long>",
+              "InvoicePayerClientName": "<string>",
+              "Description": "<string>",
+              "CreatedBy": "<string>",
+              "ModifiedBy": "<string>",
+              "Active": "<boolean>",
+              "IsPercentage": "<boolean>",
+              "TaxChildList": [
+                {
+                  "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                },
+                {
+                  "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ItemPrice": "<double>",
+          "Quantity": "<double>",
+          "DiscountPercentage": "<double>",
+          "DiscountValue": "<double>",
+          "PriceAfterTax": "<double>",
+          "OfferTaxes": [
+            {
+              "Id": "<long>",
+              "TaxPercentage": "<double>",
+              "TaxValue": "<double>",
+              "TaxName": "<string>",
+              "TaxCode": "<string>",
+              "TaxType": "<string>",
+              "InvoicePayerClientId": "<long>",
+              "InvoicePayerClientName": "<string>",
+              "Description": "<string>",
+              "CreatedBy": "<string>",
+              "ModifiedBy": "<string>",
+              "Active": "<boolean>",
+              "IsPercentage": "<boolean>",
+              "TaxChildList": [
+                {
+                  "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                },
+                {
+                  "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                }
+              ]
+            },
+            {
+              "Id": "<long>",
+              "TaxPercentage": "<double>",
+              "TaxValue": "<double>",
+              "TaxName": "<string>",
+              "TaxCode": "<string>",
+              "TaxType": "<string>",
+              "InvoicePayerClientId": "<long>",
+              "InvoicePayerClientName": "<string>",
+              "Description": "<string>",
+              "CreatedBy": "<string>",
+              "ModifiedBy": "<string>",
+              "Active": "<boolean>",
+              "IsPercentage": "<boolean>",
+              "TaxChildList": [
+                {
+                  "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                },
+                {
+                  "value": "<Circular reference to #/components/schemas/GetTax detected>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/ValidateProductsPrices"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<boolean>"
+          }

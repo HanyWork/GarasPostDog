@@ -1,0 +1,94 @@
+info:
+  name: /TaskManager/AddTaskScreenShot
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/AddTaskScreenShot"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: multipart-form
+    data:
+      - name: ScreenShotsList[0].TaskID
+        type: text
+        value: "20054"
+      - name: ScreenShotsList[0].UserID
+        type: text
+        value: "1"
+      - name: ScreenShotsList[0].CreationDateTime
+        type: text
+        value: 2024-10-29 12:40:30 PM
+        description: full date with time
+      - name: ScreenShotsList[0].Img
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Pictures/Screenshots/Screenshot (27).png
+      - name: ScreenShotsList[1].TaskID
+        type: text
+        value: "20053"
+      - name: ScreenShotsList[1].UserID
+        type: text
+        value: "1"
+      - name: ScreenShotsList[1].CreationDateTime
+        type: text
+        value: 2024-10-29 12:40:30 PM
+        description: full date with time
+      - name: ScreenShotsList[1].Img
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Pictures/Screenshots/Screenshot (16).png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/AddTaskScreenShot"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ScreenShotsList
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

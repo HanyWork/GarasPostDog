@@ -1,0 +1,92 @@
+info:
+  name: /TaskManager/GetTaskDetailsPerID
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskDetailsPerID"
+  headers:
+    - name: TaskID
+      value: "20053"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskDetailsPerID"
+      method: GET
+      headers:
+        - name: TaskID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "GetTaskDetailsList": {
+              "TaskID": "<long>",
+              "UserID": "<long>",
+              "Status": "<string>",
+              "Priority": "<string>",
+              "NeedApproval": "<boolean>",
+              "CreatorAttachement": "<string>",
+              "Read": "<boolean>",
+              "Flag": "<boolean>",
+              "Star": "<boolean>",
+              "GetTaskDetailsList": [
+                {
+                  "TaskID": "<long>",
+                  "RecieverUserID": "<long>",
+                  "IsFinished": "<boolean>",
+                  "CommentReply": "<string>",
+                  "ApprovalComment": "<string>",
+                  "Approval": "<boolean>",
+                  "Active": "<boolean>",
+                  "CreatorAttach": "<string>",
+                  "ReplyAttach": "<string>"
+                },
+                {
+                  "TaskID": "<long>",
+                  "RecieverUserID": "<long>",
+                  "IsFinished": "<boolean>",
+                  "CommentReply": "<string>",
+                  "ApprovalComment": "<string>",
+                  "Approval": "<boolean>",
+                  "Active": "<boolean>",
+                  "CreatorAttach": "<string>",
+                  "ReplyAttach": "<string>"
+                }
+              ]
+            }
+          }

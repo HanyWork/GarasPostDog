@@ -1,0 +1,26 @@
+info:
+  name: /HR/Salary/DeleteSalaryTax
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Salary/DeleteSalaryTax"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: Periti
+  body:
+    type: multipart-form
+    data:
+      - name: SalaryTaxId
+        type: text
+        value: "5"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

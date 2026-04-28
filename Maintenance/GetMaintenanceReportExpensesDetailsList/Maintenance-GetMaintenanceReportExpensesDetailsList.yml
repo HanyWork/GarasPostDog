@@ -1,0 +1,79 @@
+info:
+  name: /Maintenance/GetMaintenanceReportExpensesDetailsList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Maintenance/GetMaintenanceReportExpensesDetailsList"
+  headers:
+    - name: MaintenanceReportId
+      value: "1"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/GetMaintenanceReportExpensesDetailsList"
+      method: GET
+      headers:
+        - name: MaintenanceReportId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "MaintenanceReportExpensesDetails": [
+              {
+                "MaintenanceReportExpensesId": "<long>",
+                "Amount": "<double>",
+                "CurrencyId": "<integer>",
+                "CurrencyName": "<string>",
+                "FilePath": "<string>",
+                "Approve": "<boolean>",
+                "ExpensesTypeId": "<long>",
+                "ExpensesTypeName": "<string>"
+              },
+              {
+                "MaintenanceReportExpensesId": "<long>",
+                "Amount": "<double>",
+                "CurrencyId": "<integer>",
+                "CurrencyName": "<string>",
+                "FilePath": "<string>",
+                "Approve": "<boolean>",
+                "ExpensesTypeId": "<long>",
+                "ExpensesTypeName": "<string>"
+              }
+            ]
+          }

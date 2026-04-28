@@ -1,0 +1,215 @@
+info:
+  name: /Medical/DoctorRoom/GetRoomsWithSchedule
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/DoctorRoom/GetRoomsWithSchedule"
+  headers:
+    - name: NumberOfItemsPerPage
+      value: "10"
+    - name: CurrentPage
+      value: "1"
+    - name: SearchKey
+      value: <string>
+      disabled: true
+    - name: SortByDoctornameAsce
+      value: "true"
+      description: one of them(bool)
+      disabled: true
+    - name: SortByDoctornameDesc
+      value: "true"
+      description: one of them(bool)
+      disabled: true
+    - name: Day
+      value: 2030-06-02
+    - name: BranchID
+      value: "4"
+      disabled: true
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/DoctorRoom/GetRoomsWithSchedule"
+      method: GET
+      headers:
+        - name: NumberOfItemsPerPage
+          value: <integer>
+        - name: CurrentPage
+          value: <integer>
+        - name: SearchKey
+          value: <string>
+        - name: Day
+          value: <dateTime>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "Rooms": [
+                {
+                  "Id": "<long>",
+                  "Name": "<string>",
+                  "Schedules": [
+                    {
+                      "Id": "<long>",
+                      "DoctorId": "<long>",
+                      "DoctorName": "<string>",
+                      "SpecialityId": "<long>",
+                      "SpecialityName": "<string>",
+                      "Capacity": "<integer>",
+                      "ExaminationPrice": "<double>",
+                      "consultationPrice": "<double>",
+                      "IntervalFrom": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "IntervalTo": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      }
+                    },
+                    {
+                      "Id": "<long>",
+                      "DoctorId": "<long>",
+                      "DoctorName": "<string>",
+                      "SpecialityId": "<long>",
+                      "SpecialityName": "<string>",
+                      "Capacity": "<integer>",
+                      "ExaminationPrice": "<double>",
+                      "consultationPrice": "<double>",
+                      "IntervalFrom": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "IntervalTo": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Id": "<long>",
+                  "Name": "<string>",
+                  "Schedules": [
+                    {
+                      "Id": "<long>",
+                      "DoctorId": "<long>",
+                      "DoctorName": "<string>",
+                      "SpecialityId": "<long>",
+                      "SpecialityName": "<string>",
+                      "Capacity": "<integer>",
+                      "ExaminationPrice": "<double>",
+                      "consultationPrice": "<double>",
+                      "IntervalFrom": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "IntervalTo": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      }
+                    },
+                    {
+                      "Id": "<long>",
+                      "DoctorId": "<long>",
+                      "DoctorName": "<string>",
+                      "SpecialityId": "<long>",
+                      "SpecialityName": "<string>",
+                      "Capacity": "<integer>",
+                      "ExaminationPrice": "<double>",
+                      "consultationPrice": "<double>",
+                      "IntervalFrom": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "IntervalTo": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            }
+          }

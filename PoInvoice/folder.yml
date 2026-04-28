@@ -1,0 +1,7 @@
+info:
+  name: PoInvoice
+  type: folder
+  seq: 28
+
+request:
+  auth: inherit

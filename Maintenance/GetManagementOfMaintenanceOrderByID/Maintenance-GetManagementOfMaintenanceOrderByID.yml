@@ -1,0 +1,152 @@
+info:
+  name: /Maintenance/GetManagementOfMaintenanceOrderByID
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Maintenance/GetManagementOfMaintenanceOrderByID"
+  headers:
+    - name: MaintenanceForID
+      value: "20007"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: vetanoia
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/GetManagementOfMaintenanceOrderByID"
+      method: GET
+      headers:
+        - name: MaintenanceForID
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ManagementOfMaintenanceOrderDataObj": {
+              "ID": "<long>",
+              "MaintenanceOfferID": "<long>",
+              "MaintenanceForID": "<long>",
+              "ProjectID": "<long>",
+              "StartDate": "<string>",
+              "EndDate": "<string>",
+              "WarrentyCertificateAttachmentContent": "<binary>",
+              "WarrentyCertificateAttachmentName": "<string>",
+              "WarrentyCertificateAttachmentExtension": "<string>",
+              "ContractAttachementContent": "<binary>",
+              "ContractAttachementName": "<string>",
+              "ContractAttachementExtension": "<string>",
+              "ProjectName": "<string>",
+              "NumberOfVisits": "<integer>",
+              "ContractPrice": "<double>",
+              "CurrencyID": "<integer>",
+              "CurrencyName": "<string>",
+              "Active": "<boolean>",
+              "RateToLocalCu": "<double>",
+              "ContractAttachement": "<string>",
+              "WarrentyCertificateAttachment": "<string>",
+              "ContractStatus": "<string>",
+              "ClosingReason": "<string>",
+              "CreatedBy": "<string>",
+              "ContractType": "<string>",
+              "ClosingContractType": "<string>",
+              "ClosingMileageCounter": "<double>",
+              "CurrentMileageCounter": "<double>",
+              "ContractNumber": "<string>"
+            },
+            "ManagementOfMaintenanceOrderDataList": [
+              {
+                "ID": "<long>",
+                "MaintenanceOfferID": "<long>",
+                "MaintenanceForID": "<long>",
+                "ProjectID": "<long>",
+                "StartDate": "<string>",
+                "EndDate": "<string>",
+                "WarrentyCertificateAttachmentContent": "<binary>",
+                "WarrentyCertificateAttachmentName": "<string>",
+                "WarrentyCertificateAttachmentExtension": "<string>",
+                "ContractAttachementContent": "<binary>",
+                "ContractAttachementName": "<string>",
+                "ContractAttachementExtension": "<string>",
+                "ProjectName": "<string>",
+                "NumberOfVisits": "<integer>",
+                "ContractPrice": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "Active": "<boolean>",
+                "RateToLocalCu": "<double>",
+                "ContractAttachement": "<string>",
+                "WarrentyCertificateAttachment": "<string>",
+                "ContractStatus": "<string>",
+                "ClosingReason": "<string>",
+                "CreatedBy": "<string>",
+                "ContractType": "<string>",
+                "ClosingContractType": "<string>",
+                "ClosingMileageCounter": "<double>",
+                "CurrentMileageCounter": "<double>",
+                "ContractNumber": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "MaintenanceOfferID": "<long>",
+                "MaintenanceForID": "<long>",
+                "ProjectID": "<long>",
+                "StartDate": "<string>",
+                "EndDate": "<string>",
+                "WarrentyCertificateAttachmentContent": "<binary>",
+                "WarrentyCertificateAttachmentName": "<string>",
+                "WarrentyCertificateAttachmentExtension": "<string>",
+                "ContractAttachementContent": "<binary>",
+                "ContractAttachementName": "<string>",
+                "ContractAttachementExtension": "<string>",
+                "ProjectName": "<string>",
+                "NumberOfVisits": "<integer>",
+                "ContractPrice": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "Active": "<boolean>",
+                "RateToLocalCu": "<double>",
+                "ContractAttachement": "<string>",
+                "WarrentyCertificateAttachment": "<string>",
+                "ContractStatus": "<string>",
+                "ClosingReason": "<string>",
+                "CreatedBy": "<string>",
+                "ContractType": "<string>",
+                "ClosingContractType": "<string>",
+                "ClosingMileageCounter": "<double>",
+                "CurrentMileageCounter": "<double>",
+                "ContractNumber": "<string>"
+              }
+            ]
+          }

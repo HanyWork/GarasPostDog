@@ -1,0 +1,7 @@
+info:
+  name: AddProjectLetterOfCreditComment
+  type: folder
+  seq: 5
+
+request:
+  auth: inherit

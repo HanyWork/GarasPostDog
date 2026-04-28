@@ -1,0 +1,118 @@
+info:
+  name: /PurchesRequest/GetManageAssignedPRItems
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Purchasing/PurchesRequest/GetManageAssignedPRItems"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: Accept
+      value: text/plain
+    - name: UserAssignedTo
+      value: ""
+      disabled: true
+    - name: InventoryItemID
+      value: ""
+      disabled: true
+    - name: IsDirectPR
+      value: ""
+      disabled: true
+    - name: FormInventoryStoreID
+      value: ""
+      disabled: true
+    - name: ProjectID
+      value: ""
+      disabled: true
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PurchesRequest/GetManageAssignedPRItems"
+      method: GET
+      headers:
+        - name: filters
+          value: UserAssignedTo,<long>,InventoryItemID,<long>,IsDirectPR,<boolean>,FormInventoryStoreID,<long>,ProjectID,<long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "AssignedPRItemsList": [
+              {
+                "PurchaseRequestID": "<long>",
+                "PurchaseRequestItemID": "<long>",
+                "InventoryMatrialRequestItemID": "<long>",
+                "AssginedUserID": "<long>",
+                "AssginedUserImage": "<string>",
+                "AssginedUserName": "<string>",
+                "InventoryItemID": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "RecivedQuantity": "<double>",
+                "InventoryUOMShortName": "<string>",
+                "FabricationOrderNumber": "<string>",
+                "PurchaseRequestItemQuantity": "<double>",
+                "PurchaseRequestQuantity": "<double>",
+                "RequestRecivedQuantity": "<double>",
+                "PurchaseItemQuantity": "<double>",
+                "PurchasedUOMShortName": "<string>",
+                "RequstionUOMShortName": "<string>",
+                "ProjectName": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>"
+              },
+              {
+                "PurchaseRequestID": "<long>",
+                "PurchaseRequestItemID": "<long>",
+                "InventoryMatrialRequestItemID": "<long>",
+                "AssginedUserID": "<long>",
+                "AssginedUserImage": "<string>",
+                "AssginedUserName": "<string>",
+                "InventoryItemID": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "RecivedQuantity": "<double>",
+                "InventoryUOMShortName": "<string>",
+                "FabricationOrderNumber": "<string>",
+                "PurchaseRequestItemQuantity": "<double>",
+                "PurchaseRequestQuantity": "<double>",
+                "RequestRecivedQuantity": "<double>",
+                "PurchaseItemQuantity": "<double>",
+                "PurchasedUOMShortName": "<string>",
+                "RequstionUOMShortName": "<string>",
+                "ProjectName": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>"
+              }
+            ]
+          }

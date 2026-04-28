@@ -1,0 +1,102 @@
+info:
+  name: /CRM/AddNewCRMReport
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/CRM/AddNewCRMReport"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "CrmUserId": "JFp7UYIKFWypVNu2LYAVzQ==",
+          "BranchId": "4",
+          "ReportDate": "2024-10-17",
+          "ClientId": "30012",
+          "ClientContactPersonId": "20013",
+          "IsNew": false,
+          "Comment": "Premium Client (Cooperative)/qqqqqqqqqqqq",
+          "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+          "RelatedToSalesOfferId": "40077",
+          "ReminderIsClosed": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/CRM/AddNewCRMReport"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "Id": "<long>",
+            "CrmUserId": "<string>",
+            "BranchId": "<integer>",
+            "ReportDate": "<string>",
+            "ClientId": "<long>",
+            "ClientContactPersonId": "<long>",
+            "IsNew": "<boolean>",
+            "CrmContactTypeId": "<integer>",
+            "OtherContactName": "<string>",
+            "CrmRecievedTypeId": "<integer>",
+            "OtherRecievedName": "<string>",
+            "CrmReportReasonId": "<integer>",
+            "Comment": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<long>",
+            "CustomerSatisfaction": "<double>",
+            "DailyReportId": "<long>",
+            "DailyReportLineId": "<long>",
+            "RelatedToInventoryItemId": "<long>",
+            "RelatedToSalesOfferProductId": "<long>",
+            "RelatedToSalesOfferId": "<long>",
+            "Hint": "<string>",
+            "ReminderDate": "<string>",
+            "ReminderIsClosed": "<boolean>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

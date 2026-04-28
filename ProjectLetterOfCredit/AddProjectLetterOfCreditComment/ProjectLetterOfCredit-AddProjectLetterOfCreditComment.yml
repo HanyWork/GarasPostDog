@@ -1,0 +1,82 @@
+info:
+  name: /ProjectLetterOfCredit/AddProjectLetterOfCreditComment
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectLetterOfCredit/AddProjectLetterOfCreditComment"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: multipart-form
+    data:
+      - name: CommentList[0].ProjectLetterOfCreditID
+        type: text
+        value: "1"
+      - name: CommentList[0].comment
+        type: text
+        value: abcdefg
+      - name: CommentList[1].ProjectLetterOfCreditID
+        type: text
+        value: "1"
+      - name: CommentList[1].comment
+        type: text
+        value: test2
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectLetterOfCredit/AddProjectLetterOfCreditComment"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ProjectLetterOfCreditID
+            type: text
+            value: <long>
+          - name: comment
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

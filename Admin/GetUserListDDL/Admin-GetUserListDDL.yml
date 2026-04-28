@@ -1,0 +1,73 @@
+info:
+  name: /Admin/GetUserListDDL
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://localhost:44338/Admin/GetUserListDDL
+  headers:
+    - name: GroupId
+      value: "7"
+    - name: projectId
+      value: "245906"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: ""
+      value: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetUserListDDL"
+      method: GET
+      headers:
+        - name: GroupId
+          value: <integer>
+        - name: projectId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "UsersList": [
+              {
+                "Id": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "Id": "<long>",
+                "Name": "<string>"
+              }
+            ]
+          }

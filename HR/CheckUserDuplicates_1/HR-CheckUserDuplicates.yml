@@ -1,0 +1,92 @@
+info:
+  name: /HR/CheckUserDuplicates
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/CheckUserDuplicates"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: Garastest
+  body:
+    type: json
+    data: |-
+      {
+        "FirstName": "Vetanoia03",
+        "ARFirstName": "Test 2",
+         "MiddleName": "ddddsa",
+      //   "ARMiddleName": "<string>",
+         "LastName": "dddd"
+      //   "ARLastName": "<string>",
+      //   "Email": "<string>",
+      //   "Mobile": "<string>"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/CheckUserDuplicates"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "UserDuplicates": [
+              [
+                {
+                  "Email": "<string>",
+                  "Id": "<long>"
+                },
+                {
+                  "Email": "<string>",
+                  "Id": "<long>"
+                }
+              ],
+              [
+                {
+                  "Email": "<string>",
+                  "Id": "<long>"
+                },
+                {
+                  "Email": "<string>",
+                  "Id": "<long>"
+                }
+              ]
+            ],
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Result": "<boolean>"
+          }

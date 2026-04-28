@@ -1,0 +1,7 @@
+info:
+  name: AddEditDailyTransactionToGeneralType Copy
+  type: folder
+  seq: 24
+
+request:
+  auth: inherit

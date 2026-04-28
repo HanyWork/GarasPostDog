@@ -1,0 +1,219 @@
+info:
+  name: /TaskManager/AddTaskMangerProject
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/AddTaskMangerProject"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: multipart-form
+    data:
+      - name: ProjectName
+        type: text
+        value: test
+      - name: ClientID
+        type: text
+        value: "10334"
+      - name: ProjectDescription
+        type: text
+        value: added 19-05
+      - name: Budget
+        type: text
+        value: ""
+        description: "*"
+      - name: CurrencyID
+        type: text
+        value: "1"
+        description: "*"
+      - name: ProjectLocation
+        type: text
+        value: alex
+      - name: StartDate
+        type: text
+        value: 2024-05-19
+      - name: EndDate
+        type: text
+        value: 2024-05-21
+      - name: Billable
+        type: text
+        value: ""
+      - name: PriorityID
+        type: text
+        value: "1"
+      - name: TimeTracking
+        type: text
+        value: ""
+        description: "*"
+      - name: Active
+        type: text
+        value: ""
+      - name: BranchId
+        type: text
+        value: ""
+        description: "*"
+      - name: costTypeID
+        type: text
+        value: "1"
+        disabled: true
+      - name: ProjectContactPersonName
+        type: text
+        value: p
+      - name: ProjectContactPersonMob
+        type: text
+        value: "1"
+      - name: ProjectContactPersonHome
+        type: text
+        value: "03"
+        description: "*"
+      - name: ProjectContactPersonEmail
+        type: text
+        value: p@p.com
+      - name: ProjectContactPersonAddress
+        type: text
+        value: alex
+      - name: ProjectContactPersonCountryId
+        type: text
+        value: "1"
+        description: "*"
+      - name: ProjectContactPersonGovernorateID
+        type: text
+        value: "1"
+        description: "*"
+      - name: ProjectContactPersonAreaId
+        type: text
+        value: "1"
+        description: "*"
+      - name: AttachmentListTest[0].Id
+        type: text
+        value: "0"
+      - name: AttachmentList
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/Img.jpg
+          - /C:/Users/Vetanoia07/Desktop/OIP.jpg
+          - /C:/Users/Vetanoia07/Desktop/Task Manger.xlsx
+        disabled: true
+      - name: AttachmentListTest[0].Content
+        type: file
+        value:
+          - /C:/Users/Vetanoia04/Downloads/8.png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/AddTaskMangerProject"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ProjectName
+            type: text
+            value: <string>
+          - name: ClientID
+            type: text
+            value: <long>
+          - name: ProjectDescription
+            type: text
+            value: <string>
+          - name: Budget
+            type: text
+            value: <double>
+          - name: CurrencyID
+            type: text
+            value: <integer>
+          - name: AttachmentList
+            type: text
+            value: <string>,<string>
+          - name: ProjectLocation
+            type: text
+            value: <string>
+          - name: ContactPersonID
+            type: text
+            value: <long>
+          - name: StartDate
+            type: text
+            value: <string>
+          - name: EndDate
+            type: text
+            value: <string>
+          - name: Billable
+            type: text
+            value: <boolean>
+          - name: PriorityID
+            type: text
+            value: <integer>
+          - name: TimeTracking
+            type: text
+            value: <boolean>
+          - name: Active
+            type: text
+            value: <boolean>
+          - name: ProjectContactPersonName
+            type: text
+            value: <string>
+          - name: ProjectContactPersonMob
+            type: text
+            value: <string>
+          - name: ProjectContactPersonHome
+            type: text
+            value: <string>
+          - name: ProjectContactPersonEmail
+            type: text
+            value: <string>
+          - name: ProjectContactPersonAddress
+            type: text
+            value: <string>
+          - name: ProjectContactPersonCountryId
+            type: text
+            value: <integer>
+          - name: ProjectContactPersonGovernorateID
+            type: text
+            value: <integer>
+          - name: ProjectContactPersonAreaId
+            type: text
+            value: <integer>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

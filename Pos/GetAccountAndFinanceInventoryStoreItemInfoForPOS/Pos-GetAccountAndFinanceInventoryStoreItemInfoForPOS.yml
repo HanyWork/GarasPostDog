@@ -1,0 +1,84 @@
+info:
+  name: /Pos/GetAccountAndFinanceInventoryStoreItemInfoForPOS
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Pos/GetAccountAndFinanceInventoryStoreItemInfoForPOS"
+  headers:
+    - name: InventoryItemID
+      value: <long>
+      disabled: true
+    - name: StoreId
+      value: "1"
+    - name: InventoryItemCode
+      value: "4"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Pos/GetAccountAndFinanceInventoryStoreItemInfoForPOS"
+      method: GET
+      headers:
+        - name: InventoryItemID
+          value: <long>
+        - name: StoreId
+          value: <long>
+        - name: InventoryItemCode
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryItemInfo": {
+              "ID": "<long>",
+              "ItemName": "<string>",
+              "ItemCode": "<string>",
+              "Category": "<string>",
+              "CategoryId": "<integer>",
+              "PurchasingUnit": "<string>",
+              "RequestionUnit": "<string>",
+              "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+              "CustomPrice": "<double>",
+              "ItemImage": "<string>",
+              "Cost1": "<double>",
+              "Cost2": "<double>",
+              "Cost3": "<double>",
+              "RequestionUOMShortName": "<string>",
+              "Balance": "<double>",
+              "InventoryStoreItemId": "<long>"
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

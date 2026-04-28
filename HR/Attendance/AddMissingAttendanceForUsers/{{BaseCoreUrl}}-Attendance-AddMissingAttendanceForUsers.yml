@@ -1,0 +1,25 @@
+info:
+  name: "{{BaseCoreUrl}}/Attendance/AddMissingAttendanceForUsers"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Attendance/AddMissingAttendanceForUsers"
+  headers:
+    - name: HrUserId
+      value: "210"
+    - name: date
+      value: 2025-1-13
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

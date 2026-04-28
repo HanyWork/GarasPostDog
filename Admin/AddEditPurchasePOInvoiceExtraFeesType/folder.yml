@@ -1,0 +1,7 @@
+info:
+  name: AddEditPurchasePOInvoiceExtraFeesType
+  type: folder
+  seq: 32
+
+request:
+  auth: inherit

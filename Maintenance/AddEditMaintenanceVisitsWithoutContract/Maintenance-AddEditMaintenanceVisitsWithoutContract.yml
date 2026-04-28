@@ -1,0 +1,165 @@
+info:
+  name: /Maintenance/AddEditMaintenanceVisitsWithoutContract
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Maintenance/AddEditMaintenanceVisitsWithoutContract"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: ID
+        type: text
+        value: "20072"
+        disabled: true
+      - name: ManagementOfMaintenanceOrderID
+        type: text
+        value: "1"
+        disabled: true
+      - name: Serial
+        type: text
+        value: <string>
+        disabled: true
+      - name: PlannedDate
+        type: text
+        value: 2025-01-15
+      - name: VisitDate
+        type: text
+        value: <string>
+        disabled: true
+      - name: ConfirmedDate
+        type: text
+        value: 2024-09-09
+        disabled: true
+      - name: ClientProblem
+        type: text
+        value: test c 2
+      - name: MaintenanceVisitType
+        type: text
+        value: Extra
+      - name: Status
+        type: text
+        value: "true"
+        disabled: true
+      - name: MaintenanceForID
+        type: text
+        value: "20072"
+      - name: AssignedToID
+        type: text
+        value: "1"
+        disabled: true
+      - name: AssignedToName
+        type: text
+        value: <string>
+        disabled: true
+      - name: DepartmentName
+        type: text
+        value: <string>
+        disabled: true
+      - name: MaintenanceProblemAttachments[0].Id
+        type: text
+        value: "1"
+        disabled: true
+      - name: MaintenanceProblemAttachments[0].Active
+        type: text
+        value: "true"
+      - name: MaintenanceProblemAttachments[0].File
+        type: file
+        value:
+          - /C:/Users/vetonia7/Desktop/New folder/Screenshot 2024-03-05 095406.png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/AddEditMaintenanceVisitsWithoutContract"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: VisitsScheduleOfMaintenance.ID
+            type: text
+            value: <long>
+          - name: VisitsScheduleOfMaintenance.ManagementOfMaintenanceOrderID
+            type: text
+            value: <long>
+          - name: VisitsScheduleOfMaintenance.Serial
+            type: text
+            value: <string>
+          - name: VisitsScheduleOfMaintenance.PlannedDate
+            type: text
+            value: <string>
+          - name: VisitsScheduleOfMaintenance.VisitDate
+            type: text
+            value: <string>
+          - name: VisitsScheduleOfMaintenance.ConfirmedDate
+            type: text
+            value: <string>
+          - name: VisitsScheduleOfMaintenance.ClientProblem
+            type: text
+            value: <string>
+          - name: VisitsScheduleOfMaintenance.MaintenanceVisitType
+            type: text
+            value: <string>
+          - name: VisitsScheduleOfMaintenance.Status
+            type: text
+            value: <boolean>
+          - name: VisitsScheduleOfMaintenance.MaintenanceForID
+            type: text
+            value: <long>
+          - name: VisitsScheduleOfMaintenance.AssignedToID
+            type: text
+            value: <long>
+          - name: VisitsScheduleOfMaintenance.AssignedToName
+            type: text
+            value: <string>
+          - name: VisitsScheduleOfMaintenance.DepartmentName
+            type: text
+            value: <string>
+          - name: VisitsScheduleOfMaintenance.MaintenanceProblemAttachments
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

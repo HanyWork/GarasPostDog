@@ -1,0 +1,7 @@
+info:
+  name: GetTaskTypePermissionList
+  type: folder
+  seq: 52
+
+request:
+  auth: inherit

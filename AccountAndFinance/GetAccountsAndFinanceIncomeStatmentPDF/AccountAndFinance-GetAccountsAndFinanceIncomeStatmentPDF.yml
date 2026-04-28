@@ -1,0 +1,66 @@
+info:
+  name: /AccountAndFinance/GetAccountsAndFinanceIncomeStatmentPDF
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/GetAccountsAndFinanceIncomeStatmentPDF"
+  headers:
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Year
+      value: "2021"
+    - name: Month
+      value: "2"
+    - name: Day
+      value: "2"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/GetAccountsAndFinanceIncomeStatmentPDF"
+      method: GET
+      headers:
+        - name: year
+          value: <string>
+        - name: month
+          value: <string>
+        - name: day
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Message": "<string>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

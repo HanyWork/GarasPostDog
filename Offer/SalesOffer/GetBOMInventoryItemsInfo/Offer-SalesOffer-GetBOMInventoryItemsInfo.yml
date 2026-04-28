@@ -1,0 +1,194 @@
+info:
+  name: /Offer/SalesOffer/GetBOMInventoryItemsInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/Offer/SalesOffer/GetBOMInventoryItemsInfo"
+  headers:
+    - name: BOMId
+      value: <long>
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/GetBOMInventoryItemsInfo"
+      method: GET
+      headers:
+        - name: BOMId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "BOMCurrentPrice": "<double>",
+            "BomInventoryItemList": [
+              {
+                "ID": "<long>",
+                "ItemName": "<string>",
+                "ItemCode": "<string>",
+                "CommericalName": "<string>",
+                "PartNumber": "<string>",
+                "MarketName": "<string>",
+                "Type": "<string>",
+                "Description": "<string>",
+                "Details": "<string>",
+                "Category": "<string>",
+                "CategoryId": "<integer>",
+                "PurchasingUnit": "<string>",
+                "RequestionUnit": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                "MaxBlanace": "<double>",
+                "MinBalance": "<double>",
+                "PriceCalculationMethod": "<string>",
+                "Amount": "<double>",
+                "Active": "<boolean>",
+                "ItemImage": "<string>",
+                "Cost1": "<double>",
+                "Cost2": "<double>",
+                "Cost3": "<double>",
+                "RequestionUOMShortName": "<string>",
+                "BOMPartitionItemId": "<long>",
+                "BOMPartitionID": "<long>",
+                "StoreCategoryId": "<integer>",
+                "ItemCategoryID": "<integer>",
+                "ItemOrder": "<integer>",
+                "RequiredQty": "<double>",
+                "ItemQtyPrice": "<double>",
+                "BOMPartitionItemPriceType": "<string>",
+                "IsAlternative": "<boolean>",
+                "AlternativeItem": "<long>",
+                "ActiveToUse": "<boolean>",
+                "BOMPartitionItemDescription": "<string>",
+                "AvailableQty": "<string>",
+                "PricesList": [
+                  {
+                    "Id": "<integer>",
+                    "PriceAmount": "<double>",
+                    "PriceName": "<string>"
+                  },
+                  {
+                    "Id": "<integer>",
+                    "PriceAmount": "<double>",
+                    "PriceName": "<string>"
+                  }
+                ],
+                "StoresStockList": [
+                  {
+                    "InventoryStoreId": "<integer>",
+                    "InventoryStoreName": "<string>",
+                    "Balance": "<double>"
+                  },
+                  {
+                    "InventoryStoreId": "<integer>",
+                    "InventoryStoreName": "<string>",
+                    "Balance": "<double>"
+                  }
+                ],
+                "TotalBalance": "<double>"
+              },
+              {
+                "ID": "<long>",
+                "ItemName": "<string>",
+                "ItemCode": "<string>",
+                "CommericalName": "<string>",
+                "PartNumber": "<string>",
+                "MarketName": "<string>",
+                "Type": "<string>",
+                "Description": "<string>",
+                "Details": "<string>",
+                "Category": "<string>",
+                "CategoryId": "<integer>",
+                "PurchasingUnit": "<string>",
+                "RequestionUnit": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                "MaxBlanace": "<double>",
+                "MinBalance": "<double>",
+                "PriceCalculationMethod": "<string>",
+                "Amount": "<double>",
+                "Active": "<boolean>",
+                "ItemImage": "<string>",
+                "Cost1": "<double>",
+                "Cost2": "<double>",
+                "Cost3": "<double>",
+                "RequestionUOMShortName": "<string>",
+                "BOMPartitionItemId": "<long>",
+                "BOMPartitionID": "<long>",
+                "StoreCategoryId": "<integer>",
+                "ItemCategoryID": "<integer>",
+                "ItemOrder": "<integer>",
+                "RequiredQty": "<double>",
+                "ItemQtyPrice": "<double>",
+                "BOMPartitionItemPriceType": "<string>",
+                "IsAlternative": "<boolean>",
+                "AlternativeItem": "<long>",
+                "ActiveToUse": "<boolean>",
+                "BOMPartitionItemDescription": "<string>",
+                "AvailableQty": "<string>",
+                "PricesList": [
+                  {
+                    "Id": "<integer>",
+                    "PriceAmount": "<double>",
+                    "PriceName": "<string>"
+                  },
+                  {
+                    "Id": "<integer>",
+                    "PriceAmount": "<double>",
+                    "PriceName": "<string>"
+                  }
+                ],
+                "StoresStockList": [
+                  {
+                    "InventoryStoreId": "<integer>",
+                    "InventoryStoreName": "<string>",
+                    "Balance": "<double>"
+                  },
+                  {
+                    "InventoryStoreId": "<integer>",
+                    "InventoryStoreName": "<string>",
+                    "Balance": "<double>"
+                  }
+                ],
+                "TotalBalance": "<double>"
+              }
+            ],
+            "BomPricesList": [
+              {
+                "PriceAmount": "<double>",
+                "PriceName": "<string>"
+              },
+              {
+                "PriceAmount": "<double>",
+                "PriceName": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

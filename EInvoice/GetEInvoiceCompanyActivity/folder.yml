@@ -1,0 +1,7 @@
+info:
+  name: GetEInvoiceCompanyActivity
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

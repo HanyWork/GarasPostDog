@@ -1,0 +1,67 @@
+info:
+  name: /InventoryOpeningBalance/EditInventoryItemCost
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/InventoryOpeningBalance/EditInventoryItemCost"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garatest
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"inventoryStoreItemID\": \"4631\",\r
+
+      \    \"Cost\": 200\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/InventoryOpeningBalance/EditInventoryItemCost"
+      method: POST
+      headers:
+        - name: inventoryStoreItemID
+          value: <long>
+        - name: Cost
+          value: <double>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

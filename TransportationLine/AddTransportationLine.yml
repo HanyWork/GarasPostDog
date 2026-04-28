@@ -1,0 +1,35 @@
+info:
+  name: AddTransportationLine
+  type: http
+  seq: 21
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/AddTransportationLine"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"TransportationVehicleId\": 2,\r
+
+      \  \"LineName\": \"sidi besher\",\r
+
+      \  \"LineCost\": 1050,\r
+
+      \  \"OneWay\": true,\r
+
+      \  \"Active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

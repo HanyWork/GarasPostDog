@@ -1,0 +1,7 @@
+info:
+  name: InventoryStoreItemReportWithoutPrices
+  type: folder
+  seq: 11
+
+request:
+  auth: inherit

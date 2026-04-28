@@ -1,0 +1,70 @@
+info:
+  name: /AccountAndFinance/AccountMovementReports
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/AccountAndFinance/AccountMovementReports"
+  headers:
+    - name: CompanyName
+      value: proauto
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: FileExtension
+      value: XML
+    - name: AccountsList
+      value: "32"
+    - name: CalcWithoutPrivate
+      value: "True"
+    - name: OrderByCreationDate
+      value: "True"
+    - name: FromDate
+      value: 2022-08-05
+    - name: ToDate
+      value: 2025-08-06
+    - name: Accept
+      value: text/plain
+    - name: ClientId
+      value: "30770"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/AccountMovementReports"
+      method: POST
+      headers:
+        - name: header
+          value: FileExtension,<string>,AccountsList,<string>,OrderByCreationDate,<boolean>,CalcWithoutPrivate,<boolean>,FromDate,<string>,ToDate,<string>,CompanyName,<string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Message": "<string>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

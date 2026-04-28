@@ -1,0 +1,106 @@
+info:
+  name: /InventoryItemMatrialAddingAndExternalOrder/GetInventoryItemSupplierMatrialAddingAndExternalOrderInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItemMatrialAddingAndExternalOrder/GetInventoryItemSupplierMatrialAddingAndExternalOrderInfo"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: MatrialAddingOrderID
+      value: "170599"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/InventoryItemMatrialAddingAndExternalOrder/GetInventoryItemSupplierMatrialAddingAndExternalOrderInfo"
+      method: GET
+      headers:
+        - name: MatrialAddingOrderID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "InventoryItemInfo": {
+              "InventoryAddingOrderID": "<long>",
+              "SupplierName": "<string>",
+              "OrderType": "<string>",
+              "ToStore": "<string>",
+              "CreationDate": "<string>",
+              "Revision": "<integer>",
+              "RecivingDate": "<string>",
+              "MatrialAddingOrderInfList": [
+                {
+                  "Id": "<long>",
+                  "InventoryItemID": "<long>",
+                  "ItemName": "<string>",
+                  "ExpDate": "<string>",
+                  "ReceivedOrReturnQTY": "<string>",
+                  "ReceivedQTYUOP": "<string>",
+                  "RequireQTY": "<string>",
+                  "ReceivedQTYAfter": "<string>",
+                  "RemainQTY": "<string>",
+                  "UOM": "<string>",
+                  "PurchaseUOM": "<string>",
+                  "PONo": "<long>",
+                  "InventoryItemSerial": "<string>",
+                  "SupplierItemSerial": "<string>",
+                  "Comment": "<string>",
+                  "POItemComment": "<string>",
+                  "QIReport": "<long>"
+                },
+                {
+                  "Id": "<long>",
+                  "InventoryItemID": "<long>",
+                  "ItemName": "<string>",
+                  "ExpDate": "<string>",
+                  "ReceivedOrReturnQTY": "<string>",
+                  "ReceivedQTYUOP": "<string>",
+                  "RequireQTY": "<string>",
+                  "ReceivedQTYAfter": "<string>",
+                  "RemainQTY": "<string>",
+                  "UOM": "<string>",
+                  "PurchaseUOM": "<string>",
+                  "PONo": "<long>",
+                  "InventoryItemSerial": "<string>",
+                  "SupplierItemSerial": "<string>",
+                  "Comment": "<string>",
+                  "POItemComment": "<string>",
+                  "QIReport": "<long>"
+                }
+              ]
+            }
+          }

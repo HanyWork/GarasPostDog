@@ -1,0 +1,37 @@
+info:
+  name: UpdateTransportationLine
+  type: http
+  seq: 22
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/UpdateTransportationLine"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"Id\": 2,\r
+
+      \  \"TransportationVehicleId\": 2,\r
+
+      \  \"LineName\": \"mandra\",\r
+
+      \  \"LineCost\": 1450,\r
+
+      \  \"OneWay\": true,\r
+
+      \  \"Active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

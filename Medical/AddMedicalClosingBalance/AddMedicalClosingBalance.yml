@@ -1,0 +1,29 @@
+info:
+  name: AddMedicalClosingBalance
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddMedicalClosingBalance"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: "{\r
+
+      \    \"ID\":\"6\",\r
+
+      \    \"ClosingBalance\":\"460\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

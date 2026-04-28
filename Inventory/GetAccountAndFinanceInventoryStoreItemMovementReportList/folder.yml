@@ -1,0 +1,7 @@
+info:
+  name: GetAccountAndFinanceInventoryStoreItemMovementReportList
+  type: folder
+  seq: 36
+
+request:
+  auth: inherit

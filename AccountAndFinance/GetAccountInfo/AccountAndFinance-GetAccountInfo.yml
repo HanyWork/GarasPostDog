@@ -1,0 +1,83 @@
+info:
+  name: /AccountAndFinance/GetAccountInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/GetAccountInfo"
+  headers:
+    - name: AccountID
+      value: "20529"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/GetAccountInfo"
+      method: GET
+      headers:
+        - name: AccountID
+          value: "0"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "AccountInfoModel": {
+              "ID": "<long>",
+              "AccountName": "<string>",
+              "AccountNumber": "<string>",
+              "DataLevel": "<integer>",
+              "AccountOrder": "<integer>",
+              "Description": "<string>",
+              "ParentCategoryId": "<long>",
+              "ParentCategoryName": "<string>",
+              "AccountType": "<string>",
+              "AccountCategoryId": "<long>",
+              "AccountCategoryName": "<string>",
+              "CurrencyId": "<integer>",
+              "CurrencyName": "<string>",
+              "Active": "<boolean>",
+              "HaveChild": "<boolean>",
+              "HaveAdvancedSetting": "<boolean>",
+              "AdvanciedTypeID": "<long>",
+              "AdvancedSettingName": "<string>",
+              "AdvancedSettingLocation": "<string>",
+              "AdvancedSettingDescription": "<string>",
+              "AdvancedSettingKeepersList": [
+                "<long>",
+                "<long>"
+              ]
+            }
+          }

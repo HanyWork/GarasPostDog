@@ -1,0 +1,143 @@
+info:
+  name: /HR/Department/EditDepartment
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Department/EditDepartment"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: Periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "1024"
+      - name: Name
+        type: text
+        value: testing 01
+      - name: BranchId
+        type: text
+        value: "11"
+      - name: Active
+        type: text
+        value: "true"
+      - name: Teams[0].Id
+        type: text
+        value: "36"
+        disabled: true
+      - name: Teams[0].Name
+        type: text
+        value: First Team
+        disabled: true
+      - name: Teams[0].Active
+        type: text
+        value: "true"
+        disabled: true
+      - name: Teams[0].DepartmentId
+        type: text
+        value: "1024"
+        disabled: true
+      - name: Teams[1].Id
+        type: text
+        value: ""
+        disabled: true
+      - name: Teams[0].Id
+        type: text
+        value: "37"
+        disabled: true
+      - name: Teams[0].Name
+        type: text
+        value: Second Team03
+        disabled: true
+      - name: Teams[0].Active
+        type: text
+        value: "true"
+        disabled: true
+      - name: Teams[0].DepartmentId
+        type: text
+        value: "1025"
+        disabled: true
+      - name: Teams[0].Name
+        type: text
+        value: Third Team03
+        disabled: true
+      - name: Teams[0].Active
+        type: text
+        value: "true"
+        disabled: true
+      - name: Teams[0].DepartmentId
+        type: text
+        value: "1025"
+        disabled: true
+      - name: Teams[0].Id
+        type: text
+        value: "37"
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Department/EditDepartment"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <integer>
+          - name: Name
+            type: text
+            value: <string>
+          - name: BranchId
+            type: text
+            value: <integer>
+          - name: Active
+            type: text
+            value: <boolean>
+          - name: Teams
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<integer>"
+          }

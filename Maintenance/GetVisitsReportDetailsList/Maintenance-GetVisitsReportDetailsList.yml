@@ -1,0 +1,185 @@
+info:
+  name: /Maintenance/GetVisitsReportDetailsList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Maintenance/GetVisitsReportDetailsList"
+  headers:
+    - name: MaintVisitID
+      value: "3"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/GetVisitsReportDetailsList"
+      method: GET
+      headers:
+        - name: MaintVisitID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "GetVisitsMaintenanceReportDetailsDataList": [
+              {
+                "ID": "<long>",
+                "MaintVisitID": "<long>",
+                "ReportDate": "<string>",
+                "ClientAddress": "<string>",
+                "DefectDescription": "<string>",
+                "WorkDescription": "<string>",
+                "CollectedAmount": "<double>",
+                "CurrencyName": "<string>",
+                "ByUser": "<string>",
+                "ByUserID": "<long>",
+                "ClientPRStatus": "<boolean>",
+                "InstallationPRStatus": "<boolean>",
+                "FabricationPRStatus": "<boolean>",
+                "DesignPRStatus": "<boolean>",
+                "ProductLifePRStatus": "<boolean>",
+                "MaintenanceTeamPRStatus": "<boolean>",
+                "InternalPartComments": "<string>",
+                "Finished": "<boolean>",
+                "CRMFeedbackStatus": "<boolean>",
+                "CRMFeedback": "<string>",
+                "CRMCommitment": "<string>",
+                "CRMFeedbackComments": "<string>",
+                "ClientCommentsAndFeedback": "<string>",
+                "ClientSatisfactionRate": "<double>",
+                "ClientSignature": "<string>",
+                "ProblemReportImage": "<string>",
+                "MileageCounter": "<double>",
+                "GetUsersWorkHoursAndEvaluationList": [
+                  {
+                    "ID": "<long>",
+                    "MaintenanceReportID": "<long>",
+                    "BranchID": "<long>",
+                    "DepartmentID": "<long>",
+                    "JobTitleID": "<long>",
+                    "UserID": "<long>",
+                    "HourNum": "<double>",
+                    "TimeFrom": "<string>",
+                    "TimeTo": "<string>",
+                    "Evalution": "<double>",
+                    "Comment": "<string>",
+                    "DepartmentName": "<string>",
+                    "UserPhoto": "<string>",
+                    "UserName": "<string>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "MaintenanceReportID": "<long>",
+                    "BranchID": "<long>",
+                    "DepartmentID": "<long>",
+                    "JobTitleID": "<long>",
+                    "UserID": "<long>",
+                    "HourNum": "<double>",
+                    "TimeFrom": "<string>",
+                    "TimeTo": "<string>",
+                    "Evalution": "<double>",
+                    "Comment": "<string>",
+                    "DepartmentName": "<string>",
+                    "UserPhoto": "<string>",
+                    "UserName": "<string>"
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "MaintVisitID": "<long>",
+                "ReportDate": "<string>",
+                "ClientAddress": "<string>",
+                "DefectDescription": "<string>",
+                "WorkDescription": "<string>",
+                "CollectedAmount": "<double>",
+                "CurrencyName": "<string>",
+                "ByUser": "<string>",
+                "ByUserID": "<long>",
+                "ClientPRStatus": "<boolean>",
+                "InstallationPRStatus": "<boolean>",
+                "FabricationPRStatus": "<boolean>",
+                "DesignPRStatus": "<boolean>",
+                "ProductLifePRStatus": "<boolean>",
+                "MaintenanceTeamPRStatus": "<boolean>",
+                "InternalPartComments": "<string>",
+                "Finished": "<boolean>",
+                "CRMFeedbackStatus": "<boolean>",
+                "CRMFeedback": "<string>",
+                "CRMCommitment": "<string>",
+                "CRMFeedbackComments": "<string>",
+                "ClientCommentsAndFeedback": "<string>",
+                "ClientSatisfactionRate": "<double>",
+                "ClientSignature": "<string>",
+                "ProblemReportImage": "<string>",
+                "MileageCounter": "<double>",
+                "GetUsersWorkHoursAndEvaluationList": [
+                  {
+                    "ID": "<long>",
+                    "MaintenanceReportID": "<long>",
+                    "BranchID": "<long>",
+                    "DepartmentID": "<long>",
+                    "JobTitleID": "<long>",
+                    "UserID": "<long>",
+                    "HourNum": "<double>",
+                    "TimeFrom": "<string>",
+                    "TimeTo": "<string>",
+                    "Evalution": "<double>",
+                    "Comment": "<string>",
+                    "DepartmentName": "<string>",
+                    "UserPhoto": "<string>",
+                    "UserName": "<string>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "MaintenanceReportID": "<long>",
+                    "BranchID": "<long>",
+                    "DepartmentID": "<long>",
+                    "JobTitleID": "<long>",
+                    "UserID": "<long>",
+                    "HourNum": "<double>",
+                    "TimeFrom": "<string>",
+                    "TimeTo": "<string>",
+                    "Evalution": "<double>",
+                    "Comment": "<string>",
+                    "DepartmentName": "<string>",
+                    "UserPhoto": "<string>",
+                    "UserName": "<string>"
+                  }
+                ]
+              }
+            ]
+          }

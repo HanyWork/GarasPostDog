@@ -1,0 +1,123 @@
+info:
+  name: /Pos/GetAllMedicalDailyTreasuryBalanceForPOS
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Pos/GetAllMedicalDailyTreasuryBalanceForPOS"
+  headers:
+    - name: PosNumberId
+      value: "70596327"
+    - name: CreatedById
+      value: "71138980"
+    - name: Type
+      value: commodo fugiat qui deserunt
+    - name: From
+      value: 1966-12-07T03:26:31.816Z
+    - name: To
+      value: 1966-12-07T03:26:31.816Z
+    - name: IsOpeningBalance
+      value: "true"
+    - name: currentPage
+      value: "1"
+    - name: numberOfItemsPerPage
+      value: "10"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Pos/GetAllMedicalDailyTreasuryBalanceForPOS"
+      method: GET
+      headers:
+        - name: PosNumberId
+          value: "70596327"
+        - name: CreatedById
+          value: "71138980"
+        - name: Type
+          value: commodo fugiat qui deserunt
+        - name: From
+          value: 1966-12-07T03:26:31.816Z
+        - name: To
+          value: 1966-12-07T03:26:31.816Z
+        - name: IsOpeningBalance
+          value: "true"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "proident commodo ullamco in",
+                "ErrorCode": "minim incididunt"
+              },
+              {
+                "ErrorMSG": "qui aliquip aliqua",
+                "ErrorCode": "fugiat dolore ad"
+              }
+            ],
+            "Data": [
+              {
+                "Id": -75997712,
+                "OpeningBalance": 21015148.11637397,
+                "ClosingBalance": -139375.63659772277,
+                "TotalReceipts": -38988694.02986707,
+                "ReservationAmount": 24168810.92895782,
+                "Difference": 60529936.81905061,
+                "IsOpeningBalance": true,
+                "CreatedBy": 87604826,
+                "CreationDate": "dolore quis velit Duis",
+                "ClosingDate": "dolor ",
+                "ModifiedBy": 69777533,
+                "ReceivedFrom": 23510297,
+                "PosNumberId": 17505097,
+                "CreatedByName": "dolor do commodo ad",
+                "ModifiedByName": "quis nostrud mini",
+                "ReceivedFromName": "irure eiusmod quis ipsum ullamco",
+                "PosNumberName": "ea dolore veniam sunt",
+                "Type": "non ea"
+              },
+              {
+                "Id": 48779862,
+                "OpeningBalance": -5927565.88047494,
+                "ClosingBalance": 2840547.353888303,
+                "TotalReceipts": -81357601.74613208,
+                "ReservationAmount": 47621269.18988088,
+                "Difference": 96800699.13905975,
+                "IsOpeningBalance": true,
+                "CreatedBy": 35109925,
+                "CreationDate": "irure aliquip",
+                "ClosingDate": "irure",
+                "ModifiedBy": 88767385,
+                "ReceivedFrom": -49200080,
+                "PosNumberId": -85755934,
+                "CreatedByName": "enim sed Ut aliquip",
+                "ModifiedByName": "adipisicing anim sed",
+                "ReceivedFromName": "magna reprehenderit pr",
+                "PosNumberName": "magna do ex proident minim",
+                "Type": "culpa ullamco"
+              }
+            ]
+          }

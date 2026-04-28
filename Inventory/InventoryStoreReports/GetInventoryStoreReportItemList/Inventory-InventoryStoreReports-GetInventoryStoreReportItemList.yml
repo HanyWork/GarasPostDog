@@ -1,0 +1,81 @@
+info:
+  name: /Inventory/InventoryStoreReports/GetInventoryStoreReportItemList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryStoreReports/GetInventoryStoreReportItemList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: ReportID
+      value: "1"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: proauto
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryStoreReports/GetInventoryStoreReportItemList?ReportID=<long>"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: ReportID
+          value: <long>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "DataLList": [
+              {
+                "ID": "<long>",
+                "InventoryItemID": "<long>",
+                "ItemName": "<string>",
+                "CurrentBalance": "<double>",
+                "PhysicalBalance": "<double>",
+                "UnitCost": "<double>",
+                "Comment": "<string>",
+                "IsFinished": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "InventoryItemID": "<long>",
+                "ItemName": "<string>",
+                "CurrentBalance": "<double>",
+                "PhysicalBalance": "<double>",
+                "UnitCost": "<double>",
+                "Comment": "<string>",
+                "IsFinished": "<boolean>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,77 @@
+info:
+  name: /HR/Attendance/GetAttendanceReport
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetAttendanceReport"
+  headers:
+    - name: BranchId
+      value: "4"
+    - name: DepartmentId
+      value: "2"
+      disabled: true
+    - name: From
+      value: 2025-5-26
+      disabled: true
+    - name: To
+      value: 2025-5-26
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetAttendanceReport?CompanyName=<string>"
+      method: GET
+      headers:
+        - name: BranchId
+          value: <integer>
+        - name: DepartmentId
+          value: <long>
+        - name: From
+          value: Year,<integer>,Month,<integer>,Day,<integer>,DayOfWeek,2
+        - name: To
+          value: Year,<integer>,Month,<integer>,Day,<integer>,DayOfWeek,2
+        - name: Accept
+          value: text/plain
+      params:
+        - name: CompanyName
+          value: <string>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

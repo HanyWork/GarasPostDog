@@ -1,0 +1,101 @@
+info:
+  name: /EInvoice/AddEditEInvoiceAttachment
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/EInvoice/AddEditEInvoiceAttachment"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: EInvoiceAttachmentData.Id
+        type: text
+        value: ""
+        disabled: true
+      - name: EInvoiceAttachmentData.File
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Downloads/My cheque/My cheque/National bank of qatar 2.jpeg
+      - name: EInvoiceAttachmentData.Category
+        type: text
+        value: test
+      - name: EInvoiceAttachmentData.Active
+        type: text
+        value: "true"
+      - name: EInvoiceAttachmentData.Type
+        type: text
+        value: test
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EInvoice/AddEditEInvoiceAttachment?CompanyName=<string>&creator=<long>"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      params:
+        - name: CompanyName
+          value: <string>
+          type: query
+        - name: creator
+          value: <long>
+          type: query
+      body:
+        type: json
+        data: |-
+          {
+            "EInvoiceAttachmentData": {
+              "Id": "<long>",
+              "FileName": "<string>",
+              "FileExtension": "<string>",
+              "File": "<binary>",
+              "FilePath": "<string>",
+              "Category": "<string>",
+              "Active": "<boolean>",
+              "AttachmentPath": "<string>",
+              "Type": "<string>"
+            }
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

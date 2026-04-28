@@ -1,0 +1,22 @@
+info:
+  name: GetTaskProgressForUserList
+  type: http
+  seq: 43
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetTaskProgressForUserList"
+  headers:
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: TaskId
+      value: "20076"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

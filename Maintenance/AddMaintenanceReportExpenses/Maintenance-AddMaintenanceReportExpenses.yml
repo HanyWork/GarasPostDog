@@ -1,0 +1,114 @@
+info:
+  name: /Maintenance/AddMaintenanceReportExpenses
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Maintenance/AddMaintenanceReportExpenses"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: MaintenanceReportExpensesId
+        type: text
+        value: "2"
+        disabled: true
+      - name: MaintenanceReportId
+        type: text
+        value: "20007"
+      - name: Amount
+        type: text
+        value: "500"
+      - name: CurrencyId
+        type: text
+        value: "5"
+      - name: Comment
+        type: text
+        value: test
+      - name: Approve
+        type: text
+        value: "true"
+      - name: File
+        type: file
+        value:
+          - /D:/a10.png
+      - name: ExpensesTypeId
+        type: text
+        value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/AddMaintenanceReportExpenses"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: MaintenanceReportExpensesId
+            type: text
+            value: <long>
+          - name: MaintenanceReportId
+            type: text
+            value: <long>
+          - name: Amount
+            type: text
+            value: <double>
+          - name: CurrencyId
+            type: text
+            value: <integer>
+          - name: Comment
+            type: text
+            value: <string>
+          - name: Approve
+            type: text
+            value: <boolean>
+          - name: File
+            type: file
+            value: []
+          - name: ExpensesTypeId
+            type: text
+            value: <long>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

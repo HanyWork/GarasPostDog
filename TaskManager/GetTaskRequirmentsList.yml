@@ -1,0 +1,22 @@
+info:
+  name: GetTaskRequirmentsList
+  type: http
+  seq: 58
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskRequirmentsList"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+    - name: TaskId
+      value: "20175"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

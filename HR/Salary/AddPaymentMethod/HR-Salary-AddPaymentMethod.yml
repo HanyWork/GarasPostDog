@@ -1,0 +1,86 @@
+info:
+  name: /HR/Salary/AddPaymentMethod
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Salary/AddPaymentMethod"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: |-
+      {
+          "HrUserID": 11,
+          "PaymentMethodID": 1,
+          "BankDetailsList": [
+              {
+                  "BankName": "testBank44",
+                  "BankBranch": "cairo",
+                  "AccountHolderFullName": "test name",
+                  "AccountNumber": "44444444",
+                  "ExpiryDate": "5/2044"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Salary/AddPaymentMethod"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "PaymentMethodID": "<integer>",
+            "BankName": "<string>",
+            "BankBranch": "<string>",
+            "AccountHolderFullName": "<string>",
+            "AccountNumber": "<string>",
+            "ExpiryDate": "<string>",
+            "HrUserID": "<long>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<integer>"
+          }

@@ -1,0 +1,173 @@
+info:
+  name: /PoInvoice/AddNewPurchasePOExtraaFees
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/PoInvoice/AddNewPurchasePOExtraaFees"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: json
+    data: |+
+      {
+          "PurchasePOList": [
+              {
+                  "POId": 10,
+                  "POInvoiceId": null,
+                  "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+                  "PurchasePOExtraFeesList" : [
+                      {
+                          "Id": null,
+                          "ExtraFeesTypeId": null,
+                          "Percentage": null,
+                          "Amount": 10,
+                          "CurrencyId": null,
+                          "RateToEgp": null,
+                          "POItemId": null,
+                          "Comment": "(ExpensisName)-Automatic From Journal Entry #(Serial)",
+                          "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+                          "ModifiedBy": null
+                      }
+                  ]
+              },
+              {
+                  "POId": 11,
+                  "POInvoiceId": null,
+                  "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+                  "PurchasePOExtraFeesList" : [
+                      {
+                          "Id": null,
+                          "ExtraFeesTypeId": null,
+                          "Percentage": null,
+                          "Amount": 10,
+                          "CurrencyId": null,
+                          "RateToEgp": null,
+                          "POItemId": null,
+                          "Comment": "(ExpensisName)-Automatic From Journal Entry #(Serial)",
+                          "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+                          "ModifiedBy": null
+                      }
+                  ]
+              }
+          ]
+      }
+
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PoInvoice/AddNewPurchasePOExtraaFees"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "PurchasePOExtraFeesList": [
+              {
+                "POId": "<long>",
+                "POInvoiceId": "<long>",
+                "CreatedBy": "<string>",
+                "PurchasePOExtraFeesList": [
+                  {
+                    "Id": "<long>",
+                    "ExtraFeesTypeId": "<long>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyId": "<integer>",
+                    "RateToEgp": "<double>",
+                    "POItemId": "<long>",
+                    "Comment": "<string>",
+                    "CreatedBy": "<string>",
+                    "ModifiedBy": "<string>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "ExtraFeesTypeId": "<long>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyId": "<integer>",
+                    "RateToEgp": "<double>",
+                    "POItemId": "<long>",
+                    "Comment": "<string>",
+                    "CreatedBy": "<string>",
+                    "ModifiedBy": "<string>"
+                  }
+                ]
+              },
+              {
+                "POId": "<long>",
+                "POInvoiceId": "<long>",
+                "CreatedBy": "<string>",
+                "PurchasePOExtraFeesList": [
+                  {
+                    "Id": "<long>",
+                    "ExtraFeesTypeId": "<long>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyId": "<integer>",
+                    "RateToEgp": "<double>",
+                    "POItemId": "<long>",
+                    "Comment": "<string>",
+                    "CreatedBy": "<string>",
+                    "ModifiedBy": "<string>"
+                  },
+                  {
+                    "Id": "<long>",
+                    "ExtraFeesTypeId": "<long>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyId": "<integer>",
+                    "RateToEgp": "<double>",
+                    "POItemId": "<long>",
+                    "Comment": "<string>",
+                    "CreatedBy": "<string>",
+                    "ModifiedBy": "<string>"
+                  }
+                ]
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

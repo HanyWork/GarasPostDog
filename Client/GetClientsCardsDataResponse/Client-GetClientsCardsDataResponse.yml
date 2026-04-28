@@ -1,0 +1,191 @@
+info:
+  name: /Client/GetClientsCardsDataResponse
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Client/GetClientsCardsDataResponse"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: proauto
+    - name: Phone
+      value: ""
+      disabled: true
+    - name: Mobile
+      value: "1007457897"
+      disabled: true
+    - name: ClientName
+      value: "%D8%B4%D8%B1%D9%83%D8%A9%20%D8%AD%D8%B3%D9%86%20%D8%B9%D9%84%D8%A7%D9%85"
+    - name: SpecialityId
+      value: ""
+      disabled: true
+    - name: SalesPersonId
+      value: "1"
+      disabled: true
+    - name: BranchId
+      value: ""
+      disabled: true
+    - name: IsExpired
+      value: "true"
+      disabled: true
+    - name: ApprovalStatus
+      value: Approved
+      disabled: true
+    - name: ExpirationPeriod
+      value: "10"
+      disabled: true
+    - name: PurchasingProductsIdsString
+      value: ""
+      disabled: true
+    - name: PurchasingProductsStartDate
+      value: ""
+      disabled: true
+    - name: PurchasingProductsEndDate
+      value: ""
+      disabled: true
+    - name: RegistrationDateFrom
+      value: 2023-1-1
+      disabled: true
+    - name: RegistrationDateTo
+      value: 2023-1-1
+      disabled: true
+    - name: WithOpenOffers
+      value: "true"
+      disabled: true
+    - name: WithOpenProjects
+      value: "true"
+      disabled: true
+    - name: WithVolume
+      value: ""
+      disabled: true
+    - name: HasRFQ
+      value: "true"
+      disabled: true
+    - name: SupportedBy
+      value: Ads%20-%20%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA
+      disabled: true
+    - name: DealsDateTo
+      value: 2023-1-1
+      disabled: true
+    - name: DealsDateFrom
+      value: 2024-1-1
+      disabled: true
+    - name: CountryId
+      value: "1"
+      disabled: true
+    - name: GovernorateId
+      value: "1"
+      disabled: true
+    - name: AreaId
+      value: "1"
+      disabled: true
+    - name: ClientClassification
+      value: ""
+      disabled: true
+    - name: NumberOfItemsPerPage
+      value: "20"
+    - name: CurrentPage
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Client/GetClientsCardsDataResponse"
+      method: GET
+      headers:
+        - name: filters
+          value: Phone,<string>,Mobile,<string>,SupportedBy,<string>,Fax,<string>,ClientName,<string>,PurchasingProductsIdsString,<string>,PurchasingProductsStartDate,<string>,PurchasingProductsEndDate,<string>,RegistrationDateFrom,<string>,RegistrationDateTo,<string>,DealsDateFrom,<string>,DealsDateTo,<string>,SpecialityId,<integer>,SalesPersonId,<long>,BranchId,<integer>,IsExpired,<boolean>,WithOpenOffers,<boolean>,HasRFQ,<boolean>,WithOpenProjects,<boolean>,WithVolume,<boolean>,ApprovalStatus,<integer>,ClientClassification,<integer>,ExpirationPeriod,<integer>,AreaId,<long>,CountryId,<integer>,GovernorateId,<integer>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ClientsData": [
+              {
+                "Id": "<long>",
+                "IdEnc": "<string>",
+                "Name": "<string>",
+                "EnglishName": "<string>",
+                "SalesPersonID": "<long>",
+                "ApprovedById": "<long>",
+                "ApprovedByName": "<string>",
+                "SalesPersonName": "<string>",
+                "SalesPersonLogo": "<string>",
+                "Logo": "<binary>",
+                "HasLogo": "<boolean>",
+                "LogoURL": "<string>",
+                "Status": "<string>",
+                "ExpirationDate": "<string>",
+                "IsExpired": "<boolean>",
+                "RemainingDays": "<integer>",
+                "RegistrationDate": "<string>",
+                "RemainCollection": "<double>",
+                "Volume": "<double>",
+                "ClientSerialCounter": "<long>",
+                "ClientSerial": "<string>",
+                "ClassificationId": "<integer>",
+                "ClassificationName": "<string>",
+                "ClassificationComment": "<string>"
+              },
+              {
+                "Id": "<long>",
+                "IdEnc": "<string>",
+                "Name": "<string>",
+                "EnglishName": "<string>",
+                "SalesPersonID": "<long>",
+                "ApprovedById": "<long>",
+                "ApprovedByName": "<string>",
+                "SalesPersonName": "<string>",
+                "SalesPersonLogo": "<string>",
+                "Logo": "<binary>",
+                "HasLogo": "<boolean>",
+                "LogoURL": "<string>",
+                "Status": "<string>",
+                "ExpirationDate": "<string>",
+                "IsExpired": "<boolean>",
+                "RemainingDays": "<integer>",
+                "RegistrationDate": "<string>",
+                "RemainCollection": "<double>",
+                "Volume": "<double>",
+                "ClientSerialCounter": "<long>",
+                "ClientSerial": "<string>",
+                "ClassificationId": "<integer>",
+                "ClassificationName": "<string>",
+                "ClassificationComment": "<string>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,81 @@
+info:
+  name: /Library/GetBorrowedBooksList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Library/GetBorrowedBooksList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: "{{LibMarkCompany}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: BookName
+      value: "%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D8%B5"
+    - name: UserName
+      value: "%D9%85%D8%A7%D8%B1%D9%83%D9%88"
+    - name: NumberOfItemsPerPage
+      value: "2"
+    - name: CurrentPage
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Library/GetBorrowedBooksList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": false,
+            "Errors": [
+              {
+                "ErrorMSG": "in labore",
+                "ErrorCode": "fugiat dolor labore occaecat"
+              },
+              {
+                "ErrorMSG": "Duis",
+                "ErrorCode": "cillum ea dolor in in"
+              }
+            ],
+            "Data": {
+              "BooksList": [
+                {
+                  "UserId": 60852340,
+                  "UserName": "nostrud cupidatat enim dolor",
+                  "UserMobile": "Lorem ea",
+                  "BookId": -73353278,
+                  "BookName": "elit amet enim",
+                  "BorrowingDate": "velit esse deserunt aliqua"
+                },
+                {
+                  "UserId": -65650125,
+                  "UserName": "in voluptate ullamco aute",
+                  "UserMobile": "minim aliq",
+                  "BookId": 31950034,
+                  "BookName": "dolor",
+                  "BorrowingDate": "eiusmod enim commodo Duis"
+                }
+              ]
+            }
+          }

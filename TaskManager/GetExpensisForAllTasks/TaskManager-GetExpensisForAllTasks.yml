@@ -1,0 +1,180 @@
+info:
+  name: /TaskManager/GetExpensisForAllTasks
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetExpensisForAllTasks"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: ProjectID
+      value: ""
+    - name: GroupByDate
+      value: "true"
+    - name: GroupByTask
+      value: "true"
+    - name: GroupByUser
+      value: "true"
+    - name: ItemPerPage
+      value: "10"
+    - name: CurrrenPage
+      value: "1"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetExpensisForAllTasks"
+      method: GET
+      headers:
+        - name: filters
+          value: ProjectID,<long>,GroupByDate,<boolean>,GroupByTask,<boolean>,GroupByUser,<boolean>,ItemPerPage,<integer>,CurrrenPage,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "ExpensisList": [
+                {
+                  "Id": "<long>",
+                  "Amount": "<double>",
+                  "Note": "<string>",
+                  "Curruncy": "<string>",
+                  "Imgpath": "<string>",
+                  "TaskId": "<long>",
+                  "TaskName": "<string>",
+                  "ExpensisTypeId": "<long>",
+                  "ExpensisTypeName": "<string>",
+                  "CreatedBy": "<long>",
+                  "UserName": "<string>",
+                  "UserImgPath": "<string>",
+                  "CreationDate": "<string>",
+                  "ProjectName": "<string>"
+                },
+                {
+                  "Id": "<long>",
+                  "Amount": "<double>",
+                  "Note": "<string>",
+                  "Curruncy": "<string>",
+                  "Imgpath": "<string>",
+                  "TaskId": "<long>",
+                  "TaskName": "<string>",
+                  "ExpensisTypeId": "<long>",
+                  "ExpensisTypeName": "<string>",
+                  "CreatedBy": "<long>",
+                  "UserName": "<string>",
+                  "UserImgPath": "<string>",
+                  "CreationDate": "<string>",
+                  "ProjectName": "<string>"
+                }
+              ],
+              "GroupedExpenses": [
+                {
+                  "Key": "<string>",
+                  "ExpensisList": [
+                    {
+                      "Id": "<long>",
+                      "Amount": "<double>",
+                      "Note": "<string>",
+                      "Curruncy": "<string>",
+                      "Imgpath": "<string>",
+                      "TaskId": "<long>",
+                      "TaskName": "<string>",
+                      "ExpensisTypeId": "<long>",
+                      "ExpensisTypeName": "<string>",
+                      "CreatedBy": "<long>",
+                      "UserName": "<string>",
+                      "UserImgPath": "<string>",
+                      "CreationDate": "<string>",
+                      "ProjectName": "<string>"
+                    },
+                    {
+                      "Id": "<long>",
+                      "Amount": "<double>",
+                      "Note": "<string>",
+                      "Curruncy": "<string>",
+                      "Imgpath": "<string>",
+                      "TaskId": "<long>",
+                      "TaskName": "<string>",
+                      "ExpensisTypeId": "<long>",
+                      "ExpensisTypeName": "<string>",
+                      "CreatedBy": "<long>",
+                      "UserName": "<string>",
+                      "UserImgPath": "<string>",
+                      "CreationDate": "<string>",
+                      "ProjectName": "<string>"
+                    }
+                  ]
+                },
+                {
+                  "Key": "<string>",
+                  "ExpensisList": [
+                    {
+                      "Id": "<long>",
+                      "Amount": "<double>",
+                      "Note": "<string>",
+                      "Curruncy": "<string>",
+                      "Imgpath": "<string>",
+                      "TaskId": "<long>",
+                      "TaskName": "<string>",
+                      "ExpensisTypeId": "<long>",
+                      "ExpensisTypeName": "<string>",
+                      "CreatedBy": "<long>",
+                      "UserName": "<string>",
+                      "UserImgPath": "<string>",
+                      "CreationDate": "<string>",
+                      "ProjectName": "<string>"
+                    },
+                    {
+                      "Id": "<long>",
+                      "Amount": "<double>",
+                      "Note": "<string>",
+                      "Curruncy": "<string>",
+                      "Imgpath": "<string>",
+                      "TaskId": "<long>",
+                      "TaskName": "<string>",
+                      "ExpensisTypeId": "<long>",
+                      "ExpensisTypeName": "<string>",
+                      "CreatedBy": "<long>",
+                      "UserName": "<string>",
+                      "UserImgPath": "<string>",
+                      "CreationDate": "<string>",
+                      "ProjectName": "<string>"
+                    }
+                  ]
+                }
+              ],
+              "FilePath": "<string>"
+            }
+          }

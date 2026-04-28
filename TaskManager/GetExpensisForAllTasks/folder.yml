@@ -1,0 +1,7 @@
+info:
+  name: GetExpensisForAllTasks
+  type: folder
+  seq: 17
+
+request:
+  auth: inherit

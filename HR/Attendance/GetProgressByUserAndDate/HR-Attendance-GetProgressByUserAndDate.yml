@@ -1,0 +1,153 @@
+info:
+  name: /HR/Attendance/GetProgressByUserAndDate
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetProgressByUserAndDate"
+  headers:
+    - name: HrUserID
+      value: "11"
+    - name: day
+      value: "16"
+    - name: month
+      value: "1"
+    - name: year
+      value: "2025"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetProgressByUserAndDate"
+      method: GET
+      headers:
+        - name: HrUserID
+          value: <long>
+        - name: month
+          value: <integer>
+        - name: year
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "TaskId": "<long>",
+                "ProjectID": "<long>",
+                "Note": "<string>",
+                "ProgressRate": "<double>",
+                "Date": "<string>"
+              },
+              {
+                "TaskId": "<long>",
+                "ProjectID": "<long>",
+                "Note": "<string>",
+                "ProgressRate": "<double>",
+                "Date": "<string>"
+              }
+            ]
+          }
+
+docs: |-
+  # Get Progress By User And Date
+
+  This API endpoint retrieves the progress of a user for a specific date.
+
+  ## Request
+
+  ### Query Parameters
+
+  - None
+      
+
+  ### Request Body
+
+  - Not applicable
+      
+
+  ## Response
+
+  The response for this request follows the JSON schema below:
+
+  ``` json
+  {
+      "type": "object",
+      "properties": {
+          "Result": {
+              "type": "boolean"
+          },
+          "Errors": {
+              "type": "array",
+              "items": {
+                  "type": "object",
+                  "properties": {
+                      "ErrorMSG": {
+                          "type": "string"
+                      },
+                      "ErrorCode": {
+                          "type": "string"
+                      }
+                  }
+              }
+          },
+          "Data": {
+              "type": "array",
+              "items": {
+                  "type": "object",
+                  "properties": {
+                      "TaskId": {
+                          "type": "string"
+                      },
+                      "ProjectID": {
+                          "type": "string"
+                      },
+                      "Note": {
+                          "type": "string"
+                      },
+                      "ProgressRate": {
+                          "type": "string"
+                      },
+                      "Date": {
+                          "type": "string"
+                      }
+                  }
+              }
+          }
+      }
+  }
+
+   ```

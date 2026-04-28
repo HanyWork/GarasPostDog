@@ -1,0 +1,91 @@
+info:
+  name: AggregateMatrialReleaseItem
+  type: http
+  seq: 48
+
+http:
+  method: POST
+  url: "{{BaseCoreBYUrl}}/InventoryMatrialReleaseForBY/AggregateMatrialReleaseItem"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: ortho
+  body:
+    type: json
+    data: "{\r
+
+      \    \"ParentMatrialReleaseId\": \"10015\",\r
+
+      \    \"Status\": \"Pending\",\r
+
+      \    \"AggregateMatrialReleaseItemPerUserList\": [\r
+
+      \        {\r
+
+      \            \"UserId\": \"20013\",\r
+
+      \            \"TransactionDate\": \"2024-5-1\",\r
+
+      \            \"UserInsuranceId\": \"3\",\r
+
+      \            \"AggregateMatrialReleaseItemList\": [\r
+
+      \                {\r
+
+      \                    \"MatrialReleaseItemId\": \"10016\",\r
+
+      \                    \"InventoryItemId\": \"141\",\r
+
+      \                    \"QTY\": 1\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"MatrialReleaseItemId\": \"10017\",\r
+
+      \                    \"InventoryItemId\": \"141\",\r
+
+      \                    \"QTY\": 1\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"UserId\": \"1\",\r
+
+      \            \"TransactionDate\": \"2024-4-10\",\r
+
+      \            \"UserInsuranceId\": \"1\",\r
+
+      \            \"AggregateMatrialReleaseItemList\": [\r
+
+      \                {\r
+
+      \                    \"MatrialReleaseItemId\": \"10016\",\r
+
+      \                    \"InventoryItemId\": \"141\",\r
+
+      \                    \"QTY\": 2\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

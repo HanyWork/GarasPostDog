@@ -1,0 +1,71 @@
+info:
+  name: /HR/VacationDay/GetVacationDay
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Branch/GetVacationDay"
+  headers:
+    - name: VacationDayId
+      value: "1"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/VacationDay/GetVacationDay"
+      method: GET
+      headers:
+        - name: VacationDayId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "Id": "<long>",
+              "ArName": "<string>",
+              "EngName": "<string>",
+              "OtherName": "<string>",
+              "Reason": "<string>",
+              "IsPaid": "<boolean>",
+              "IsDeducted": "<boolean>",
+              "AllowOverTime": "<boolean>",
+              "AllowDelayingDeduction": "<boolean>",
+              "AllowAutomaticCalculations": "<boolean>",
+              "From": "<dateTime>",
+              "To": "<dateTime>"
+            }
+          }

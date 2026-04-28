@@ -1,0 +1,162 @@
+info:
+  name: /HR/Branch/AddBranch
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Branch/AddBranch"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: Periti
+  body:
+    type: multipart-form
+    data:
+      - name: Name
+        type: text
+        value: CairoBranch3
+        description: "(Required) "
+      - name: Id
+        type: text
+        value: <integer>
+        disabled: true
+      - name: Active
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: IsMain
+        type: text
+        value: "true"
+        disabled: true
+      - name: GovernorateId
+        type: text
+        value: "1"
+      - name: Building
+        type: text
+        value: "1"
+      - name: Floor
+        type: text
+        value: "1"
+      - name: Mobile
+        type: text
+        value: "1"
+      - name: AreaId
+        type: text
+        value: "1"
+      - name: CountryId
+        type: text
+        value: "1"
+      - name: Address
+        type: text
+        value: string
+      - name: Telephone
+        type: text
+        value: string
+      - name: Description
+        type: text
+        value: string
+      - name: Email
+        type: text
+        value: GergesAbdo99@gmail.com
+      - name: Diameter
+        type: text
+        value: "2.5"
+      - name: Latitude
+        type: text
+        value: "0.56475"
+      - name: Longitude
+        type: text
+        value: "0.365489"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Branch/AddBranch"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Name
+            type: text
+            value: <string>
+            description: "(Required) "
+          - name: Id
+            type: text
+            value: <integer>
+          - name: Active
+            type: text
+            value: <boolean>
+          - name: IsMain
+            type: text
+            value: <boolean>
+          - name: GovernorateId
+            type: text
+            value: <integer>
+          - name: Building
+            type: text
+            value: <integer>
+          - name: Floor
+            type: text
+            value: <integer>
+          - name: Mobile
+            type: text
+            value: <string>
+          - name: AreaId
+            type: text
+            value: <long>
+          - name: CountryId
+            type: text
+            value: <integer>
+          - name: Address
+            type: text
+            value: <string>
+          - name: Telephone
+            type: text
+            value: <string>
+          - name: Description
+            type: text
+            value: <string>
+          - name: Email
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

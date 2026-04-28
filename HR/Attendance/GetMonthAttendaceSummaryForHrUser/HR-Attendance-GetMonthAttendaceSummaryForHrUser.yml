@@ -1,0 +1,147 @@
+info:
+  name: /HR/Attendance/GetMonthAttendaceSummaryForHrUser
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetMonthAttendaceSummaryForHrUser"
+  headers:
+    - name: HrUserID
+      value: "11"
+    - name: month
+      value: "1"
+    - name: year
+      value: "2025"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetMonthAttendaceSummaryForHrUser"
+      method: GET
+      headers:
+        - name: HrUserID
+          value: <long>
+        - name: month
+          value: <integer>
+        - name: year
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "HrUserId": "<long>",
+                "DayName": "<string>",
+                "Date": {
+                  "Year": "<integer>",
+                  "Month": "<integer>",
+                  "Day": "<integer>",
+                  "DayOfWeek": 6,
+                  "DayOfYear": "<integer>",
+                  "DayNumber": "<integer>"
+                },
+                "From": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "To": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "TotalHours": "<integer>",
+                "TotalMins": "<integer>",
+                "OverTimeHour": "<integer>",
+                "OverTimeMins": "<integer>",
+                "DelayHours": "<integer>",
+                "DelayMins": "<integer>",
+                "DayTypeID": "<integer>",
+                "DayTypeName": "<string>",
+                "AbsenceDayApprovedById": "<long>",
+                "AbsenceDayApprovedByName": "<string>"
+              },
+              {
+                "HrUserId": "<long>",
+                "DayName": "<string>",
+                "Date": {
+                  "Year": "<integer>",
+                  "Month": "<integer>",
+                  "Day": "<integer>",
+                  "DayOfWeek": 1,
+                  "DayOfYear": "<integer>",
+                  "DayNumber": "<integer>"
+                },
+                "From": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "To": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "TotalHours": "<integer>",
+                "TotalMins": "<integer>",
+                "OverTimeHour": "<integer>",
+                "OverTimeMins": "<integer>",
+                "DelayHours": "<integer>",
+                "DelayMins": "<integer>",
+                "DayTypeID": "<integer>",
+                "DayTypeName": "<string>",
+                "AbsenceDayApprovedById": "<long>",
+                "AbsenceDayApprovedByName": "<string>"
+              }
+            ]
+          }

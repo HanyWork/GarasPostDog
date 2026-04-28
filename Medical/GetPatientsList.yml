@@ -1,0 +1,28 @@
+info:
+  name: GetPatientsList
+  type: http
+  seq: 49
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/GetPatientsList"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+    - name: SearchKey
+      value: ""
+    - name: CurrentPage
+      value: ""
+      disabled: true
+    - name: NumberOfItemsPerPage
+      value: ""
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

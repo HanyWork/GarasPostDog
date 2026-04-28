@@ -1,0 +1,70 @@
+info:
+  name: /SalesOffer/GetSalesPersonsClientsDetailsExcel
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/SalesOffer/GetSalesPersonsClientsDetailsExcel"
+  headers:
+    - name: Month
+      value: "10"
+    - name: Year
+      value: "2024"
+    - name: BranchId
+      value: "4"
+    - name: WithProjectExtraModifications
+      value: "false"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesOffer/GetSalesPersonsClientsDetailsExcel"
+      method: GET
+      headers:
+        - name: Month
+          value: <integer>
+        - name: Year
+          value: <integer>
+        - name: BranchId
+          value: <integer>
+        - name: WithProjectExtraModifications
+          value: <boolean>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Message": "<string>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

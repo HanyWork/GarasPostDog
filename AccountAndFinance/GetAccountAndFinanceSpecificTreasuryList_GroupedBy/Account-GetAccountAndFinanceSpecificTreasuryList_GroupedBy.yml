@@ -1,0 +1,138 @@
+info:
+  name: /Account/GetAccountAndFinanceSpecificTreasuryList_GroupedBy
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/GetAccountAndFinanceSpecificTreasuryList_GroupedBy"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+    - name: AccountID
+      value: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Account/GetAccountAndFinanceSpecificTreasuryList_GroupedBy"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "balanceListPerDate": [
+              {
+                "creationDate": "<string>",
+                "entryDetailsPerDay": [
+                  {
+                    "dayName": "<string>",
+                    "entryDetails": [
+                      {
+                        "accountName": "<string>",
+                        "balance": "<double>",
+                        "currencyName": "<string>",
+                        "entryID": "<long>"
+                      },
+                      {
+                        "accountName": "<string>",
+                        "balance": "<double>",
+                        "currencyName": "<string>",
+                        "entryID": "<long>"
+                      }
+                    ]
+                  },
+                  {
+                    "dayName": "<string>",
+                    "entryDetails": [
+                      {
+                        "accountName": "<string>",
+                        "balance": "<double>",
+                        "currencyName": "<string>",
+                        "entryID": "<long>"
+                      },
+                      {
+                        "accountName": "<string>",
+                        "balance": "<double>",
+                        "currencyName": "<string>",
+                        "entryID": "<long>"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "creationDate": "<string>",
+                "entryDetailsPerDay": [
+                  {
+                    "dayName": "<string>",
+                    "entryDetails": [
+                      {
+                        "accountName": "<string>",
+                        "balance": "<double>",
+                        "currencyName": "<string>",
+                        "entryID": "<long>"
+                      },
+                      {
+                        "accountName": "<string>",
+                        "balance": "<double>",
+                        "currencyName": "<string>",
+                        "entryID": "<long>"
+                      }
+                    ]
+                  },
+                  {
+                    "dayName": "<string>",
+                    "entryDetails": [
+                      {
+                        "accountName": "<string>",
+                        "balance": "<double>",
+                        "currencyName": "<string>",
+                        "entryID": "<long>"
+                      },
+                      {
+                        "accountName": "<string>",
+                        "balance": "<double>",
+                        "currencyName": "<string>",
+                        "entryID": "<long>"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "cumulativeBalanceBefore": "<string>",
+            "cumulativeBalanceAfter": "<string>",
+            "totalSumAmount": "<string>"
+          }

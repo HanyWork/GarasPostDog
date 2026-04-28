@@ -1,0 +1,134 @@
+info:
+  name: /Account/GetAccountAndFinanceClientReportList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/GetAccountAndFinanceClientReportList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: ClientID
+      value: ""
+      disabled: true
+    - name: ProjectID
+      value: ""
+      disabled: true
+    - name: ProjectTypeID
+      value: ""
+      disabled: true
+    - name: ProjectCreationFrom
+      value: ""
+      disabled: true
+    - name: ProjectCreationTo
+      value: ""
+      disabled: true
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: proauto
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Account/GetAccountAndFinanceClientReportList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "totalProjectCount": "<integer>",
+            "totalCreationProjectYTD": "<double>",
+            "totalCreationProjectYTDTotalCollected": "<double>",
+            "totalCreationProjectYTDTotalCollectedPercent": "<double>",
+            "clientList": [
+              {
+                "clientName": "<string>",
+                "clientID": "<long>",
+                "volume": "<double>",
+                "collected": "<double>",
+                "remain": "<double>",
+                "collectedPercent": "<double>",
+                "clientProjectsList": [
+                  {
+                    "creationDate": "<string>",
+                    "projectName": "<string>",
+                    "projectID": "<long>",
+                    "volume": "<double>",
+                    "collected": "<double>",
+                    "remain": "<double>",
+                    "collectedPercent": "<double>"
+                  },
+                  {
+                    "creationDate": "<string>",
+                    "projectName": "<string>",
+                    "projectID": "<long>",
+                    "volume": "<double>",
+                    "collected": "<double>",
+                    "remain": "<double>",
+                    "collectedPercent": "<double>"
+                  }
+                ]
+              },
+              {
+                "clientName": "<string>",
+                "clientID": "<long>",
+                "volume": "<double>",
+                "collected": "<double>",
+                "remain": "<double>",
+                "collectedPercent": "<double>",
+                "clientProjectsList": [
+                  {
+                    "creationDate": "<string>",
+                    "projectName": "<string>",
+                    "projectID": "<long>",
+                    "volume": "<double>",
+                    "collected": "<double>",
+                    "remain": "<double>",
+                    "collectedPercent": "<double>"
+                  },
+                  {
+                    "creationDate": "<string>",
+                    "projectName": "<string>",
+                    "projectID": "<long>",
+                    "volume": "<double>",
+                    "collected": "<double>",
+                    "remain": "<double>",
+                    "collectedPercent": "<double>"
+                  }
+                ]
+              }
+            ],
+            "totalSalesVolume": "<double>",
+            "totalCollected": "<double>",
+            "remain": "<double>",
+            "totalCollectedPercent": "<double>"
+          }

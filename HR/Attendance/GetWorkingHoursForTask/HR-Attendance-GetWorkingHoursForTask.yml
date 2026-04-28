@@ -1,0 +1,122 @@
+info:
+  name: /HR/Attendance/GetWorkingHoursForTask
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetWorkingHoursForTask"
+  headers:
+    - name: TaskId
+      value: "20052"
+    - name: HrUserId
+      value: "11"
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetWorkingHoursForTask"
+      method: GET
+      headers:
+        - name: TaskId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "projectName": "<string>",
+                "TaskName": "<string>",
+                "UserName": "<string>",
+                "HrUserId": "<long>",
+                "Date": "<string>",
+                "ProgressNote": "<string>",
+                "TotalHours": "<double>",
+                "ProgressPercent": "<double>",
+                "CheckIn": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "CheckOut": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "Cost": "<double>",
+                "WorkingHourRate": "<double>"
+              },
+              {
+                "projectName": "<string>",
+                "TaskName": "<string>",
+                "UserName": "<string>",
+                "HrUserId": "<long>",
+                "Date": "<string>",
+                "ProgressNote": "<string>",
+                "TotalHours": "<double>",
+                "ProgressPercent": "<double>",
+                "CheckIn": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "CheckOut": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "Cost": "<double>",
+                "WorkingHourRate": "<double>"
+              }
+            ]
+          }

@@ -1,0 +1,86 @@
+info:
+  name: /Project/GetProjectsTypesDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Project/GetProjectsTypesDetails"
+  headers:
+    - name: headers
+      value: projectsStatus,<string>,salesPersonId,<long>,branchId,<integer>,month,<integer>,year,<integer>,day,<integer>
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: ProjectsStatus
+      value: open
+    - name: year
+      value: "2023"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Project/GetProjectsTypesDetails"
+      method: GET
+      headers:
+        - name: headers
+          value: projectsStatus,<string>,salesPersonId,<long>,branchId,<integer>,month,<integer>,year,<integer>,day,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "projectCost": "<double>",
+            "rentCost": "<double>",
+            "maintenanceCost": "<double>",
+            "internalCost": "<double>",
+            "jobCost": "<double>",
+            "warantycost": "<double>",
+            "projectsDetails": [
+              {
+                "projectsType": "<string>",
+                "projectsStatus": "<string>",
+                "countOfProjects": "<integer>",
+                "totalCost": "<double>",
+                "totalCollectedCost": "<double>",
+                "totalCollectedPercentage": "<string>"
+              },
+              {
+                "projectsType": "<string>",
+                "projectsStatus": "<string>",
+                "countOfProjects": "<integer>",
+                "totalCost": "<double>",
+                "totalCollectedCost": "<double>",
+                "totalCollectedPercentage": "<string>"
+              }
+            ],
+            "projectsStatus": "<string>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

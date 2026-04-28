@@ -1,0 +1,84 @@
+info:
+  name: /Notification/AddNewNotification
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Notification/AddNewNotification"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        //"ID": 81695826,
+        "ToUserID":20032,
+        "Title": "esse dolor sit",
+        "Description": "ullamco ad Ut consectetur",
+        "URL": "irure cillum eu commodo",
+        "New": false,
+        "FromUserID":1 
+       // "NotificationProcessID": 73811759
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Notification/AddNewNotification"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "toUserID": "<long>",
+            "title": "<string>",
+            "description": "<string>",
+            "url": "<string>",
+            "new": "<boolean>",
+            "fromUserID": "<long>",
+            "notificationProcessID": "<integer>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

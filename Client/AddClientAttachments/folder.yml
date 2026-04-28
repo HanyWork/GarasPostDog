@@ -1,0 +1,7 @@
+info:
+  name: AddClientAttachments
+  type: folder
+  seq: 16
+
+request:
+  auth: inherit

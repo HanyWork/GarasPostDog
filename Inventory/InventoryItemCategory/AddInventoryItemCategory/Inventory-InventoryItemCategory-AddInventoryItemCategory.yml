@@ -1,0 +1,92 @@
+info:
+  name: /Inventory/InventoryItemCategory/AddInventoryItemCategory
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItemCategory/AddInventoryItemCategory"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: vetanoia
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "Name": "22222",
+          "Description": "zvxcbfn ",
+          "Active": true,
+          "ParentCategoryID": "2074",
+          "IsFinalProduct": true,
+          "IsRentItem": true,
+          "IsAsset": true,
+          "IsNonStock": true,
+          "CategoryTypeId": "1"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItemCategory/AddInventoryItemCategory"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<integer>",
+            "ParentCategoryID": "<integer>",
+            "CategoryTypeId": "<integer>",
+            "HaveItem": "<boolean>",
+            "IsFinalProduct": "<boolean>",
+            "IsRentItem": "<boolean>",
+            "IsAsset": "<boolean>",
+            "IsNonStock": "<boolean>",
+            "HasChild": "<boolean>",
+            "Name": "<string>",
+            "Description": "<string>",
+            "ParentName": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Active": "<boolean>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

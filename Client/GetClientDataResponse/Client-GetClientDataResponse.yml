@@ -1,0 +1,645 @@
+info:
+  name: /Client/GetClientDataResponse
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Client/GetClientDataResponse"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: vetanoia
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: ClientId
+      value: "1185"
+    - name: OwnerCoProfile
+      value: "false"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Client/GetClientDataResponse"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ClientsData": {
+              "Id": "<long>",
+              "IdEnc": "<string>",
+              "Name": "<string>",
+              "EnglishName": "<string>",
+              "SalesPersonID": "<long>",
+              "ApprovedById": "<long>",
+              "ApprovedByName": "<string>",
+              "SalesPersonName": "<string>",
+              "SalesPersonLogo": "<string>",
+              "Logo": "<binary>",
+              "HasLogo": "<boolean>",
+              "LogoURL": "<string>",
+              "Status": "<string>",
+              "ExpirationDate": "<string>",
+              "IsExpired": "<boolean>",
+              "RemainingDays": "<integer>",
+              "RegistrationDate": "<string>",
+              "RemainCollection": "<double>",
+              "Volume": "<double>",
+              "ClientSerialCounter": "<long>",
+              "ClientSerial": "<string>",
+              "ClassificationId": "<integer>",
+              "ClassificationName": "<string>",
+              "ClassificationComment": "<string>",
+              "Type": "<string>",
+              "Email": "<string>",
+              "WebSite": "<string>",
+              "CreatedBy": "<string>",
+              "Note": "<string>",
+              "Rate": "<integer>",
+              "FirstContractDate": "<string>",
+              "GroupName": "<string>",
+              "BranchName": "<string>",
+              "Consultant": "<string>",
+              "FollowUpPeriod": "<integer>",
+              "ConsultantType": "<string>",
+              "SupportedByCompany": "<boolean>",
+              "SupportedBy": "<string>",
+              "BranchID": "<integer>",
+              "LastReportDate": "<string>",
+              "NeedApproval": "<integer>",
+              "OpeningBalance": "<double>",
+              "OpeningBalanceType": "<string>",
+              "OpeningBalanceDate": "<string>",
+              "OpeningBalanceCurrencyId": "<integer>",
+              "OpeningBalanceCurrencyName": "<string>",
+              "DefaultDelivaryAndShippingMethodId": "<integer>",
+              "DefaultDelivaryAndShippingMethodName": "<string>",
+              "OtherDelivaryAndShippingMethodName": "<string>",
+              "CommercialRecord": "<string>",
+              "TaxCard": "<string>",
+              "ChangeSalesPersonComment": "<string>",
+              "OwnerCoProfile": "<boolean>",
+              "Active": "<boolean>",
+              "ClientSpecialities": [
+                {
+                  "ID": "<long>",
+                  "SpecialityID": "<integer>",
+                  "SpecialityName": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "SpecialityID": "<integer>",
+                  "SpecialityName": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ClientAddresses": [
+                {
+                  "ID": "<long>",
+                  "CountryID": "<integer>",
+                  "CountryName": "<string>",
+                  "GovernorateID": "<integer>",
+                  "GovernorateName": "<string>",
+                  "Address": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "BuildingNumber": "<string>",
+                  "Floor": "<string>",
+                  "Description": "<string>",
+                  "AreaID": "<long>",
+                  "AreaName": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "CountryID": "<integer>",
+                  "CountryName": "<string>",
+                  "GovernorateID": "<integer>",
+                  "GovernorateName": "<string>",
+                  "Address": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "BuildingNumber": "<string>",
+                  "Floor": "<string>",
+                  "Description": "<string>",
+                  "AreaID": "<long>",
+                  "AreaName": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ClientLandLines": [
+                {
+                  "ID": "<long>",
+                  "LandLine": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "LandLine": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ClientMobiles": [
+                {
+                  "ID": "<long>",
+                  "Mobile": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "Mobile": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ClientFaxes": [
+                {
+                  "ID": "<long>",
+                  "Fax": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "Fax": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ClientPaymentTerms": [
+                {
+                  "ID": "<long>",
+                  "Name": "<string>",
+                  "Description": "<string>",
+                  "Percentage": "<double>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "Name": "<string>",
+                  "Description": "<string>",
+                  "Percentage": "<double>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ClientBankAccounts": [
+                {
+                  "ID": "<long>",
+                  "BankDetails": "<string>",
+                  "BeneficiaryName": "<string>",
+                  "IBAN": "<string>",
+                  "SwiftCode": "<string>",
+                  "Account": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "BankDetails": "<string>",
+                  "BeneficiaryName": "<string>",
+                  "IBAN": "<string>",
+                  "SwiftCode": "<string>",
+                  "Account": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ]
+            },
+            "ClientConsultantData": {
+              "Id": "<long>",
+              "ClientId": "<long>",
+              "ConsultantName": "<string>",
+              "CreatedBy": "<string>",
+              "ModifiedBy": "<string>",
+              "Company": "<string>",
+              "ConsultantFor": "<string>",
+              "ConsultantAddresses": [
+                {
+                  "ID": "<long>",
+                  "CountryID": "<integer>",
+                  "CountryName": "<string>",
+                  "GovernorateID": "<integer>",
+                  "GovernorateName": "<string>",
+                  "Address": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "BuildingNumber": "<string>",
+                  "Floor": "<string>",
+                  "Description": "<string>"
+                },
+                {
+                  "ID": "<long>",
+                  "CountryID": "<integer>",
+                  "CountryName": "<string>",
+                  "GovernorateID": "<integer>",
+                  "GovernorateName": "<string>",
+                  "Address": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "BuildingNumber": "<string>",
+                  "Floor": "<string>",
+                  "Description": "<string>"
+                }
+              ],
+              "ConsultantFaxes": [
+                {
+                  "ID": "<long>",
+                  "Fax": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "Fax": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ConsultantEmails": [
+                {
+                  "ID": "<long>",
+                  "Email": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "Email": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ConsultantMobiles": [
+                {
+                  "ID": "<long>",
+                  "Mobile": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "Mobile": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ConsultantLandLines": [
+                {
+                  "ID": "<long>",
+                  "LandLine": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "LandLine": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ],
+              "ConsultantSpecialities": [
+                {
+                  "ID": "<long>",
+                  "SpecialityID": "<integer>",
+                  "SpecialityName": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "ID": "<long>",
+                  "SpecialityID": "<integer>",
+                  "SpecialityName": "<string>",
+                  "CreatedBy": "<string>",
+                  "ModifiedBy": "<string>",
+                  "Active": "<boolean>"
+                }
+              ]
+            },
+            "ClientAddressData": [
+              {
+                "ID": "<long>",
+                "CountryID": "<integer>",
+                "CountryName": "<string>",
+                "GovernorateID": "<integer>",
+                "GovernorateName": "<string>",
+                "Address": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "BuildingNumber": "<string>",
+                "Floor": "<string>",
+                "Description": "<string>",
+                "AreaID": "<long>",
+                "AreaName": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "CountryID": "<integer>",
+                "CountryName": "<string>",
+                "GovernorateID": "<integer>",
+                "GovernorateName": "<string>",
+                "Address": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "BuildingNumber": "<string>",
+                "Floor": "<string>",
+                "Description": "<string>",
+                "AreaID": "<long>",
+                "AreaName": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ClientContactPersonData": [
+              {
+                "ID": "<long>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "Name": "<string>",
+                "Title": "<string>",
+                "Location": "<string>",
+                "Email": "<string>",
+                "Mobile": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "Name": "<string>",
+                "Title": "<string>",
+                "Location": "<string>",
+                "Email": "<string>",
+                "Mobile": "<string>"
+              }
+            ],
+            "ClientMobileData": [
+              {
+                "ID": "<long>",
+                "Mobile": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "Mobile": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ClientLandLineData": [
+              {
+                "ID": "<long>",
+                "LandLine": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "LandLine": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ClientFaxData": [
+              {
+                "ID": "<long>",
+                "Fax": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "Fax": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ClientPaymentTermData": [
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "Percentage": "<double>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "Percentage": "<double>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ClientBankAccountData": [
+              {
+                "ID": "<long>",
+                "BankDetails": "<string>",
+                "BeneficiaryName": "<string>",
+                "IBAN": "<string>",
+                "SwiftCode": "<string>",
+                "Account": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "BankDetails": "<string>",
+                "BeneficiaryName": "<string>",
+                "IBAN": "<string>",
+                "SwiftCode": "<string>",
+                "Account": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ClientSalesPersonHistory": [
+              {
+                "ID": "<long>",
+                "SalesPersonId": "<long>",
+                "SalesPersonName": "<string>",
+                "StartDate": "<string>",
+                "EndDate": "<string>",
+                "Current": "<boolean>",
+                "ChangeReason": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "SalesPersonId": "<long>",
+                "SalesPersonName": "<string>",
+                "StartDate": "<string>",
+                "EndDate": "<string>",
+                "Current": "<boolean>",
+                "ChangeReason": "<string>"
+              }
+            ],
+            "LicenseAttachements": [
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "BussinessCardsAttachments": [
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "BrochuresAttachments": [
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "TaxCardAttachment": {
+              "Id": "<long>",
+              "FileName": "<string>",
+              "FileExtension": "<string>",
+              "FileContent": "<string>",
+              "FilePath": "<string>",
+              "Category": "<string>",
+              "Active": "<boolean>"
+            },
+            "CommercialRecordAttachment": {
+              "Id": "<long>",
+              "FileName": "<string>",
+              "FileExtension": "<string>",
+              "FileContent": "<string>",
+              "FilePath": "<string>",
+              "Category": "<string>",
+              "Active": "<boolean>"
+            },
+            "OtherAttachments": [
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "FileName": "<string>",
+                "FileExtension": "<string>",
+                "FileContent": "<string>",
+                "FilePath": "<string>",
+                "Category": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "IsExistClientProfile": "<boolean>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

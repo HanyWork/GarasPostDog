@@ -1,0 +1,227 @@
+info:
+  name: /Client/AddNewClientConsultant
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Client/AddNewClientConsultant"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "ClientId": 10334,
+          "Id": 16,
+          "ConsultantName": "Test",
+          "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+          "ModifiedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+          "Company": "TestAPI",
+          "ConsultantFor": "",
+          "ConsultantFaxes": [
+              {
+                  
+                  "Fax": "Test2",
+                  "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+                  "ModifiedBy": "JFp7UYIKFWypVNu2LYAVzQ=="
+              }
+          ],
+          "ConsultantEmails": [
+              {
+                  "Email": "test",
+                  "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+                  "ModifiedBy": "JFp7UYIKFWypVNu2LYAVzQ=="
+              }
+          ],
+          "ConsultantLandLines": [
+              {
+                  "LandLine": "598875545",
+                  "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+                  "ModifiedBy": ""
+              }
+          ],
+          "ConsultantMobiles": [
+              {
+                  "Mobile": "01287425684",
+                  "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ==",
+                  "ModifiedBy": ""
+              }
+          ],
+          "ConsultantSpecialities": [
+              {
+                  "SpecialityID": 1,
+                  "CreatedBy": "JFp7UYIKFWypVNu2LYAVzQ=="
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Client/AddNewClientConsultant"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "Id": "<long>",
+            "ClientId": "<long>",
+            "ConsultantName": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>",
+            "Company": "<string>",
+            "ConsultantFor": "<string>",
+            "ConsultantAddresses": [
+              {
+                "ID": "<long>",
+                "CountryID": "<integer>",
+                "CountryName": "<string>",
+                "GovernorateID": "<integer>",
+                "GovernorateName": "<string>",
+                "Address": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "BuildingNumber": "<string>",
+                "Floor": "<string>",
+                "Description": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "CountryID": "<integer>",
+                "CountryName": "<string>",
+                "GovernorateID": "<integer>",
+                "GovernorateName": "<string>",
+                "Address": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "BuildingNumber": "<string>",
+                "Floor": "<string>",
+                "Description": "<string>"
+              }
+            ],
+            "ConsultantFaxes": [
+              {
+                "ID": "<long>",
+                "Fax": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "Fax": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ConsultantEmails": [
+              {
+                "ID": "<long>",
+                "Email": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "Email": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ConsultantMobiles": [
+              {
+                "ID": "<long>",
+                "Mobile": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "Mobile": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ConsultantLandLines": [
+              {
+                "ID": "<long>",
+                "LandLine": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "LandLine": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ConsultantSpecialities": [
+              {
+                "ID": "<long>",
+                "SpecialityID": "<integer>",
+                "SpecialityName": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "SpecialityID": "<integer>",
+                "SpecialityName": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

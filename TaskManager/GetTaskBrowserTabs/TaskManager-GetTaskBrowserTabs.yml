@@ -1,0 +1,82 @@
+info:
+  name: /TaskManager/GetTaskBrowserTabs
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskBrowserTabs"
+  headers:
+    - name: UserID
+      value: "1"
+    - name: TaskID
+      value: <long>
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskBrowserTabs"
+      method: POST
+      headers:
+        - name: UserID
+          value: <long>
+        - name: TaskID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "TabsList": [
+                {
+                  "TaskID": "<long>",
+                  "taskName": "<string>",
+                  "UserID": "<long>",
+                  "UserName": "<string>",
+                  "CreationDateTime": "<string>",
+                  "TabName": "<string>"
+                },
+                {
+                  "TaskID": "<long>",
+                  "taskName": "<string>",
+                  "UserID": "<long>",
+                  "UserName": "<string>",
+                  "CreationDateTime": "<string>",
+                  "TabName": "<string>"
+                }
+              ]
+            }
+          }

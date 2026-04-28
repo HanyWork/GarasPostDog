@@ -1,0 +1,114 @@
+info:
+  name: /Purchasing/PurchaseOrder/GetSelectPRItemsForAddPO
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Purchasing/PurchaseOrder/GetSelectPRItemsForAddPO"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: InventoryItemID
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Purchasing/PurchaseOrder/GetPurchasingAndSuppliersDashboard"
+      method: GET
+      headers:
+        - name: InventoryStoreID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Data": {
+              "PurchasedMaterialTotalAmount": "<double>",
+              "PurchasedMaterialPONo": "<integer>",
+              "PurchasedMaterialPOItemNo": "<integer>",
+              "PurchasedMaterialPOSupplierNo": "<integer>",
+              "PROpenNo": "<integer>",
+              "PROpenFromStoreNo": "<integer>",
+              "PRItemOpenNo": "<integer>",
+              "PRClosedNo": "<integer>",
+              "PRClosedFromStoreNo": "<integer>",
+              "PRItemClosedNo": "<integer>",
+              "TotalPRItemNo": "<integer>",
+              "AssignedPRItemNo": "<integer>",
+              "AssignedPRItemPercent": "<float>",
+              "NoPersonAssignedPRItem": "<integer>",
+              "PersonAssingedPOList": [
+                {
+                  "PersonName": "<string>",
+                  "PRAssignedNo": "<integer>",
+                  "PONo": "<integer>",
+                  "PONoPercent": "<float>"
+                },
+                {
+                  "PersonName": "<string>",
+                  "PRAssignedNo": "<integer>",
+                  "PONo": "<integer>",
+                  "PONoPercent": "<float>"
+                }
+              ],
+              "NOTAssignedPRItemNo": "<integer>",
+              "NOTAssignedPRItemPercent": "<float>",
+              "PoOpenNo": "<integer>",
+              "PoItemOpenNo": "<integer>",
+              "PoOpenFromSupplierNo": "<integer>",
+              "PoClosedNo": "<integer>",
+              "PoItemClosedNo": "<integer>",
+              "PoItemClosedFromSupplierNo": "<integer>",
+              "NOPOInvoiceForOpenPO": "<integer>",
+              "NOPOMissedInvoiceForOpenPO": "<integer>",
+              "TotalCostPOInvoiceForOpenPO": "<double>",
+              "NOPOInvoiceForClosedPO": "<integer>",
+              "NOPOMissedInvoiceForClosedPO": "<integer>",
+              "TotalCostPOInvoiceForClosedPO": "<double>",
+              "TotalInvoicesAmountForPO": "<double>",
+              "ExpiredItemsNo": "<integer>",
+              "ExpiredItemsTotalAmount": "<double>",
+              "LowStockItemsNo": "<long>",
+              "TotalLowStockItems": "<double>",
+              "ExternalBackOrdersNO": "<integer>",
+              "ExternalBackOrdersItemsNO": "<integer>",
+              "ExternalBackOrdersReturnedItemsNO": "<integer>",
+              "ExternalBackOrdersToSupplierNO": "<integer>",
+              "ExternalBackOrdersTotalAmountCost": "<double>",
+              "NoOfSupplier": "<integer>",
+              "SupplierAccountsPercentPaid": "<double>",
+              "SupplierAccountsPercentRemain": "<double>",
+              "SupplierAccountsTotalAmountPaid": "<double>",
+              "SupplierAccountsTotalAmountRemain": "<double>"
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

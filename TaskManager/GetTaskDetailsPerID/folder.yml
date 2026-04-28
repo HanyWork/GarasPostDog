@@ -1,0 +1,7 @@
+info:
+  name: GetTaskDetailsPerID
+  type: folder
+  seq: 53
+
+request:
+  auth: inherit

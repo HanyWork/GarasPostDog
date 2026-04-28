@@ -1,0 +1,22 @@
+info:
+  name: TestHeader8
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/api/ExcelUsa/TestHeader8"
+  headers:
+    - name: UserID
+      value: JFp7UYIKFWypVNu2LYAVzQ==
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,7 @@
+info:
+  name: AddSalesOfferInternalApproval
+  type: folder
+  seq: 30
+
+request:
+  auth: inherit

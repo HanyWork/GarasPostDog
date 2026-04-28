@@ -1,0 +1,104 @@
+info:
+  name: /HR/VacationType/EditVacationTypesForUser
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/VacationType/EditVacationTypesForUser"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  body:
+    type: multipart-form
+    data:
+      - name: dto[0].Id
+        type: text
+        value: "965"
+      - name: dto[0].ContractID
+        type: text
+        value: "75"
+      - name: dto[0].ContractLeaveSettingID
+        type: text
+        value: "21"
+      - name: dto[0].Active
+        type: text
+        value: "true"
+      - name: dto[0].LeaveAllowed
+        type: text
+        value: Allowed
+      - name: dto[0].Balance
+        type: text
+        value: "12"
+        disabled: true
+      - name: dto[0].Used
+        type: text
+        value: "2"
+      - name: dto[0].Remain
+        type: text
+        value: "0"
+      - name: dto[0].HrUserId
+        type: text
+        value: "80"
+      - name: dto[0].Comment
+        type: text
+        value: comment
+      - name: dto[0].BalancePerMonth
+        type: text
+        value: "3"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/VacationType/EditVacationTypesForUser"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: dto
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              "<long>",
+              "<long>"
+            ]
+          }

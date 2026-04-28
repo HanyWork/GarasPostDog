@@ -1,0 +1,30 @@
+info:
+  name: GetSalesOfferListForInternalTicket
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/InternalTicket/GetSalesOfferListForInternalTicket"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+    - name: From
+      value: 2024-1-1
+    - name: To
+      value: 2024-12-31
+    - name: SalesPersonId
+      value: "20071"
+    - name: CategoryId
+      value: ""
+    - name: DepartmentId
+      value: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

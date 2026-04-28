@@ -1,0 +1,22 @@
+info:
+  name: /HR/Salary/GetSalaryDudectionTaxListForHrUser
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Salary/GetSalaryDudectionTaxListForHrUser"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+    - name: HrUserID
+      value: "150"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

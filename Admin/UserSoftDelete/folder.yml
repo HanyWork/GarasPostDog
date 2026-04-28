@@ -1,0 +1,7 @@
+info:
+  name: UserSoftDelete
+  type: folder
+  seq: 83
+
+request:
+  auth: inherit

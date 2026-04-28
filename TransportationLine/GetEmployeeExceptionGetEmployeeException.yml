@@ -1,0 +1,26 @@
+info:
+  name: GetEmployeeExceptionGetEmployeeException
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/api/Transportation/GetEmployeeException"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: PageNo
+      value: "1"
+    - name: NoOfItems
+      value: "2"
+    - name: HrUserId
+      value: "3"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

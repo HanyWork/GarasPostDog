@@ -1,0 +1,178 @@
+info:
+  name: /PoInvoice/AddDirectPoInvoice
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/PoInvoice/AddDirectPoInvoice"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  body:
+    type: json
+    data: |-
+      {
+          "PurchasePOInvoice": {
+              
+              "InvoiceDate": "2024-08-19",
+              "InvoiceCollectionDueDate": "2024-08-19",
+              "TotalInvoicePrice": "1000.0000",
+              "PurchasePOInvoiceTypeID": "3",
+              "TotalInvoiceCost": "1000.00000",
+              "IsClosed": false,
+              "IsFinalPriced": false,
+              "IsSentToACC": true,
+              "TransactionId": "555666"
+          },
+          "PurchasePOItemList": [
+              {
+      "InventoryItemId":1,
+
+                  "CurrencyID": "1",
+                  "RateToEgp": "1",
+                  "ActualLocalUnitPrice": "20",
+                  "ActualUnitPrice": "20",
+                  "TotalLocalActualPrice": "1000",
+                  "FinalLocalUnitCostUOR": "20.0000",
+                  "TotalActualPrice": "1000",
+                  "InvoiceComments": "N/A",
+                  "ActualUnitPriceUnit": "\tجم\t ",
+                  "RecivedQuantity": "10",
+                  "ReqQuantity":"10",
+                  "IsChecked": true,
+                  "SupplierInvoiceSerial": "8769748"
+              }
+          ],
+          "PoInvoiceTaxIncludedList": [],
+          "PoInvoiceExtraFeesList": []
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PoInvoice/AddDirectPoInvoice"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "PurchasePOInvoice": {
+              "InvoiceDate": "<string>",
+              "InvoiceCollectionDueDate": "<string>",
+              "TotalInvoicePrice": "<double>",
+              "PurchasePOInvoiceTypeID": "<long>",
+              "TotalInvoiceCost": "<double>",
+              "IsClosed": "<boolean>",
+              "IsFinalPriced": "<boolean>",
+              "IsSentToACC": "<boolean>",
+              "TransactionId": "<integer>"
+            },
+            "PurchasePOItemList": [
+              {
+                "RateToEgp": "<double>",
+                "ActualLocalUnitPrice": "<double>",
+                "ActualUnitPrice": "<double>",
+                "TotalLocalActualPrice": "<double>",
+                "FinalLocalUnitCostUOR": "<double>",
+                "TotalActualPrice": "<double>",
+                "InvoiceComments": "<string>",
+                "ActualUnitPriceUnit": "<string>"
+              },
+              {
+                "RateToEgp": "<double>",
+                "ActualLocalUnitPrice": "<double>",
+                "ActualUnitPrice": "<double>",
+                "TotalLocalActualPrice": "<double>",
+                "FinalLocalUnitCostUOR": "<double>",
+                "TotalActualPrice": "<double>",
+                "InvoiceComments": "<string>",
+                "ActualUnitPriceUnit": "<string>"
+              }
+            ],
+            "PoInvoiceTaxIncludedList": [
+              {
+                "Id": "<long>",
+                "POInvoiceID": "<long>",
+                "POTaxIncludedTypeID": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "RateToEGP": "<double>",
+                "CurrencyID": "<integer>"
+              },
+              {
+                "Id": "<long>",
+                "POInvoiceID": "<long>",
+                "POTaxIncludedTypeID": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "RateToEGP": "<double>",
+                "CurrencyID": "<integer>"
+              }
+            ],
+            "PoInvoiceExtraFeesList": [
+              {
+                "Id": "<long>",
+                "POInvoiceID": "<long>",
+                "POInvoiceExtraFeesTypeID": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "RateToEGP": "<double>",
+                "CurrencyID": "<integer>",
+                "POItemId": "<long>",
+                "Comment": "<string>"
+              },
+              {
+                "Id": "<long>",
+                "POInvoiceID": "<long>",
+                "POInvoiceExtraFeesTypeID": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "RateToEGP": "<double>",
+                "CurrencyID": "<integer>",
+                "POItemId": "<long>",
+                "Comment": "<string>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

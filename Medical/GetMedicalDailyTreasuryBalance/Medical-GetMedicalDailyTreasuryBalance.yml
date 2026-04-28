@@ -1,0 +1,89 @@
+info:
+  name: /Medical/GetMedicalDailyTreasuryBalance
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/GetMedicalDailyTreasuryBalance"
+  headers:
+    - name: PosNumberId
+      value: "1"
+    - name: IsOpeningBalance
+      value: "true"
+      disabled: true
+    - name: CreatedById
+      value: "1"
+      disabled: true
+    - name: Type
+      value: pos
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/GetMedicalDailyTreasuryBalance"
+      method: GET
+      headers:
+        - name: PosNumberId
+          value: "28813567"
+        - name: IsOpeningBalance
+          value: "true"
+        - name: CreatedById
+          value: "-11231719"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": false,
+            "Errors": [
+              {
+                "ErrorMSG": "enim laboris minim eu in",
+                "ErrorCode": "eiusmod sit ea magna proident"
+              },
+              {
+                "ErrorMSG": "mollit",
+                "ErrorCode": "nostrud qui do"
+              }
+            ],
+            "Data": {
+              "Id": -50440672,
+              "OpeningBalance": 78472566.71112439,
+              "ClosingBalance": 28050892.555963755,
+              "TotalReceipts": 91022606.53537658,
+              "ReservationAmount": -57693831.31145909,
+              "Difference": 86023486.77995515,
+              "IsOpeningBalance": true,
+              "CreatedBy": -6387491,
+              "CreationDate": "tempor incididunt ut ipsum",
+              "ClosingDate": "cillum nostrud",
+              "ModifiedBy": 66331412,
+              "ReceivedFrom": -16933392,
+              "PosNumberId": -30593880,
+              "CreatedByName": "Duis est",
+              "ModifiedByName": "velit",
+              "ReceivedFromName": "ullamco qui veniam",
+              "PosNumberName": "enim Excepteur voluptate",
+              "Type": "commodo consequat"
+            }
+          }

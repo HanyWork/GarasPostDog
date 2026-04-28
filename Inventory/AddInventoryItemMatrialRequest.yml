@@ -1,0 +1,87 @@
+info:
+  name: AddInventoryItemMatrialRequest
+  type: http
+  seq: 46
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/InventoryMatrialReleaseForBY/AddInventoryItemMatrialRequest"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: json
+    data: "{\r
+
+      \    \"MatrialRequestOrderId\": \"0\",\r
+
+      \    \"FromUserId\": \"20048\",\r
+
+      \    \"InventoryStoreID\": \"2006\",\r
+
+      \    \"Status\": \"Not Finished Yet\",\r
+
+      \    \"UserInsuranceId\": \"7\",\r
+
+      \    \"MatrialReleaseItemWithRequestItemList\": [\r
+
+      \        {\r
+
+      \            \"Active\": true,\r
+
+      \            \"ID\": \"0\",\r
+
+      \            \"InventoryItemID\": \"147\",\r
+
+      \            \"NewRecivedQTY\": 1,\r
+
+      \            \"NewComment\": \"\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"Active\": true,\r
+
+      \            \"ID\": \"0\",\r
+
+      \            \"InventoryItemID\": \"144\",\r
+
+      \            \"NewRecivedQTY\": 1,\r
+
+      \            \"NewComment\": \"L\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"Active\": true,\r
+
+      \            \"ID\": \"0\",\r
+
+      \            \"InventoryItemID\": \"141\",\r
+
+      \            \"NewRecivedQTY\": 1,\r
+
+      \            \"NewComment\": \"R\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"IsFinish\": true,\r
+
+      \    \"IsRenew\": true,\r
+
+      \    \"TransactionDate\": \"2024-05-15\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

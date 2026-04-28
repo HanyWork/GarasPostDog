@@ -1,0 +1,92 @@
+info:
+  name: /Inventory/InventoryItem/GetInventoryAndStoresDashboard
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/GetInventoryAndStoresDashboard"
+  headers:
+    - name: DateTo
+      value: <dateTime>
+      disabled: true
+    - name: InventoryStoreID
+      value: "3"
+    - name: CompanyName
+      value: vetanoia
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/GetInventoryAndStoresDashboard"
+      method: GET
+      headers:
+        - name: DateTo
+          value: <dateTime>
+        - name: InventoryStoreID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Data": {
+              "InventoryItemsNo": "<long>",
+              "InventoryStoreItemsPricedNo": "<long>",
+              "InventoryStoreItemsTotalAmount": "<double>",
+              "ExpiredItemsNo": "<long>",
+              "ExpiredItemsTotalAmount": "<double>",
+              "LowStockItemsNo": "<long>",
+              "TotalLowStockItems": "<double>",
+              "AddingOrderNo": "<long>",
+              "AddingOrderItemsNo": "<long>",
+              "AddingOrderFromSupplierNo": "<long>",
+              "MaterialRequestOpenOrdersNo": "<long>",
+              "MaterialRequestOpenOrdersItemsNo": "<long>",
+              "MaterialRequestClosedOrdersNo": "<long>",
+              "MaterialRequestClosedOrdersItemsNo": "<long>",
+              "MaterialReleasedOrdersNo": "<long>",
+              "MaterialReleasedOrdersItemsNo": "<long>",
+              "InternalBackOrdersNo": "<long>",
+              "InternalBackOrdersItemsNo": "<long>",
+              "InternalTransferOrdersNo": "<long>",
+              "InternalTransferOrdersItemsNo": "<long>",
+              "ExternalBackOrdersNo": "<long>",
+              "ExternalBackOrdersItemsNo": "<long>",
+              "ExternalBackOrdersToSupplierNo": "<long>",
+              "FinalProductOrdersNo": "<long>",
+              "FinalProductOrdersItemsNo": "<long>",
+              "FinalProductOrdersFromProjectNo": "<long>",
+              "HaveInventoryAdjustingReport": "<boolean>",
+              "CountOFInventoryAdjustingReport": "<integer>"
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

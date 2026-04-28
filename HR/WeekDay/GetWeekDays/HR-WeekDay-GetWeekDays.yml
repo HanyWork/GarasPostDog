@@ -1,0 +1,71 @@
+info:
+  name: /HR/WeekDay/GetWeekDays
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/WeekDay/GetWeekDays"
+  headers:
+    - name: BranchId
+      value: "1032"
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/WeekDay/GetWeekDays"
+      method: GET
+      headers:
+        - name: BranchId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<integer>",
+                "Day": "<string>",
+                "IsWeekEnd": "<boolean>",
+                "BranchId": "<integer>"
+              },
+              {
+                "Id": "<integer>",
+                "Day": "<string>",
+                "IsWeekEnd": "<boolean>",
+                "BranchId": "<integer>"
+              }
+            ]
+          }

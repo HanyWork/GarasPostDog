@@ -1,0 +1,22 @@
+info:
+  name: /EmailTool/GetAllMessages
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/EmailTool/GetAllMessages"
+  headers:
+    - name: EmailUserId
+      value: garas@sasclearance.com
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

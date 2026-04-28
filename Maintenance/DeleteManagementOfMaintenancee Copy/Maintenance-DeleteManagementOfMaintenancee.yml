@@ -1,0 +1,60 @@
+info:
+  name: /Maintenance/DeleteManagementOfMaintenancee
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Maintenance/DeleteManagementOfMaintenance"
+  headers:
+    - name: ContractId
+      value: "21198"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: vetanoia
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: DeleteContract
+      value: "false"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/DeleteManagementOfMaintenancee"
+      method: POST
+      headers:
+        - name: ContractId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

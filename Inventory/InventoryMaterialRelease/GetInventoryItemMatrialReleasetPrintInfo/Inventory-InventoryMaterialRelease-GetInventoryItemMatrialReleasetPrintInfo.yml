@@ -1,0 +1,81 @@
+info:
+  name: /Inventory/InventoryMaterialRelease/GetInventoryItemMatrialReleasetPrintInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryMaterialRelease/GetInventoryItemMatrialReleasetPrintInfo"
+  headers:
+    - name: MatrialReleaseOrderID
+      value: "210607"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryMaterialRelease/GetInventoryItemMatrialReleasetPrintInfo"
+      method: GET
+      headers:
+        - name: MatrialReleaseOrderID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "MatrialReleasePrintInfo": [
+              {
+                "Id": "<long>",
+                "InventoryMatrialReleaseOrderId": "<long>",
+                "ContactPersonName": "<string>",
+                "ContactPersonMobile": "<string>",
+                "ClientAddress": "<string>",
+                "ShippingMethod": "<string>",
+                "Comment": "<string>",
+                "PackagingQTY": "<double>",
+                "ProjectId": "<long>"
+              },
+              {
+                "Id": "<long>",
+                "InventoryMatrialReleaseOrderId": "<long>",
+                "ContactPersonName": "<string>",
+                "ContactPersonMobile": "<string>",
+                "ClientAddress": "<string>",
+                "ShippingMethod": "<string>",
+                "Comment": "<string>",
+                "PackagingQTY": "<double>",
+                "ProjectId": "<long>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,160 @@
+info:
+  name: /Inventory/InventoryMaterialRelease/GetInventoryStoreItemBatchWithExpDate
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryMaterialRelease/GetInventoryStoreItemBatchWithExpDate"
+  headers:
+    - name: UserToken
+      value: TA9LNkKy%2bD3lErolg9RlDA%3d%3d
+    - name: CompanyName
+      value: garastest
+    - name: CurrentPage
+      value: "1"
+      disabled: true
+    - name: NumberOfItemsPerPage
+      value: "10"
+      disabled: true
+    - name: InventoryItemID
+      value: "590"
+      disabled: true
+    - name: StorID
+      value: "2017"
+    - name: StorLocationID
+      value: "9"
+      disabled: true
+    - name: ReportID
+      value: "6"
+    - name: Serial
+      value: "1212121"
+      disabled: true
+    - name: ExpDate
+      value: 2023-1-1
+      disabled: true
+    - name: SortByDESC
+      value: name
+      disabled: true
+    - name: SortByASC
+      value: name
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryMaterialRelease/GetInventoryStoreItemBatchWithExpDate"
+      method: GET
+      headers:
+        - name: InventoryItemID
+          value: <long>
+        - name: StorID
+          value: <long>
+        - name: ReportID
+          value: <long>
+        - name: StorLocationID
+          value: <integer>
+        - name: Serial
+          value: <string>
+        - name: CurrentPage
+          value: <integer>
+        - name: NumberOfItemsPerPage
+          value: <integer>
+        - name: ExpDate
+          value: <dateTime>
+        - name: SortByASC
+          value: <string>
+        - name: SortByDESC
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "DDLList": [
+              {
+                "serial": "<string>",
+                "expDate": "<string>",
+                "CreationDate": "<dateTime>",
+                "storeId": "<integer>",
+                "storeLocationId": "<integer>",
+                "InventoryItemID": "<long>",
+                "ItemName": "<string>",
+                "ItemCode": "<string>",
+                "PurchasingUOM": "<string>",
+                "storeName": "<string>",
+                "storelocation": "<string>",
+                "totalStockBalanceWithHold": "<double>",
+                "availableStockBalance": "<double>",
+                "holdQty": "<double>",
+                "stockBalanceList": [
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  }
+                ]
+              },
+              {
+                "serial": "<string>",
+                "expDate": "<string>",
+                "CreationDate": "<dateTime>",
+                "storeId": "<integer>",
+                "storeLocationId": "<integer>",
+                "InventoryItemID": "<long>",
+                "ItemName": "<string>",
+                "ItemCode": "<string>",
+                "PurchasingUOM": "<string>",
+                "storeName": "<string>",
+                "storelocation": "<string>",
+                "totalStockBalanceWithHold": "<double>",
+                "availableStockBalance": "<double>",
+                "holdQty": "<double>",
+                "stockBalanceList": [
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "StockBalance": "<double>"
+                  }
+                ]
+              }
+            ],
+            "SumTotalStockBalance": "<double>",
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

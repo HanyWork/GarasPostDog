@@ -1,0 +1,125 @@
+info:
+  name: /HR/Attendance/InsertWorkingTrackingByAttendance
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Attendance/InsertWorkingTrackingByAttendance"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITi
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: UserId
+        type: text
+        value: "213"
+      - name: Date
+        type: text
+        value: 2025-1-22
+      - name: TotalHours
+        type: text
+        value: "10"
+        disabled: true
+      - name: ProgressNote
+        type: text
+        value: test phase one done
+        disabled: true
+      - name: progressPErcent
+        type: text
+        value: "10"
+        disabled: true
+      - name: CheckIn
+        type: text
+        value: 05:54 PM
+      - name: checkOut
+        type: text
+        value: 06:30 PM
+        disabled: true
+      - name: Latitude
+        type: text
+        value: "29.993884076423004"
+        disabled: true
+      - name: Longitude
+        type: text
+        value: "31.262308272513675"
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/InsertWorkingTrackingByAttendance"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: UserId
+            type: text
+            value: <long>
+          - name: Date
+            type: text
+            value: <dateTime>
+          - name: TotalHours
+            type: text
+            value: "[object Object]"
+          - name: ProgressNote
+            type: text
+            value: <string>
+          - name: progressPErcent
+            type: text
+            value: <double>
+          - name: CheckIn
+            type: text
+            value: "[object Object]"
+          - name: checkOut
+            type: text
+            value: "[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

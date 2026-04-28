@@ -1,0 +1,106 @@
+info:
+  name: /Maintenance/AddEditMaintenanceType
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Maintenance/AddEditMaintenanceType"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: proauto
+  body:
+    type: json
+    data: |-
+      {
+          "Id":30,
+          "Name":"صيانة 80000",
+          "Description":"صيانة 80000",
+          "VehicleRateId":7,
+          "Comment":"صيانة 80000",
+          "VehiclePriorityLevelId": 2,
+          "BOMID":6,
+          "Milage":80000,
+          "IsForAllModels":false,
+          "vehicleMaintenanceTypeServiceSheduleCategories":[3,4],
+          "vehicleMaintenanceTypeForBrandsStrings":[2],
+          "vehicleMaintenanceTypeForModelsStrings":[11,22]
+
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/AddEditMaintenanceType?UserID=<long>"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      params:
+        - name: UserID
+          value: <long>
+          type: query
+      body:
+        type: json
+        data: |-
+          {
+            "Id": "<long>",
+            "Name": "<string>",
+            "VehicleRateId": "<integer>",
+            "Description": "<string>",
+            "Comment": "<string>",
+            "VehiclePriorityLevelId": "<integer>",
+            "IsForAllModels": "<boolean>",
+            "BOMID": "<long>",
+            "VehicleMaintenanceTypeServiceSheduleCategories": [
+              "<long>",
+              "<long>"
+            ],
+            "VehicleMaintenanceTypeForModelsStrings": [
+              "<integer>",
+              "<integer>"
+            ],
+            "VehicleMaintenanceTypeForBrandsStrings": [
+              "<integer>",
+              "<integer>"
+            ],
+            "Milage": "<integer>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

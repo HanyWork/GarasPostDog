@@ -1,0 +1,7 @@
+info:
+  name: EditProjectInvoiceCollected
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit

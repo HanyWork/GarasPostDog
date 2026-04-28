@@ -1,0 +1,106 @@
+info:
+  name: /TaskManager/EditTask
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/EditTask"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "ID": "20175",
+          "Name": "TEST PROJECT22222",
+          "Description": "FGHFGHFGHFGFGH",
+          "ExpireDate": "2026-10-17",
+          "Active": true,
+          "TaskUser": "bishoy magdy",
+          "TaskTypeID": 1,
+          "TaskCategory": "Project",
+          "TaskSubject": "FGH",
+          "TaskBranchID": "",
+          "TaskPage": "",
+          "GroupReply": false,
+          "NeedApproval": true,
+          "Priority": "Low",
+          "ProjectBudget": "4000.0"
+          
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/EditTask"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<integer>",
+            "taskFlagID": "<integer>",
+            "taskID": "<integer>",
+            "status": "<string>",
+            "priority": "<string>",
+            "name": "<string>",
+            "description": "<string>",
+            "expireDate": "<string>",
+            "taskUser": "<string>",
+            "taskTypeID": "<integer>",
+            "refrenceNumber": "<string>",
+            "taskCategory": "<string>",
+            "taskSubject": "<string>",
+            "branchID": "<integer>",
+            "taskPage": "<string>",
+            "active": "<boolean>",
+            "flag": "<boolean>",
+            "needApproval": "<boolean>",
+            "storeName": "<string>",
+            "location": "<string>",
+            "tel": "<string>",
+            "groupReply": "<boolean>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

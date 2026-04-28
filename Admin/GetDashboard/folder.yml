@@ -1,0 +1,7 @@
+info:
+  name: GetDashboard
+  type: folder
+  seq: 71
+
+request:
+  auth: inherit

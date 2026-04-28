@@ -1,0 +1,45 @@
+info:
+  name: UpdateTransportationVehicle
+  type: http
+  seq: 24
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/UpdateTransportationVehicle"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"Id\": 4,\r
+
+      \  \"VehicleTypeId\": 2,\r
+
+      \  \"Capacity\": 111,\r
+
+      \  //\"IsApproved\": true,\r
+
+      \  //\"ApprovedBy\": \"string\",\r
+
+      \  \"Active\": true\r
+
+      \ // \"CreationDate\": \"2025-06-30T14:40:07.220Z\",\r
+
+      \  //\"CreationBy\": 0,\r
+
+      \ // \"ModifiedDate\": \"2025-06-30T14:40:07.220Z\",\r
+
+      \  //\"ModifiedBy\": 0\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

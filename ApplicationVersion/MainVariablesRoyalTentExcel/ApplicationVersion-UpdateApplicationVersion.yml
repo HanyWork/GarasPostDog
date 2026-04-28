@@ -1,0 +1,129 @@
+info:
+  name: /ApplicationVersion/UpdateApplicationVersion
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ApplicationVersion/UpdateApplicationVersion"
+  headers:
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"DesktopVersion\": \"1.6\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/RoyalTent/MainVariablesRoyalTentExcel"
+      method: GET
+      headers:
+        - name: Iron
+          value: <double>
+        - name: Kemer
+          value: <double>
+        - name: Aluminium
+          value: <double>
+        - name: WoodPaint
+          value: <double>
+        - name: BFC
+          value: <double>
+        - name: PergolaSior
+          value: <double>
+        - name: Jotamastic87Grey
+          value: <double>
+        - name: Jotamastic80Grey
+          value: <double>
+        - name: HardTopXPWhiteBlackGrey
+          value: <double>
+        - name: HardTopXPColor
+          value: <double>
+        - name: Thinner17
+          value: <double>
+        - name: Thinner10
+          value: <double>
+        - name: IronMash
+          value: <double>
+        - name: Thinner
+          value: <double>
+        - name: PaintDoko
+          value: <double>
+        - name: KimaBoxCMB
+          value: <double>
+        - name: WeldingWire
+          value: <double>
+        - name: WaterTrackByMeter
+          value: <double>
+        - name: OrdinaryConcreteBase
+          value: <double>
+        - name: SikaCMB
+          value: <double>
+        - name: PolyCarbonate10Min
+          value: <double>
+        - name: PergolaMotor
+          value: <double>
+        - name: RemoteControl
+          value: <double>
+        - name: FrontAccessorskitWithAluminumCover
+          value: <double>
+        - name: BackAccessorskit
+          value: <double>
+        - name: RemoteControlForEngine
+          value: <double>
+        - name: Powerkey
+          value: <double>
+        - name: LEDBulbsWithCover
+          value: <double>
+        - name: GoldenPaintForAluminum
+          value: <double>
+        - name: RegularPaintForAluminum
+          value: <double>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Message": "<string>",
+            "MainVariablesList": [
+              {
+                "Name": "<string>",
+                "Value": "<double>"
+              },
+              {
+                "Name": "<string>",
+                "Value": "<double>"
+              }
+            ],
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

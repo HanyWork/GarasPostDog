@@ -1,0 +1,81 @@
+info:
+  name: /User/GetEmployeeInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/User/GetEmployeeInfo"
+  headers:
+    - name: UserID
+      value: "20264"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/User/GetEmployeeInfo"
+      method: GET
+      headers:
+        - name: UserID
+          value: "89198551"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": false,
+            "Errors": [
+              {
+                "ErrorMSG": "ea sunt nulla do",
+                "ErrorCode": "qui in magna officia ad"
+              },
+              {
+                "ErrorMSG": "veniam consectetur",
+                "ErrorCode": "consectetur"
+              }
+            ],
+            "EmployeeInfo": {
+              "ID": -45934081,
+              "IDEnc": "veniam in magna dolor consequat",
+              "EmployeeName": "nostrud do ea amet enim",
+              "DepartmentName": "Lorem id con",
+              "JobTitleName": "dolore aliqua enim reprehenderit",
+              "Mobile": "sunt",
+              "Email": "esse occaecat velit",
+              "BranchName": "dolor amet laborum occaecat",
+              "Status": true,
+              "Photo": "occaecat",
+              "JobTitleID": 64940708,
+              "DepartmentID": -25665466,
+              "LastName": "cillum deserunt",
+              "FirstName": "sint",
+              "MiddleName": "commodo ut fugiat enim",
+              "Gender": "pariatur sunt Ut",
+              "expiredDocumentsCount": 69284492,
+              "OldID": -66276187,
+              "BranchID": 4492475,
+              "Age": -5280799,
+              "CreatedBy": "id ea Excepteur cillum veniam",
+              "ModifiedBy": "officia nu",
+              "Active": true,
+              "Password": "labore sunt id Duis tempor"
+            }
+          }

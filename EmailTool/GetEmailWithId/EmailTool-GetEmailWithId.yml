@@ -1,0 +1,41 @@
+info:
+  name: /EmailTool/GetEmailWithId
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/EmailTool/GetEmailWithId"
+  headers:
+    - name: EmailUserId
+      value: mikey@sasclearance.com
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: messageId
+      value: AAMkAGJjYzRkMDE0LWNlZDAtNGZmOC1iOTk5LWU4M2VlODU1ZjJkMQBGAAAAAACqt5_qz-O0TZTIHWiXAUL5BwDt0nAvyIC-QoO3rjNcY2c6AAAAAAEMAADt0nAvyIC-QoO3rjNcY2c6AAAAAAVdAAA=
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EmailTool/GetEmailWithId"
+      method: GET
+      headers:
+        - name: userId
+          value: <string>
+        - name: messageId
+          value: <string>
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""

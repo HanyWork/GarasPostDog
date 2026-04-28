@@ -1,0 +1,7 @@
+info:
+  name: DeleteProjectWorkshopStation
+  type: folder
+  seq: 18
+
+request:
+  auth: inherit

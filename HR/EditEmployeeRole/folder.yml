@@ -1,0 +1,7 @@
+info:
+  name: EditEmployeeRole
+  type: folder
+  seq: 30
+
+request:
+  auth: inherit

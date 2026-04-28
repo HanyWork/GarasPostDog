@@ -1,0 +1,81 @@
+info:
+  name: /Patient/GetPatientById
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Patient/GetPatientById"
+  headers:
+    - name: patientId
+      value: "5"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{libmarkapiBaseUrl}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Patient/GetPatientById"
+      method: GET
+      headers:
+        - name: patientId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "FirstName": "<string>",
+              "MiddleName": "<string>",
+              "LastName": "<string>",
+              "DateOfBirth": "<dateTime>",
+              "Gender": "<string>",
+              "Photo": "<string>",
+              "Email": "<string>",
+              "Mobile": "<string>",
+              "Insurance": [
+                {
+                  "UserPatientId": "<long>",
+                  "Name": "<string>",
+                  "IncuranceNo": "<string>",
+                  "ExpireDate": "<dateTime>"
+                },
+                {
+                  "UserPatientId": "<long>",
+                  "Name": "<string>",
+                  "IncuranceNo": "<string>",
+                  "ExpireDate": "<dateTime>"
+                }
+              ]
+            }
+          }

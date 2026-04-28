@@ -1,0 +1,7 @@
+info:
+  name: DeleteManagementOfMaintenancee Copy
+  type: folder
+  seq: 39
+
+request:
+  auth: inherit

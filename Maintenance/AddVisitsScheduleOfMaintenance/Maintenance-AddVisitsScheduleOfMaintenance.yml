@@ -1,0 +1,106 @@
+info:
+  name: /Maintenance/AddVisitsScheduleOfMaintenance
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Maintenance/AddVisitsScheduleOfMaintenance"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  body:
+    type: json
+    data: '{"VisitsScheduleOfMaintenanceDataList":[{"ID":"80382","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2025-06-17"},{"ID":"80383","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2025-07-17"},{"ID":"80384","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2025-08-17"},{"ID":"80385","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2025-09-17"},{"ID":"80386","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2025-10-17"},{"ID":"80387","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2025-11-17"},{"ID":"80388","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2025-12-17"},{"ID":"80389","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-01-17"},{"ID":"80390","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-02-17"},{"ID":"80391","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-03-17"},{"ID":"80392","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-04-17"},{"ID":"80393","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-05-17"},{"ID":"80394","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-06-17"},{"ID":"80395","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-07-17"},{"ID":"80396","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-08-17"},{"ID":"80397","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-09-17"},{"ID":"80398","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-10-17"},{"ID":"80399","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-11-17"},{"ID":"80400","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2026-12-17"},{"ID":"80401","MaintenanceForID":"31242","ManagementOfMaintenanceOrderID":"41523","PlannedDate":"2027-01-17"}]}'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/AddVisitsScheduleOfMaintenance"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "VisitsScheduleOfMaintenanceDataList": [
+              {
+                "ID": "<long>",
+                "ManagementOfMaintenanceOrderID": "<long>",
+                "Serial": "<string>",
+                "PlannedDate": "<string>",
+                "VisitDate": "<string>",
+                "Status": "<boolean>",
+                "MaintenanceForID": "<long>",
+                "AssignedToID": "<long>",
+                "MileageCounter": "<double>",
+                "ChceckInlongitude": "<double>",
+                "ChecckInlatitude": "<double>",
+                "CheckInTime": "<dateTime>",
+                "ChceckOutlongitude": "<double>",
+                "CheckOutlatitude": "<double>",
+                "CheckOutTime": "<dateTime>",
+                "ReminderDate": "<dateTime>",
+                "ReminderHint": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "ManagementOfMaintenanceOrderID": "<long>",
+                "Serial": "<string>",
+                "PlannedDate": "<string>",
+                "VisitDate": "<string>",
+                "Status": "<boolean>",
+                "MaintenanceForID": "<long>",
+                "AssignedToID": "<long>",
+                "MileageCounter": "<double>",
+                "ChceckInlongitude": "<double>",
+                "ChecckInlatitude": "<double>",
+                "CheckInTime": "<dateTime>",
+                "ChceckOutlongitude": "<double>",
+                "CheckOutlatitude": "<double>",
+                "CheckOutTime": "<dateTime>",
+                "ReminderDate": "<dateTime>",
+                "ReminderHint": "<string>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

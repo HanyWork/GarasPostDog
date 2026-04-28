@@ -1,0 +1,94 @@
+info:
+  name: /Purchasing/PurchaseOrder/AddNewPurchaseOrder
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Purchasing/PurchaseOrder/AddNewPurchaseOrder"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: json
+    data: |-
+      {
+          "RequestDate": "12-06-2023",
+          "SupplierID": "10015",
+          "POType": 1,
+          "PurchaseRequestItmesList": [
+              {
+                  "PRItemID": "19",
+                  "ApprovedQty": "5"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Purchasing/PurchaseOrder/AddNewPurchaseOrder"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "SupplierID": "<long>",
+            "POType": "<integer>",
+            "RequestDate": "<string>",
+            "PurchaseRequestItmesList": [
+              {
+                "PRItemID": "<long>",
+                "ApprovedQty": "<double>",
+                "EstimatedPrice": "<double>",
+                "CurrencyID": "<integer>"
+              },
+              {
+                "PRItemID": "<long>",
+                "ApprovedQty": "<double>",
+                "EstimatedPrice": "<double>",
+                "CurrencyID": "<integer>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,103 @@
+info:
+  name: /EmailTool/SendEmail
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/EmailTool/SendEmail"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: multipart-form
+    data:
+      - name: To[0]
+        type: text
+        value: marconbishay@gmail.com
+      - name: To[1]
+        type: text
+        value: marconagy7000@gmail.com
+        disabled: true
+      - name: Cc[0]
+        type: text
+        value: marconagy7000@gmail.com
+        disabled: true
+      - name: Subject
+        type: text
+        value: test multi attachment
+      - name: Body
+        type: text
+        value: test marco
+      - name: AttachmentsList[0].Id
+        type: text
+        value: "54"
+        disabled: true
+      - name: AttachmentsList[1].Id
+        type: text
+        value: "74"
+        disabled: true
+      - name: AttachmentsList[0].Content
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/json.txt
+      - name: AttachmentsList[1].Content
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/OIP.jpg
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EmailTool/SendEmail"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "UserID": "<string>",
+            "Subject": "<string>",
+            "Content": "<string>",
+            "RecipientEmail": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<string>"
+          }

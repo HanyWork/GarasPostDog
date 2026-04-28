@@ -1,0 +1,66 @@
+info:
+  name: /HrUser/GetUserCards
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HrUser/GetUserCards"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+    - name: currentPage
+      value: "1"
+    - name: numberOfItemsPerPage
+      value: "20"
+    - name: userName
+      value: a
+      description: this is the Search Key
+      disabled: true
+    - name: active
+      value: "false"
+    - name: DepId
+      value: "2"
+      disabled: true
+    - name: jobTilteId
+      value: "1"
+      disabled: true
+    - name: BranchId
+      value: "2"
+      disabled: true
+    - name: IsUser
+      value: "true"
+      disabled: true
+    - name: isDeleted
+      value: "true"
+      disabled: true
+    - name: Email
+      value: U@U
+      disabled: true
+    - name: mobile
+      value: "012"
+      disabled: true
+    - name: ActiveUser
+      value: "false"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HrUser/GetUserCards"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""

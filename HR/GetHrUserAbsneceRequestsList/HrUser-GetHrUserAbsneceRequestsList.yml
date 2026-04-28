@@ -1,0 +1,97 @@
+info:
+  name: /HrUser/GetHrUserAbsneceRequestsList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HrUser/GetHrUserAbsneceRequestsList"
+  headers:
+    - name: HrUserId
+      value: "146"
+    - name: AbsenceTypeId
+      value: "2"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HrUser/GetHrUserAbsneceRequestsList"
+      method: GET
+      headers:
+        - name: HrUserId
+          value: <long>
+        - name: AbsenceTypeId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "AbsenceTypeName": "<string>",
+              "TotalBalance": "<integer>",
+              "Requested": "<integer>",
+              "Remain": "<integer>",
+              "AbsenceRequestsList": [
+                {
+                  "From": "<dateTime>",
+                  "To": "<dateTime>",
+                  "Approval": "<string>",
+                  "AbsenceCause": "<string>",
+                  "FirstApproval": "<boolean>",
+                  "FirstRejectionCause": "<string>",
+                  "FirstApprovedByName": "<string>",
+                  "FirstApprovedByImg": "<string>",
+                  "SecondApproval": "<boolean>",
+                  "SecondRejectionCause": "<string>",
+                  "SecondApprovedByName": "<string>",
+                  "SecondApprovedByImg": "<string>"
+                },
+                {
+                  "From": "<dateTime>",
+                  "To": "<dateTime>",
+                  "Approval": "<string>",
+                  "AbsenceCause": "<string>",
+                  "FirstApproval": "<boolean>",
+                  "FirstRejectionCause": "<string>",
+                  "FirstApprovedByName": "<string>",
+                  "FirstApprovedByImg": "<string>",
+                  "SecondApproval": "<boolean>",
+                  "SecondRejectionCause": "<string>",
+                  "SecondApprovedByName": "<string>",
+                  "SecondApprovedByImg": "<string>"
+                }
+              ]
+            }
+          }

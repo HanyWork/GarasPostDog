@@ -1,0 +1,85 @@
+info:
+  name: /Inventory/InventoryMaterialRelease/GetMatrialReleaseShippingAddressContact
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryMaterialRelease/GetMatrialReleaseShippingAddressContact"
+  headers:
+    - name: MatrialReleaseID
+      value: "306821"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryMaterialRelease/GetMatrialReleaseShippingAddressContact"
+      method: GET
+      headers:
+        - name: MatrialReleaseID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "MainMatrialReleaseDataVM": [
+              {
+                "shippingMethod": "<string>",
+                "mainAddress": "<string>",
+                "mainContactName": "<string>",
+                "mainContactMobile": "<string>",
+                "SalesOfferID": "<long>",
+                "ClientID": "<long>",
+                "ProjectID": "<long>",
+                "ProjectName": "<string>",
+                "OfferPricingComment": "<string>",
+                "OfferProjectData": "<string>",
+                "OfferTechnicalInfo": "<string>"
+              },
+              {
+                "shippingMethod": "<string>",
+                "mainAddress": "<string>",
+                "mainContactName": "<string>",
+                "mainContactMobile": "<string>",
+                "SalesOfferID": "<long>",
+                "ClientID": "<long>",
+                "ProjectID": "<long>",
+                "ProjectName": "<string>",
+                "OfferPricingComment": "<string>",
+                "OfferProjectData": "<string>",
+                "OfferTechnicalInfo": "<string>"
+              }
+            ]
+          }

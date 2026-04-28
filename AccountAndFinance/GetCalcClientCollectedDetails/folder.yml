@@ -1,0 +1,7 @@
+info:
+  name: GetCalcClientCollectedDetails
+  type: folder
+  seq: 19
+
+request:
+  auth: inherit

@@ -1,0 +1,81 @@
+info:
+  name: AddMedicalReservation
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddMedicalReservation"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: "{\r
+
+      \    \"DoctorID\": 11,\r
+
+      \    \"Serial\": 8,\r
+
+      \    \"ReservationDate\": \"2025-05-30\",\r
+
+      \    \"PatientID\": 10334,\r
+
+      \    \"PatientTypeID\": 1,\r
+
+      \    \"DoctorScheduleID\": 10005,\r
+
+      \    //\"TeamID\": 1,//specialty\r
+
+      \    \"RoomId\": 1,\r
+
+      \    \"Capacity\": 4,\r
+
+      \    \"Active\": true,\r
+
+      \    \"PaymentMethodId\":1,\r
+
+      \    \"CardNumber\" : \"784656\",\r
+
+      \    //\"ParentID\": \"1\",\r
+
+      \    \"Type\" : \"Addons\",\r
+
+      \    \"InventoryItemAndCategoryList\": [\r
+
+      \    {\r
+
+      \      \"InventoryItemId\": 299,\r
+
+      \      \"InventoryItemCategoryID\": 2050,\r
+
+      \      \"ItemPrice\": 5,\r
+
+      \      \"Quantity\": 2\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"InventoryItemId\": 300,\r
+
+      \      \"InventoryItemCategoryID\": 2050,\r
+
+      \      \"ItemPrice\": 10,\r
+
+      \      \"Quantity\": 5\r
+
+      \    }\r
+
+      \  ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

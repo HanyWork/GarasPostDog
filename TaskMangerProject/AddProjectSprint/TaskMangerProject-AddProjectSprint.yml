@@ -1,0 +1,97 @@
+info:
+  name: /TaskMangerProject/AddProjectSprint
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskMangerProject/AddProjectSprint"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: projectID
+        type: text
+        value: "1"
+      - name: sprintsList[0].name
+        type: text
+        value: test0
+      - name: sprintsList[0].orderNo
+        type: text
+        value: "333"
+      - name: sprintsList[0].stratDate
+        type: text
+        value: 2024-05-16
+      - name: sprintsList[0].EndDate
+        type: text
+        value: 2025-01-01
+      - name: sprintsList[1].name
+        type: text
+        value: test0
+      - name: sprintsList[1].orderNo
+        type: text
+        value: "333"
+      - name: sprintsList[1].stratDate
+        type: text
+        value: 2024-05-16
+      - name: sprintsList[1].EndDate
+        type: text
+        value: 2026-01-01
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskMangerProject/AddProjectSprint"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: projectID
+            type: text
+            value: <long>
+          - name: sprintsList
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

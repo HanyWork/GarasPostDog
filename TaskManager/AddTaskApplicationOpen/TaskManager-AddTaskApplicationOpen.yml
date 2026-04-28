@@ -1,0 +1,455 @@
+info:
+  name: /TaskManager/AddTaskApplicationOpen
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/AddTaskApplicationOpen"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: |-
+      {
+          "TaskApplicationOpen": [
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 11:54:18 AM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:00:12 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - notification_and_task_provider.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:06:22 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - notification_and_task_provider.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 11:59:15 AM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, New tab and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 12:59:12 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:02:12 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:01:12 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:03:12 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:22:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:11:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:20:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:25:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:18:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:24:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:30:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:05:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:12:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:08:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:28:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:19:49 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - notification_and_task_provider.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:06:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:32:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:16:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:31:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:07:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:26:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:27:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:09:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 11:58:14 AM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, New tab and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:17:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:29:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:13:10 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, shoply - login_request.g.dart\r, the_periti_group_egypt - task_manager_helper.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 12:01:16 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, New tab and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - pubspec.yaml [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:15:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:04:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:07:22 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - notification_and_task_provider.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:14:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:33:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 11:55:14 AM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:00:48 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, Merge Revisions for D:\\StudioProjects\\the_periti_group_egypt\\lib\\Providers\\notification_and_task_provider.dart\r, Conflicts\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:14:10 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - task_manager_helper.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 12:02:14 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, New tab and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - sign_in.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:01:45 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, Merge Revisions for D:\\StudioProjects\\the_periti_group_egypt\\lib\\Providers\\notification_and_task_provider.dart\r, Conflicts\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:19:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:21:33 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - task_manager_helper.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:18:33 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:15:10 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - task_manager_helper.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:23:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 11:57:14 AM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:19:33 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 12:00:14 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, New tab and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, \r, the_periti_group_egypt - sign_in_mob.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:20:33 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - notification_and_task_provider.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:21:48 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - task_manager_helper.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 12:58:12 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "05 Nov 2024 06:02:42 PM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 11:54:17 AM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:22:33 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - task_manager_helper.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:18:48 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:12:09 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - task_manager_helper.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 11:56:16 AM",
+                  "AppName": "[WhatsApp\r, Sticky Notes\r, Calculator\r, Settings\r, Calculator\r, GitHub Desktop\r, Title\r, Sticky Notes\r, ChatGPT - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - web_drawer_project_and_task_manager.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt\r, WhatsApp]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:20:48 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - task_manager_helper.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              },
+              {
+                  "TaskID": 20172,
+                  "UserID": "1",
+                  "CreationDateTime": "06 Nov 2024 01:08:21 PM",
+                  "AppName": "[WhatsApp\r, Calculator\r, Settings\r, Calculator\r, ChatGPT and 1 more page - Personal - Microsoft? Edge\r, /TaskManager/AddTaskScreenShot - Vetanoia Team\r, the_periti_group_egypt - task_manager_helper.dart [the_periti_group_egypt]\r, library-flutter_app - inventory_and_stores_provider.dart\r, Settings\r, Microsoft Text Input Application\r, the_periti_group_egypt]"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/AddTaskApplicationOpen"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "TaskApplicationOpen": [
+              {
+                "TaskID": "<long>",
+                "UserID": "<long>",
+                "CreationDateTime": "<string>",
+                "AppName": "<string>"
+              },
+              {
+                "TaskID": "<long>",
+                "UserID": "<long>",
+                "CreationDateTime": "<string>",
+                "AppName": "<string>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

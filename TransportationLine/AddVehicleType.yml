@@ -1,0 +1,29 @@
+info:
+  name: AddVehicleType
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/AddVehicleType"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"Type\": \"Hi-Ace\",\r
+
+      \  \"Active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

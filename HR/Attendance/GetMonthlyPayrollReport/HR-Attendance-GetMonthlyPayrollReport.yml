@@ -1,0 +1,130 @@
+info:
+  name: /HR/Attendance/GetMonthlyPayrollReport
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetMonthlyPayrollReport"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: BranchID
+      value: "1"
+    - name: DepartmentID
+      value: "2"
+      disabled: true
+    - name: PaymentMethodID
+      value: "4"
+      disabled: true
+    - name: HrUserID
+      value: "210"
+    - name: Month
+      value: "1"
+    - name: Year
+      value: "2025"
+    - name: DownloadExcel
+      value: "true"
+      disabled: true
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetMonthlyPayrollReport"
+      method: GET
+      headers:
+        - name: filters
+          value: BranchID,<integer>,DepartmentID,<integer>,PaymentMethodID,<integer>,HrUserID,<long>,Month,<integer>,Year,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "BranchID": "<integer>",
+              "DepartmentID": "<integer>",
+              "PaymentMethodID": "<integer>",
+              "HrUserID": "<long>",
+              "Month": "<integer>",
+              "Year": "<integer>",
+              "PayrollMonthList": [
+                {
+                  "HrUserID": "<long>",
+                  "UserFullName": "<string>",
+                  "DepartmentID": "<integer>",
+                  "DepartmentName": "<string>",
+                  "TeamID": "<long>",
+                  "TeamName": "<string>",
+                  "JobtitleID": "<integer>",
+                  "JobTitleName": "<string>",
+                  "TotalWorkingdays": "<integer>",
+                  "TotalOverTimeHours": "<double>",
+                  "TotalDelayHours": "<double>",
+                  "VacationDaysNumber": "<integer>",
+                  "TotalAbsenceDays": "<integer>",
+                  "Allowances": "<double>",
+                  "Tax": "<double>",
+                  "Insurance": "<double>",
+                  "OtherDeductions": "<double>",
+                  "OtherIncome": "<double>",
+                  "PaymentMethodID": "<integer>",
+                  "PaymentMethodName": "<string>",
+                  "TotalGross": "<double>",
+                  "TotalNet": "<double>"
+                },
+                {
+                  "HrUserID": "<long>",
+                  "UserFullName": "<string>",
+                  "DepartmentID": "<integer>",
+                  "DepartmentName": "<string>",
+                  "TeamID": "<long>",
+                  "TeamName": "<string>",
+                  "JobtitleID": "<integer>",
+                  "JobTitleName": "<string>",
+                  "TotalWorkingdays": "<integer>",
+                  "TotalOverTimeHours": "<double>",
+                  "TotalDelayHours": "<double>",
+                  "VacationDaysNumber": "<integer>",
+                  "TotalAbsenceDays": "<integer>",
+                  "Allowances": "<double>",
+                  "Tax": "<double>",
+                  "Insurance": "<double>",
+                  "OtherDeductions": "<double>",
+                  "OtherIncome": "<double>",
+                  "PaymentMethodID": "<integer>",
+                  "PaymentMethodName": "<string>",
+                  "TotalGross": "<double>",
+                  "TotalNet": "<double>"
+                }
+              ]
+            }
+          }

@@ -1,0 +1,88 @@
+info:
+  name: /ProjectLetterOfCredit/EditProjectLetterOfCredit
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/ProjectLetterOfCredit/EditProjectLetterOfCredit"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  body:
+    type: json
+    data: |-
+      {
+        "ID": 1,
+        "ProjectID": 48,
+        "LetterOfCreditTypeID": 1,
+        "ReturnedAfter": 586,
+        "bankName": "Saib",
+        "StartDate": "2024-07-06",
+        "Amount": 4242,
+        "CurrencyID": 2,
+        "EndDate": "2024-07-30",
+        "ProjectPaymentTermsID": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectLetterOfCredit/EditProjectLetterOfCredit"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "ProjectID": "<long>",
+            "LetterOfCreditTypeID": "<integer>",
+            "ReturnedAfter": "<integer>",
+            "bankName": "<string>",
+            "StartDate": "<string>",
+            "Amount": "<double>",
+            "CurrencyID": "<integer>",
+            "EndDate": "<string>",
+            "ProjectPaymentTermsID": "<long>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

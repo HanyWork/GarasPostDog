@@ -1,0 +1,77 @@
+info:
+  name: /User/GetUserTargetDistribution
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/User/GetUserTargetDistribution"
+  headers:
+    - name: BranchId
+      value: "4"
+    - name: Year
+      value: "2020"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/User/GetUserTargetDistribution"
+      method: GET
+      headers:
+        - name: BranchId
+          value: <integer>
+        - name: Year
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "UserTargetDistributionList": [
+              {
+                "ID": "<long>",
+                "GroupID": "<integer>",
+                "BranchID": "<integer>",
+                "Name": "<string>",
+                "Amount": "<double>"
+              },
+              {
+                "ID": "<long>",
+                "GroupID": "<integer>",
+                "BranchID": "<integer>",
+                "Name": "<string>",
+                "Amount": "<double>"
+              }
+            ]
+          }

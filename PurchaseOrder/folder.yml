@@ -1,0 +1,7 @@
+info:
+  name: PurchaseOrder
+  type: folder
+  seq: 30
+
+request:
+  auth: inherit

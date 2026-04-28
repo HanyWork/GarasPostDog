@@ -1,0 +1,7 @@
+info:
+  name: DeleteBranch
+  type: folder
+  seq: 11
+
+request:
+  auth: inherit

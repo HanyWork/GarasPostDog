@@ -1,0 +1,189 @@
+info:
+  name: /Inventory/InventoryStoreReports/UpdateInventoryStoreReportItem
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryStoreReports/UpdateInventoryStoreReportItem"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+  body:
+    type: json
+    data: |-
+      {
+          "ReportID": "2",
+          "ItemPhysicalBalanceList": [
+              {
+                  "InventoryItemId": "33",
+                  "Comment": "",
+                  "CurrentBalance": "49.5601",
+                  "PhysicalBalance": "-0.26010",
+                  "IDSInventoryStoreItemList": [
+                      "179"
+                  ]
+              },
+              {
+                  "InventoryItemId": "34",
+                  "Comment": "",
+                  "CurrentBalance": "100",
+                  "PhysicalBalance": "0.91000",
+                  "IDSInventoryStoreItemList": [
+                      "180"
+                  ]
+              },
+              {
+                  "InventoryItemId": "57",
+                  "Comment": "",
+                  "CurrentBalance": "295",
+                  "PhysicalBalance": "-74.85000",
+                  "IDSInventoryStoreItemList": [
+                      "186"
+                  ]
+              },
+              {
+                  "InventoryItemId": "57",
+                  "Comment": "",
+                  "CurrentBalance": "150",
+                  "PhysicalBalance": "75.00000",
+                  "IDSInventoryStoreItemList": [
+                      "21270"
+                  ]
+              },
+              {
+                  "InventoryItemId": "128",
+                  "Comment": "",
+                  "CurrentBalance": "40",
+                  "PhysicalBalance": "0.00000",
+                  "IDSInventoryStoreItemList": [
+                      "189"
+                  ]
+              },
+              {
+                  "InventoryItemId": "158",
+                  "Comment": "",
+                  "CurrentBalance": "3",
+                  "PhysicalBalance": "0.00000",
+                  "IDSInventoryStoreItemList": [
+                      "158"
+                  ]
+              },
+              {
+                  "InventoryItemId": "195",
+                  "Comment": "",
+                  "CurrentBalance": "42",
+                  "PhysicalBalance": "0.80000",
+                  "IDSInventoryStoreItemList": [
+                      "161"
+                  ]
+              },
+              {
+                  "InventoryItemId": "253",
+                  "Comment": "",
+                  "CurrentBalance": "100",
+                  "PhysicalBalance": "0.80000",
+                  "IDSInventoryStoreItemList": [
+                      "166"
+                  ]
+              },
+              {
+                  "InventoryItemId": "544",
+                  "Comment": "",
+                  "CurrentBalance": "320",
+                  "PhysicalBalance": "-132.00000",
+                  "IDSInventoryStoreItemList": [
+                      "209"
+                  ]
+              },
+              {
+                  "InventoryItemId": "314",
+                  "Comment": "",
+                  "CurrentBalance": "50.02",
+                  "PhysicalBalance": "-0.02000",
+                  "IDSInventoryStoreItemList": [
+                      "178"
+                  ]
+              },
+              {
+                  "InventoryItemId": "538",
+                  "Comment": "",
+                  "CurrentBalance": "530",
+                  "PhysicalBalance": "0.00000",
+                  "IDSInventoryStoreItemList": [
+                      "199",
+                      "1042"
+                  ]
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryStoreReports/UpdateInventoryStoreReportItem"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ItemPhysicalBalanceList": [
+              {
+                "InventoryItemId": "<long>",
+                "Comment": "<string>",
+                "CurrentBalance": "<double>",
+                "PhysicalBalance": "<double>",
+                "IDSInventoryStoreItemList": [
+                  "<long>",
+                  "<long>"
+                ]
+              },
+              {
+                "InventoryItemId": "<long>",
+                "Comment": "<string>",
+                "CurrentBalance": "<double>",
+                "PhysicalBalance": "<double>",
+                "IDSInventoryStoreItemList": [
+                  "<long>",
+                  "<long>"
+                ]
+              }
+            ],
+            "ReportID": "<long>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

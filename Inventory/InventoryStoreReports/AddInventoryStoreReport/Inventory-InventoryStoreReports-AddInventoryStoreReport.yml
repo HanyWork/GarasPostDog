@@ -1,0 +1,110 @@
+info:
+  name: /Inventory/InventoryStoreReports/AddInventoryStoreReport
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryStoreReports/AddInventoryStoreReport"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  body:
+    type: multipart-form
+    data:
+      - name: Closed
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: Approved
+        type: text
+        value: "true"
+        disabled: true
+      - name: ID
+        type: text
+        value: "9"
+        disabled: true
+      - name: ReportSubject
+        type: text
+        value: test desc  rt aaa
+      - name: ReportDesc
+        type: text
+        value: test desc  rt aaa
+      - name: DateFrom
+        type: text
+        value: 2022-11-01
+      - name: DateTo
+        type: text
+        value: 2023-01-02
+      - name: StoreId
+        type: text
+        value: "2"
+      - name: AttachmentList[0].Id
+        type: text
+        value: ""
+        disabled: true
+      - name: AttachmentList[0].FileContent
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Desktop/WhatsApp Image 2023-09-26 at 15.27.20_2dc7f533.jpg
+      - name: AttachmentList[0].Active
+        type: text
+        value: "true"
+      - name: AttachmentList[1].Id
+        type: text
+        value: "1"
+        disabled: true
+      - name: AttachmentList[1].FileContent
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Desktop/WhatsApp Image 2023-09-26 at 15.27.20_2dc7f533.jpg
+      - name: AttachmentList[1].Active
+        type: text
+        value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryStoreReports/AddInventoryStoreReport"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

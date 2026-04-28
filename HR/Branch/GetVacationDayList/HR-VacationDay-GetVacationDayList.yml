@@ -1,0 +1,85 @@
+info:
+  name: /HR/VacationDay/GetVacationDayList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Branch/GetVacationDayList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: BranchId
+      value: "2"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/VacationDay/GetVacationDayList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<long>",
+                "ArName": "<string>",
+                "EngName": "<string>",
+                "OtherName": "<string>",
+                "Reason": "<string>",
+                "IsPaid": "<boolean>",
+                "IsDeducted": "<boolean>",
+                "AllowOverTime": "<boolean>",
+                "AllowDelayingDeduction": "<boolean>",
+                "AllowAutomaticCalculations": "<boolean>",
+                "From": "<dateTime>",
+                "To": "<dateTime>"
+              },
+              {
+                "Id": "<long>",
+                "ArName": "<string>",
+                "EngName": "<string>",
+                "OtherName": "<string>",
+                "Reason": "<string>",
+                "IsPaid": "<boolean>",
+                "IsDeducted": "<boolean>",
+                "AllowOverTime": "<boolean>",
+                "AllowDelayingDeduction": "<boolean>",
+                "AllowAutomaticCalculations": "<boolean>",
+                "From": "<dateTime>",
+                "To": "<dateTime>"
+              }
+            ]
+          }

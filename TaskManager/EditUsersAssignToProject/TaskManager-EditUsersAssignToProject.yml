@@ -1,0 +1,121 @@
+info:
+  name: /TaskManager/EditUsersAssignToProject
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/EditUsersAssignToProject"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: json
+    data: |-
+      {
+        "ProjectID": 60077,
+        "AdminUsersList": [
+          {
+            "ID" : 0,
+            "UserID": 10009,
+            "Active": true
+          }
+        ],
+        "ManagerUsersList": [
+          {
+            "ID" : 0,
+            "UserID": 10022,
+            "Active": true
+          }
+        ],
+        "NormalUsersList": [
+          {
+            "ID" : 20044,
+            "UserID": 10020,
+            "Active": false
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/EditUsersAssignToProject"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ProjectID": "<long>",
+            "AdminUsersList": [
+              {
+                "UserID": "<long>",
+                "Active": "<boolean>"
+              },
+              {
+                "UserID": "<long>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ManagerUsersList": [
+              {
+                "UserID": "<long>",
+                "Active": "<boolean>"
+              },
+              {
+                "UserID": "<long>",
+                "Active": "<boolean>"
+              }
+            ],
+            "NormalUsersList": [
+              {
+                "UserID": "<long>",
+                "Active": "<boolean>"
+              },
+              {
+                "UserID": "<long>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

@@ -1,0 +1,103 @@
+info:
+  name: /HR/Salary/GetSalaryHistoryForUser
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Salary/GetSalaryHistoryForUser"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: HrUserId
+      value: "11"
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Salary/GetSalaryHistoryForUser?HrUserId=<long>"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: HrUserId
+          value: <long>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "HrUserId": "<long>",
+              "HrUserName": "<string>",
+              "SalaryHistory": [
+                {
+                  "Id": "<integer>",
+                  "ContractId": "<long>",
+                  "CurrencyId": "<integer>",
+                  "CurrencyName": "<string>",
+                  "SalaryTypeName": "<string>",
+                  "TotalGross": "<double>",
+                  "TotalNet": "<double>",
+                  "TotalIncome": "<double>",
+                  "MultiplyingFactor": "<double>",
+                  "PaymentMethodId": "<integer>",
+                  "PaymentStrategyId": "<integer>",
+                  "HrUserId": "<long>",
+                  "BasicSalary": "<double>",
+                  "VariantSalary": "<double>",
+                  "From": "<dateTime>",
+                  "To": "<dateTime>",
+                  "IsCurrent": "<boolean>"
+                },
+                {
+                  "Id": "<integer>",
+                  "ContractId": "<long>",
+                  "CurrencyId": "<integer>",
+                  "CurrencyName": "<string>",
+                  "SalaryTypeName": "<string>",
+                  "TotalGross": "<double>",
+                  "TotalNet": "<double>",
+                  "TotalIncome": "<double>",
+                  "MultiplyingFactor": "<double>",
+                  "PaymentMethodId": "<integer>",
+                  "PaymentStrategyId": "<integer>",
+                  "HrUserId": "<long>",
+                  "BasicSalary": "<double>",
+                  "VariantSalary": "<double>",
+                  "From": "<dateTime>",
+                  "To": "<dateTime>",
+                  "IsCurrent": "<boolean>"
+                }
+              ]
+            }
+          }

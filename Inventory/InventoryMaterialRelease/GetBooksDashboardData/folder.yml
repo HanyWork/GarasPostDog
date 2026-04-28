@@ -1,0 +1,7 @@
+info:
+  name: GetBooksDashboardData
+  type: folder
+  seq: 13
+
+request:
+  auth: inherit

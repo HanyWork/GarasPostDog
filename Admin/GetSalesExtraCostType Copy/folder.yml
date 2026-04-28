@@ -1,0 +1,7 @@
+info:
+  name: GetSalesExtraCostType Copy
+  type: folder
+  seq: 21
+
+request:
+  auth: inherit

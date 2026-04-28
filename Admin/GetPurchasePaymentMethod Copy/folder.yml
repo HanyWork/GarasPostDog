@@ -1,0 +1,7 @@
+info:
+  name: GetPurchasePaymentMethod Copy
+  type: folder
+  seq: 35
+
+request:
+  auth: inherit

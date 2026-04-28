@@ -1,0 +1,112 @@
+info:
+  name: /TaskManager/GetTaskMangerProjectsCards
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskMangerProjectsCards"
+  headers:
+    - name: ProjectName
+      value: test
+      disabled: true
+    - name: CreatorID
+      value: "1"
+      disabled: true
+    - name: closed
+      value: "false"
+      disabled: true
+    - name: NotActive
+      value: "false"
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: numberOfItemsPerPage
+      value: "100"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: IsArchived
+      value: "true"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskMangerProjectsCards"
+      method: GET
+      headers:
+        - name: ProjectName
+          value: <string>
+        - name: CreatorID
+          value: <long>
+        - name: closed
+          value: <boolean>
+        - name: CurrentPage
+          value: <integer>
+        - name: numberOfItemsPerPage
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "ID": "<long>",
+                "ProjectName": "<string>",
+                "NumOfOpenTasks": "<integer>",
+                "NumOfClosedTasks": "<integer>",
+                "EndDate": "<string>",
+                "RemainDays": "<long>",
+                "PriortyID": "<integer>",
+                "CurrentPage": "<integer>",
+                "NumberOfItemsPerPage": "<integer>"
+              },
+              {
+                "ID": "<long>",
+                "ProjectName": "<string>",
+                "NumOfOpenTasks": "<integer>",
+                "NumOfClosedTasks": "<integer>",
+                "EndDate": "<string>",
+                "RemainDays": "<long>",
+                "PriortyID": "<integer>",
+                "CurrentPage": "<integer>",
+                "NumberOfItemsPerPage": "<integer>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            }
+          }

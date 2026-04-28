@@ -1,0 +1,95 @@
+info:
+  name: /HR/VacationType/EditVacationType
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/VacationType/EditVacationType"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "12"
+      - name: HolidayName
+        type: text
+        value: Leave Leave Leave
+      - name: BalancePerMonth
+        type: text
+        value: "4"
+      - name: BalancePerYear
+        type: text
+        value: "30"
+        disabled: true
+      - name: Notes
+        type: text
+        value: gerges
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/VacationType/EditVacationType"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: HolidayName
+            type: text
+            value: <string>
+          - name: AllowedPerYear
+            type: text
+            value: <integer>
+          - name: Balance
+            type: text
+            value: <integer>
+          - name: Notes
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<integer>"
+          }

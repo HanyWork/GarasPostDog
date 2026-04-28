@@ -1,0 +1,89 @@
+info:
+  name: /Admin/GetBranches
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/GetBranches"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetBranches"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "branchResponseList": [
+              {
+                "id": "<integer>",
+                "name": "<string>",
+                "branchName": "<string>",
+                "countryName": "<string>",
+                "governorateName": "<string>",
+                "description": "<string>",
+                "address": "<string>",
+                "tel": "<string>",
+                "fax": "<string>",
+                "email": "<string>",
+                "active": "<boolean>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>",
+                "countryID": "<integer>",
+                "governorateID": "<integer>"
+              },
+              {
+                "id": "<integer>",
+                "name": "<string>",
+                "branchName": "<string>",
+                "countryName": "<string>",
+                "governorateName": "<string>",
+                "description": "<string>",
+                "address": "<string>",
+                "tel": "<string>",
+                "fax": "<string>",
+                "email": "<string>",
+                "active": "<boolean>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>",
+                "countryID": "<integer>",
+                "governorateID": "<integer>"
+              }
+            ]
+          }

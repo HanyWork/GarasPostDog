@@ -1,0 +1,64 @@
+info:
+  name: /Inventory/InventoryItem/GetInventoryStoreItemTotalPricesAndCosts
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/GetInventoryStoreItemTotalPricesAndCosts"
+  headers:
+    - name: InventoryStoreID
+      value: "3"
+      disabled: true
+    - name: DateTo
+      value: <dateTime>
+      disabled: true
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/GetInventoryStoreItemTotalPricesAndCosts"
+      method: GET
+      headers:
+        - name: InventoryStoreID
+          value: <long>
+        - name: DateTo
+          value: <dateTime>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Data": {},
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

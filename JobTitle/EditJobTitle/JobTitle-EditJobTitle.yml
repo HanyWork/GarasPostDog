@@ -1,0 +1,89 @@
+info:
+  name: /JobTitle/EditJobTitle
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/JobTitle/EditJobTitle"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garasTest
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "1043"
+      - name: JobTitleName
+        type: text
+        value: test111
+      - name: hourlyRate
+        type: text
+        value: "26"
+        disabled: true
+      - name: currency
+        type: text
+        value: "2"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/JobTitle/EditJobTitle"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: JobTitleName
+            type: text
+            value: <string>
+          - name: hourlyRate
+            type: text
+            value: <double>
+          - name: currency
+            type: text
+            value: <integer>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

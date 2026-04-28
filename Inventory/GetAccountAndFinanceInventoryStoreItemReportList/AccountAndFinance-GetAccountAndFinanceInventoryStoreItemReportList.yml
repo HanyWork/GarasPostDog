@@ -1,0 +1,154 @@
+info:
+  name: /AccountAndFinance/GetAccountAndFinanceInventoryStoreItemReportList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{libmarkapiBaseUrl}}/Inventory/GetAccountAndFinanceInventoryStoreItemReportList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{LibMarkCompany}}"
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "20"
+    - name: InventoryStoreID
+      value: "6"
+      disabled: true
+    - name: SearchKey
+      value: ETHYL
+      disabled: true
+    - name: ItemSerial
+      value: ""
+      disabled: true
+    - name: MatrialAddingOrderSerial
+      value: ""
+      disabled: true
+    - name: SortBy
+      value: ItemName
+      disabled: true
+    - name: IsExpDate
+      value: "true"
+      disabled: true
+    - name: LowStock
+      value: "10"
+      disabled: true
+    - name: ExceedBalance
+      value: "20"
+      disabled: true
+    - name: NotReleasedFrom
+      value: 2023-1-1
+      disabled: true
+    - name: ChapterName
+      value: filo
+      disabled: true
+    - name: PartNO
+      value: "95"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/GetAccountAndFinanceInventoryStoreItemReportList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            },
+            "TotalPricedItems": "<long>",
+            "TotalItems": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "InventoryStoreItemList": [
+              {
+                "ID": "<long>",
+                "ItemCode": "<string>",
+                "ItemName": "<string>",
+                "PartNO": "<string>",
+                "InventoryStoreName": "<string>",
+                "Category": "<string>",
+                "UnitCost": "<double>",
+                "ItemSerialCounter": "<string>",
+                "Active": "<boolean>",
+                "Cost1": "<double>",
+                "Cost2": "<double>",
+                "Cost3": "<double>",
+                "HoldQTY": "<double>",
+                "OpenPOQTY": "<double>",
+                "StockBalance": "<double>",
+                "StockBalanceValue": "<double>",
+                "RequestionUOMShortName": "<string>",
+                "ExpDate": "<string>",
+                "InventoryStoreId": "<long>",
+                "RUOM": "<string>",
+                "CommercialName": "<string>",
+                "MarketName": "<string>",
+                "MaxStock": "<double>",
+                "MinStock": "<double>"
+              },
+              {
+                "ID": "<long>",
+                "ItemCode": "<string>",
+                "ItemName": "<string>",
+                "PartNO": "<string>",
+                "InventoryStoreName": "<string>",
+                "Category": "<string>",
+                "UnitCost": "<double>",
+                "ItemSerialCounter": "<string>",
+                "Active": "<boolean>",
+                "Cost1": "<double>",
+                "Cost2": "<double>",
+                "Cost3": "<double>",
+                "HoldQTY": "<double>",
+                "OpenPOQTY": "<double>",
+                "StockBalance": "<double>",
+                "StockBalanceValue": "<double>",
+                "RequestionUOMShortName": "<string>",
+                "ExpDate": "<string>",
+                "InventoryStoreId": "<long>",
+                "RUOM": "<string>",
+                "CommercialName": "<string>",
+                "MarketName": "<string>",
+                "MaxStock": "<double>",
+                "MinStock": "<double>"
+              }
+            ],
+            "TotalStockBalance": "<double>",
+            "TotalStockBalanceValue": "<double>",
+            "NoOfItems": "<integer>"
+          }

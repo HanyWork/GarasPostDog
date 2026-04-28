@@ -1,0 +1,7 @@
+info:
+  name: GetOfferInventoryItemInfo
+  type: folder
+  seq: 18
+
+request:
+  auth: inherit

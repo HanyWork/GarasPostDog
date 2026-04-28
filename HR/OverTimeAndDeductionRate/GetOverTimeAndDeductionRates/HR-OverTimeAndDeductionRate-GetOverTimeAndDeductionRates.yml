@@ -1,0 +1,107 @@
+info:
+  name: /HR/OverTimeAndDeductionRate/GetOverTimeAndDeductionRates
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/OverTimeAndDeductionRate/GetOverTimeAndDeductionRates"
+  headers:
+    - name: branchId
+      value: "2"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/OverTimeAndDeductionRate/GetOverTimeAndDeductionRates"
+      method: GET
+      headers:
+        - name: branchId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "Id": "<long>",
+                "From": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "To": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "Rate": "<double>",
+                "BranchId": "<integer>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "From": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "To": {
+                  "Hour": "<integer>",
+                  "Minute": "<integer>",
+                  "Second": "<integer>",
+                  "Millisecond": "<integer>",
+                  "Microsecond": "<integer>",
+                  "Nanosecond": "<integer>",
+                  "Ticks": "<long>"
+                },
+                "Rate": "<double>",
+                "BranchId": "<integer>",
+                "Active": "<boolean>"
+              }
+            ]
+          }

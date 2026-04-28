@@ -1,0 +1,106 @@
+info:
+  name: /Project/GetFullProjectCardDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Project/GetFullProjectCardDetails"
+  headers:
+    - name: _ProjectId
+      value: <long>
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: ProjectId
+      value: "245482"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Project/GetFullProjectCardDetails"
+      method: GET
+      headers:
+        - name: _ProjectId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "projectCard": {
+              "projectId": "<long>",
+              "projectSerial": "<string>",
+              "projectName": "<string>",
+              "clientName": "<string>",
+              "projectStatus": "<string>",
+              "projectExtraModifications": "<double>",
+              "totalProjectPrice": "<double>",
+              "projectType": "<string>",
+              "projectSalesPersonImgUrl": "<string>",
+              "projectSalesPersonName": "<string>",
+              "projectRevision": "<string>",
+              "maintnanceType": "<string>",
+              "projectManagerName": "<string>",
+              "projectManagerImgUrl": "<string>",
+              "projectStartDate": "<string>",
+              "projectEndDate": "<string>",
+              "remainTime": "<integer>",
+              "finishProjectReportStatus": "<string>",
+              "offerPrice": "<double>",
+              "offerTax": "<double>",
+              "offerExtraCost": "<double>",
+              "totalProjectCollectedCost": "<double>",
+              "totalProjectCollectedCostPercentage": "<string>",
+              "remainCollection": "<double>",
+              "openFabOrders": "<integer>",
+              "totalFabOrders": "<integer>",
+              "totalHoursFabOrders": "<double>",
+              "fabOrdersPercentage": "<string>",
+              "openInstallationOrders": "<integer>",
+              "totalInstallationOrders": "<integer>",
+              "totalHoursInstallationOrders": "<double>",
+              "installationOrdersPercentage": "<string>",
+              "bomMaterialCost": "<double>",
+              "bomCurrentMaterialCost": "<double>",
+              "bomMaterialCostDate": "<string>",
+              "bomReleasedMaterialCost": "<double>",
+              "extraReleasedMaterialCost": "<double>",
+              "totalReleasedMaterialCost": "<double>",
+              "bomReleasedPercentage": "<string>",
+              "extraReleasedPercentage": "<string>",
+              "totalReleasedPercentage": "<string>",
+              "remainMaterialPricingTimeCost": "<double>",
+              "remainMaterialCurrentCost": "<double>",
+              "remainMaterialDiffCost": "<double>",
+              "lastBOMMaterialCostModifiedDate": "<string>"
+            },
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

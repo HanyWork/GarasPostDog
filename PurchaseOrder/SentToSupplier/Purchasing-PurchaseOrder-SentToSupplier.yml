@@ -1,0 +1,95 @@
+info:
+  name: /Purchasing/PurchaseOrder/SentToSupplier
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/Purchasing/PurchaseOrder/SentToSupplier"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+  body:
+    type: multipart-form
+    data:
+      - name: POID
+        type: text
+        value: <long>
+      - name: SentToSupp
+        type: text
+        value: <boolean>
+      - name: DeliveryDate
+        type: text
+        value: <string>
+      - name: SendingMethod
+        type: text
+        value: <string>
+      - name: ContactPersonID
+        type: text
+        value: <long>
+      - name: Files
+        type: text
+        value: "[object Object],[object Object]"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Purchasing/PurchaseOrder/SentToSupplier"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: POID
+            type: text
+            value: <long>
+          - name: SentToSupp
+            type: text
+            value: <boolean>
+          - name: DeliveryDate
+            type: text
+            value: <string>
+          - name: SendingMethod
+            type: text
+            value: <string>
+          - name: ContactPersonID
+            type: text
+            value: <long>
+          - name: Files
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

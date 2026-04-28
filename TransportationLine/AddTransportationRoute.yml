@@ -1,0 +1,41 @@
+info:
+  name: AddTransportationRoute
+  type: http
+  seq: 30
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/AddTransportationRoute"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"TransportationLineId\": 3,\r
+
+      \  \"SupplierId\": 30,\r
+
+      \  \"SupplierContactPersonId\": 31,\r
+
+      \  \"BranchScheduleId\": 10225,\r
+
+      \  \"PeriodFrom\": \"2025-07-02T13:55:46.081Z\",\r
+
+      \  \"HrUserId\":11\r
+
+      \  //\"PeriodTo\":\r
+
+      \ // \"Active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

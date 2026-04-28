@@ -1,0 +1,7 @@
+info:
+  name: GetAreasList
+  type: folder
+  seq: 47
+
+request:
+  auth: inherit

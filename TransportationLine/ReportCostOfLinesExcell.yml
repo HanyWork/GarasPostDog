@@ -1,0 +1,49 @@
+info:
+  name: ReportCostOfLinesExcell
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/api/Transportation/ReportCostOfLinesExcell"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: TransportionlineId
+      value: "1"
+      disabled: true
+    - name: SupplierId
+      value: "3"
+    - name: supplierContactPersonId
+      value: ""
+      disabled: true
+    - name: date
+      value: 2025-07-01
+      disabled: true
+    - name: serialBus
+      value: "4"
+      disabled: true
+    - name: PageNo
+      value: "1"
+      disabled: true
+    - name: NoOfItems
+      value: ""
+      disabled: true
+    - name: dateFrom
+      value: 2026-03-01
+    - name: dateTo
+      value: 2026-03-30
+  auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

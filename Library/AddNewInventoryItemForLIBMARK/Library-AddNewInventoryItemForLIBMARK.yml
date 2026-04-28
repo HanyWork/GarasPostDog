@@ -1,0 +1,148 @@
+info:
+  name: /Library/AddNewInventoryItemForLIBMARK
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Library/AddNewInventoryItemForLIBMARK"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: libmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Data.ID
+        type: text
+        value: "0"
+      - name: Data.ItemName
+        type: text
+        value: Gr Test
+      - name: Data.CategoryId
+        type: text
+        value: "131"
+      - name: Data.RequstionUOMID
+        type: text
+        value: "1"
+      - name: Data.PurchasingUOMID
+        type: text
+        value: "1"
+      - name: Data.PartNumber
+        type: text
+        value: "63"
+      - name: Data.Active
+        type: text
+        value: " true"
+        disabled: true
+      - name: Data.CalculationTypeID
+        type: text
+        value: "4"
+      - name: Data.CommericalName
+        type: text
+        value: " aswdfasdf"
+        disabled: true
+      - name: Data.Description
+        type: text
+        value: " asdfasdf"
+        disabled: true
+      - name: Data.Details
+        type: text
+        value: " asdfsadf"
+        disabled: true
+      - name: Data.ConvertRateFromPurchasingToRequestionUnit
+        type: text
+        value: "1"
+        disabled: true
+      - name: Data.Type
+        type: text
+        value: " Local"
+        disabled: true
+      - name: Data.MarketName
+        type: text
+        value: " asdfawsdfsdfa"
+        disabled: true
+      - name: Data.MaxBlanace
+        type: text
+        value: "21"
+        disabled: true
+      - name: Data.MinBalance
+        type: text
+        value: "32"
+        disabled: true
+      - name: Data.CostAmount1
+        type: text
+        value: "1"
+        disabled: true
+      - name: Data.CostAmount2
+        type: text
+        value: "2"
+        disabled: true
+      - name: Data.CostAmount3
+        type: text
+        value: "3"
+        disabled: true
+      - name: Data.PriorityID
+        type: text
+        value: "2"
+        disabled: true
+      - name: Data.AttachmentsList[0].Id
+        type: text
+        value: "10002"
+        disabled: true
+      - name: Data.AttachmentsList[0].Active
+        type: text
+        value: "true"
+        disabled: true
+      - name: Data.CustomAmount
+        type: text
+        value: "100"
+      - name: Data.Image
+        type: file
+        value: []
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Library/AddNewInventoryItemForLIBMARK"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": false,
+            "Errors": [
+              {
+                "ErrorMSG": "id quis sit non",
+                "ErrorCode": "Excepteur"
+              },
+              {
+                "ErrorMSG": "labore deserunt id",
+                "ErrorCode": "non nostrud"
+              }
+            ],
+            "ID": -86819841
+          }

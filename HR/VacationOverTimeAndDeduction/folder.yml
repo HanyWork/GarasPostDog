@@ -1,0 +1,7 @@
+info:
+  name: VacationOverTimeAndDeduction
+  type: folder
+  seq: 41
+
+request:
+  auth: inherit

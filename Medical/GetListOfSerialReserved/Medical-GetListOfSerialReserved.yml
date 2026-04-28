@@ -1,0 +1,70 @@
+info:
+  name: /Medical/GetListOfSerialReserved
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/GetListOfSerialReserved"
+  headers:
+    - name: DoctorID
+      value: ""
+      disabled: true
+    - name: DoctorScheduleID
+      value: "10005"
+    - name: DayDate
+      value: 2025-05-30
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/GetListOfSerialReserved"
+      method: GET
+      headers:
+        - name: DoctorID
+          value: <long>
+        - name: DoctorScheduleID
+          value: <long>
+        - name: DayDate
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              "<integer>",
+              "<integer>"
+            ]
+          }

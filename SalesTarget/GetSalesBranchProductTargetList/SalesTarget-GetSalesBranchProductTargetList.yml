@@ -1,0 +1,112 @@
+info:
+  name: /SalesTarget/GetSalesBranchProductTargetList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/SalesTarget/GetSalesBranchProductTargetList"
+  headers:
+    - name: TargetId
+      value: "1018"
+    - name: BranchId
+      value: <integer>
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesTarget/GetSalesBranchProductTargetList"
+      method: GET
+      headers:
+        - name: TargetId
+          value: <integer>
+        - name: BranchId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SalesBranchProductTargets": [
+              {
+                "BranchID": "<integer>",
+                "BranchName": "<string>",
+                "SalesBranchProductTargetList": [
+                  {
+                    "ID": "<long>",
+                    "ProductId": "<long>",
+                    "ProductName": "<string>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyID": "<integer>",
+                    "CurrencyName": "<string>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "ProductId": "<long>",
+                    "ProductName": "<string>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyID": "<integer>",
+                    "CurrencyName": "<string>"
+                  }
+                ]
+              },
+              {
+                "BranchID": "<integer>",
+                "BranchName": "<string>",
+                "SalesBranchProductTargetList": [
+                  {
+                    "ID": "<long>",
+                    "ProductId": "<long>",
+                    "ProductName": "<string>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyID": "<integer>",
+                    "CurrencyName": "<string>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "ProductId": "<long>",
+                    "ProductName": "<string>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyID": "<integer>",
+                    "CurrencyName": "<string>"
+                  }
+                ]
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

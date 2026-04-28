@@ -1,0 +1,37 @@
+info:
+  name: /EmailTool/GetEmailAttachments
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/EmailTool/GetEmailAttachments"
+  headers:
+    - name: userId
+      value: garas@sasclearance.com
+    - name: messageId
+      value: AAMkADgzZmMyMDYxLWRkN2YtNDJkMC1iYzdlLTIxMTEwNGY5NjA4YQBGAAAAAAAgX7WsJxQJQaLUuPlWntjSBwCCzSsIXnj9SZYhXtqAfLNSAAAAAAEMAACCzSsIXnj9SZYhXtqAfLNSAABmsmopAAA=
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EmailTool/GetEmailAttachments"
+      method: GET
+      headers:
+        - name: userId
+          value: <string>
+        - name: messageId
+          value: <string>
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""

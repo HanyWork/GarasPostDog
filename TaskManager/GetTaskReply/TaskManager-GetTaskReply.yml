@@ -1,0 +1,123 @@
+info:
+  name: /TaskManager/GetTaskReply
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskReply"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "10"
+    - name: TaskID
+      value: "801316"
+      disabled: true
+    - name: CommentSearch
+      value: ""
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskReply"
+      method: GET
+      headers:
+        - name: header
+          value: currentPage,<integer>,numberOfItemsPerPage,<integer>,taskID,<long>,commentSearch,<string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "paginationHeader": {
+              "currentPage": "<integer>",
+              "totalPages": "<integer>",
+              "itemsPerPage": "<integer>",
+              "totalItems": "<integer>"
+            },
+            "getTaskReplyList": [
+              {
+                "id": "<long>",
+                "taskID": "<long>",
+                "recieverUserID": "<long>",
+                "isFinished": "<boolean>",
+                "commentReply": "<string>",
+                "approvalComment": "<string>",
+                "creatorName": "<string>",
+                "creatorPhoto": "<string>",
+                "taskStatus": "<string>",
+                "approval": "<boolean>",
+                "active": "<boolean>",
+                "creatorAttach": "<string>",
+                "replyAttach": "<string>",
+                "createdBy": "<long>",
+                "creatorFileName": "<string>",
+                "creatorFileExtension": "<string>",
+                "creatorFileContent": "<string>",
+                "replyFileName": "<string>",
+                "replyFileExtension": "<string>",
+                "replyFileContent": "<string>",
+                "creationDate": "<string>",
+                "modifiedBy": "<long>",
+                "modifiedDate": "<string>"
+              },
+              {
+                "id": "<long>",
+                "taskID": "<long>",
+                "recieverUserID": "<long>",
+                "isFinished": "<boolean>",
+                "commentReply": "<string>",
+                "approvalComment": "<string>",
+                "creatorName": "<string>",
+                "creatorPhoto": "<string>",
+                "taskStatus": "<string>",
+                "approval": "<boolean>",
+                "active": "<boolean>",
+                "creatorAttach": "<string>",
+                "replyAttach": "<string>",
+                "createdBy": "<long>",
+                "creatorFileName": "<string>",
+                "creatorFileExtension": "<string>",
+                "creatorFileContent": "<string>",
+                "replyFileName": "<string>",
+                "replyFileExtension": "<string>",
+                "replyFileContent": "<string>",
+                "creationDate": "<string>",
+                "modifiedBy": "<long>",
+                "modifiedDate": "<string>"
+              }
+            ]
+          }

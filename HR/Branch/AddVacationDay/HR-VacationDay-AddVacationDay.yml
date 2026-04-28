@@ -1,0 +1,167 @@
+info:
+  name: /HR/VacationDay/AddVacationDay
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Branch/AddVacationDay"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: ArName
+        type: text
+        value: Egaza check2
+      - name: EngName
+        type: text
+        value: Vacation2
+      - name: OtherName
+        type: text
+        value: Vacation
+      - name: Reason
+        type: text
+        value: Reason
+      - name: IsPaid
+        type: text
+        value: "true"
+      - name: IsDeducted
+        type: text
+        value: "false"
+      - name: AllowOverTime
+        type: text
+        value: "true"
+      - name: AllowDelayingDeduction
+        type: text
+        value: "true"
+      - name: AllowAutomaticCalculations
+        type: text
+        value: "false"
+      - name: From
+        type: text
+        value: 2025-2-12
+      - name: To
+        type: text
+        value: 2025-2-12
+      - name: Active
+        type: text
+        value: "true"
+      - name: BranchId
+        type: text
+        value: "1"
+      - name: OverTimeDeductionRates[0].From
+        type: text
+        value: 8:00 AM
+      - name: OverTimeDeductionRates[0].To
+        type: text
+        value: 12:00 PM
+      - name: OverTimeDeductionRates[0].Rate
+        type: text
+        value: "1.4"
+      - name: OverTimeDeductionRates[0].Active
+        type: text
+        value: "true"
+      - name: OverTimeDeductionRates[1].From
+        type: text
+        value: 12:00 AM
+      - name: OverTimeDeductionRates[1].To
+        type: text
+        value: 5:00 AM
+      - name: OverTimeDeductionRates[1].Rate
+        type: text
+        value: "1.4"
+      - name: OverTimeDeductionRates[1].Active
+        type: text
+        value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/VacationDay/AddVacationDay"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: ArName
+            type: text
+            value: <string>
+          - name: EngName
+            type: text
+            value: <string>
+          - name: OtherName
+            type: text
+            value: <string>
+          - name: Reason
+            type: text
+            value: <string>
+          - name: IsPaid
+            type: text
+            value: <boolean>
+          - name: IsDeducted
+            type: text
+            value: <boolean>
+          - name: AllowOverTime
+            type: text
+            value: <boolean>
+          - name: AllowDelayingDeduction
+            type: text
+            value: <boolean>
+          - name: AllowAutomaticCalculations
+            type: text
+            value: <boolean>
+          - name: From
+            type: text
+            value: <dateTime>
+          - name: To
+            type: text
+            value: <dateTime>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

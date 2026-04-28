@@ -1,0 +1,7 @@
+info:
+  name: CheckUserDuplicates
+  type: folder
+  seq: 21
+
+request:
+  auth: inherit

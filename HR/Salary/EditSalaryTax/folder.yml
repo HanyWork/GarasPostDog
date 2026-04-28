@@ -1,0 +1,7 @@
+info:
+  name: EditSalaryTax
+  type: folder
+  seq: 14
+
+request:
+  auth: inherit

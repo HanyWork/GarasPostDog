@@ -1,0 +1,96 @@
+info:
+  name: /Admin/EditEmployeeGroupNew
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Admin/EditEmployeeGroupNew"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "UserID": "20032",
+          "userGroupData": [
+              {
+                  "GroupID": "7"
+              },
+              {
+                  "GroupID": "10010"
+              },
+              {
+                  "GroupID": "20023"
+              },
+              {
+                  "GroupID": "20024"
+              },
+              {
+                  "GroupID": "20030"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/EditEmployeeGroupNew"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "GroupID": "<integer>",
+            "UserID": "<integer>",
+            "userGroupData": [
+              {
+                "GroupID": "<integer>"
+              },
+              {
+                "GroupID": "<integer>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

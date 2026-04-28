@@ -1,0 +1,73 @@
+info:
+  name: /ProjectPayment/GetProjectPaymentTermsReport
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/ProjectPayment/GetProjectPaymentTermsReport"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: ProjectID
+      value: "50"
+      disabled: true
+    - name: DueDateFrom
+      value: 2024-06-20
+      disabled: true
+    - name: DueDateTo
+      value: 2024-06-30
+      disabled: true
+    - name: NumGreaterThanRemain
+      value: "98"
+      disabled: true
+    - name: IsCollected
+      value: "true"
+      disabled: true
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectPayment/GetProjectPaymentTermsReport"
+      method: GET
+      headers:
+        - name: filters
+          value: ProjectID,<long>,DueDateFrom,<string>,DueDateTo,<string>,NumGreaterThanRemain,<long>,IsCollected,<boolean>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

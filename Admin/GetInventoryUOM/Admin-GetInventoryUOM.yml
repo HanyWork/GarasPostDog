@@ -1,0 +1,71 @@
+info:
+  name: /Admin/GetInventoryUOM
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/GetInventoryUOM"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: Companyname
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetInventoryUOM"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "inventoryUOMDList": [
+              {
+                "id": "<integer>",
+                "name": "<string>",
+                "shortName": "<string>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>",
+                "active": "<boolean>"
+              },
+              {
+                "id": "<integer>",
+                "name": "<string>",
+                "shortName": "<string>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>",
+                "active": "<boolean>"
+              }
+            ]
+          }

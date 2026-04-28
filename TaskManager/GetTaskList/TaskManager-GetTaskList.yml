@@ -1,0 +1,207 @@
+info:
+  name: /TaskManager/GetTaskList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskList"
+  headers:
+    - name: TaskID
+      value: ""
+      disabled: true
+    - name: TaskTypeID
+      value: ""
+      disabled: true
+    - name: ToUserID
+      value: ""
+      disabled: true
+    - name: Status
+      value: ""
+      disabled: true
+    - name: TaskCategory
+      value: ""
+      disabled: true
+    - name: PriorityFilter
+      value: ""
+      disabled: true
+    - name: TaskName
+      value: ""
+      disabled: true
+    - name: NeedApproval
+      value: ""
+      disabled: true
+    - name: Read
+      value: ""
+      disabled: true
+    - name: Flag
+      value: ""
+      disabled: true
+    - name: Star
+      value: ""
+      disabled: true
+    - name: IsFinished
+      value: ""
+      disabled: true
+    - name: DateFrom
+      value: ""
+      disabled: true
+    - name: DateTo
+      value: ""
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: Delayed
+      value: ""
+      disabled: true
+    - name: SearchKey
+      value: ""
+      disabled: true
+    - name: NotActive
+      value: ""
+      disabled: true
+    - name: IsArchived
+      value: "true"
+    - name: NumberOfItemsPerPage
+      value: "100"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskList"
+      method: GET
+      headers:
+        - name: header
+          value: TaskID,<long>,TaskTypeID,<long>,ToUserID,<long>,Status,<string>,TaskCategory,<string>,PriorityFilter,<string>,TaskName,<string>,NeedApproval,<boolean>,Read,<boolean>,Flag,<boolean>,Star,<boolean>,IsFinished,<boolean>,DateFrom,<string>,DateTo,<string>,SearchKey,<string>,CurrentPage,<integer>,Delayed,<boolean>,NotActive,<boolean>,NumberOfItemsPerPage,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "TaskCount": "<integer>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "TasksList": [
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskCategory": "<string>",
+                "TaskSubject": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "RejectedNo": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "ProjectID": "<long>",
+                "ProjectSprintID": "<long>",
+                "ProjectWorkFlowID": "<long>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskCategory": "<string>",
+                "TaskSubject": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "RejectedNo": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "ProjectID": "<long>",
+                "ProjectSprintID": "<long>",
+                "ProjectWorkFlowID": "<long>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            }
+          }

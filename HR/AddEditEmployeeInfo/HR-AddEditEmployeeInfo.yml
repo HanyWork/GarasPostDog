@@ -1,0 +1,109 @@
+info:
+  name: /HR/AddEditEmployeeInfo
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HrUser/AddEditEmployeeInfo"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: proauto
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "ID": "10011",
+          "Email": "111",
+          "Password": "111",
+          "FirstName": "worker1",
+          "ArFirstName": "worker1",
+          "MiddleName": ".",
+          "ArMiddleName": ".",
+          "LastName": ".",
+          "ArLastName": ".",
+          "Mobile": "111",
+          "Photo": "",
+          "Active": true,
+          "Age": "1",
+          "Gender": "Male",
+          "BranchID": "4",
+          "DepartmentID": "2",
+          "JobTitleID": "15",
+          "DateOfBirth": "2025-05-05",
+          "AddHrUser": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/AddEditEmployeeInfo"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<integer>",
+            "employeeName": "<string>",
+            "departmentName": "<string>",
+            "lastName": "<string>",
+            "firstName": "<string>",
+            "middleName": "<string>",
+            "gender": "<string>",
+            "expiredDocumentsCount": "<integer>",
+            "departmentID": "<integer>",
+            "oldID": "<integer>",
+            "branchID": "<integer>",
+            "jobTitleName": "<string>",
+            "branchName": "<string>",
+            "jobTitleID": "<integer>",
+            "age": "<integer>",
+            "email": "<string>",
+            "mobile": "<string>",
+            "photo": "<string>",
+            "createdBy": "<string>",
+            "modifiedBy": "<string>",
+            "active": "<boolean>",
+            "password": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

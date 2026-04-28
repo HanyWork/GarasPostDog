@@ -1,0 +1,114 @@
+info:
+  name: /EInvoice/AddEditEInvoiceSetting
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/EInvoice/AddEditEInvoiceSetting"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        //"ID": 5,
+                  "ClientIdProduction": "5b1249f5-ec56-48c7-bd06-71cc3e7694d1",
+                  "Clientsecret1Production": "a38b2493-d98d-444d-bd1e-21dcf0da7bd0",
+                  "Clientsecret2Production": "9e6bb197-01de-49b2-9525-ca673fae6a51",
+                  "ClientIdTest": "",
+                  "Clientsecret1Test": "",
+                  "Clientsecret2Test": "",
+                  "RegistrationNumber": "462189600",
+                  "IssuerType": "B",
+                  "ActivityCode1": "4649",
+                  "ActivityCode2": "",
+                  "ActivityCode3": "",
+                  "ItemCodeType": "EG",
+                  "IssureName": null,
+                  "Path": null,
+                  "CompanyName": null,
+                  "PinCode": null,
+                  "Active": true,
+                  "IsSignature": true,
+                  "IsProduction": true,
+                  "ItemTypeEINVOICE": "EGS",
+                  "CreatedBy": null,
+                  "ModifiedBy": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EInvoice/AddEditEInvoiceSetting"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<integer>",
+            "ClientIdProduction": "<string>",
+            "Clientsecret1Production": "<string>",
+            "Clientsecret2Production": "<string>",
+            "ClientIdTest": "<string>",
+            "Clientsecret1Test": "<string>",
+            "Clientsecret2Test": "<string>",
+            "RegistrationNumber": "<string>",
+            "IssuerType": "<string>",
+            "ActivityCode1": "<string>",
+            "ActivityCode2": "<string>",
+            "ActivityCode3": "<string>",
+            "ItemCodeType": "<string>",
+            "IssureName": "<string>",
+            "Path": "<string>",
+            "CompanyName": "<string>",
+            "PinCode": "<string>",
+            "Active": "<boolean>",
+            "IsSignature": "<boolean>",
+            "IsProduction": "<boolean>",
+            "ItemTypeEINVOICE": "<string>",
+            "CreatedBy": "<string>",
+            "ModifiedBy": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<integer>"
+          }

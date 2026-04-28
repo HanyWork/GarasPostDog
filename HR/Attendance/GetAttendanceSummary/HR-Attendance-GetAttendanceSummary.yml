@@ -1,0 +1,28 @@
+info:
+  name: /HR/Attendance/GetAttendanceSummary
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetAttendanceSummary"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+    - name: UserId
+      value: "21"
+    - name: month
+      value: "5"
+    - name: year
+      value: "2024"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

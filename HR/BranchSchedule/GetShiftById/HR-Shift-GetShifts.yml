@@ -1,0 +1,24 @@
+info:
+  name: /HR/Shift/GetShifts
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/BranchSchedule/GetShiftById"
+  headers:
+    - name: shiftId
+      value: "2"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

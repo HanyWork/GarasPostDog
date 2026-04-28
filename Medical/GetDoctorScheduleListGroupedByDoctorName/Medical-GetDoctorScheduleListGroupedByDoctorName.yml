@@ -1,0 +1,241 @@
+info:
+  name: /Medical/GetDoctorScheduleListGroupedByDoctorName
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/GetDoctorScheduleListGroupedByDoctorName"
+  headers:
+    - name: SpecialtyID
+      value: "1"
+      description: same as team ID
+    - name: DoctorID
+      value: "11"
+      disabled: true
+    - name: DayDate
+      value: 2030-06-2
+    - name: searchKey
+      value: "%D8%B3%D8%A7%D9%85%D8%B1"
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+    - name: SortByDoctornameAsce
+      value: "true"
+      description: one of them(bool)
+    - name: SortByDoctornameDesc
+      value: "true"
+      description: one of them(bool)
+      disabled: true
+    - name: BranchID
+      value: "4"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/GetDoctorScheduleListGroupedByDoctorName"
+      method: GET
+      headers:
+        - name: SpecialtyID
+          value: <long>
+        - name: DoctorID
+          value: <long>
+        - name: DayDate
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "DoctorList": [
+                {
+                  "DoctorName": "<string>",
+                  "DoctorScheduleList": [
+                    {
+                      "ID": "<long>",
+                      "DoctorID": "<long>",
+                      "DoctorName": "<string>",
+                      "Capacity": "<integer>",
+                      "IntervalFrom": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "IntervalTo": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "ConsultationPrice": "<double>",
+                      "StatusID": "<integer>",
+                      "StatusName": "<string>",
+                      "StartDate": "<string>",
+                      "EndDate": "<string>",
+                      "Room": "<string>",
+                      "PercentageTypeID": "<integer>",
+                      "PercentageTypeName": "<string>",
+                      "ExaminationPrice": "<double>",
+                      "SpecialityID": "<long>",
+                      "SpecialityName": "<string>",
+                      "WeekDayID": "<integer>",
+                      "WeekDayName": "<string>"
+                    },
+                    {
+                      "ID": "<long>",
+                      "DoctorID": "<long>",
+                      "DoctorName": "<string>",
+                      "Capacity": "<integer>",
+                      "IntervalFrom": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "IntervalTo": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "ConsultationPrice": "<double>",
+                      "StatusID": "<integer>",
+                      "StatusName": "<string>",
+                      "StartDate": "<string>",
+                      "EndDate": "<string>",
+                      "Room": "<string>",
+                      "PercentageTypeID": "<integer>",
+                      "PercentageTypeName": "<string>",
+                      "ExaminationPrice": "<double>",
+                      "SpecialityID": "<long>",
+                      "SpecialityName": "<string>",
+                      "WeekDayID": "<integer>",
+                      "WeekDayName": "<string>"
+                    }
+                  ]
+                },
+                {
+                  "DoctorName": "<string>",
+                  "DoctorScheduleList": [
+                    {
+                      "ID": "<long>",
+                      "DoctorID": "<long>",
+                      "DoctorName": "<string>",
+                      "Capacity": "<integer>",
+                      "IntervalFrom": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "IntervalTo": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "ConsultationPrice": "<double>",
+                      "StatusID": "<integer>",
+                      "StatusName": "<string>",
+                      "StartDate": "<string>",
+                      "EndDate": "<string>",
+                      "Room": "<string>",
+                      "PercentageTypeID": "<integer>",
+                      "PercentageTypeName": "<string>",
+                      "ExaminationPrice": "<double>",
+                      "SpecialityID": "<long>",
+                      "SpecialityName": "<string>",
+                      "WeekDayID": "<integer>",
+                      "WeekDayName": "<string>"
+                    },
+                    {
+                      "ID": "<long>",
+                      "DoctorID": "<long>",
+                      "DoctorName": "<string>",
+                      "Capacity": "<integer>",
+                      "IntervalFrom": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "IntervalTo": {
+                        "Hour": "<integer>",
+                        "Minute": "<integer>",
+                        "Second": "<integer>",
+                        "Millisecond": "<integer>",
+                        "Microsecond": "<integer>",
+                        "Nanosecond": "<integer>",
+                        "Ticks": "<long>"
+                      },
+                      "ConsultationPrice": "<double>",
+                      "StatusID": "<integer>",
+                      "StatusName": "<string>",
+                      "StartDate": "<string>",
+                      "EndDate": "<string>",
+                      "Room": "<string>",
+                      "PercentageTypeID": "<integer>",
+                      "PercentageTypeName": "<string>",
+                      "ExaminationPrice": "<double>",
+                      "SpecialityID": "<long>",
+                      "SpecialityName": "<string>",
+                      "WeekDayID": "<integer>",
+                      "WeekDayName": "<string>"
+                    }
+                  ]
+                }
+              ]
+            }
+          }

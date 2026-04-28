@@ -1,0 +1,87 @@
+info:
+  name: /SalesOffer/ValidateProductsPrices
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/SalesOffer/ValidateProductsPrices"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: piaroma
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      [
+        {
+          "ItemPrice": 4500,
+          "Quantity": 25,
+          "PriceAfterTax": 114000,
+          "DiscountPercentage":null,
+          "DiscountValue":500,
+          "OfferTaxes": [
+            {
+              "Id": 32,
+              "TaxPercentage": 14.00,
+              "TaxValue": 0,
+              "TaxName": "General Item sales",
+              "TaxCode": "V009",
+              "TaxType": "T1",
+              "InvoicePayerClientId":1,
+              "InvoicePayerClientName": "<string>",
+              "Description": "<string>",
+              "CreatedBy": "<string>",
+              "ModifiedBy": "<string>",
+              "Active": true,
+              "IsPercentage": true
+            }
+          ]
+        }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesOffer/ValidateProductsPrices"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<boolean>"
+          }

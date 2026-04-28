@@ -1,0 +1,38 @@
+info:
+  name: GetTaskMonitoringByUser
+  type: http
+  seq: 61
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskMonitoringByUser"
+  headers:
+    - name: UserId
+      value: "20032"
+      disabled: true
+    - name: TaskId
+      value: "20175"
+      disabled: true
+    - name: ProjectId
+      value: "1"
+      disabled: true
+    - name: From
+      value: 2024-11-12
+    - name: To
+      value: 2024-11-12
+    - name: GroupBy
+      value: task
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,7 @@
+info:
+  name: GetTaxTypeDDL
+  type: folder
+  seq: 29
+
+request:
+  auth: inherit

@@ -1,0 +1,7 @@
+info:
+  name: EditSalary
+  type: folder
+  seq: 27
+
+request:
+  auth: inherit

@@ -1,0 +1,115 @@
+info:
+  name: /Inventory/InventoryMaterialRequest/GetInventoryItemMatrialRequestList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryMaterialRequest/GetInventoryItemMatrialRequestList"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: InventoryItemID
+      value: "9741"
+      disabled: true
+    - name: ToInventoryStoreID
+      value: "3"
+      disabled: true
+    - name: FromUserID
+      value: "1"
+      disabled: true
+    - name: CreatorUserID
+      value: "1"
+      disabled: true
+    - name: RequestDate
+      value: 8-17-2022
+      disabled: true
+    - name: MatrialRequestTypeID
+      value: "20003"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryMaterialRequest/GetInventoryItemMatrialRequestList"
+      method: GET
+      headers:
+        - name: filters
+          value: InventoryItemID,<long>,InventoryStoreID,<long>,FromUserID,<long>,CreatorUserID,<long>,MatrialRequestTypeID,<long>,RequestDate,<dateTime>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryMtrialRequestByDateList": [
+              {
+                "DateMonth": "<string>",
+                "InventoryMatrialRequestInfoList": [
+                  {
+                    "ID": "<long>",
+                    "InventoryMatrialRequestNo": "<string>",
+                    "FromUserName": "<string>",
+                    "Status": "<string>",
+                    "StoreName": "<string>",
+                    "IsHold": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "InventoryMatrialRequestNo": "<string>",
+                    "FromUserName": "<string>",
+                    "Status": "<string>",
+                    "StoreName": "<string>",
+                    "IsHold": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "DateMonth": "<string>",
+                "InventoryMatrialRequestInfoList": [
+                  {
+                    "ID": "<long>",
+                    "InventoryMatrialRequestNo": "<string>",
+                    "FromUserName": "<string>",
+                    "Status": "<string>",
+                    "StoreName": "<string>",
+                    "IsHold": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "InventoryMatrialRequestNo": "<string>",
+                    "FromUserName": "<string>",
+                    "Status": "<string>",
+                    "StoreName": "<string>",
+                    "IsHold": "<boolean>"
+                  }
+                ]
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

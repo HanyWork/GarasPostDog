@@ -1,0 +1,7 @@
+info:
+  name: GetGroupDetails
+  type: folder
+  seq: 58
+
+request:
+  auth: inherit

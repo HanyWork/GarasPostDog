@@ -1,0 +1,106 @@
+info:
+  name: /SalesTarget/AddEditSalesBranchUserTarget
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/SalesTarget/AddEditSalesBranchUserTarget"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "TargetId": "1018",
+          "BranchId": "4",
+          "SalesBranchUserTargets": [
+              {
+                  "ID": "30039",
+                  "UserId": "6",
+                  "Percentage": "30",
+                  "Amount": "4500000",
+                  "CurrencyID": "1"
+              },
+              {
+                  "ID": "30040",
+                  "UserId": "3",
+                  "Percentage": "40",
+                  "Amount": "6000000",
+                  "CurrencyID": "1"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesTarget/AddEditSalesBranchUserTarget"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "SalesBranchUserTargets": [
+              {
+                "ID": "<long>",
+                "UserId": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "Active": "<boolean>",
+                "CurrencyID": "<integer>"
+              },
+              {
+                "ID": "<long>",
+                "UserId": "<long>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "Active": "<boolean>",
+                "CurrencyID": "<integer>"
+              }
+            ],
+            "TargetId": "<integer>",
+            "BranchId": "<integer>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

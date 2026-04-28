@@ -1,0 +1,112 @@
+info:
+  name: /TaskManager/GetTaskMonitoring
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskMonitoringByUser"
+  headers:
+    - name: UserId
+      value: "20032"
+      disabled: true
+    - name: TaskId
+      value: "20175"
+      disabled: true
+    - name: ProjectId
+      value: "1"
+      disabled: true
+    - name: From
+      value: 2024-11-7
+    - name: To
+      value: 2024-11-7
+    - name: GroupBy
+      value: task
+      description: task or user
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskMonitoring"
+      method: GET
+      headers:
+        - name: UserId
+          value: <long>
+        - name: TaskId
+          value: <long>
+        - name: ProjectId
+          value: <long>
+        - name: From
+          value: <dateTime>
+        - name: To
+          value: <dateTime>
+        - name: GroupBy
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "UserName": "<string>",
+              "TaskName": "<string>",
+              "MonitorList": [
+                {
+                  "TaskID": "<long>",
+                  "TaskName": "<string>",
+                  "ProjectName": "<string>",
+                  "UserID": "<long>",
+                  "UserName": "<string>",
+                  "CreationDateTime": "<string>",
+                  "ImgPath": "<string>",
+                  "SmallImgPath": "<string>",
+                  "TabName": "<string>",
+                  "AppName": "<string>"
+                },
+                {
+                  "TaskID": "<long>",
+                  "TaskName": "<string>",
+                  "ProjectName": "<string>",
+                  "UserID": "<long>",
+                  "UserName": "<string>",
+                  "CreationDateTime": "<string>",
+                  "ImgPath": "<string>",
+                  "SmallImgPath": "<string>",
+                  "TabName": "<string>",
+                  "AppName": "<string>"
+                }
+              ]
+            }
+          }

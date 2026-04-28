@@ -1,0 +1,93 @@
+info:
+  name: /HR/WeekDay/UpdateWeekDays
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/WeekDay/UpdateWeekDays"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "WeekDays": [
+              {
+                  "Id": 13,
+                  "Day": "Friday",
+                  "IsWeekEnd": true,
+                  "BranchId": 1032
+              },
+              {
+                  "Id": 14,
+                  "Day": "Saturday",
+                  "IsWeekEnd": true,
+                  "BranchId": 1032
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/WeekDay/UpdateWeekDays"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          [
+            {
+              "Id": "<integer>",
+              "Day": "<string>",
+              "IsWeekEnd": "<boolean>",
+              "BranchId": "<integer>"
+            },
+            {
+              "Id": "<integer>",
+              "Day": "<string>",
+              "IsWeekEnd": "<boolean>",
+              "BranchId": "<integer>"
+            }
+          ]
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

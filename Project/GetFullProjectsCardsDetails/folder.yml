@@ -1,0 +1,7 @@
+info:
+  name: GetFullProjectsCardsDetails
+  type: folder
+  seq: 22
+
+request:
+  auth: inherit

@@ -1,0 +1,133 @@
+info:
+  name: /PurchesRequest/GetPurchaseRequestWithItemsInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Purchasing/PurchesRequest/GetPurchaseRequestWithItemsInfo"
+  headers:
+    - name: PurchaseRequestID
+      value: "20036"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PurchesRequest/GetPurchaseRequestWithItemsInfo"
+      method: GET
+      headers:
+        - name: PurchaseRequestID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "PurchaseRequestWithItemItemInfo": {
+              "PurchaseRequestID": "<long>",
+              "FromInventoryStoreName": "<string>",
+              "Status": "<string>",
+              "ApprovalStataus": "<string>",
+              "IsDirectPR": "<boolean>",
+              "RequestDate": "<string>",
+              "PurchaseItemInfoList": [
+                {
+                  "PurchaseRequestItemID": "<long>",
+                  "InventoryItemID": "<long>",
+                  "ItemName": "<string>",
+                  "ItemCode": "<string>",
+                  "ReqQTY": "<double>",
+                  "ReqUOM": "<string>",
+                  "PurchaseQTY": "<double>",
+                  "PurchaseUOM": "<string>",
+                  "ProjectName": "<string>",
+                  "FabOrderNo": "<string>",
+                  "Comment": "<string>",
+                  "MRItemComment": "<string>",
+                  "PurchasePOItemRecivedQuantity": "<double>",
+                  "RecivedQuantityRUOMShortName": "<string>",
+                  "POID": "<long>",
+                  "PurchaseOrderQTY": "<double>",
+                  "SupplierName": "<string>",
+                  "PurchaseRequestNotes": "<string>",
+                  "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                  "PurchaseOrdersDetailsList": [
+                    {
+                      "POID": "<long>",
+                      "PurchaseOrderQTY": "<double>",
+                      "SupplierName": "<string>"
+                    },
+                    {
+                      "POID": "<long>",
+                      "PurchaseOrderQTY": "<double>",
+                      "SupplierName": "<string>"
+                    }
+                  ]
+                },
+                {
+                  "PurchaseRequestItemID": "<long>",
+                  "InventoryItemID": "<long>",
+                  "ItemName": "<string>",
+                  "ItemCode": "<string>",
+                  "ReqQTY": "<double>",
+                  "ReqUOM": "<string>",
+                  "PurchaseQTY": "<double>",
+                  "PurchaseUOM": "<string>",
+                  "ProjectName": "<string>",
+                  "FabOrderNo": "<string>",
+                  "Comment": "<string>",
+                  "MRItemComment": "<string>",
+                  "PurchasePOItemRecivedQuantity": "<double>",
+                  "RecivedQuantityRUOMShortName": "<string>",
+                  "POID": "<long>",
+                  "PurchaseOrderQTY": "<double>",
+                  "SupplierName": "<string>",
+                  "PurchaseRequestNotes": "<string>",
+                  "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                  "PurchaseOrdersDetailsList": [
+                    {
+                      "POID": "<long>",
+                      "PurchaseOrderQTY": "<double>",
+                      "SupplierName": "<string>"
+                    },
+                    {
+                      "POID": "<long>",
+                      "PurchaseOrderQTY": "<double>",
+                      "SupplierName": "<string>"
+                    }
+                  ]
+                }
+              ]
+            }
+          }

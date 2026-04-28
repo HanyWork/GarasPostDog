@@ -1,0 +1,113 @@
+info:
+  name: /Inventory/InventoryStoreReports/UpdateReportToInvStoreItem
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryStoreReports/UpdateReportToInvStoreItem"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  body:
+    type: json
+    data: |-
+      {
+        "ItemPhysicalBalanceList": [
+          {
+            "InventoryItemId": "<long>",
+            "Comment": "<string>",
+            "CurrentBalance": "<double>",
+            "PhysicalBalance": "<double>",
+            "IDSInventoryStoreItemList": [
+              "<long>",
+              "<long>"
+            ]
+          },
+          {
+            "InventoryItemId": "<long>",
+            "Comment": "<string>",
+            "CurrentBalance": "<double>",
+            "PhysicalBalance": "<double>",
+            "IDSInventoryStoreItemList": [
+              "<long>",
+              "<long>"
+            ]
+          }
+        ],
+        "ReportID": "<long>"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryStoreReports/UpdateReportToInvStoreItem"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ItemPhysicalBalanceList": [
+              {
+                "InventoryItemId": "<long>",
+                "Comment": "<string>",
+                "CurrentBalance": "<double>",
+                "PhysicalBalance": "<double>",
+                "IDSInventoryStoreItemList": [
+                  "<long>",
+                  "<long>"
+                ]
+              },
+              {
+                "InventoryItemId": "<long>",
+                "Comment": "<string>",
+                "CurrentBalance": "<double>",
+                "PhysicalBalance": "<double>",
+                "IDSInventoryStoreItemList": [
+                  "<long>",
+                  "<long>"
+                ]
+              }
+            ],
+            "ReportID": "<long>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

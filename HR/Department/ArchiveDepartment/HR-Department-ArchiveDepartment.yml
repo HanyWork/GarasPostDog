@@ -1,0 +1,64 @@
+info:
+  name: /HR/Department/ArchiveDepartment
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/HR/Department/ArchiveDepartment?DepartmentId=<integer>&Archive=<boolean>"
+  headers:
+    - name: Accept
+      value: text/plain
+  params:
+    - name: DepartmentId
+      value: <integer>
+      type: query
+    - name: Archive
+      value: <boolean>
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Department/ArchiveDepartment?DepartmentId=<integer>&Archive=<boolean>"
+      method: POST
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: DepartmentId
+          value: <integer>
+          type: query
+        - name: Archive
+          value: <boolean>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

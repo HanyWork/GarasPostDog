@@ -1,0 +1,80 @@
+info:
+  name: /Notification/EditNotifications
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Notification/EditNotifications"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: '{"ID":"41221","New":false}'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Notification/EditNotifications"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "toUserID": "<long>",
+            "toUserName": "<string>",
+            "toUserPhoto": "<string>",
+            "title": "<string>",
+            "createdBy": "<string>",
+            "description": "<string>",
+            "date": "<string>",
+            "url": "<string>",
+            "new": "<boolean>",
+            "fromUserID": "<long>",
+            "fromUserName": "<string>",
+            "fromUserPhoto": "<string>",
+            "notificationProcessID": "<integer>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

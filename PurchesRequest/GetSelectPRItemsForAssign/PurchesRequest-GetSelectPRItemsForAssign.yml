@@ -1,0 +1,118 @@
+info:
+  name: /PurchesRequest/GetSelectPRItemsForAssign
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Purchasing/PurchesRequest/GetSelectPRItemsForAssign"
+  headers:
+    - name: InventoryItemID
+      value: <long>
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PurchesRequest/GetSelectPRItemsForAssign"
+      method: GET
+      headers:
+        - name: InventoryItemID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "SelectPRItemsForAssignList": [
+              {
+                "ID": "<long>",
+                "PurchaseRequestID": "<long>",
+                "InventoryMatrialRequestID": "<long>",
+                "PurchaseRequestItemID": "<long>",
+                "InventoryItemID": "<long>",
+                "InventoryMatrialRequestItemID": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "RecivedQuantity": "<double>",
+                "RequstionUOMID": "<integer>",
+                "RequstionUOMShortName": "<string>",
+                "FabricationOrderNumber": "<string>",
+                "FabricationOrderID": "<long>",
+                "PurchaseItemQuantity": "<double>",
+                "PRItemQuantityUOP": "<double>",
+                "PurchasedQuantity": "<double>",
+                "PurchasedUOMShortName": "<string>",
+                "ProjectID": "<long>",
+                "ProjectName": "<string>",
+                "ReqQuantity": "<double>",
+                "RemainQty": "<double>",
+                "Comment": "<string>",
+                "POType": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                "PRNotes": "<string>",
+                "PRNO": "<string>",
+                "MRNO": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "PurchaseRequestID": "<long>",
+                "InventoryMatrialRequestID": "<long>",
+                "PurchaseRequestItemID": "<long>",
+                "InventoryItemID": "<long>",
+                "InventoryMatrialRequestItemID": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "RecivedQuantity": "<double>",
+                "RequstionUOMID": "<integer>",
+                "RequstionUOMShortName": "<string>",
+                "FabricationOrderNumber": "<string>",
+                "FabricationOrderID": "<long>",
+                "PurchaseItemQuantity": "<double>",
+                "PRItemQuantityUOP": "<double>",
+                "PurchasedQuantity": "<double>",
+                "PurchasedUOMShortName": "<string>",
+                "ProjectID": "<long>",
+                "ProjectName": "<string>",
+                "ReqQuantity": "<double>",
+                "RemainQty": "<double>",
+                "Comment": "<string>",
+                "POType": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                "PRNotes": "<string>",
+                "PRNO": "<string>",
+                "MRNO": "<string>"
+              }
+            ]
+          }

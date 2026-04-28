@@ -1,0 +1,19 @@
+info:
+  name: GetInventoryItemPartNoList
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/DDL/GetInventoryItemPartNoList"
+  headers:
+    - name: CompanyName
+      value: elite
+    - name: UserToken
+      value: "{{UserToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

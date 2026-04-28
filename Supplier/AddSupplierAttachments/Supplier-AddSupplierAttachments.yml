@@ -1,0 +1,159 @@
+info:
+  name: /Supplier/AddSupplierAttachments
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Supplier/AddSupplierAttachments"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: SupplierId
+        type: text
+        value: "60604"
+      - name: CreatedBy
+        type: text
+        value: <string>
+        disabled: true
+      - name: TaxCardAttachment.Id
+        type: text
+        value: "2"
+      - name: TaxCardAttachment.Active
+        type: text
+        value: "false"
+      - name: TaxCardAttachment.File
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Desktop/WhatsApp Image 2023-09-26 at 15.27.20_2dc7f533.jpg
+      - name: TaxCardAttachment.FilePath
+        type: text
+        value: <string>
+        disabled: true
+      - name: CommercialRecordAttachment.Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: CommercialRecordAttachment.Active
+        type: text
+        value: <boolean>
+        disabled: true
+      - name: CommercialRecordAttachment.File
+        type: file
+        value: []
+        disabled: true
+      - name: CommercialRecordAttachment.FilePath
+        type: text
+        value: <string>
+        disabled: true
+      - name: LicenseAttachements
+        type: text
+        value: "[object Object],[object Object]"
+        disabled: true
+      - name: BussinessCardsAttachments
+        type: text
+        value: "[object Object],[object Object]"
+        disabled: true
+      - name: BrochuresAttachments
+        type: text
+        value: "[object Object],[object Object]"
+        disabled: true
+      - name: OtherAttachments
+        type: text
+        value: "[object Object],[object Object]"
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Supplier/AddSupplierAttachments"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: SupplierId
+            type: text
+            value: <long>
+          - name: CreatedBy
+            type: text
+            value: <string>
+          - name: TaxCardAttachment.Id
+            type: text
+            value: <long>
+          - name: TaxCardAttachment.Active
+            type: text
+            value: <boolean>
+          - name: TaxCardAttachment.File
+            type: file
+            value: []
+          - name: TaxCardAttachment.FilePath
+            type: text
+            value: <string>
+          - name: CommercialRecordAttachment.Id
+            type: text
+            value: <long>
+          - name: CommercialRecordAttachment.Active
+            type: text
+            value: <boolean>
+          - name: CommercialRecordAttachment.File
+            type: file
+            value: []
+          - name: CommercialRecordAttachment.FilePath
+            type: text
+            value: <string>
+          - name: LicenseAttachements
+            type: text
+            value: "[object Object],[object Object]"
+          - name: BussinessCardsAttachments
+            type: text
+            value: "[object Object],[object Object]"
+          - name: BrochuresAttachments
+            type: text
+            value: "[object Object],[object Object]"
+          - name: OtherAttachments
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

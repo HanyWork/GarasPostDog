@@ -1,0 +1,7 @@
+info:
+  name: EditGroupRole_1
+  type: folder
+  seq: 55
+
+request:
+  auth: inherit

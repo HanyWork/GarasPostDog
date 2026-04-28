@@ -1,0 +1,60 @@
+info:
+  name: /Library/GetBooksDashboardData
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{libmarkapiBaseUrl}}/Library/GetBooksDashboardData"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: "{{LibMarkCompany}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Library/GetBooksDashboardData"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "Lorem minim eu",
+                "ErrorCode": "Excepteur sed"
+              },
+              {
+                "ErrorMSG": "magna aliquip",
+                "ErrorCode": "fugiat magna"
+              }
+            ],
+            "Data": {
+              "TotalBorrowers": 3615216,
+              "TotalBooks": 56977366,
+              "TotalCopies": -15413262,
+              "BooksInLibrary": -44024057.54324139,
+              "BooksBorrowed": -23405211.637484998
+            }
+          }

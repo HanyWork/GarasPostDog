@@ -1,0 +1,7 @@
+info:
+  name: ReverseInventoryAddingOrder
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

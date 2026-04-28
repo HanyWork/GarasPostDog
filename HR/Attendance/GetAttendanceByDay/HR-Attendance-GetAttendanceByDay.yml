@@ -1,0 +1,130 @@
+info:
+  name: /HR/Attendance/GetAttendanceByDay
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetAttendanceByDay"
+  headers:
+    - name: AttendanceDate
+      value: 2025-5-26
+    - name: BranchId
+      value: "4"
+    - name: DepartmentId
+      value: <integer>
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetAttendanceByDay"
+      method: GET
+      headers:
+        - name: date
+          value: <dateTime>
+        - name: BranchId
+          value: <integer>
+        - name: DepartmentId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "UsersNumber": "<integer>",
+              "Date": "<dateTime>",
+              "AttendanceList": [
+                {
+                  "Name": "<string>",
+                  "DepartmentName": "<string>",
+                  "TeamName": "<string>",
+                  "JobtitleName": "<string>",
+                  "Date": "<string>",
+                  "From": {
+                    "Hour": "<integer>",
+                    "Minute": "<integer>",
+                    "Second": "<integer>",
+                    "Millisecond": "<integer>",
+                    "Microsecond": "<integer>",
+                    "Nanosecond": "<integer>",
+                    "Ticks": "<long>"
+                  },
+                  "To": {
+                    "Hour": "<integer>",
+                    "Minute": "<integer>",
+                    "Second": "<integer>",
+                    "Millisecond": "<integer>",
+                    "Microsecond": "<integer>",
+                    "Nanosecond": "<integer>",
+                    "Ticks": "<long>"
+                  },
+                  "TotalHours": "<string>",
+                  "OverTimeHours": "<string>",
+                  "DelayHours": "<string>",
+                  "DayType": "<string>"
+                },
+                {
+                  "Name": "<string>",
+                  "DepartmentName": "<string>",
+                  "TeamName": "<string>",
+                  "JobtitleName": "<string>",
+                  "Date": "<string>",
+                  "From": {
+                    "Hour": "<integer>",
+                    "Minute": "<integer>",
+                    "Second": "<integer>",
+                    "Millisecond": "<integer>",
+                    "Microsecond": "<integer>",
+                    "Nanosecond": "<integer>",
+                    "Ticks": "<long>"
+                  },
+                  "To": {
+                    "Hour": "<integer>",
+                    "Minute": "<integer>",
+                    "Second": "<integer>",
+                    "Millisecond": "<integer>",
+                    "Microsecond": "<integer>",
+                    "Nanosecond": "<integer>",
+                    "Ticks": "<long>"
+                  },
+                  "TotalHours": "<string>",
+                  "OverTimeHours": "<string>",
+                  "DelayHours": "<string>",
+                  "DayType": "<string>"
+                }
+              ]
+            }
+          }

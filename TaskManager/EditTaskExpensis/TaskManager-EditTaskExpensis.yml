@@ -1,0 +1,114 @@
+info:
+  name: /TaskManager/EditTaskExpensis
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/EditTaskExpensis"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "67"
+      - name: Amount
+        type: text
+        value: "300"
+      - name: Note
+        type: text
+        value: sdfsdfsdf
+      - name: Curruncy
+        type: text
+        value: USD
+      - name: ActiveAttach
+        type: text
+        value: "True"
+      - name: Attachment
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/OIP.jpg
+        disabled: true
+      - name: TaskId
+        type: text
+        value: "20144"
+      - name: ExpensisTypeId
+        type: text
+        value: "2"
+      - name: Billable
+        type: text
+        value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/EditTaskExpensis"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <integer>
+          - name: Amount
+            type: text
+            value: <long>
+          - name: Note
+            type: text
+            value: <string>
+          - name: Curruncy
+            type: text
+            value: <string>
+          - name: Attachment
+            type: text
+            value: <string>
+          - name: TaskId
+            type: text
+            value: <long>
+          - name: ExpensisTypeId
+            type: text
+            value: <long>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

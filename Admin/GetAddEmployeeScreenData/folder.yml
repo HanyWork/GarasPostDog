@@ -1,0 +1,7 @@
+info:
+  name: GetAddEmployeeScreenData
+  type: folder
+  seq: 77
+
+request:
+  auth: inherit

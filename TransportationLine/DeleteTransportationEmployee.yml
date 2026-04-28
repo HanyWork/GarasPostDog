@@ -1,0 +1,22 @@
+info:
+  name: DeleteTransportationEmployee
+  type: http
+  seq: 46
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/DeleteTransportationEmployee"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Id
+      value: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

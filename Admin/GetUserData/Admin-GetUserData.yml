@@ -1,0 +1,100 @@
+info:
+  name: /Admin/GetUserData
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/GetUserData"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetUserData"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "LocalCurrencyId": "<integer>",
+            "LocalCurrencyName": "<string>",
+            "CompanyInfo": "<string>",
+            "CompanyImg": "<string>",
+            "SpecialityList": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "DepartmentName": "<string>",
+            "BranchName": "<string>",
+            "BranchID": "<integer>",
+            "NotificationCount": "<integer>",
+            "TaskCount": "<integer>",
+            "Jobtitle": "<string>",
+            "RoleList": [
+              {
+                "RoleID": "<integer>",
+                "RoleName": "<string>"
+              },
+              {
+                "RoleID": "<integer>",
+                "RoleName": "<string>"
+              }
+            ],
+            "GroupList": [
+              {
+                "GroupID": "<long>",
+                "GroupName": "<string>"
+              },
+              {
+                "GroupID": "<long>",
+                "GroupName": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>",
+            "UserID": "<string>",
+            "UserIDNO": "<long>",
+            "UserImageURL": "<string>",
+            "UserName": "<string>",
+            "CountryId": "<long>",
+            "CountryName": "<string>"
+          }

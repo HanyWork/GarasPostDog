@@ -1,0 +1,7 @@
+info:
+  name: AddEditBundleModule
+  type: folder
+  seq: 78
+
+request:
+  auth: inherit

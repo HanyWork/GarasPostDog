@@ -1,0 +1,121 @@
+info:
+  name: AddNewSalesOfferForInternalTicket
+  type: http
+  seq: 39
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/AddNewSalesOfferForInternalTicket"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: 6HtuEQH%2fMUNNBUgz5hj8Hg%3d%3d
+  body:
+    type: json
+    data: "{\r
+
+      \    \"SalesOffer\": {\r
+
+      \        \"ParentSalesOfferID\": \"44003\",\r
+
+      \        \"StartDate\": \"2024-12-08 15:37:28\",\r
+
+      \        \"EndDate\": \"2024-12-08 15:37:28\",\r
+
+      \        \"SalesPersonId\": \"20072\",\r
+
+      \        \"BranchId\": \"4\",\r
+
+      \        \"ClientApprovalDate\": \"2024-12-08 15:37:28\",\r
+
+      \        \"ClientApprove\": true,\r
+
+      \        \"ProjectStartDate\": \"12-08-2024\",\r
+
+      \        \"ProjectEndDate\": \"12-08-2024\",\r
+
+      \        \"ExtraOrDiscountPriceBySalesPerson\": \"0\",\r
+
+      \        \"ClientComment\": \"\",\r
+
+      \        \"Status\": \"Closed\",\r
+
+      \        \"Active\": true,\r
+
+      \        \"Completed\": false,\r
+
+      \        \"TechnicalInfo\": \"N/A\",\r
+
+      \        \"FinancialInfo\": \"N/A\",\r
+
+      \        \"ProjectData\": \"\",\r
+
+      \        \"ClientId\": \"10387\",\r
+
+      \        \"ProductType\": \"\",\r
+
+      \        \"SendingOfferConfirmation\": false,\r
+
+      \        \"RejectionReason\": \"N/A\",\r
+
+      \        \"ContactPersonMobile\": \"N/A\",\r
+
+      \        \"ContactPersonEmail\": \"N/A\",\r
+
+      \        \"ContactPersonName\": \"نرمين فايز \",\r
+
+      \        \"OfferType\": \"Internal Ticket return\",\r
+
+      \        \"OfferAmount\": \"875\",\r
+
+      \        \"FinalOfferPrice\": \"875\"\r
+
+      \    },\r
+
+      \    \"SalesOfferProductList\": [\r
+
+      \        {\r
+
+      \            \"Id\": \"66788\",\r
+
+      \            \"Quantity\": 1,\r
+
+      \            \"Active\": true,\r
+
+      \            \"InventoryItemId\": \"598\",\r
+
+      \            \"InventoryItemCategoryId\": \"2071\",\r
+
+      \            \"ItemPrice\": 875,\r
+
+      \            \"InvoicePayerClientId\": \"10387\",\r
+
+      \            \"FinalPrice\": 875,\r
+
+      \            \"DiscountPercentage\": 0,\r
+
+      \            \"DiscountValue\": 0,\r
+
+      \            \"ItemPricingComment\": \"باطنة وقلب\",\r
+
+      \            \"ProfitPercentage\": \"0\",\r
+
+      \            \"SalesOfferProductAttachments\": []\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"SalesOfferAttachmentList\": []\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

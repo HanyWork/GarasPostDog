@@ -1,0 +1,85 @@
+info:
+  name: /Inventory/InventoryMaterialRelease/GetBorrowedBookForEachUser
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryMaterialRelease/GetBorrowedBookForEachUser"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: Libmark
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryMaterialRelease/GetMatrialReleaseItemList"
+      method: GET
+      headers:
+        - name: ProjectID
+          value: <long>
+        - name: UserID
+          value: <long>
+        - name: StoreID
+          value: <integer>
+        - name: StoreLocationID
+          value: <integer>
+        - name: InventoryItemID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "DDLList": [
+              {
+                "ID": "<long>",
+                "MatrialReleaseNo": "<long>",
+                "ItemName": "<string>",
+                "ItemCode": "<string>",
+                "QtyReleased": "<double>",
+                "ProjectName": "<string>",
+                "ExpDate": "<string>",
+                "Serial": "<string>",
+                "FabNo": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "MatrialReleaseNo": "<long>",
+                "ItemName": "<string>",
+                "ItemCode": "<string>",
+                "QtyReleased": "<double>",
+                "ProjectName": "<string>",
+                "ExpDate": "<string>",
+                "Serial": "<string>",
+                "FabNo": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

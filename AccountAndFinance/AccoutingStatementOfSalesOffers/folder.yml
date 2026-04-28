@@ -1,0 +1,7 @@
+info:
+  name: AccoutingStatementOfSalesOffers
+  type: folder
+  seq: 51
+
+request:
+  auth: inherit

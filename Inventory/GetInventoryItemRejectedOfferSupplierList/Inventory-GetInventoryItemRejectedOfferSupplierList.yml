@@ -1,0 +1,125 @@
+info:
+  name: /Inventory/GetInventoryItemRejectedOfferSupplierList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/GetInventoryItemRejectedOfferSupplierList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: InventoryItemID
+      value: "1"
+    - name: CompanyName
+      value: proauto
+    - name: POID
+      value: "1"
+      disabled: true
+    - name: SupplierID
+      value: "1"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/GetInventoryItemRejectedOfferSupplierList"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ItemRejectedOfferSupplierList": [
+              {
+                "SupplierID": "<long>",
+                "SupplierName": "<string>",
+                "POID": "<long>",
+                "ReqQuantity": "<double>",
+                "RecivedQuantity": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "EstimatedCost": "<double>",
+                "ItemComment": "<string>",
+                "SupplierOfferComment": "<string>",
+                "CreationDate": "<string>"
+              },
+              {
+                "SupplierID": "<long>",
+                "SupplierName": "<string>",
+                "POID": "<long>",
+                "ReqQuantity": "<double>",
+                "RecivedQuantity": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "EstimatedCost": "<double>",
+                "ItemComment": "<string>",
+                "SupplierOfferComment": "<string>",
+                "CreationDate": "<string>"
+              }
+            ],
+            "ItemAcceptedOfferSupplierList": [
+              {
+                "SupplierID": "<long>",
+                "SupplierName": "<string>",
+                "POID": "<long>",
+                "ReqQuantity": "<double>",
+                "RecivedQuantity": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "EstimatedCost": "<double>",
+                "ActualUnitCost_EGP": "<double>",
+                "FinalUnitCost_EGP": "<double>",
+                "ItemComment": "<string>",
+                "SupplierOfferComment": "<string>",
+                "CreationDate": "<string>"
+              },
+              {
+                "SupplierID": "<long>",
+                "SupplierName": "<string>",
+                "POID": "<long>",
+                "ReqQuantity": "<double>",
+                "RecivedQuantity": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "EstimatedCost": "<double>",
+                "ActualUnitCost_EGP": "<double>",
+                "FinalUnitCost_EGP": "<double>",
+                "ItemComment": "<string>",
+                "SupplierOfferComment": "<string>",
+                "CreationDate": "<string>"
+              }
+            ]
+          }

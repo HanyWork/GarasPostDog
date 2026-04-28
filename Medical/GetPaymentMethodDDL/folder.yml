@@ -1,0 +1,7 @@
+info:
+  name: GetPaymentMethodDDL
+  type: folder
+  seq: 23
+
+request:
+  auth: inherit

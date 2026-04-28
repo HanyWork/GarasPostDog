@@ -1,0 +1,65 @@
+info:
+  name: AddTaskRequirements
+  type: http
+  seq: 57
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/AddTaskRequirements"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: "{\r
+
+      \  \"TaskId\": 20162,\r
+
+      \  \"RequirementList\": [\r
+
+      \    {\r
+
+      \      //\"Id\": \"<long>\",\r
+
+      \      \"Name\": \"P1\",\r
+
+      \      \"Percentage\": 25,\r
+
+      \      \"IsFinish\": false\r
+
+      \      //\"CreationDate\": \"<string>\",\r
+
+      \      //\"Active\": \"<boolean>\"\r
+
+      \    },\r
+
+      \    {\r
+
+      \      //\"Id\": \"<long>\",\r
+
+      \      \"Name\": \"P2\",\r
+
+      \      \"Percentage\": 35,\r
+
+      \      \"IsFinish\": false\r
+
+      \      //\"CreationDate\": \"<string>\",\r
+
+      \      //\"Active\": \"<boolean>\"\r
+
+      \    }\r
+
+      \  ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

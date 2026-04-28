@@ -1,0 +1,72 @@
+info:
+  name: /Medical/GetClientPatientInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Medical/GetClientPatientInfo"
+  headers:
+    - name: ClientID
+      value: "10355"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/GetClientPatientInfo"
+      method: GET
+      headers:
+        - name: ClientID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "Id": "<long>",
+              "ClientName": "<string>",
+              "ClientType": "<string>",
+              "salesPersonID": "<long>",
+              "salesPersonName": "<string>",
+              "Email": "<string>",
+              "ClientMobile": "<string>",
+              "FollowUpPeriod": "<integer>",
+              "IdentityNumber": "<long>",
+              "NationalityId": "<long>",
+              "NationalityName": "<string>",
+              "Gender": "<string>",
+              "BirthDate": "<string>"
+            }
+          }

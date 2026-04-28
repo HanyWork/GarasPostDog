@@ -1,0 +1,7 @@
+info:
+  name: AddSalaryDeductionTax
+  type: folder
+  seq: 19
+
+request:
+  auth: inherit

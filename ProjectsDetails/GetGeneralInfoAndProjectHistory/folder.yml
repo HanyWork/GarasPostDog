@@ -1,0 +1,7 @@
+info:
+  name: GetGeneralInfoAndProjectHistory
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit

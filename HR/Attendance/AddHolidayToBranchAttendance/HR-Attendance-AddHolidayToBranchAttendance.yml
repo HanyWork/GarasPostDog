@@ -1,0 +1,31 @@
+info:
+  name: /HR/Attendance/AddHolidayToBranchAttendance
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Attendance/AddHolidayToBranchAttendance"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: vetanoia
+  body:
+    type: multipart-form
+    data:
+      - name: vacationDayID
+        type: text
+        value: "10033"
+      - name: branchID
+        type: text
+        value: "4"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

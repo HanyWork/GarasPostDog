@@ -1,0 +1,121 @@
+info:
+  name: /HR/Salary/EditSalary
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Salary/EditSalary"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "14"
+      - name: ContractId
+        type: text
+        value: "1"
+      - name: CurrencyId
+        type: text
+        value: "1"
+      - name: TotalGross
+        type: text
+        value: "4000"
+      - name: TotalNet
+        type: text
+        value: "39200"
+      - name: TotalIncome
+        type: text
+        value: "37900"
+      - name: MultiplyingFactor
+        type: text
+        value: "0.5"
+      - name: PaymentMethodId
+        type: text
+        value: "1"
+      - name: PaymentStrategyId
+        type: text
+        value: "1"
+      - name: HrUserId
+        type: text
+        value: "21"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Salary/EditSalary"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ContractId
+            type: text
+            value: <long>
+          - name: CurrencyId
+            type: text
+            value: <integer>
+          - name: TotalGross
+            type: text
+            value: <double>
+          - name: TotalNet
+            type: text
+            value: <double>
+          - name: TotalIncome
+            type: text
+            value: <double>
+          - name: MultiplyingFactor
+            type: text
+            value: <double>
+          - name: PaymentMethodId
+            type: text
+            value: <integer>
+          - name: PaymentStrategyId
+            type: text
+            value: <integer>
+          - name: HrUserId
+            type: text
+            value: <long>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

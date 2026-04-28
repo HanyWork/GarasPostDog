@@ -1,0 +1,82 @@
+info:
+  name: /Maintenance/GetVisitScheduleReport
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Maintenance/GetVisitScheduleReport"
+  headers:
+    - name: VisitStatus
+      value: Completed
+      description: "Completed, Not Completed,Late "
+    - name: Months
+      value: "1.5"
+      disabled: true
+    - name: From
+      value: 2025-3-23
+      disabled: true
+    - name: To
+      value: 2025-3-24
+      disabled: true
+    - name: ClientId
+      value: <long>
+      disabled: true
+    - name: SearchKey
+      value: "24924"
+      disabled: true
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/GetVisitScheduleReport"
+      method: POST
+      headers:
+        - name: VisitStatus
+          value: <string>
+        - name: From
+          value: <dateTime>
+        - name: To
+          value: <dateTime>
+        - name: ClientId
+          value: <long>
+        - name: SearchKey
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

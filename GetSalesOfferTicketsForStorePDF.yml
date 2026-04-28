@@ -1,0 +1,27 @@
+info:
+  name: GetSalesOfferTicketsForStorePDF
+  type: http
+  seq: 49
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/InternalTicket/GetSalesOfferTicketsForStorePDF"
+  headers:
+    - name: FromDate
+      value: 2024-01-11
+    - name: ToDate
+      value: 2024-11-26
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+    - name: UserId
+      value: "2"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

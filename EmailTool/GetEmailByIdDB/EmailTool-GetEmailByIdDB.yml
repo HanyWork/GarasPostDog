@@ -1,0 +1,84 @@
+info:
+  name: /EmailTool/GetEmailByIdDB
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/EmailTool/GetEmailByIdDB"
+  headers:
+    - name: EmailID
+      value: "725"
+    - name: microSoftEmailID
+      value: AAMkADgzZmMyMDYxLWRkN2YtNDJkMC1iYzdlLTIxMTEwNGY5NjA4YQBGAAAAAAAgX7WsJxQJQaLUuPlWntjSBwCCzSsIXnj9SZYhXtqAfLNSAAAAAAEMAACCzSsIXnj9SZYhXtqAfLNSAABqsg52AAA=
+      description: string
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EmailTool/GetEmailByIdDB"
+      method: GET
+      headers:
+        - name: EmailID
+          value: <long>
+        - name: microSoftEmailID
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "ID": "<long>",
+              "EmailId": "<string>",
+              "EmailBody": "<string>",
+              "EmailSubject": "<string>",
+              "EmailSender": "<string>",
+              "UserId": "<long>",
+              "UserName": "<string>",
+              "HasAttatchment": "<boolean>",
+              "RecivedDate": "<string>",
+              "EmailTypeID": "<integer>",
+              "EmailTypeName": "<string>",
+              "AttachmentList": [
+                "<string>",
+                "<string>"
+              ],
+              "EmailCcList": [
+                "<string>",
+                "<string>"
+              ]
+            }
+          }

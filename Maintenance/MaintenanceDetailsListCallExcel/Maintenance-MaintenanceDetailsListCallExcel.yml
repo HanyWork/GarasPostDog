@@ -1,0 +1,126 @@
+info:
+  name: /Maintenance/MaintenanceDetailsListCallExcel
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Maintenance/MaintenanceDetailsListCallExcel"
+  headers:
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: ClientID
+      value: "30012"
+      disabled: true
+    - name: ProductBrand
+      value: test
+      disabled: true
+    - name: ProductFabricator
+      value: test
+      disabled: true
+    - name: SearchKey
+      value: ""
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "100"
+    - name: AreaID
+      value: "1"
+      disabled: true
+    - name: FromDate
+      value: 2023-1-1
+      disabled: true
+    - name: ToDate
+      value: 2023-3-1
+      disabled: true
+    - name: ContractType
+      value: ExpireSoon
+      disabled: true
+    - name: WeekNum
+      value: "1"
+      disabled: true
+    - name: CategoryID
+      value: "1"
+      disabled: true
+    - name: Longitude
+      value: "25.43270000"
+    - name: Latitude
+      value: "51.44990000"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/MaintenanceDetailsListCallExcel"
+      method: GET
+      headers:
+        - name: FromDate
+          value: <dateTime>
+        - name: ToDate
+          value: <dateTime>
+        - name: ClientID
+          value: <long>
+        - name: CategoryID
+          value: <long>
+        - name: AreaID
+          value: <long>
+        - name: AreaIdsString
+          value: <string>
+        - name: Latitude
+          value: <double>
+        - name: Longitude
+          value: <double>
+        - name: Radius
+          value: <double>
+        - name: WithInDayNo
+          value: <integer>
+        - name: ContractType
+          value: <string>
+        - name: WeekNum
+          value: <integer>
+        - name: MaintenanceType
+          value: <string>
+        - name: ProductBrand
+          value: <string>
+        - name: ProductFabricator
+          value: <string>
+        - name: SearchKey
+          value: <string>
+        - name: CurrentPage
+          value: <integer>
+        - name: NumberOfItemsPerPage
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Message": "<string>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,7 @@
+info:
+  name: GetEmployeeList
+  type: folder
+  seq: 86
+
+request:
+  auth: inherit

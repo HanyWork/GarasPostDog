@@ -1,0 +1,105 @@
+info:
+  name: /SalesOffer/GetSalesReportLineStatisticsPerDate
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/GetSalesReportLineStatisticsPerDate"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: Year
+      value: "2024"
+    - name: Month
+      value: "1"
+    - name: ReportCreator
+      value: "30886"
+      disabled: true
+    - name: SalesPersonId
+      value: "10026"
+      disabled: true
+    - name: ClientId
+      value: "32814"
+      disabled: true
+    - name: BranchId
+      value: "4"
+      disabled: true
+    - name: isReviewed
+      value: "true"
+      disabled: true
+    - name: ThroughName
+      value: Whatsapp
+      description: Phone or Email or Whatsapp or Meeting or Other
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesOffer/GetSalesReportLineStatisticsPerDate"
+      method: GET
+      headers:
+        - name: filters
+          value: BranchId,<long>,ClientId,<long>,SalesPersonId,<long>,ReportCreator,<long>,Year,<integer>,ThroughName,<string>,isReviewed,<boolean>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Data": [
+              {
+                "CreationDate": "<string>",
+                "DatePerType": "<integer>",
+                "Count": "<integer>",
+                "ReportLinesPerDateList": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/ReportStatisctsPerDate detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/ReportStatisctsPerDate detected>"
+                  }
+                ]
+              },
+              {
+                "CreationDate": "<string>",
+                "DatePerType": "<integer>",
+                "Count": "<integer>",
+                "ReportLinesPerDateList": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/ReportStatisctsPerDate detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/ReportStatisctsPerDate detected>"
+                  }
+                ]
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,109 @@
+info:
+  name: /Maintenance/MaintenanceContractDetailsListExcel
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Maintenance/MaintenanceContractDetailsListExcel"
+  headers:
+    - name: ContractStatus
+      value: ExpireSoon
+      disabled: true
+    - name: ContractType
+      value: Warranty
+      disabled: true
+    - name: Late
+      value: "true"
+      disabled: true
+    - name: WeekNum
+      value: "1"
+      disabled: true
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Accept
+      value: text/plain
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/MaintenanceContractDetailsListExcel?CompanyName=<string>"
+      method: GET
+      headers:
+        - name: FromDate
+          value: <dateTime>
+        - name: ToDate
+          value: <dateTime>
+        - name: ClientID
+          value: <long>
+        - name: CategoryID
+          value: <long>
+        - name: AreaID
+          value: <long>
+        - name: AreaIdsString
+          value: <string>
+        - name: Latitude
+          value: <double>
+        - name: Longitude
+          value: <double>
+        - name: Radius
+          value: <double>
+        - name: WithInDayNo
+          value: <integer>
+        - name: ContractType
+          value: <string>
+        - name: ContractStatus
+          value: <string>
+        - name: WeekNum
+          value: <integer>
+        - name: MaintenanceType
+          value: <string>
+        - name: ProductBrand
+          value: <string>
+        - name: ProductFabricator
+          value: <string>
+        - name: SearchKey
+          value: <string>
+        - name: CurrentPage
+          value: <integer>
+        - name: NumberOfItemsPerPage
+          value: <integer>
+        - name: Accept
+          value: text/plain
+      params:
+        - name: CompanyName
+          value: <string>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Message": "<string>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

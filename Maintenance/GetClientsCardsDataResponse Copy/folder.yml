@@ -1,0 +1,7 @@
+info:
+  name: GetClientsCardsDataResponse Copy
+  type: folder
+  seq: 36
+
+request:
+  auth: inherit

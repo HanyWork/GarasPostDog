@@ -1,0 +1,166 @@
+info:
+  name: /PurchesRequest/GetMangePurchasePOWebList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Purchasing/PurchesRequest/GetMangePurchasePOWebList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "100"
+    - name: InventoryItemID
+      value: "1971"
+      disabled: true
+    - name: CreatorUserID
+      value: "1"
+      disabled: true
+    - name: SupplierID
+      value: "1"
+      disabled: true
+    - name: POID
+      value: "1"
+      disabled: true
+    - name: POTypeID
+      value: "1"
+      disabled: true
+    - name: RequestDate
+      value: 9-21-2022
+      disabled: true
+    - name: CreationDate
+      value: 9-21-2022
+      disabled: true
+    - name: SearchKey
+      value: tester
+      description: Item Name , Item Code (Value)
+      disabled: true
+    - name: Status
+      value: open
+      description: open , closed
+      disabled: true
+    - name: HasAddingOrder
+      value: "true"
+      description: true , false
+      disabled: true
+    - name: HasInvoice
+      value: "true"
+      description: true , false
+      disabled: true
+    - name: SortByASC
+      value: ""
+      description: Date , POID
+      disabled: true
+    - name: SupplierInvoiceSerial
+      value: "123"
+      disabled: true
+    - name: IsSentToAcc
+      value: "false"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PurchesRequest/GetMangePurchasePOWebList"
+      method: GET
+      headers:
+        - name: filters
+          value: CurrentPage,<integer>,NumberOfItemsPerPage,<integer>,InventoryItemID,<long>,CreatorUserID,<long>,SupplierID,<long>,POID,<long>,POTypeID,<long>,RequestDate,<string>,CreationDate,<string>,SearchKey,<string>,Status,<string>,HasAddingOrder,<boolean>,HasInvoice,<boolean>,SupplierInvoiceSerial,<string>,IsSentToAcc,<boolean>,SortByASC,<string>,SortByDESC,<string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SumTotalInvoicePrice": "<double>",
+            "SumTotalInvoiceCost": "<double>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "PurchasePOList": [
+              {
+                "IDEnc": "<string>",
+                "ID": "<long>",
+                "RequestDate": "<string>",
+                "CreationDate": "<string>",
+                "SupplierName": "<string>",
+                "TotalEstimatedCost": "<double>",
+                "Status": "<string>",
+                "TechApprovalStatus": "<string>",
+                "FinalApprovalStatus": "<string>",
+                "ApprovalStatus": "<string>",
+                "POTypeID": "<long>",
+                "POTypeName": "<string>",
+                "SentToSupplier": "<boolean>",
+                "AssignedPurchasingPersonID": "<long>",
+                "CreatedByID": "<long>",
+                "CreatedByName": "<string>",
+                "HasInvoice": "<boolean>",
+                "TotalInvoice": "<double>",
+                "TotalInvoicePrice": "<double>",
+                "POInvoiceId": "<long>",
+                "NoOfRejected": "<integer>",
+                "POCollection": "<double>",
+                "FirstRejectedOffer": "<long>"
+              },
+              {
+                "IDEnc": "<string>",
+                "ID": "<long>",
+                "RequestDate": "<string>",
+                "CreationDate": "<string>",
+                "SupplierName": "<string>",
+                "TotalEstimatedCost": "<double>",
+                "Status": "<string>",
+                "TechApprovalStatus": "<string>",
+                "FinalApprovalStatus": "<string>",
+                "ApprovalStatus": "<string>",
+                "POTypeID": "<long>",
+                "POTypeName": "<string>",
+                "SentToSupplier": "<boolean>",
+                "AssignedPurchasingPersonID": "<long>",
+                "CreatedByID": "<long>",
+                "CreatedByName": "<string>",
+                "HasInvoice": "<boolean>",
+                "TotalInvoice": "<double>",
+                "TotalInvoicePrice": "<double>",
+                "POInvoiceId": "<long>",
+                "NoOfRejected": "<integer>",
+                "POCollection": "<double>",
+                "FirstRejectedOffer": "<long>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            }
+          }

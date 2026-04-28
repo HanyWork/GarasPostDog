@@ -1,0 +1,164 @@
+info:
+  name: /PoInvoice/AddEditPoInvoice
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/PoInvoice/AddEditPoInvoice"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "PurchasePOInvoice": {
+              "Id": "10917",
+              "POID": "41673",
+              "InvoiceDate": "2025-06-26",
+              "InvoiceCollectionDueDate": "2025-06-26",
+              "TotalInvoicePrice": "1350.0000",
+              "PurchasePOInvoiceTypeID": "6",
+              "PurchasePOInvoiceTypeName": "Other",
+              "TotalInvoiceCost": "1350.00000",
+              "IsClosed": false,
+              "IsFinalPriced": false,
+              "IsSentToACC": false
+          },
+          "PurchasePOItemList": [
+              {
+                  "ID": "44123",
+                  "CurrencyID": "1",
+                  "RateToEgp": "1",
+                  "PartNumber": "563325",
+                  "RequstionUOMID": "1",
+                  "RequstionUOMShortName": "عدد",
+                  "PurchasingUOMID": "1",
+                  "PurchasingUOMShortName": "عدد",
+                  "ActualLocalUnitPrice": "300",
+                  "ActualUnitPrice": "300",
+                  "ActualLocalUnitPriceUOR": "300",
+                  "ActualUnitPriceUOR": "300",
+                  "TotalLocalActualPrice": "300",
+                  "TotalActualPriceUOR": "300",
+                  "FinalLocalUnitCostUOR": "300.0000",
+                  "FinalUnitCostUOR": "300.0000",
+                  "TotalFinalLocalUnitCost": "300.0000",
+                  "TotalFinalUnitCost": "300.0000",
+                  "TotalActualPrice": "300",
+                  "InvoiceComments": "N/A",
+                  "CurrencyName": "EGP",
+                  "ActualUnitPriceUnit": "عدد",
+                  "InventoryMaterialRequestId": "43634",
+                  "RecivedQuantity": "1",
+                  "ReqQuantity": "1",
+                  "IsChecked": false
+              },
+              {
+                  "ID": "44124",
+                  "CurrencyID": "1",
+                  "RateToEgp": "1",
+                  "PartNumber": "63021430",
+                  "RequstionUOMID": "1",
+                  "RequstionUOMShortName": "عدد",
+                  "PurchasingUOMID": "1",
+                  "PurchasingUOMShortName": "عدد",
+                  "ActualLocalUnitPrice": "300",
+                  "ActualUnitPrice": "300",
+                  "ActualLocalUnitPriceUOR": "300",
+                  "ActualUnitPriceUOR": "300",
+                  "TotalLocalActualPrice": "300",
+                  "TotalActualPriceUOR": "300",
+                  "FinalLocalUnitCostUOR": "300.0000",
+                  "FinalUnitCostUOR": "300.0000",
+                  "TotalFinalLocalUnitCost": "300.0000",
+                  "TotalFinalUnitCost": "300.0000",
+                  "TotalActualPrice": "300",
+                  "InvoiceComments": "N/A",
+                  "CurrencyName": "EGP",
+                  "ActualUnitPriceUnit": "عدد",
+                  "InventoryMaterialRequestId": "43634",
+                  "RecivedQuantity": "1",
+                  "ReqQuantity": "1",
+                  "IsChecked": false
+              },
+              {
+                  "ID": "44125",
+                  "CurrencyID": "1",
+                  "RateToEgp": "1",
+                  "PartNumber": "50820151",
+                  "RequstionUOMID": "1",
+                  "RequstionUOMShortName": "عدد",
+                  "PurchasingUOMID": "1",
+                  "PurchasingUOMShortName": "عدد",
+                  "ActualLocalUnitPrice": "750",
+                  "ActualUnitPrice": "750",
+                  "ActualLocalUnitPriceUOR": "750",
+                  "ActualUnitPriceUOR": "750",
+                  "TotalLocalActualPrice": "750",
+                  "TotalActualPriceUOR": "750",
+                  "FinalLocalUnitCostUOR": "750.0000",
+                  "FinalUnitCostUOR": "750.0000",
+                  "TotalFinalLocalUnitCost": "750.0000",
+                  "TotalFinalUnitCost": "750.0000",
+                  "TotalActualPrice": "750",
+                  "InvoiceComments": "N/A",
+                  "CurrencyName": "EGP",
+                  "ActualUnitPriceUnit": "عدد",
+                  "InventoryMaterialRequestId": "43642",
+                  "RecivedQuantity": "1",
+                  "ReqQuantity": "1",
+                  "IsChecked": false
+              }
+          ],
+          "PoInvoiceTaxIncludedList": [],
+          "PoInvoiceExtraFeesList": []
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PoInvoice/AddEditPoInvoice"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

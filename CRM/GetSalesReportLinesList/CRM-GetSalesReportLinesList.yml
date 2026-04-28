@@ -1,0 +1,235 @@
+info:
+  name: /CRM/GetSalesReportLinesList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/CRM/GetSalesReportLinesList"
+  headers:
+    - name: SalesReportId
+      value: "50272"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/CRM/GetSalesReportLinesList"
+      method: GET
+      headers:
+        - name: SalesReportId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SalesReportLinesList": [
+              {
+                "Id": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "ClientPhone": "<string>",
+                "ClientMobile": "<string>",
+                "ClientEmail": "<string>",
+                "ClientExpirationDate": "<string>",
+                "ClientStatus": "<string>",
+                "ClientClassification": "<string>",
+                "Hint": "<string>",
+                "DailyReportThroughId": "<integer>",
+                "DailyReportThroughName": "<string>",
+                "ReportDate": "<string>",
+                "FromTime": "<float>",
+                "ToTime": "<float>",
+                "Location": "<string>",
+                "PickLocation": "<string>",
+                "Reason": "<string>",
+                "IsNew": "<boolean>",
+                "NewClientAddress": "<string>",
+                "NewClientTel": "<string>",
+                "IsReviewed": "<boolean>",
+                "ReviewedBy": "<long>",
+                "ReviewedByName": "<string>",
+                "NewClientName": "<string>",
+                "ContactPerson": "<string>",
+                "ContactPersonMobile": "<string>",
+                "ReasonTypeId": "<integer>",
+                "ReasonTypeName": "<string>",
+                "CustomerSatisfaction": "<double>",
+                "RelatedToInventoryItemId": "<long>",
+                "RelatedToSalesOfferProductId": "<long>",
+                "RelatedToSalesOfferId": "<long>",
+                "ReminderDate": "<string>",
+                "Latitude": "<double>",
+                "Longitude": "<double>",
+                "SalesReportLineExpenses": [
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "Active": "<boolean>",
+                      "File": "<binary>",
+                      "FilePath": "<string>"
+                    }
+                  },
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "Active": "<boolean>",
+                      "File": "<binary>",
+                      "FilePath": "<string>"
+                    }
+                  }
+                ],
+                "CRMLinesIds": [
+                  "<long>",
+                  "<long>"
+                ],
+                "RelatedToInventoryItemName": "<string>",
+                "RelatedToSalesOfferProductName": "<string>",
+                "RelatedToProjectProductId": "<long>",
+                "RelatedToProjectProductName": "<string>",
+                "RelatedToSalesOfferSerial": "<string>",
+                "RelatedToSalesOfferName": "<string>",
+                "RelatedToProjectId": "<long>",
+                "RelatedToProjectSerial": "<string>",
+                "RelatedToProjectName": "<string>",
+                "CreationDate": "<string>",
+                "Comment": "<string>",
+                "RemindIsClosed": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "ClientPhone": "<string>",
+                "ClientMobile": "<string>",
+                "ClientEmail": "<string>",
+                "ClientExpirationDate": "<string>",
+                "ClientStatus": "<string>",
+                "ClientClassification": "<string>",
+                "Hint": "<string>",
+                "DailyReportThroughId": "<integer>",
+                "DailyReportThroughName": "<string>",
+                "ReportDate": "<string>",
+                "FromTime": "<float>",
+                "ToTime": "<float>",
+                "Location": "<string>",
+                "PickLocation": "<string>",
+                "Reason": "<string>",
+                "IsNew": "<boolean>",
+                "NewClientAddress": "<string>",
+                "NewClientTel": "<string>",
+                "IsReviewed": "<boolean>",
+                "ReviewedBy": "<long>",
+                "ReviewedByName": "<string>",
+                "NewClientName": "<string>",
+                "ContactPerson": "<string>",
+                "ContactPersonMobile": "<string>",
+                "ReasonTypeId": "<integer>",
+                "ReasonTypeName": "<string>",
+                "CustomerSatisfaction": "<double>",
+                "RelatedToInventoryItemId": "<long>",
+                "RelatedToSalesOfferProductId": "<long>",
+                "RelatedToSalesOfferId": "<long>",
+                "ReminderDate": "<string>",
+                "Latitude": "<double>",
+                "Longitude": "<double>",
+                "SalesReportLineExpenses": [
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "Active": "<boolean>",
+                      "File": "<binary>",
+                      "FilePath": "<string>"
+                    }
+                  },
+                  {
+                    "Id": "<long>",
+                    "DailyReportLineID": "<long>",
+                    "Amount": "<double>",
+                    "Type": "<string>",
+                    "CurrencyId": "<integer>",
+                    "CurrencyName": "<string>",
+                    "Comment": "<string>",
+                    "FilePath": "<string>",
+                    "AttachmentObj": {
+                      "Id": "<long>",
+                      "Active": "<boolean>",
+                      "File": "<binary>",
+                      "FilePath": "<string>"
+                    }
+                  }
+                ],
+                "CRMLinesIds": [
+                  "<long>",
+                  "<long>"
+                ],
+                "RelatedToInventoryItemName": "<string>",
+                "RelatedToSalesOfferProductName": "<string>",
+                "RelatedToProjectProductId": "<long>",
+                "RelatedToProjectProductName": "<string>",
+                "RelatedToSalesOfferSerial": "<string>",
+                "RelatedToSalesOfferName": "<string>",
+                "RelatedToProjectId": "<long>",
+                "RelatedToProjectSerial": "<string>",
+                "RelatedToProjectName": "<string>",
+                "CreationDate": "<string>",
+                "Comment": "<string>",
+                "RemindIsClosed": "<boolean>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

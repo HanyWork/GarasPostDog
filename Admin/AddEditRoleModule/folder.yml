@@ -1,0 +1,7 @@
+info:
+  name: AddEditRoleModule
+  type: folder
+  seq: 63
+
+request:
+  auth: inherit

@@ -1,0 +1,47 @@
+info:
+  name: AddException Copy
+  type: http
+  seq: 19
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/AddException"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"transportationVehicleRouteId\": 10033,\r
+
+      \    \"Active\": true,\r
+
+      \    \"hrUserId\": 3,\r
+
+      \    //\"TransportationVehicleRouteDirectionId\": 0,\r
+
+      \    //\"FromDate\": 0,\r
+
+      \    //\"ToDate\": true,\r
+
+      \    \"Period\": \"AM\",\r
+
+      \    \"DayName\": \"Saturday\",\r
+
+      \    \"ExceptionDate\":\"2025-08-30\",\r
+
+      \    \"Latitude\": 31.02546321,\r
+
+      \    \"Longtitud\": 32.21458745\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

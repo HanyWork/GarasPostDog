@@ -1,0 +1,79 @@
+info:
+  name: /SalesTarget/GetSalesBranchTargetList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/SalesTarget/GetSalesBranchTargetList"
+  headers:
+    - name: TargetId
+      value: "15"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesTarget/GetSalesBranchTargetList"
+      method: GET
+      headers:
+        - name: TargetId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SalesBranchTargets": [
+              {
+                "ID": "<long>",
+                "TargetID": "<integer>",
+                "BranchID": "<integer>",
+                "BranchName": "<string>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "TargetID": "<integer>",
+                "BranchID": "<integer>",
+                "BranchName": "<string>",
+                "Percentage": "<double>",
+                "Amount": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

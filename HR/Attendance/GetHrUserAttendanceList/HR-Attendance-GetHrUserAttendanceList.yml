@@ -1,0 +1,104 @@
+info:
+  name: /HR/Attendance/GetHrUserAttendanceList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetHrUserAttendanceList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+    - name: AttendanceDate
+      value: 2024-4-16
+    - name: notAttended
+      value: "true"
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "500"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetHrUserAttendanceList"
+      method: GET
+      headers:
+        - name: header
+          value: AttendanceDate,<dateTime>,notAttended,<boolean>,EmployeeId,<long>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>,fromDate,<dateTime>,toDate,<dateTime>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "UserID": "<long>",
+                "UserName": "<string>",
+                "DepartmentId": "<integer>",
+                "DepartmentName": "<string>",
+                "AttendanceId": "<long>",
+                "AbsenceTypeId": "<integer>",
+                "AbsenceTypeName": "<string>",
+                "CheckInHour": "<integer>",
+                "CheckInMin": "<integer>",
+                "CheckOutHour": "<integer>",
+                "CheckOutMin": "<integer>",
+                "IsApprovedAbsence": "<boolean>",
+                "IsOffDay": "<boolean>",
+                "OffDayName": "<string>"
+              },
+              {
+                "UserID": "<long>",
+                "UserName": "<string>",
+                "DepartmentId": "<integer>",
+                "DepartmentName": "<string>",
+                "AttendanceId": "<long>",
+                "AbsenceTypeId": "<integer>",
+                "AbsenceTypeName": "<string>",
+                "CheckInHour": "<integer>",
+                "CheckInMin": "<integer>",
+                "CheckOutHour": "<integer>",
+                "CheckOutMin": "<integer>",
+                "IsApprovedAbsence": "<boolean>",
+                "IsOffDay": "<boolean>",
+                "OffDayName": "<string>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            }
+          }

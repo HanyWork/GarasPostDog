@@ -1,0 +1,90 @@
+info:
+  name: /Inventory/InventoryItem/GetStoresIdListForKeeperForEachUser
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/GetStoresIdListForKeeperForEachUser"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: KeeperFrom
+      value: "1"
+    - name: KeeperTo
+      value: "20053"
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/GetStoresIdListForKeeper?KeeperFrom=-38770498&KeeperTo=-38770498"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+      params:
+        - name: KeeperFrom
+          value: "-38770498"
+          type: query
+        - name: KeeperTo
+          value: "-38770498"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "eiusm",
+                "ErrorCode": "Ut velit in cupidatat"
+              },
+              {
+                "ErrorMSG": "est",
+                "ErrorCode": "quis consequat ea"
+              }
+            ],
+            "Data": {
+              "StoresFrom": [
+                {
+                  "StoreId": 24488042,
+                  "Name": "est culpa deserunt",
+                  "PosNumberId": 62466834
+                },
+                {
+                  "StoreId": -92293334,
+                  "Name": "Excepteur Ut",
+                  "PosNumberId": 19954829
+                }
+              ],
+              "StoresTo": [
+                {
+                  "StoreId": -79294324,
+                  "Name": "ea",
+                  "PosNumberId": -38187412
+                },
+                {
+                  "StoreId": -60907457,
+                  "Name": "quis cupidatat aliqua qui mollit",
+                  "PosNumberId": 12263390
+                }
+              ]
+            }
+          }

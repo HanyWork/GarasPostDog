@@ -1,0 +1,7 @@
+info:
+  name: MapPlaceDetails
+  type: folder
+  seq: 85
+
+request:
+  auth: inherit

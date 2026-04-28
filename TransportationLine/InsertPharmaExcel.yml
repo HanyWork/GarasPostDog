@@ -1,0 +1,27 @@
+info:
+  name: InsertPharmaExcel
+  type: http
+  seq: 17
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/InsertPharmaExcel"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: ExcelSheet
+        type: file
+        value:
+          - postman-cloud:///1f0af3cb-7c58-4880-b6d2-866607cc0a89
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

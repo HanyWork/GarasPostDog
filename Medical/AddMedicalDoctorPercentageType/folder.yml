@@ -1,0 +1,7 @@
+info:
+  name: AddMedicalDoctorPercentageType
+  type: folder
+  seq: 45
+
+request:
+  auth: inherit

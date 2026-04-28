@@ -1,0 +1,645 @@
+info:
+  name: /Client/AddNewClient
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Client/AddNewClient"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Name
+        type: text
+        value: TestMickey test2
+      - name: Type
+        type: text
+        value: " Individual"
+      - name: CreatedBy
+        type: text
+        value: " JFp7UYIKFWypVNu2LYAVzQ=="
+      - name: SalesPersonID
+        type: text
+        value: " 2"
+      - name: Rate
+        type: text
+        value: " 3"
+      - name: BranchName
+        type: text
+        value: " Cairo,"
+      - name: FollowUpPeriod
+        type: text
+        value: " 3"
+      - name: ConsultantType
+        type: text
+        value: " "
+      - name: NeedApproval
+        type: text
+        value: " 0"
+      - name: OwnerCoProfile
+        type: text
+        value: "false"
+      - name: HasLogo
+        type: text
+        value: "false"
+      - name: Logo
+        type: file
+        value:
+          - /C:/Users/vetanoia03/Desktop/WhatsApp Image 2023-09-26 at 15.27.20_2dc7f533.jpg
+        disabled: true
+      - name: Id
+        type: text
+        value: "10334"
+      - name: Active
+        type: text
+        value: "false"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Client/AddNewClient"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "Id": "<long>",
+            "IdEnc": "<string>",
+            "Name": "<string>",
+            "EnglishName": "<string>",
+            "SalesPersonID": "<long>",
+            "ApprovedById": "<long>",
+            "ApprovedByName": "<string>",
+            "SalesPersonName": "<string>",
+            "SalesPersonLogo": "<string>",
+            "Logo": "<string>",
+            "HasLogo": "<boolean>",
+            "Status": "<string>",
+            "ExpirationDate": "<string>",
+            "IsExpired": "<boolean>",
+            "RemainingDays": "<integer>",
+            "RegistrationDate": "<string>",
+            "RemainCollection": "<double>",
+            "Volume": "<double>",
+            "ClientSerialCounter": "<long>",
+            "ClientSerial": "<string>",
+            "ClassificationId": "<integer>",
+            "ClassificationName": "<string>",
+            "ClassificationComment": "<string>",
+            "Type": "<string>",
+            "Email": "<string>",
+            "WebSite": "<string>",
+            "CreatedBy": "<string>",
+            "Note": "<string>",
+            "Rate": "<integer>",
+            "FirstContractDate": "<string>",
+            "GroupName": "<string>",
+            "BranchName": "<string>",
+            "Consultant": "<string>",
+            "FollowUpPeriod": "<integer>",
+            "ConsultantType": "<string>",
+            "SupportedByCompany": "<boolean>",
+            "SupportedBy": "<string>",
+            "BranchID": "<integer>",
+            "LastReportDate": "<string>",
+            "NeedApproval": "<integer>",
+            "OpeningBalance": "<double>",
+            "OpeningBalanceType": "<string>",
+            "OpeningBalanceDate": "<string>",
+            "OpeningBalanceCurrencyId": "<integer>",
+            "OpeningBalanceCurrencyName": "<string>",
+            "DefaultDelivaryAndShippingMethodId": "<integer>",
+            "DefaultDelivaryAndShippingMethodName": "<string>",
+            "OtherDelivaryAndShippingMethodName": "<string>",
+            "CommercialRecord": "<string>",
+            "TaxCard": "<string>",
+            "ChangeSalesPersonComment": "<string>",
+            "OwnerCoProfile": "<boolean>",
+            "Active": "<boolean>",
+            "ClientSpecialities": [
+              {
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "SpecialityId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Modified": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Speciality": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              },
+              {
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "SpecialityId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Modified": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Speciality": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              }
+            ],
+            "ClientAddresses": [
+              {
+                "Address": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CountryId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "GovernorateId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Modified": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "BuildingNumber": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Floor": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Description": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "AreaId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Area": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Country": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              },
+              {
+                "Address": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CountryId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "GovernorateId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Modified": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "BuildingNumber": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Floor": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Description": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "AreaId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Area": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Country": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              }
+            ],
+            "ClientLandLines": [
+              {
+                "ID": "<long>",
+                "LandLine": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<long>",
+                "LandLine": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ],
+            "ClientMobiles": [
+              {
+                "Mobile": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Modified": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              },
+              {
+                "Mobile": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Modified": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedByNavigation": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              }
+            ],
+            "ClientFaxes": [
+              {
+                "Fax": "<string>",
+                "Id": "<long>",
+                "ClientId": "<long>",
+                "CreatedBy": "<long>",
+                "CreationDate": "<dateTime>",
+                "ModifiedBy": "<long>",
+                "Modified": "<dateTime>",
+                "Active": "<boolean>",
+                "CreatedByNavigation": {
+                  "value": "<Circular reference to #/components/schemas/User detected>"
+                },
+                "ModifiedByNavigation": {
+                  "value": "<Circular reference to #/components/schemas/User detected>"
+                }
+              },
+              {
+                "Fax": "<string>",
+                "Id": "<long>",
+                "ClientId": "<long>",
+                "CreatedBy": "<long>",
+                "CreationDate": "<dateTime>",
+                "ModifiedBy": "<long>",
+                "Modified": "<dateTime>",
+                "Active": "<boolean>",
+                "CreatedByNavigation": {
+                  "value": "<Circular reference to #/components/schemas/User detected>"
+                },
+                "ModifiedByNavigation": {
+                  "value": "<Circular reference to #/components/schemas/User detected>"
+                }
+              }
+            ],
+            "ClientPaymentTerms": [
+              {
+                "Name": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Description": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Percentage": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Time": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              },
+              {
+                "Name": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Description": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Percentage": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Time": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              }
+            ],
+            "ClientBankAccounts": [
+              {
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "BankDetails": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "BeneficiaryName": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Iban": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "SwiftCode": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Account": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              },
+              {
+                "Id": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ClientId": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "BankDetails": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "BeneficiaryName": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Iban": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "SwiftCode": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Account": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Active": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreatedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "CreationDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedBy": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ModifiedDate": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "Client": {
+                  "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

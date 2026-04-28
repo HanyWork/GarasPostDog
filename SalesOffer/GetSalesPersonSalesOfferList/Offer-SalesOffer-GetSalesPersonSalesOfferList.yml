@@ -1,0 +1,145 @@
+info:
+  name: /Offer/SalesOffer/GetSalesPersonSalesOfferList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/GetSalesPersonSalesOfferList"
+  headers:
+    - name: filters
+      value: OfferType,<string>,ProductsList,<string>,ReleaseFilter,<string>,ProductType,<string>,ClientName,<string>,ProjectName,<string>,OfferStatus,<string>,ReminderDateFilter,<string>,From,<dateTime>,To,<dateTime>,SalesPersonId,<long>,BranchId,<integer>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>,SearchKey,<string>,HasInvoice,<boolean>,InvoiceDate,<dateTime>,HasProject,<boolean>,ProjectDate,<dateTime>,HasAutoJE,<boolean>,HasJournalEntry,<boolean>,JournalEntryDate,<dateTime>
+    - name: OfferStatusParam
+      value: <string>
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "10000"
+    - name: OfferType
+      value: ""
+      disabled: true
+    - name: ProductsList
+      value: 5,549
+      disabled: true
+    - name: ProductType
+      value: ""
+      disabled: true
+    - name: ClientName
+      value: ""
+      disabled: true
+    - name: ProjectName
+      value: ""
+      disabled: true
+    - name: OfferStatus
+      value: ClientApproval
+      description: Pricing, Recieved, ClientApproval, Closed, Rejecteden
+    - name: From
+      value: 2023-07-01
+    - name: To
+      value: 2023-07-31
+    - name: SalesPersonId
+      value: "30819"
+    - name: BranchId
+      value: ""
+      disabled: true
+    - name: SearchKey
+      value: "#29-3-2023"
+      description: OfferSerial,ProjectName,ClientName
+      disabled: true
+    - name: InvoiceDate
+      value: ""
+      disabled: true
+    - name: HasInvoice
+      value: "false"
+      disabled: true
+    - name: HasProject
+      value: "false"
+      disabled: true
+    - name: ProjectDate
+      value: ""
+      disabled: true
+    - name: HasJournalEntry
+      value: "false"
+      disabled: true
+    - name: JournalEntryDate
+      value: ""
+      disabled: true
+    - name: ReminderDateFilter
+      value: Today
+      description: Delay, Today
+      disabled: true
+    - name: HasAutoJE
+      value: "true"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/GetSalesPersonSalesOfferList"
+      method: GET
+      headers:
+        - name: filters
+          value: OfferType,<string>,ProductsList,<string>,ReleaseFilter,<string>,ProductType,<string>,ClientName,<string>,ProjectName,<string>,OfferStatus,<string>,ReminderDateFilter,<string>,From,<dateTime>,To,<dateTime>,SalesPersonId,<long>,BranchId,<integer>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>,SearchKey,<string>,HasInvoice,<boolean>,InvoiceDate,<dateTime>,HasProject,<boolean>,ProjectDate,<dateTime>,HasAutoJE,<boolean>,HasJournalEntry,<boolean>,JournalEntryDate,<dateTime>
+        - name: OfferStatusParam
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Data": {
+              "TotalSalesOfferPerSalesPersonList": [
+                {
+                  "SalesPersonId": "<long>",
+                  "SalesPersonName": "<string>",
+                  "SumFinalOfferPrice": "<double>",
+                  "SalesOfferCount": "<long>"
+                },
+                {
+                  "SalesPersonId": "<long>",
+                  "SalesPersonName": "<string>",
+                  "SumFinalOfferPrice": "<double>",
+                  "SalesOfferCount": "<long>"
+                }
+              ],
+              "TotalOffersCount": "<long>",
+              "TotalOffersPrice": "<double>"
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            }
+          }

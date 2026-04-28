@@ -1,0 +1,7 @@
+info:
+  name: DoctorRoom
+  type: folder
+  seq: 19
+
+request:
+  auth: inherit

@@ -1,0 +1,32 @@
+info:
+  name: GetLaboratoryMessagePagingList
+  type: http
+  seq: 50
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/api/Laboratory/GetLaboratoryMessagePagingList"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+    - name: PageNo
+      value: "2"
+      disabled: true
+    - name: NoOfItems
+      value: "8"
+    - name: FromDate
+      value: 2025-01-01
+    - name: ToDate
+      value: 2025-01-09
+    - name: Name
+      value: "%D9%85%D9%8A%D9%86%D8%A7"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

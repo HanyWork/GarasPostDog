@@ -1,0 +1,7 @@
+info:
+  name: GetTaskUnitRateServiceList
+  type: folder
+  seq: 34
+
+request:
+  auth: inherit

@@ -1,0 +1,115 @@
+info:
+  name: /TaskManager/AddDeleteTaskUserGroup
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/AddDeleteTaskUserGroup"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "DeleteAllButOne": false,
+          "RemainUserGroupId": 0,
+          "TaskId": 20175
+      }
+      // {
+      //   "taskUserGroupList": [
+      //     {
+      //       "id": "<long>",
+      //       "userGroupID": "<integer>",
+      //       "taskID": "<integer>",
+      //       "isDeleted": "<boolean>",
+      //       "isGroup": "<boolean>",
+      //       "flag": "<boolean>"
+      //     },
+      //     {
+      //       "id": "<long>",
+      //       "userGroupID": "<integer>",
+      //       "taskID": "<integer>",
+      //       "isDeleted": "<boolean>",
+      //       "isGroup": "<boolean>",
+      //       "flag": "<boolean>"
+      //     }
+      //   ],
+      //   "deleteAllButOne": "<boolean>",
+      //   "remainUserGroupId": "<integer>",
+      //   "taskId": "<long>"
+      // }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/AddDeleteTaskUserGroup"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "taskUserGroupList": [
+              {
+                "id": "<long>",
+                "userGroupID": "<integer>",
+                "taskID": "<integer>",
+                "isDeleted": "<boolean>",
+                "isGroup": "<boolean>",
+                "flag": "<boolean>"
+              },
+              {
+                "id": "<long>",
+                "userGroupID": "<integer>",
+                "taskID": "<integer>",
+                "isDeleted": "<boolean>",
+                "isGroup": "<boolean>",
+                "flag": "<boolean>"
+              }
+            ],
+            "deleteAllButOne": "<boolean>",
+            "remainUserGroupId": "<integer>",
+            "taskId": "<long>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

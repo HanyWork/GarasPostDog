@@ -1,0 +1,113 @@
+info:
+  name: /AccountAndFinance/GetInventoryItem
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/GetInventoryItem"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+    - name: InventoryItemID
+      value: "299"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/GetInventoryItem"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "ID": "<long>",
+              "ItemName": "<string>",
+              "ItemCode": "<string>",
+              "CommericalName": "<string>",
+              "PartNumber": "<string>",
+              "MarketName": "<string>",
+              "Type": "<string>",
+              "Description": "<string>",
+              "Details": "<string>",
+              "Category": "<string>",
+              "CategoryId": "<integer>",
+              "PurchasingUnit": "<string>",
+              "RequestionUnit": "<string>",
+              "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+              "MaxBlanace": "<double>",
+              "MinBalance": "<double>",
+              "PriceCalculationMethod": "<string>",
+              "Amount": "<double>",
+              "Active": "<boolean>",
+              "ItemImage": "<string>",
+              "Cost1": "<double>",
+              "Cost2": "<double>",
+              "Cost3": "<double>",
+              "RequestionUOMShortName": "<string>",
+              "CalculationTypeID": "<integer>",
+              "CustomAmount": "<double>",
+              "CostAmount1": "<double>",
+              "CostAmount2": "<double>",
+              "CostAmount3": "<double>",
+              "PurchasingUOMID": "<integer>",
+              "RequstionUOMID": "<integer>",
+              "PriorityID": "<integer>",
+              "ParentItemID": "<long>",
+              "ImageFileName": "<string>",
+              "ImageFileExtension": "<string>",
+              "ImageFileContent": "<string>",
+              "AttachmentsList": [
+                {
+                  "Id": "<long>",
+                  "FileName": "<string>",
+                  "FileExtension": "<string>",
+                  "FileContent": "<string>",
+                  "FilePath": "<string>",
+                  "Category": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "Id": "<long>",
+                  "FileName": "<string>",
+                  "FileExtension": "<string>",
+                  "FileContent": "<string>",
+                  "FilePath": "<string>",
+                  "Category": "<string>",
+                  "Active": "<boolean>"
+                }
+              ]
+            }
+          }

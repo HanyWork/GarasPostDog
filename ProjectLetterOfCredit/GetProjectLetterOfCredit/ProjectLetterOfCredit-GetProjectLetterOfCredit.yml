@@ -1,0 +1,108 @@
+info:
+  name: /ProjectLetterOfCredit/GetProjectLetterOfCredit
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/ProjectLetterOfCredit/GetProjectLetterOfCredit"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: vetanoia
+    - name: ProjectID
+      value: "266593"
+    - name: ClienId
+      value: "10335"
+      disabled: true
+    - name: SalesPersonID
+      value: "1"
+      disabled: true
+    - name: Status
+      value: ""
+      disabled: true
+    - name: BankName
+      value: CIB
+      disabled: true
+    - name: LetterOfCreditTypeID
+      value: ""
+      disabled: true
+    - name: NumberOfitemsPerPage
+      value: "10"
+    - name: currentPage
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/ProjectLetterOfCredit/GetProjectLetterOfCredit"
+      method: GET
+      headers:
+        - name: ProjectID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": [
+              {
+                "ID": "<long>",
+                "ProjectID": "<long>",
+                "LetterOfCreditTypeID": "<integer>",
+                "LetterOfCreditTypeName": "<string>",
+                "ReturnedAfter": "<integer>",
+                "bankName": "<string>",
+                "StartDate": "<string>",
+                "Amount": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "EndDate": "<string>",
+                "status": "<string>",
+                "ProjectPaymentTermsID": "<long>"
+              },
+              {
+                "ID": "<long>",
+                "ProjectID": "<long>",
+                "LetterOfCreditTypeID": "<integer>",
+                "LetterOfCreditTypeName": "<string>",
+                "ReturnedAfter": "<integer>",
+                "bankName": "<string>",
+                "StartDate": "<string>",
+                "Amount": "<double>",
+                "CurrencyID": "<integer>",
+                "CurrencyName": "<string>",
+                "EndDate": "<string>",
+                "status": "<string>",
+                "ProjectPaymentTermsID": "<long>"
+              }
+            ]
+          }

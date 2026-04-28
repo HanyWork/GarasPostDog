@@ -1,0 +1,88 @@
+info:
+  name: /TaskManager/GetTaskProgressReport
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskProgressReport"
+  headers:
+    - name: ProjectId
+      value: "51"
+    - name: TaskId
+      value: <long>
+      disabled: true
+    - name: InvoiceNumber
+      value: <long>
+      disabled: true
+    - name: Type
+      value: <string>
+      disabled: true
+    - name: UserName
+      value: Kyrillos test 02 don't touch
+      disabled: true
+    - name: From
+      value: 2024-10-1
+      disabled: true
+    - name: To
+      value: 2024-10-30
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskProgressReport"
+      method: GET
+      headers:
+        - name: ProjectId
+          value: <long>
+        - name: TaskId
+          value: <long>
+        - name: InvoiceNumber
+          value: <long>
+        - name: Type
+          value: <string>
+        - name: UserName
+          value: <string>
+        - name: From
+          value: <dateTime>
+        - name: To
+          value: <dateTime>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

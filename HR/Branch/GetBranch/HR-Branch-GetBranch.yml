@@ -1,0 +1,73 @@
+info:
+  name: /HR/Branch/GetBranch
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Branch/GetBranch"
+  headers:
+    - name: BranchId
+      value: "1032"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Branch/GetBranch"
+      method: GET
+      headers:
+        - name: BranchId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "Name": "<string>",
+              "Id": "<integer>",
+              "Active": "<boolean>",
+              "IsMain": "<boolean>",
+              "GovernorateId": "<integer>",
+              "Building": "<integer>",
+              "Floor": "<integer>",
+              "Mobile": "<string>",
+              "AreaId": "<long>",
+              "CountryId": "<integer>",
+              "Address": "<string>",
+              "Telephone": "<string>",
+              "Description": "<string>",
+              "Email": "<string>"
+            }
+          }

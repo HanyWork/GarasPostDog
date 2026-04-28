@@ -1,0 +1,518 @@
+info:
+  name: /TaskManager/GetTaskListsByStatus
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/TaskManager/GetTaskListsByStatus"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "100"
+    - name: TaskID
+      value: "1"
+      disabled: true
+    - name: TaskUserID
+      value: "2"
+      disabled: true
+    - name: Status
+      value: Waiting Approval
+      disabled: true
+    - name: PriorityFilter
+      value: Low
+      disabled: true
+    - name: NeedApproval
+      value: "False"
+      disabled: true
+    - name: IsFinished
+      value: "False"
+      disabled: true
+    - name: ToUserID
+      value: "1"
+      disabled: true
+    - name: TaskTypeID
+      value: "0"
+      disabled: true
+    - name: TaskCategory
+      value: Request List
+      disabled: true
+    - name: DateFrom
+      value: 2023-8-2
+      disabled: true
+    - name: DateTo
+      value: 2023-10-2
+      disabled: true
+    - name: SearchKey
+      value: test
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: Star
+      value: "true"
+      disabled: true
+    - name: Read
+      value: "false"
+      disabled: true
+    - name: NotActive
+      value: "true"
+      description: true -> return not active tasks
+      disabled: true
+    - name: IsArchived
+      value: "true"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/GetTaskListsByStatus"
+      method: GET
+      headers:
+        - name: header
+          value: TaskID,<long>,TaskTypeID,<long>,ToUserID,<long>,Status,<string>,TaskCategory,<string>,Priority,<string>,TaskName,<string>,NeedApproval,<boolean>,Read,<boolean>,Flag,<boolean>,Star,<boolean>,IsFinished,<boolean>,DateFrom,<string>,DateTo,<string>,SearchKey,<string>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ReceivedTasksList": [
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskPermissions": "<string>",
+                "TaskCategory": "<string>",
+                "GroupReply": "<boolean>",
+                "TaskPage": "<string>",
+                "TaskUser": "<string>",
+                "TaskTypeName": "<string>",
+                "TaskSubject": "<string>",
+                "BranchName": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "TaskCount": "<integer>",
+                "RejectedNo": "<integer>",
+                "TaskCreatorCount": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "taskAttachements": "<string>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskPermissions": "<string>",
+                "TaskCategory": "<string>",
+                "GroupReply": "<boolean>",
+                "TaskPage": "<string>",
+                "TaskUser": "<string>",
+                "TaskTypeName": "<string>",
+                "TaskSubject": "<string>",
+                "BranchName": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "TaskCount": "<integer>",
+                "RejectedNo": "<integer>",
+                "TaskCreatorCount": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "taskAttachements": "<string>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              }
+            ],
+            "OpenTasksList": [
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskPermissions": "<string>",
+                "TaskCategory": "<string>",
+                "GroupReply": "<boolean>",
+                "TaskPage": "<string>",
+                "TaskUser": "<string>",
+                "TaskTypeName": "<string>",
+                "TaskSubject": "<string>",
+                "BranchName": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "TaskCount": "<integer>",
+                "RejectedNo": "<integer>",
+                "TaskCreatorCount": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "taskAttachements": "<string>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskPermissions": "<string>",
+                "TaskCategory": "<string>",
+                "GroupReply": "<boolean>",
+                "TaskPage": "<string>",
+                "TaskUser": "<string>",
+                "TaskTypeName": "<string>",
+                "TaskSubject": "<string>",
+                "BranchName": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "TaskCount": "<integer>",
+                "RejectedNo": "<integer>",
+                "TaskCreatorCount": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "taskAttachements": "<string>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              }
+            ],
+            "WaitingTasksList": [
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskPermissions": "<string>",
+                "TaskCategory": "<string>",
+                "GroupReply": "<boolean>",
+                "TaskPage": "<string>",
+                "TaskUser": "<string>",
+                "TaskTypeName": "<string>",
+                "TaskSubject": "<string>",
+                "BranchName": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "TaskCount": "<integer>",
+                "RejectedNo": "<integer>",
+                "TaskCreatorCount": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "taskAttachements": "<string>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskPermissions": "<string>",
+                "TaskCategory": "<string>",
+                "GroupReply": "<boolean>",
+                "TaskPage": "<string>",
+                "TaskUser": "<string>",
+                "TaskTypeName": "<string>",
+                "TaskSubject": "<string>",
+                "BranchName": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "TaskCount": "<integer>",
+                "RejectedNo": "<integer>",
+                "TaskCreatorCount": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "taskAttachements": "<string>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              }
+            ],
+            "ClosedTasksList": [
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskPermissions": "<string>",
+                "TaskCategory": "<string>",
+                "GroupReply": "<boolean>",
+                "TaskPage": "<string>",
+                "TaskUser": "<string>",
+                "TaskTypeName": "<string>",
+                "TaskSubject": "<string>",
+                "BranchName": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "TaskCount": "<integer>",
+                "RejectedNo": "<integer>",
+                "TaskCreatorCount": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "taskAttachements": "<string>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "Active": "<boolean>",
+                "IsFinished": "<boolean>",
+                "NeedApproval": "<boolean>",
+                "IsTaskOwner": "<boolean>",
+                "Piriority": "<string>",
+                "Status": "<string>",
+                "Name": "<string>",
+                "Description": "<string>",
+                "ExpireDate": "<string>",
+                "CreationDate": "<string>",
+                "CreatoreName": "<string>",
+                "TaskPermissions": "<string>",
+                "TaskCategory": "<string>",
+                "GroupReply": "<boolean>",
+                "TaskPage": "<string>",
+                "TaskUser": "<string>",
+                "TaskTypeName": "<string>",
+                "TaskSubject": "<string>",
+                "BranchName": "<string>",
+                "CreatorPhoto": "<string>",
+                "TaskStatus": "<string>",
+                "TaskCount": "<integer>",
+                "RejectedNo": "<integer>",
+                "TaskCreatorCount": "<integer>",
+                "TaskTypeID": "<integer>",
+                "CreatedBy": "<long>",
+                "taskAttachements": "<string>",
+                "TaskUserGroupList": [
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "TaskID": "<long>",
+                    "UserGroupID": "<long>",
+                    "IsGroup": "<boolean>",
+                    "Read": "<boolean>",
+                    "Flag": "<boolean>",
+                    "Star": "<boolean>"
+                  }
+                ]
+              }
+            ]
+          }

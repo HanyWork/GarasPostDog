@@ -1,0 +1,77 @@
+info:
+  name: /Inventory/ItemsPricing/GetInventoryItemPriceHistoryList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/ItemsPricing/GetInventoryItemPriceHistoryList"
+  headers:
+    - name: InventoryItemId
+      value: "82"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/ItemsPricing/GetInventoryItemPriceHistoryList"
+      method: GET
+      headers:
+        - name: InventoryItemId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "PurchasePOInventoryItemPriceList": [
+              {
+                "SupplierID": "<long>",
+                "SupplierName": "<string>",
+                "InvoiceDate": "<string>",
+                "UnitPrice": "<double>",
+                "UnitCost": "<double>",
+                "PurchasePOInvoiceID": "<long>"
+              },
+              {
+                "SupplierID": "<long>",
+                "SupplierName": "<string>",
+                "InvoiceDate": "<string>",
+                "UnitPrice": "<double>",
+                "UnitCost": "<double>",
+                "PurchasePOInvoiceID": "<long>"
+              }
+            ],
+            "CountOfSupplier": "<integer>",
+            "CountOfInvoice": "<integer>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

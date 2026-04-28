@@ -1,0 +1,96 @@
+info:
+  name: /HR/Salary/ChangeSalaryForUser
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Salary/ChangeSalaryForUser"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: |-
+      {
+        "Id": 75,
+        "ContractId": 136,
+        "CurrencyId": 2,
+        "TotalGross": 10000,
+        "TotalNet": 10000,
+        "TotalIncome": 10000,
+        "MultiplyingFactor": 0,
+        "PaymentMethodId": 5,
+        "PaymentStrategyId": 1,
+        "HrUserId": 189,
+        "BasicSalary": 0,
+        "VariantSalary": 0,
+        "Reason":"test"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Salary/ChangeSalaryForUser"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "Id": "<long>",
+            "ContractId": "<long>",
+            "CurrencyId": "<integer>",
+            "TotalGross": "<double>",
+            "TotalNet": "<double>",
+            "TotalIncome": "<double>",
+            "MultiplyingFactor": "<double>",
+            "PaymentMethodId": "<integer>",
+            "PaymentStrategyId": "<integer>",
+            "HrUserId": "<long>",
+            "BasicSalary": "<double>",
+            "VariantSalary": "<double>",
+            "From": "<dateTime>",
+            "To": "<dateTime>",
+            "ChangeReason": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

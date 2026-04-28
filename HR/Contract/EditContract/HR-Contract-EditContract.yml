@@ -1,0 +1,181 @@
+info:
+  name: /HR/Contract/EditContract
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Contract/EditContract"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "77"
+      - name: ContactTypeID
+        type: text
+        value: "1"
+      - name: StartDate
+        type: text
+        value: 2024-12-10
+      - name: EndDate
+        type: text
+        value: 2027-12-10
+      - name: IsCurrent
+        type: text
+        value: "true"
+      - name: IsAllowOverTime
+        type: text
+        value: "true"
+      - name: ISAutomatic
+        type: text
+        value: "true"
+      - name: FreeWorkingHours
+        type: text
+        value: "true"
+      - name: AllowBreakDeduction
+        type: text
+        value: "true"
+      - name: AllowLocationTracking
+        type: text
+        value: "true"
+      - name: Diameter
+        type: text
+        value: "4.0"
+      - name: AllowComissions
+        type: text
+        value: "true"
+      - name: ComissionRate
+        type: text
+        value: "4.0"
+      - name: ComissionPercentage
+        type: text
+        value: "0.5"
+      - name: AllowOvertime
+        type: text
+        value: "true"
+      - name: AutomaticPerWorkingHours
+        type: text
+        value: "true"
+      - name: AllowedWithApproval
+        type: text
+        value: "true"
+      - name: HrUserId
+        type: text
+        value: "11"
+      - name: FirstReportToID
+        type: text
+        value: "20032"
+      - name: SecondReportToID
+        type: text
+        value: "1"
+      - name: WorkingHours
+        type: text
+        value: "8.5"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Contract/EditContract"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: ContactTypeID
+            type: text
+            value: <integer>
+          - name: StartDate
+            type: text
+            value: <dateTime>
+          - name: EndDate
+            type: text
+            value: <dateTime>
+          - name: IsCurrent
+            type: text
+            value: <boolean>
+          - name: IsAllowOverTime
+            type: text
+            value: <boolean>
+          - name: ISAutomatic
+            type: text
+            value: <boolean>
+          - name: FreeWorkingHours
+            type: text
+            value: <boolean>
+          - name: AllowBreakDeduction
+            type: text
+            value: <boolean>
+          - name: AllowLocationTracking
+            type: text
+            value: <boolean>
+          - name: Diameter
+            type: text
+            value: <float>
+          - name: AllowComissions
+            type: text
+            value: <boolean>
+          - name: ComissionRate
+            type: text
+            value: <double>
+          - name: ComissionPercentage
+            type: text
+            value: <double>
+          - name: AllowOvertime
+            type: text
+            value: <boolean>
+          - name: AutomaticPerWorkingHours
+            type: text
+            value: <boolean>
+          - name: AllowedWithApproval
+            type: text
+            value: <boolean>
+          - name: HrUserId
+            type: text
+            value: <long>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

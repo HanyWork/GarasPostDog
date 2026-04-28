@@ -1,0 +1,7 @@
+info:
+  name: ProjectCheque
+  type: folder
+  seq: 23
+
+request:
+  auth: inherit

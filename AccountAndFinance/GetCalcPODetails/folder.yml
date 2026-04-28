@@ -1,0 +1,7 @@
+info:
+  name: GetCalcPODetails
+  type: folder
+  seq: 15
+
+request:
+  auth: inherit

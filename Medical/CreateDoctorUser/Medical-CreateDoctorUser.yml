@@ -1,0 +1,211 @@
+info:
+  name: /Medical/CreateDoctorUser
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/CreateDoctorUser"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+  body:
+    type: multipart-form
+    data:
+      - name: FirstName
+        type: text
+        value: n1
+      - name: ARFirstName
+        type: text
+        value: ا
+      - name: MiddleName
+        type: text
+        value: n2
+        disabled: true
+      - name: ARMiddleName
+        type: text
+        value: adipisicing nisi voluptate esse
+        disabled: true
+      - name: LastName
+        type: text
+        value: n2ghj
+      - name: ARLastName
+        type: text
+        value: minim ex
+      - name: Email
+        type: text
+        value: qwerjty@qwerty.com
+        disabled: true
+      - name: Mobile
+        type: text
+        value: "011223344559"
+        disabled: true
+      - name: Active
+        type: text
+        value: "true"
+      - name: Photo
+        type: file
+        value:
+          - /C:/Users/Vetanoia07/Desktop/photo_2025-05-19_16-27-35.jpg
+        disabled: true
+      - name: Gender
+        type: text
+        value: male
+        disabled: true
+      - name: DateOfBirth
+        type: text
+        value: 1995-10-20
+        disabled: true
+      - name: LandLine
+        type: text
+        value: "04578962"
+        disabled: true
+      - name: NationalityId
+        type: text
+        value: "44417384"
+        disabled: true
+      - name: BranchID
+        type: text
+        value: "-44175309"
+        disabled: true
+      - name: DepartmentID
+        type: text
+        value: "-98549320"
+        disabled: true
+      - name: TeamId
+        type: text
+        value: "15"
+        disabled: true
+      - name: JobTitleID
+        type: text
+        value: "34999061"
+        disabled: true
+      - name: IsDeleted
+        type: text
+        value: "true"
+        disabled: true
+      - name: Password
+        type: text
+        value: "12345678"
+        disabled: true
+      - name: ConfirmPass
+        type: text
+        value: "12345678"
+        disabled: true
+      - name: TeamsIdList
+        type: text
+        value: 16,17,7854112
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/CreateDoctorUser"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: FirstName
+            type: text
+            value: sunt velit laboris veniam
+          - name: ARFirstName
+            type: text
+            value: velit amet sit
+          - name: MiddleName
+            type: text
+            value: aliqua in pariatur aliquip et
+          - name: ARMiddleName
+            type: text
+            value: adipisicing nisi voluptate esse
+          - name: LastName
+            type: text
+            value: aliquip voluptate
+          - name: ARLastName
+            type: text
+            value: minim ex
+          - name: Email
+            type: text
+            value: in aliquip offici
+          - name: Mobile
+            type: text
+            value: aute
+          - name: Active
+            type: text
+            value: "false"
+          - name: Photo
+            type: file
+            value: []
+          - name: Gender
+            type: text
+            value: qui veniam voluptate
+          - name: DateOfBirth
+            type: text
+            value: elit eiusmod ullamco tempor
+          - name: LandLine
+            type: text
+            value: laboris dolor do
+          - name: NationalityId
+            type: text
+            value: "44417384"
+          - name: BranchID
+            type: text
+            value: "-44175309"
+          - name: DepartmentID
+            type: text
+            value: "-98549320"
+          - name: TeamId
+            type: text
+            value: "72312064"
+          - name: JobTitleID
+            type: text
+            value: "34999061"
+          - name: IsDeleted
+            type: text
+            value: "true"
+          - name: Password
+            type: text
+            value: "consequat "
+          - name: ConfirmPass
+            type: text
+            value: ut
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "non ad D",
+                "ErrorCode": "aute cupidatat dolor qui in"
+              },
+              {
+                "ErrorMSG": "velit laboris nostrud",
+                "ErrorCode": "ad id dolor"
+              }
+            ],
+            "ID": 63506801
+          }

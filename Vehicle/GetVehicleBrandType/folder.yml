@@ -1,0 +1,7 @@
+info:
+  name: GetVehicleBrandType
+  type: folder
+  seq: 11
+
+request:
+  auth: inherit

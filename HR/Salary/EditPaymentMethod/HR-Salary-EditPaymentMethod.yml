@@ -1,0 +1,82 @@
+info:
+  name: /HR/Salary/EditPaymentMethod
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Salary/EditPaymentMethod"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: |-
+      {
+          "HrUserID": "11",
+          "PaymentMethodID": 1,
+          "BankName": "QNB",
+          "AccountHolderFullName": "test@tttttttt.com",
+          "AccountNumber": "12456",
+          "BankDetailsID":"3"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Salary/EditPaymentMethod"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "BankDetailsID": "<integer>",
+            "PaymentMethodID": "<integer>",
+            "BankName": "<string>",
+            "BankBranch": "<string>",
+            "AccountHolderFullName": "<string>",
+            "AccountNumber": "<string>",
+            "ExpiryDate": "<string>",
+            "HrUserID": "<long>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<integer>"
+          }

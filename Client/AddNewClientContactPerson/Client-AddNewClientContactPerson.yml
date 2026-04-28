@@ -1,0 +1,104 @@
+info:
+  name: /Client/AddNewClientContactPerson
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Client/AddNewClientContactPerson"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "ClientId": "10360",
+          "ClientContactPersons": [
+              {
+                  "Active": true,
+                  "Name": "test",
+                  "Title": "dddd",
+                  "Email": "rrrr",
+                  "Mobile": "999999",
+                  "Location": ""
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Client/AddNewClientContactPerson"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ClientId": "<long>",
+            "ClientContactPersons": [
+              {
+                "ID": "<long>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "Name": "<string>",
+                "Title": "<string>",
+                "Location": "<string>",
+                "Email": "<string>",
+                "Mobile": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>",
+                "Name": "<string>",
+                "Title": "<string>",
+                "Location": "<string>",
+                "Email": "<string>",
+                "Mobile": "<string>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

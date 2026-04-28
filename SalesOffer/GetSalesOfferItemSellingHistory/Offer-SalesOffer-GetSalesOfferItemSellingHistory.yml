@@ -1,0 +1,77 @@
+info:
+  name: /Offer/SalesOffer/GetSalesOfferItemSellingHistory
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/GetSalesOfferItemSellingHistory"
+  headers:
+    - name: InventoryItemId
+      value: "40499"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/GetSalesOfferItemSellingHistory"
+      method: GET
+      headers:
+        - name: InventoryItemId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SalesOfferItemsSalesDetailsList": [
+              {
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "OfferId": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "SoldDate": "<string>",
+                "ItemPrice": "<double>"
+              },
+              {
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "OfferId": "<long>",
+                "ClientId": "<long>",
+                "ClientName": "<string>",
+                "SoldDate": "<string>",
+                "ItemPrice": "<double>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

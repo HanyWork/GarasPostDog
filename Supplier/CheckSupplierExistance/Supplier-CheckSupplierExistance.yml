@@ -1,0 +1,99 @@
+info:
+  name: /Supplier/CheckSupplierExistance
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Supplier/CheckSupplierExistance"
+  headers:
+    - name: SupplierName
+      value: <string>
+      disabled: true
+    - name: SupplierMobile
+      value: <string>
+      disabled: true
+    - name: SupplierPhone
+      value: <string>
+      disabled: true
+    - name: SupplierFax
+      value: <string>
+      disabled: true
+    - name: SupplierEmail
+      value: marco@msn.com
+    - name: SupplierWebsite
+      value: <string>
+      disabled: true
+    - name: ContactPersonMobile
+      value: <string>
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Supplier/CheckSupplierExistance"
+      method: GET
+      headers:
+        - name: SupplierName
+          value: <string>
+        - name: SupplierMobile
+          value: <string>
+        - name: SupplierPhone
+          value: <string>
+        - name: SupplierFax
+          value: <string>
+        - name: SupplierEmail
+          value: <string>
+        - name: SupplierWebsite
+          value: <string>
+        - name: ContactPersonMobile
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SuppliersList": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "SuppliersCount": "<integer>",
+            "IsExist": "<boolean>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

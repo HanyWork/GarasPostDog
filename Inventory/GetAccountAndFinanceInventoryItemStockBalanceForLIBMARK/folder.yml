@@ -1,0 +1,7 @@
+info:
+  name: GetAccountAndFinanceInventoryItemStockBalanceForLIBMARK
+  type: folder
+  seq: 29
+
+request:
+  auth: inherit

@@ -1,0 +1,134 @@
+info:
+  name: /PurchesRequest/GetMatrialPurchaseRequestList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Purchasing/PurchesRequest/GetMatrialPurchaseRequestList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: InventoryItemID
+      value: ""
+      disabled: true
+    - name: PurchaseRequestID
+      value: ""
+      disabled: true
+    - name: IsDirectPR
+      value: ""
+      disabled: true
+    - name: FormInventoryStoreID
+      value: ""
+      disabled: true
+    - name: CreatorUserID
+      value: ""
+      disabled: true
+    - name: Status
+      value: open
+      disabled: true
+    - name: SearchKey
+      value: ""
+      disabled: true
+    - name: RequestDate
+      value: ""
+      disabled: true
+    - name: currentpage
+      value: ""
+      disabled: true
+    - name: ItemsPerPage
+      value: ""
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PurchesRequest/GetMatrialPurchaseRequestList"
+      method: GET
+      headers:
+        - name: filters
+          value: InventoryItemID,<long>,PurchaseRequestID,<long>,IsDirectPR,<boolean>,FormInventoryStoreID,<long>,CreatorUserID,<long>,Status,<string>,SearchKey,<string>,RequestDate,<string>,currentpage,<integer>,ItemsPerPage,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "TotalCounter": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "InventoryMatrialPurchaseRequestByDateList": [
+              {
+                "DateMonth": "<string>",
+                "InventoryMatrialPurchaseRequestInfoList": [
+                  {
+                    "PurchaseRequestID": "<string>",
+                    "FromInventoryStoreName": "<string>",
+                    "Status": "<string>",
+                    "ApprovalStataus": "<string>",
+                    "IsDirectPR": "<boolean>",
+                    "RequestDate": "<string>",
+                    "CreatorName": "<string>"
+                  },
+                  {
+                    "PurchaseRequestID": "<string>",
+                    "FromInventoryStoreName": "<string>",
+                    "Status": "<string>",
+                    "ApprovalStataus": "<string>",
+                    "IsDirectPR": "<boolean>",
+                    "RequestDate": "<string>",
+                    "CreatorName": "<string>"
+                  }
+                ]
+              },
+              {
+                "DateMonth": "<string>",
+                "InventoryMatrialPurchaseRequestInfoList": [
+                  {
+                    "PurchaseRequestID": "<string>",
+                    "FromInventoryStoreName": "<string>",
+                    "Status": "<string>",
+                    "ApprovalStataus": "<string>",
+                    "IsDirectPR": "<boolean>",
+                    "RequestDate": "<string>",
+                    "CreatorName": "<string>"
+                  },
+                  {
+                    "PurchaseRequestID": "<string>",
+                    "FromInventoryStoreName": "<string>",
+                    "Status": "<string>",
+                    "ApprovalStataus": "<string>",
+                    "IsDirectPR": "<boolean>",
+                    "RequestDate": "<string>",
+                    "CreatorName": "<string>"
+                  }
+                ]
+              }
+            ]
+          }

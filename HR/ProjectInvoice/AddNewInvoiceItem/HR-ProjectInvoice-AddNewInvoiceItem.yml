@@ -1,0 +1,84 @@
+info:
+  name: /HR/ProjectInvoice/AddNewInvoiceItem
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/ProjectInvoice/AddNewInvoiceItem"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: PERITI
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "Type": "WTP",
+        "Name": "WTP",
+        "HrUserId": 11,
+        "Quantity": 10,
+        "Rate": 1.5,
+        "ProjectInvoiceId": 3,
+        "Total": 0,
+        "UOMID": 78
+      }
+      // TYpe can be WTP, Task Expensis, Task Unit Service or discount
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/ProjectInvoice/AddNewInvoiceItem"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "Type": "<string>",
+            "Name": "<string>",
+            "HrUserId": "<long>",
+            "Quantity": "<double>",
+            "Rate": "<double>",
+            "ProjectInvoiceId": "<long>",
+            "Total": "<double>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

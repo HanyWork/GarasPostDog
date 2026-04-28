@@ -1,0 +1,28 @@
+info:
+  name: AddUsersAttedance22
+  type: http
+  seq: 34
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/AddUsersAttedance22"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

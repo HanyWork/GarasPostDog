@@ -1,0 +1,78 @@
+info:
+  name: /Admin/AddEditInventoryUOM
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Admin/AddEditInventoryUOM"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: companyname
+      value: "{{CompanyName}}"
+    - name: usertoken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "id": 114,
+        "name": "test G",
+        "shortName": "TG",
+        "active": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/AddEditInventoryUOM"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<integer>",
+            "name": "<string>",
+            "shortName": "<string>",
+            "createdBy": "<string>",
+            "modifiedBy": "<string>",
+            "active": "<boolean>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

@@ -1,0 +1,33 @@
+info:
+  name: /EmailTool/messages
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/EmailTool/messages"
+  headers:
+    - name: userId
+      value: garas@sasclearance.com
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/EmailTool/messages"
+      method: GET
+      headers:
+        - name: userId
+          value: <string>
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""

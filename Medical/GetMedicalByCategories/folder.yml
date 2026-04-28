@@ -1,0 +1,7 @@
+info:
+  name: GetMedicalByCategories
+  type: folder
+  seq: 30
+
+request:
+  auth: inherit

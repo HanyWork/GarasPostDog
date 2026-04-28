@@ -1,0 +1,7 @@
+info:
+  name: GetTaskScreenShot
+  type: folder
+  seq: 47
+
+request:
+  auth: inherit

@@ -1,0 +1,33 @@
+info:
+  name: UpdateVehicleType
+  type: http
+  seq: 20
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/UpdateVehicleType"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Id\": 4,\r
+
+      \    \"Type\": \"Microcar\",\r
+
+      \    \"Active\": true\r
+
+      \    \r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

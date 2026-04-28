@@ -1,0 +1,7 @@
+info:
+  name: GetProjectInvoices
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit

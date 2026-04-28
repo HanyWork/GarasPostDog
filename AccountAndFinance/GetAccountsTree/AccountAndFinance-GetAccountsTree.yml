@@ -1,0 +1,159 @@
+info:
+  name: /AccountAndFinance/GetAccountsTree
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/AccountAndFinance/GetAccountsTree"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garasch
+    - name: CalcWithoutPrivate
+      value: "true"
+      disabled: true
+    - name: OrderByCreationDate
+      value: "true"
+    - name: FromDate
+      value: 2023-01-1
+      disabled: true
+    - name: DateTo
+      value: 2023-12-31
+      disabled: true
+    - name: AccountID
+      value: "58"
+    - name: AccountCategoryID
+      value: "1"
+      disabled: true
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/AccountAndFinance/GetAccountsTree"
+      method: GET
+      headers:
+        - name: CalcWithoutPrivate
+          value: "true"
+        - name: OrderByCreationDate
+          value: "false"
+        - name: AccountID
+          value: "0"
+        - name: AccountCategoryID
+          value: "0"
+        - name: DateTo
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "GetAccountTreeList": [
+              {
+                "id": "<string>",
+                "title": "<string>",
+                "parentId": "<string>",
+                "HasChild": "<boolean>",
+                "Code": "<string>",
+                "Category": "<string>",
+                "Type": "<string>",
+                "Debit": "<double>",
+                "Credit": "<double>",
+                "Accumulative": "<double>",
+                "Currency": "<string>",
+                "Active": "<boolean>",
+                "AdvanciedTypeId": "<long>",
+                "AdvanciedTypeName": "<string>",
+                "DataLevel": "<integer>",
+                "subs": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/TreeViewAccount detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/TreeViewAccount detected>"
+                  }
+                ],
+                "AccumulativePerMonth": [
+                  {
+                    "month": "<integer>",
+                    "credit": "<double>",
+                    "Debit": "<double>",
+                    "Accumulative": "<double>"
+                  },
+                  {
+                    "month": "<integer>",
+                    "credit": "<double>",
+                    "Debit": "<double>",
+                    "Accumulative": "<double>"
+                  }
+                ]
+              },
+              {
+                "id": "<string>",
+                "title": "<string>",
+                "parentId": "<string>",
+                "HasChild": "<boolean>",
+                "Code": "<string>",
+                "Category": "<string>",
+                "Type": "<string>",
+                "Debit": "<double>",
+                "Credit": "<double>",
+                "Accumulative": "<double>",
+                "Currency": "<string>",
+                "Active": "<boolean>",
+                "AdvanciedTypeId": "<long>",
+                "AdvanciedTypeName": "<string>",
+                "DataLevel": "<integer>",
+                "subs": [
+                  {
+                    "value": "<Circular reference to #/components/schemas/TreeViewAccount detected>"
+                  },
+                  {
+                    "value": "<Circular reference to #/components/schemas/TreeViewAccount detected>"
+                  }
+                ],
+                "AccumulativePerMonth": [
+                  {
+                    "month": "<integer>",
+                    "credit": "<double>",
+                    "Debit": "<double>",
+                    "Accumulative": "<double>"
+                  },
+                  {
+                    "month": "<integer>",
+                    "credit": "<double>",
+                    "Debit": "<double>",
+                    "Accumulative": "<double>"
+                  }
+                ]
+              }
+            ]
+          }

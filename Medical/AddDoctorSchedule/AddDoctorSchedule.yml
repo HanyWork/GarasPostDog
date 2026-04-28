@@ -1,0 +1,91 @@
+info:
+  name: AddDoctorSchedule
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddDoctorSchedule"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: "// {\r
+
+      //     \"DoctorID\": \"156\",\r
+
+      //     \"Capacity\": \"120\",\r
+
+      //     \"IntervalFrom\": \"00:00:00\",\r
+
+      //     \"IntervalTo\": \"22:00:00\",\r
+
+      //     \"ConsultationPrice\": \"150\",\r
+
+      //     \"StatusID\": \"1\",\r
+
+      //     \"StartDate\": \"2030-05-29\",\r
+
+      //     \"EndDate\": \"2031-06-22\",\r
+
+      //     \"RoomId\": \"5\",\r
+
+      //     \"PercentageTypeID\": \"1\",\r
+
+      //     \"ExaminationPrice\": \"800\",\r
+
+      //     \"WeekDayID\": \"1\",\r
+
+      //     \"TeamID\": \"1\",\r
+
+      //     \"HoldQuantity\": \"0\",\r
+
+      //     \"Period\": \"120\",\r
+
+      //     \"BranchID\":\"4\"\r
+
+      // }\r
+
+      {\r
+
+      \    \"DoctorID\": \"86\",\r
+
+      \    \"Capacity\": \"30\",\r
+
+      \    \"IntervalFrom\": \"00:00:00\",\r
+
+      \    \"IntervalTo\": \"02:00:00\",\r
+
+      \    \"ConsultationPrice\": \"150\",\r
+
+      \    \"StatusID\": \"1\",\r
+
+      \    \"StartDate\": \"2025-09-02\",\r
+
+      \    \"EndDate\": \"2026-09-02\",\r
+
+      \    \"RoomId\": \"1\",\r
+
+      \    \"PercentageTypeID\": \"1\",\r
+
+      \    \"ExaminationPrice\": \"150\",\r
+
+      \    \"WeekDayID\": \"3\",\r
+
+      \    \"TeamID\": \"15\",\r
+
+      \    \"HoldQuantity\": \"5\",\r
+
+      \    \"BranchID\": \"4\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,83 @@
+info:
+  name: /Admin/GetGroup
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/GetGroup"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetGroup"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "groupDataList": [
+              {
+                "id": "<integer>",
+                "groupUserCount": "<integer>",
+                "groupRoleCount": "<integer>",
+                "name": "<string>",
+                "description": "<string>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>",
+                "roleIDs": [
+                  "<integer>",
+                  "<integer>"
+                ],
+                "active": "<boolean>"
+              },
+              {
+                "id": "<integer>",
+                "groupUserCount": "<integer>",
+                "groupRoleCount": "<integer>",
+                "name": "<string>",
+                "description": "<string>",
+                "createdBy": "<string>",
+                "modifiedBy": "<string>",
+                "roleIDs": [
+                  "<integer>",
+                  "<integer>"
+                ],
+                "active": "<boolean>"
+              }
+            ]
+          }

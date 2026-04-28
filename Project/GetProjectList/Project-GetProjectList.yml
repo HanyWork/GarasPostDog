@@ -1,0 +1,76 @@
+info:
+  name: /Project/GetProjectList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Project/GetProjectList"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: SearchKey
+      value: test
+      disabled: true
+    - name: CompanyName
+      value: garastest
+    - name: ProjectReturn
+      value: "true"
+      disabled: true
+    - name: ClientID
+      value: "1"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Project/GetProjectList"
+      method: GET
+      headers:
+        - name: headers
+          value: clientID,<long>,projectReturn,<boolean>,projectName,<string>,searchKey,<string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ddlList": [
+              {
+                "id": "<long>",
+                "name": "<string>",
+                "projectSerial": "<string>",
+                "salesOfferId": "<long>"
+              },
+              {
+                "id": "<long>",
+                "name": "<string>",
+                "projectSerial": "<string>",
+                "salesOfferId": "<long>"
+              }
+            ],
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

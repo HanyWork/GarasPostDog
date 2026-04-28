@@ -1,0 +1,77 @@
+info:
+  name: /Admin/GetImportantDateList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Admin/GetImportantDateList"
+  headers:
+    - name: ImpDateId
+      value: "0"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/GetImportantDateList"
+      method: GET
+      headers:
+        - name: ImpDateId
+          value: "0"
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "importantDateList": [
+              {
+                "id": "<integer>",
+                "reminderDate": "<string>",
+                "comment": "<string>",
+                "status": "<string>",
+                "active": "<boolean>",
+                "type": "<string>",
+                "filePath": "<string>"
+              },
+              {
+                "id": "<integer>",
+                "reminderDate": "<string>",
+                "comment": "<string>",
+                "status": "<string>",
+                "active": "<boolean>",
+                "type": "<string>",
+                "filePath": "<string>"
+              }
+            ]
+          }

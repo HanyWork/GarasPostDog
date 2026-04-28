@@ -1,0 +1,7 @@
+info:
+  name: EditPaymentMethod
+  type: folder
+  seq: 33
+
+request:
+  auth: inherit

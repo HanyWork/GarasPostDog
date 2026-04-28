@@ -1,0 +1,92 @@
+info:
+  name: /Admin/AddEditBranches
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Admin/AddEditBranches"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  body:
+    type: json
+    data: |-
+      {
+        "id": 1017,
+        "name": "Management",
+        "description": "Mangg",
+        "address": "test",
+        "fax": "ttt",
+        "email": "Mang",
+        "active": true,
+        "countryID": 1,
+        "governorateID": 4
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/AddEditBranches"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<integer>",
+            "name": "<string>",
+            "branchName": "<string>",
+            "countryName": "<string>",
+            "governorateName": "<string>",
+            "description": "<string>",
+            "address": "<string>",
+            "tel": "<string>",
+            "fax": "<string>",
+            "email": "<string>",
+            "active": "<boolean>",
+            "createdBy": "<string>",
+            "modifiedBy": "<string>",
+            "countryID": "<integer>",
+            "governorateID": "<integer>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

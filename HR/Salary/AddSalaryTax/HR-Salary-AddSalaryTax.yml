@@ -1,0 +1,106 @@
+info:
+  name: /HR/Salary/AddSalaryTax
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Salary/AddSalaryTax"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  body:
+    type: multipart-form
+    data:
+      - name: Percentage
+        type: text
+        value: "10.5"
+      - name: Min
+        type: text
+        value: "15"
+      - name: Max
+        type: text
+        value: "16"
+      - name: Active
+        type: text
+        value: "true"
+        disabled: true
+      - name: BranchId
+        type: text
+        value: "2"
+        disabled: true
+      - name: TaxTypeId
+        type: text
+        value: "1"
+        disabled: true
+      - name: SalaryTypeId
+        type: text
+        value: "1"
+      - name: TaxTypeName
+        type: text
+        value: test
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Salary/AddSalaryTax"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Percentage
+            type: text
+            value: <double>
+          - name: Min
+            type: text
+            value: <long>
+          - name: Max
+            type: text
+            value: <long>
+          - name: Active
+            type: text
+            value: <boolean>
+          - name: BranchId
+            type: text
+            value: <integer>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

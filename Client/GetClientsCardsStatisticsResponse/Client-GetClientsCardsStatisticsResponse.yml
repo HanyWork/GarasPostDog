@@ -1,0 +1,153 @@
+info:
+  name: /Client/GetClientsCardsStatisticsResponse
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Client/GetClientsCardsStatisticsResponse"
+  headers:
+    - name: filters
+      value: Phone,<string>,Mobile,<string>,SupportedBy,<string>,Fax,<string>,ClientName,<string>,PurchasingProductsIdsString,<string>,PurchasingProductsStartDate,<string>,PurchasingProductsEndDate,<string>,RegistrationDateFrom,<string>,RegistrationDateTo,<string>,SpecialityId,<integer>,SalesPersonId,<long>,BranchId,<integer>,IsExpired,<boolean>,DealsDateFrom,<string>,DealsDateTo,<string>,HasRFQ,<boolean>,WithOpenOffers,<boolean>,WithOpenProjects,<boolean>,WithVolume,<boolean>,ApprovalStatus,<integer>,ClientClassification,<integer>,ExpirationPeriod,<integer>,AreaId,<long>,GovernorateId,<integer>,CountryId,<integer>
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Phone
+      value: ""
+      disabled: true
+    - name: Mobile
+      value: ""
+      disabled: true
+    - name: ClientName
+      value: "%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D9%87%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D9%87"
+      disabled: true
+    - name: SpecialityId
+      value: ""
+      disabled: true
+    - name: SalesPersonId
+      value: ""
+      disabled: true
+    - name: BranchId
+      value: ""
+      disabled: true
+    - name: IsExpired
+      value: ""
+      disabled: true
+    - name: ApprovalStatus
+      value: ""
+      description: 0 => Approved, 1 => NeedApproval, 2 => Rejected
+      disabled: true
+    - name: ExpirationPeriod
+      value: "10"
+      description: Days
+    - name: CountryId
+      value: ""
+      disabled: true
+    - name: GovernorateId
+      value: ""
+      disabled: true
+    - name: PurchasingProductsIdsString
+      value: ""
+      description: String of Products Ids seperated by comma "1,2,3,.."
+      disabled: true
+    - name: PurchasingProductsStartDate
+      value: ""
+      disabled: true
+    - name: PurchasingProductsEndDate
+      value: ""
+      disabled: true
+    - name: RegistrationDateFrom
+      value: 2024-1-1
+      disabled: true
+    - name: RegistrationDateTo
+      value: 2024-2-1
+      disabled: true
+    - name: WithOpenOffers
+      value: ""
+      description: Bool
+      disabled: true
+    - name: WithOpenProjects
+      value: ""
+      description: Bool
+      disabled: true
+    - name: WithVolume
+      value: ""
+      description: Bool
+      disabled: true
+    - name: DealsDateTo
+      value: ""
+      disabled: true
+    - name: DealsDateFrom
+      value: ""
+      disabled: true
+    - name: HasRFQ
+      value: ""
+      disabled: true
+    - name: SupportedBy
+      value: ""
+      disabled: true
+    - name: DealsDateTo
+      value: ""
+      disabled: true
+    - name: DealsDateFrom
+      value: ""
+      disabled: true
+    - name: CountryId
+      value: ""
+      disabled: true
+    - name: GovernorateId
+      value: ""
+      disabled: true
+    - name: AreaId
+      value: ""
+      disabled: true
+    - name: ClientClassification
+      value: ""
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Client/GetClientsCardsStatisticsResponse"
+      method: GET
+      headers:
+        - name: filters
+          value: Phone,<string>,Mobile,<string>,SupportedBy,<string>,Fax,<string>,ClientName,<string>,PurchasingProductsIdsString,<string>,PurchasingProductsStartDate,<string>,PurchasingProductsEndDate,<string>,RegistrationDateFrom,<string>,RegistrationDateTo,<string>,SpecialityId,<integer>,SalesPersonId,<long>,BranchId,<integer>,IsExpired,<boolean>,DealsDateFrom,<string>,DealsDateTo,<string>,HasRFQ,<boolean>,WithOpenOffers,<boolean>,WithOpenProjects,<boolean>,WithVolume,<boolean>,ApprovalStatus,<integer>,ClientClassification,<integer>,ExpirationPeriod,<integer>,AreaId,<long>,GovernorateId,<integer>,CountryId,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "TotalClientsCount": "<integer>",
+            "TotalVolume": "<double>",
+            "TotalRemainCollection": "<double>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

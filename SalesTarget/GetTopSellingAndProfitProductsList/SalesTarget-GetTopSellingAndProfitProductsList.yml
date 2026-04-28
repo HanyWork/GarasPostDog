@@ -1,0 +1,86 @@
+info:
+  name: /SalesTarget/GetTopSellingAndProfitProductsList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/SalesTarget/GetTopSellingAndProfitProductsList"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: TargetYear
+      value: "2023"
+      disabled: true
+    - name: StartYear
+      value: "2023"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesTarget/GetTopSellingAndProfitProductsList"
+      method: GET
+      headers:
+        - name: TargetYear
+          value: <integer>
+        - name: StartYear
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "TopSellingProducts": [
+              {
+                "Quantity": "<double>",
+                "Value": "<double>",
+                "Name": "<string>"
+              },
+              {
+                "Quantity": "<double>",
+                "Value": "<double>",
+                "Name": "<string>"
+              }
+            ],
+            "TopProfitProducts": [
+              {
+                "Quantity": "<double>",
+                "Value": "<double>",
+                "Name": "<string>"
+              },
+              {
+                "Quantity": "<double>",
+                "Value": "<double>",
+                "Name": "<string>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

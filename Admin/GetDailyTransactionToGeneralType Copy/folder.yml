@@ -1,0 +1,7 @@
+info:
+  name: GetDailyTransactionToGeneralType Copy
+  type: folder
+  seq: 23
+
+request:
+  auth: inherit

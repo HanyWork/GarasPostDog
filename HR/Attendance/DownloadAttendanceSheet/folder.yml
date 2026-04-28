@@ -1,0 +1,7 @@
+info:
+  name: DownloadAttendanceSheet
+  type: folder
+  seq: 30
+
+request:
+  auth: inherit

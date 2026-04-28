@@ -1,0 +1,33 @@
+info:
+  name: AddInventoryItemContent
+  type: http
+  seq: 49
+
+http:
+  method: POST
+  url: "{{libmarkapiBaseUrl}}/Inventory/AddInventoryItemContent"
+  headers:
+    - name: CompanyName
+      value: libmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"InventoryItemId\": \"171\",\r
+
+      \    \"ChapterName\": \"مرقس\",\r
+
+      \    \"Description\": \"س\",\r
+
+      \    \"ParentContentId\": \"18\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

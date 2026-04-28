@@ -1,0 +1,126 @@
+info:
+  name: /HR/AddAttendanceData
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HrUser/AddAttendanceData"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "AttendanceData": [
+              {
+                  "ID": 10081,
+                  "EmployeeId": 3,
+                  "DepartmentId": 2,
+                  "TeamId": 10,
+                  "AttendanceDateSTR": "2024-1-3",
+                  "CheckInHour": 9,
+                  "CheckInMin": 30,
+                  "CheckOutHour": 15,
+                  "CheckOutMin": 0
+                  //"AbsenceTypeId": 3
+              }
+              // {
+              //     "ID": 10014,
+              //     "EmployeeId": 10004,
+              //     "DepartmentId": 2,
+              //     "TeamId": 10,
+              //     "AttendanceDateSTR": "2024-1-1",
+              //     "CheckInHour": 9,
+              //     "CheckInMin": 30,
+              //     "CheckOutHour": 17,
+              //     "CheckOutMin": 0,
+              //     "AbsenceTypeId": 3
+              // }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/AddAttendanceData"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "attendanceData": [
+              {
+                "id": "<long>",
+                "employeeId": "<long>",
+                "employeeName": "<long>",
+                "departmentId": "<integer>",
+                "teamId": "<long>",
+                "attendanceDate": "<dateTime>",
+                "attendanceDateSTR": "<string>",
+                "checkInHour": "<integer>",
+                "checkInMin": "<integer>",
+                "checkOutHour": "<integer>",
+                "checkOutMin": "<integer>",
+                "noMin": "<integer>",
+                "absenceTypeId": "<integer>"
+              },
+              {
+                "id": "<long>",
+                "employeeId": "<long>",
+                "employeeName": "<long>",
+                "departmentId": "<integer>",
+                "teamId": "<long>",
+                "attendanceDate": "<dateTime>",
+                "attendanceDateSTR": "<string>",
+                "checkInHour": "<integer>",
+                "checkInMin": "<integer>",
+                "checkOutHour": "<integer>",
+                "checkOutMin": "<integer>",
+                "noMin": "<integer>",
+                "absenceTypeId": "<integer>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

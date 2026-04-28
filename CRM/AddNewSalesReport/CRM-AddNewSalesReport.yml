@@ -1,0 +1,173 @@
+info:
+  name: /CRM/AddNewSalesReport
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/CRM/AddNewSalesReport"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: UserId
+        type: text
+        value: MjAxMjU=
+      - name: ReportDate
+        type: text
+        value: 2024-11-20
+      - name: ModifiedBy
+        type: text
+        value: " JFp7UYIKFWypVNu2LYAVzQ=="
+      - name: Status
+        type: text
+        value: Gerges
+      - name: Note
+        type: text
+        value: " "
+      - name: IsReviewed
+        type: text
+        value: " false"
+      - name: ReportLinesList[0].ClientId
+        type: text
+        value: " 30012"
+      - name: ReportLinesList[0].DailyReportThroughId
+        type: text
+        value: " 2"
+      - name: ReportLinesList[0].FromTime
+        type: text
+        value: " 17.01"
+      - name: ReportLinesList[0].ToTime
+        type: text
+        value: " 20.01"
+      - name: ReportLinesList[0].Reason
+        type: text
+        value: " asdasdasdasa"
+      - name: ReportLinesList[0].ContactPerson
+        type: text
+        value: " test"
+      - name: ReportLinesList[0].ContactPersonMobile
+        type: text
+        value: " 00000000"
+      - name: ReportLinesList[0].ReasonTypeId
+        type: text
+        value: " 3"
+      - name: ReportLinesList[0].CustomerSatisfaction
+        type: text
+        value: " 0"
+      - name: ReportLinesList[0].IsNew
+        type: text
+        value: " false"
+      - name: ReportLinesList[0].Longitude
+        type: text
+        value: " 0"
+      - name: ReportLinesList[0].Latitude
+        type: text
+        value: " 0"
+      - name: ReportLinesList[0].SalesReportLineExpenses[0].Amount
+        type: text
+        value: " 23"
+      - name: ReportLinesList[0].SalesReportLineExpenses[0].Type
+        type: text
+        value: " Purchasing(TO Supplier)"
+      - name: ReportLinesList[0].SalesReportLineExpenses[0].CurrencyId
+        type: text
+        value: " 1"
+      - name: ReportLinesList[0].SalesReportLineExpenses[0].Comment
+        type: text
+        value: " dafda"
+      - name: ReportLinesList[0].SalesReportLineExpenses[0].AttachmentObj.File
+        type: file
+        value:
+          - /D:/a9.png
+      - name: ReportLinesList[0].SalesReportLineExpenses[0].AttachmentObj.Active
+        type: text
+        value: " true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/CRM/AddNewSalesReport"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: UserId
+            type: text
+            value: <string>
+          - name: ReportDate
+            type: text
+            value: <string>
+          - name: ModifiedBy
+            type: text
+            value: <string>
+          - name: Status
+            type: text
+            value: <string>
+          - name: Note
+            type: text
+            value: <string>
+          - name: ReviewComment
+            type: text
+            value: <string>
+          - name: ReviewedBy
+            type: text
+            value: <long>
+          - name: IsReviewed
+            type: text
+            value: <boolean>
+          - name: Review
+            type: text
+            value: <float>
+          - name: SalesReportExpenses
+            type: text
+            value: "[object Object],[object Object]"
+          - name: ReportLinesList
+            type: text
+            value: "[object Object],[object Object]"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

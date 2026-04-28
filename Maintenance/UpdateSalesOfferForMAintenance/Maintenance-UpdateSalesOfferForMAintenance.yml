@@ -1,0 +1,111 @@
+info:
+  name: /Maintenance/UpdateSalesOfferForMAintenance
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Maintenance/UpdateSalesOfferForMAintenance"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "OfferId":31249,
+          "StartDate": "2025-04-16",
+          "EndDate": "2025-04-16",
+          "ClientId": "1",
+          "WorkerOrder": "fgh",
+          "ProductFabricator": "Vendor Name",
+          "ContactPersonName": "\tعلي مانع حمد الدوساري 2018\t ",
+          //"ContactPersonMobile": "+974 66079933-+974 55749712",
+          "OfferType":"TestType",
+          "LocationX":2.5,
+          "LocationY":7.5,
+          "ProjectLocation": "Qatar / Qatar / Ain Khaled\r\n / 0,0,\tQatar\t / ",
+          "Maintenances": [
+              {
+                  "ProductName": "ggggggggg",
+                  "ProductBrand": "hhhhhhhhhhhhhhhh",
+                  "Problem": "hnnnnnnnnn",
+                  "Active": true
+              },
+              {
+                  "ProductName": "ffffffff",
+                  "ProductBrand": "gggggggggg",
+                  "Problem": "hhhhhhhh",
+                  "Active": true
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/AddSalesOfferForMAintenance"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "StartDate": "<string>",
+            "EndDate": "<string>",
+            "ClientId": "<long>",
+            "WorkerOrder": "<string>",
+            "SalesPersonId": "<long>",
+            "Maintenances": [
+              {
+                "ProductName": "<string>",
+                "ProductBrand": "<string>",
+                "Problem": "<string>"
+              },
+              {
+                "ProductName": "<string>",
+                "ProductBrand": "<string>",
+                "Problem": "<string>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

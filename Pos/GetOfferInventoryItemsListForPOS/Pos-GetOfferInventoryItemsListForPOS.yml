@@ -1,0 +1,116 @@
+info:
+  name: /Pos/GetOfferInventoryItemsListForPOS
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Pos/GetOfferInventoryItemsListForPOS"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: InventoryItemId
+      value: "595"
+      disabled: true
+    - name: CategoryId
+      value: ""
+      disabled: true
+    - name: StoreId
+      value: "1"
+    - name: InventoryItemName
+      value: ""
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "50"
+    - name: PriorityId
+      value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Pos/GetOfferInventoryItemsListForPOS"
+      method: GET
+      headers:
+        - name: filters
+          value: InventoryItemId,<long>,CategoryId,<integer>,StoreId,<integer>,InventoryItemName,<string>,CurrentPage,<integer>,NumberOfItemsPerPage,<integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryItemsList": [
+              {
+                "ID": "<long>",
+                "ItemName": "<string>",
+                "ItemCode": "<string>",
+                "Category": "<string>",
+                "CategoryId": "<integer>",
+                "PurchasingUnit": "<string>",
+                "RequestionUnit": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                "CustomPrice": "<double>",
+                "ItemImage": "<string>",
+                "Cost1": "<double>",
+                "Cost2": "<double>",
+                "Cost3": "<double>",
+                "RequestionUOMShortName": "<string>",
+                "Balance": "<double>"
+              },
+              {
+                "ID": "<long>",
+                "ItemName": "<string>",
+                "ItemCode": "<string>",
+                "Category": "<string>",
+                "CategoryId": "<integer>",
+                "PurchasingUnit": "<string>",
+                "RequestionUnit": "<string>",
+                "ConvertRateFromPurchasingToRequestionUnit": "<double>",
+                "CustomPrice": "<double>",
+                "ItemImage": "<string>",
+                "Cost1": "<double>",
+                "Cost2": "<double>",
+                "Cost3": "<double>",
+                "RequestionUOMShortName": "<string>",
+                "Balance": "<double>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            }
+          }

@@ -1,0 +1,36 @@
+info:
+  name: "{{BaseCoreUrl}}/Notification/SendMessageToUser"
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Notification/SendMessageToUser"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "UserIDSList": [
+          1
+        ],
+        "Title": "Test Notification",
+        "Description": "test",
+        "URL": "<string>",
+        "SenderName": "<string>",
+        "SenderImg": "<string>",
+        "SenderImg2": "<string>"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

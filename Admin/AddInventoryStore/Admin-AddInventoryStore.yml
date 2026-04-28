@@ -1,0 +1,123 @@
+info:
+  name: /Admin/AddInventoryStore
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Admin/AddInventoryStore"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: stmark
+  body:
+    type: json
+    data: |-
+      {
+        //"ID": 98986848,
+        "Active": true,
+        "StoreName": "Test Pos",
+        "Tel": "laborum laboris",
+        "Location": "ex sit ea consectetur",
+        "HasPos":true,
+        "AddInventoryStoreKeeperData": [
+          {
+            //"ID": -86488809,
+            //"InventoryStoreID": -93777735,
+            "UserID": -1,
+            "Active": true
+          }
+        ],
+        "AddInventoryStoreLocationData": [
+          {
+            //"ID": 61104686,
+            //"InventoryStoreID": 10903687,
+            "Location": "sunt enim",
+            "Active": false
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Admin/AddInventoryStore"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ID": 98986848,
+            "Active": true,
+            "StoreName": "anim ul",
+            "Tel": "laborum laboris",
+            "Location": "ex sit ea consectetur",
+            "AddInventoryStoreKeeperData": [
+              {
+                "ID": -86488809,
+                "InventoryStoreID": -93777735,
+                "UserID": -27124999,
+                "Active": true
+              },
+              {
+                "ID": 67073603,
+                "InventoryStoreID": -53981749,
+                "UserID": 33130773,
+                "Active": false
+              }
+            ],
+            "AddInventoryStoreLocationData": [
+              {
+                "ID": 61104686,
+                "InventoryStoreID": 10903687,
+                "Location": "sunt enim",
+                "Active": false
+              },
+              {
+                "ID": 86054094,
+                "InventoryStoreID": -71581739,
+                "Location": "proident nostrud cupidatat",
+                "Active": false
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "ad est do s",
+                "ErrorCode": "nulla dolor"
+              },
+              {
+                "ErrorMSG": "in ad cillum ea dolore",
+                "ErrorCode": "officia deserunt"
+              }
+            ],
+            "ID": 91429496
+          }

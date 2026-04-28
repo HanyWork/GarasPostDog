@@ -1,0 +1,112 @@
+info:
+  name: /SalesTarget/GetSalesBranchUserTargetList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/SalesTarget/GetSalesBranchUserTargetList"
+  headers:
+    - name: TargetId
+      value: "14"
+    - name: BranchId
+      value: "4"
+      disabled: true
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesTarget/GetSalesBranchUserTargetList"
+      method: GET
+      headers:
+        - name: TargetId
+          value: <integer>
+        - name: BranchId
+          value: <integer>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SalesBranchUserTargets": [
+              {
+                "BranchID": "<integer>",
+                "BranchName": "<string>",
+                "SalesBranchUserTargetList": [
+                  {
+                    "ID": "<long>",
+                    "UserId": "<long>",
+                    "UserName": "<string>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyID": "<integer>",
+                    "CurrencyName": "<string>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "UserId": "<long>",
+                    "UserName": "<string>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyID": "<integer>",
+                    "CurrencyName": "<string>"
+                  }
+                ]
+              },
+              {
+                "BranchID": "<integer>",
+                "BranchName": "<string>",
+                "SalesBranchUserTargetList": [
+                  {
+                    "ID": "<long>",
+                    "UserId": "<long>",
+                    "UserName": "<string>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyID": "<integer>",
+                    "CurrencyName": "<string>"
+                  },
+                  {
+                    "ID": "<long>",
+                    "UserId": "<long>",
+                    "UserName": "<string>",
+                    "Percentage": "<double>",
+                    "Amount": "<double>",
+                    "CurrencyID": "<integer>",
+                    "CurrencyName": "<string>"
+                  }
+                ]
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

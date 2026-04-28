@@ -1,0 +1,120 @@
+info:
+  name: /Inventory/InventoryItem/GetAccountAndFinanceInventoryItemStockBalance
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/GetAccountAndFinanceInventoryItemStockBalance"
+  headers:
+    - name: InventoryItemID
+      value: "1"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: libmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/GetAccountAndFinanceInventoryItemStockBalance"
+      method: GET
+      headers:
+        - name: InventoryItemID
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "AvailableStock": "<double>",
+              "UOR": "<string>",
+              "Result": "<boolean>",
+              "Errors": [
+                {
+                  "ErrorMSG": "<string>",
+                  "ErrorCode": "<string>"
+                },
+                {
+                  "ErrorMSG": "<string>",
+                  "ErrorCode": "<string>"
+                }
+              ],
+              "InventoryItemMovementList": [
+                {
+                  "No": "<integer>",
+                  "StoreId": "<integer>",
+                  "StoreName": "<string>",
+                  "Comment": "<string>",
+                  "Balance": "<double>",
+                  "LocationBalance": [
+                    {
+                      "LocationId": "<integer>",
+                      "LocationName": "<string>",
+                      "Balance": "<double>"
+                    },
+                    {
+                      "LocationId": "<integer>",
+                      "LocationName": "<string>",
+                      "Balance": "<double>"
+                    }
+                  ],
+                  "ListOfComments": [
+                    "<string>",
+                    "<string>"
+                  ]
+                },
+                {
+                  "No": "<integer>",
+                  "StoreId": "<integer>",
+                  "StoreName": "<string>",
+                  "Comment": "<string>",
+                  "Balance": "<double>",
+                  "LocationBalance": [
+                    {
+                      "LocationId": "<integer>",
+                      "LocationName": "<string>",
+                      "Balance": "<double>"
+                    },
+                    {
+                      "LocationId": "<integer>",
+                      "LocationName": "<string>",
+                      "Balance": "<double>"
+                    }
+                  ],
+                  "ListOfComments": [
+                    "<string>",
+                    "<string>"
+                  ]
+                }
+              ]
+            }
+          }

@@ -1,0 +1,35 @@
+info:
+  name: UpdateTransportationEmployee
+  type: http
+  seq: 40
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/UpdateTransportationEmployee"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Id\": 0,\r
+
+      \    \"TransportationVehicleRouteId\": 0,\r
+
+      \    \"hrUserId\": 0,\r
+
+      \    \"Active\": true,\r
+
+      \    \"TransportationVehicleRouteDirectionId\": 0\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

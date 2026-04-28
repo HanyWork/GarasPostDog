@@ -1,0 +1,7 @@
+info:
+  name: AddHrEmployeeToUser
+  type: folder
+  seq: 31
+
+request:
+  auth: inherit

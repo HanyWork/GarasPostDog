@@ -1,0 +1,7 @@
+info:
+  name: EditTaskMangerProject
+  type: folder
+  seq: 24
+
+request:
+  auth: inherit

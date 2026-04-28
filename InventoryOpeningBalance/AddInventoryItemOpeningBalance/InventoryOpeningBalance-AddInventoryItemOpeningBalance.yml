@@ -1,0 +1,93 @@
+info:
+  name: /InventoryOpeningBalance/AddInventoryItemOpeningBalance
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/InventoryOpeningBalance/AddInventoryItemOpeningBalance"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: sanpeter
+  body:
+    type: json
+    data: |-
+      {
+          "InventoryItemOpeningBalanceHeadList": [
+              {
+                  "InventoryStoreID": "3",
+                  "RecevingData": "07/31/2025",
+                  "ItemList": [
+                      {
+                          "InventoryItemID": "10563",
+                          "QTY": 10,
+                          "Serial": "",
+                          "RateToEGP": "1",
+                          "CurrencyId": "1"
+                      }
+                  ]
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/InventoryOpeningBalance/AddInventoryItemOpeningBalance"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryItemOpeningBalanceHeadList": [
+              {
+                "InventoryStoreID": "<integer>",
+                "RecevingData": "<string>"
+              },
+              {
+                "InventoryStoreID": "<integer>",
+                "RecevingData": "<string>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

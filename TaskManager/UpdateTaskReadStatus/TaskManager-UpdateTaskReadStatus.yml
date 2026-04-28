@@ -1,0 +1,133 @@
+info:
+  name: /TaskManager/UpdateTaskReadStatus
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskManager/UpdateTaskReadStatus"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "ID": 804208
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/TaskManager/UpdateTaskReadStatus"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<integer>",
+            "TaskFlagID": "<integer>",
+            "TaskID": "<integer>",
+            "Status": "<string>",
+            "Priority": "<string>",
+            "Name": "<string>",
+            "Description": "<string>",
+            "ExpireDate": "<string>",
+            "TaskUser": "<string>",
+            "TaskTypeID": "<integer>",
+            "RefrenceNumber": "<string>",
+            "TaskCategory": "<string>",
+            "TaskSubject": "<string>",
+            "BranchID": "<integer>",
+            "TaskPage": "<string>",
+            "Active": "<boolean>",
+            "Flag": "<boolean>",
+            "NeedApproval": "<boolean>",
+            "StoreName": "<string>",
+            "Location": "<string>",
+            "Tel": "<string>",
+            "GroupReply": "<boolean>",
+            "ScreenMonitoring": "<boolean>",
+            "AllowTime": "<boolean>",
+            "ProjectBudget": "<double>",
+            "Currency": "<string>",
+            "Weight": "<double>",
+            "ProjectID": "<long>",
+            "ProjectSprintId": "<long>",
+            "ProjectWorkflowId": "<long>",
+            "taskAttachements": {
+              "Id": "<long>",
+              "FileName": "<string>",
+              "FileExtension": "<string>",
+              "FileContent": "<string>",
+              "FilePath": "<string>",
+              "Category": "<string>",
+              "Active": "<boolean>"
+            },
+            "AddGroupIDsData": [
+              {
+                "GroupID": "<integer>",
+                "PermissionLevelID": "<integer>",
+                "IsGroup": "<boolean>"
+              },
+              {
+                "GroupID": "<integer>",
+                "PermissionLevelID": "<integer>",
+                "IsGroup": "<boolean>"
+              }
+            ],
+            "AddUserIDData": [
+              {
+                "UserID": "<integer>",
+                "IsGroup": "<boolean>",
+                "PermissionLevelID": "<integer>"
+              },
+              {
+                "UserID": "<integer>",
+                "IsGroup": "<boolean>",
+                "PermissionLevelID": "<integer>"
+              }
+            ],
+            "DeleteAttachment": "<boolean>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

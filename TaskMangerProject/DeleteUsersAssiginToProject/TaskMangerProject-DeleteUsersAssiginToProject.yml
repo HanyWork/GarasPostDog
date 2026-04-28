@@ -1,0 +1,26 @@
+info:
+  name: /TaskMangerProject/DeleteUsersAssiginToProject
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/TaskMangerProject/DeleteUsersAssiginToProject"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: "44"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

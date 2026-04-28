@@ -1,0 +1,22 @@
+info:
+  name: DeleteTransportationDirection
+  type: http
+  seq: 45
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/DeleteTransportationDirection"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Id
+      value: "4"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,121 @@
+info:
+  name: /PurchesRequest/GetPurchasingPersonsList
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Purchasing/PurchesRequest/GetPurchasingPersonsList"
+  headers:
+    - name: SearchKey
+      value: mina
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/PurchesRequest/GetPurchasingPersonsList"
+      method: GET
+      headers:
+        - name: SearchKey
+          value: <string>
+        - name: CompName
+          value: <string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "DDLList": [
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "Email": "<string>",
+                "JobTitleName": "<string>",
+                "Department": "<string>",
+                "BranchId": "<integer>",
+                "BranchName": "<string>",
+                "Image": "<string>",
+                "RoleList": [
+                  {
+                    "RoleID": "<integer>",
+                    "RoleName": "<string>"
+                  },
+                  {
+                    "RoleID": "<integer>",
+                    "RoleName": "<string>"
+                  }
+                ],
+                "GroupList": [
+                  {
+                    "GroupID": "<long>",
+                    "GroupName": "<string>"
+                  },
+                  {
+                    "GroupID": "<long>",
+                    "GroupName": "<string>"
+                  }
+                ]
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "Email": "<string>",
+                "JobTitleName": "<string>",
+                "Department": "<string>",
+                "BranchId": "<integer>",
+                "BranchName": "<string>",
+                "Image": "<string>",
+                "RoleList": [
+                  {
+                    "RoleID": "<integer>",
+                    "RoleName": "<string>"
+                  },
+                  {
+                    "RoleID": "<integer>",
+                    "RoleName": "<string>"
+                  }
+                ],
+                "GroupList": [
+                  {
+                    "GroupID": "<long>",
+                    "GroupName": "<string>"
+                  },
+                  {
+                    "GroupID": "<long>",
+                    "GroupName": "<string>"
+                  }
+                ]
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

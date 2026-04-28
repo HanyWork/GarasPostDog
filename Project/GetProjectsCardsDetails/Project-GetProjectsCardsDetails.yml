@@ -1,0 +1,113 @@
+info:
+  name: /Project/GetProjectsCardsDetails
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Project/GetProjectsCardsDetails"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: OfferType
+      value: New Project Offer
+    - name: ProjectsStatus
+      value: open
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "10"
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: ProjectCreationFrom
+      value: 2024-1-1
+      disabled: true
+    - name: ProjectCreationTo
+      value: 2024-2-14
+      disabled: true
+    - name: SalesPersonBranchId
+      value: "4"
+      disabled: true
+    - name: year
+      value: "2022"
+    - name: month
+      value: "4"
+      disabled: true
+    - name: SalesPersonId
+      value: "6"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Project/GetProjectsCardsDetails"
+      method: GET
+      headers:
+        - name: headers
+          value: offerType,<string>,projectsStatus,<string>,currentPage,<integer>,numberOfItemsPerPage,<integer>,projectId,<long>,clientId,<long>,projectOfferTypesFilters,<string>,maintenanceTypesFilters,<string>,location,<string>,salesPersonBranchId,<long>,projectManagerId,<long>,salesPersonId,<long>,branchId,<integer>,month,<integer>,year,<integer>,sortByRemainCollections,<boolean>,sortByRemainType,<boolean>,projectCreationFrom,<string>,projectCreationTo,<string>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ],
+            "projectCardsList": [
+              {
+                "projectId": "<long>",
+                "projectSerial": "<string>",
+                "projectName": "<string>",
+                "clientName": "<string>",
+                "projectStatus": "<string>",
+                "projectExtraModifications": "<double>",
+                "totalProjectPrice": "<double>",
+                "projectType": "<string>",
+                "projectSalesPersonImgUrl": "<string>",
+                "projectSalesPersonName": "<string>"
+              },
+              {
+                "projectId": "<long>",
+                "projectSerial": "<string>",
+                "projectName": "<string>",
+                "clientName": "<string>",
+                "projectStatus": "<string>",
+                "projectExtraModifications": "<double>",
+                "totalProjectPrice": "<double>",
+                "projectType": "<string>",
+                "projectSalesPersonImgUrl": "<string>",
+                "projectSalesPersonName": "<string>"
+              }
+            ],
+            "projectsStatus": "<string>",
+            "projectsType": "<string>",
+            "paginationHeader": {
+              "currentPage": "<integer>",
+              "totalPages": "<integer>",
+              "itemsPerPage": "<integer>",
+              "totalItems": "<integer>"
+            }
+          }

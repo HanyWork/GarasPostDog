@@ -1,0 +1,83 @@
+info:
+  name: /DDL/GetCountriesGovernoratesAreasDDLs
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/DDL/GetCountriesGovernoratesAreasDDLs"
+  headers:
+    - name: Accept
+      value: text/plain
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/DDL/GetCountriesGovernoratesAreasDDLs"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "CountriesDDL": [
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>"
+              }
+            ],
+            "GoverneratesDDL": [
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "CountryId": "<integer>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "CountryId": "<integer>"
+              }
+            ],
+            "AreasDDL": [
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "GovernorateId": "<integer>"
+              },
+              {
+                "ID": "<long>",
+                "Name": "<string>",
+                "GovernorateId": "<integer>"
+              }
+            ],
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

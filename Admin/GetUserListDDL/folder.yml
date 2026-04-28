@@ -1,0 +1,7 @@
+info:
+  name: GetUserListDDL
+  type: folder
+  seq: 68
+
+request:
+  auth: inherit

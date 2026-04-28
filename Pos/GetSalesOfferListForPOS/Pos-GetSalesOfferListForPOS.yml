@@ -1,0 +1,670 @@
+info:
+  name: /Pos/GetSalesOfferListForPOS
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Pos/GetSalesOfferListForPOS"
+  headers:
+    - name: OfferType
+      value: POS
+      disabled: true
+    - name: ClientName
+      value: magn
+      disabled: true
+    - name: OfferStatus
+      value: Closed
+    - name: From
+      value: 2025-07-01 12:00 AM
+    - name: To
+      value: 2025-07-20 11:59 PM
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "200"
+    - name: SearchKey
+      value: magn
+      disabled: true
+    - name: CreatorUserId
+      value: "20065"
+      disabled: true
+    - name: SalesOfferClassifiction
+      value: POS
+    - name: StoreId
+      value: "2019"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: uQd7Uky0TC%2fFJ2XS0rCozw%3d%3d
+    - name: CompanyName
+      value: stmark
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Pos/GetSalesOfferListForPOS?OfferStatusParam=magn"
+      method: POST
+      headers:
+        - name: OfferType
+          value: magn
+        - name: ClientName
+          value: magn
+        - name: OfferStatus
+          value: magn
+        - name: From
+          value: 1976-03-23T15:32:20.687Z
+        - name: To
+          value: 1976-03-23T15:32:20.687Z
+        - name: CurrentPage
+          value: "29446694"
+        - name: NumberOfItemsPerPage
+          value: "29446694"
+        - name: SearchKey
+          value: magn
+        - name: CreatorUserId
+          value: "-62611377"
+        - name: SalesOfferClassifiction
+          value: magn
+        - name: StoreId
+          value: "-62611377"
+        - name: Accept
+          value: text/plain
+      params:
+        - name: OfferStatusParam
+          value: magn
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SalesOfferList": {
+              "SalesOfferList": [
+                {
+                  "Id": 43341189,
+                  "OfferSerial": "aliqua commodo",
+                  "ContactPersonName": "minim proident",
+                  "ContactPersonEmail": "sunt laborum",
+                  "ContactPersonMobile": "et tempor es",
+                  "ClientId": -14626968,
+                  "ClientName": "tempor aute",
+                  "ParentSalesOfferID": -22407376,
+                  "ParentSalesOfferSerial": "nostrud magna irure sit aliquip",
+                  "CreatorName": "commodo fugiat Lorem ea",
+                  "CreationDate": "deserunt sit",
+                  "OfferType": "ad enim",
+                  "CreationTime": "in velit dolor",
+                  "FinalOfferPrice": -50277509.92417297,
+                  "RemainPrice": 37052751.700056285,
+                  "TeamId": 32954225,
+                  "TeamName": "Ut ex ullamco dolor",
+                  "ChildrenSalesOfferList": [
+                    {
+                      "SalesOfferId": -61605636,
+                      "SalesOfferSerial": "reprehenderit sunt aliquip consectetur nisi",
+                      "TotalPrice": 8564556.02487652,
+                      "CreationDate": "ipsum dolor minim do consequat"
+                    },
+                    {
+                      "SalesOfferId": -66483950,
+                      "SalesOfferSerial": "dolor laborum",
+                      "TotalPrice": 35894932.94738594,
+                      "CreationDate": "dolor anim est"
+                    }
+                  ]
+                },
+                {
+                  "Id": -83543075,
+                  "OfferSerial": "Excepteur Lorem",
+                  "ContactPersonName": "veniam proident ipsum",
+                  "ContactPersonEmail": "laboris deserunt",
+                  "ContactPersonMobile": "labore anim amet occaecat",
+                  "ClientId": 64909031,
+                  "ClientName": "minim voluptate mollit deserunt culpa",
+                  "ParentSalesOfferID": -69747218,
+                  "ParentSalesOfferSerial": "velit in",
+                  "CreatorName": "aute sit",
+                  "CreationDate": "do in exercitation nulla",
+                  "OfferType": "commodo",
+                  "CreationTime": "dolor tempor",
+                  "FinalOfferPrice": -65332957.776059695,
+                  "RemainPrice": 78627515.29841498,
+                  "TeamId": 59049046,
+                  "TeamName": "in nulla Duis mollit",
+                  "ChildrenSalesOfferList": [
+                    {
+                      "SalesOfferId": -47181881,
+                      "SalesOfferSerial": "tempor nostr",
+                      "TotalPrice": -8478443.392014071,
+                      "CreationDate": "cupidatat cillum magna"
+                    },
+                    {
+                      "SalesOfferId": 4516624,
+                      "SalesOfferSerial": "fugiat ut",
+                      "TotalPrice": 54596049.83294487,
+                      "CreationDate": "aliquip sint esse"
+                    }
+                  ]
+                }
+              ],
+              "TotalOffersCount": -41454878,
+              "TotalOffersPrice": 98655938.72725561
+            },
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "oc",
+                "ErrorCode": "reprehenderit"
+              },
+              {
+                "ErrorMSG": "pariatur do Excepteur",
+                "ErrorCode": "dolor"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": -14864637,
+              "TotalPages": -48665567,
+              "ItemsPerPage": 64760402,
+              "TotalItems": 11938554
+            }
+          }
+  - name: /Pos/GetSalesOfferListForPOS
+    request:
+      url: "{{BaseCoreUrl}}/Pos/GetSalesOfferListForPOS"
+      method: GET
+      headers:
+        - name: OfferType
+          value: POS
+        - name: ClientName
+          value: magn
+          disabled: true
+        - name: OfferStatus
+          value: Closed
+          disabled: true
+        - name: From
+          value: 2025-07-13 12:00 AM
+          disabled: true
+        - name: To
+          value: 2025-07-13 11:59 PM
+          disabled: true
+        - name: CurrentPage
+          value: "1"
+        - name: NumberOfItemsPerPage
+          value: "20"
+        - name: SearchKey
+          value: magn
+          disabled: true
+        - name: CreatorUserId
+          value: "1"
+        - name: SalesOfferClassifiction
+          value: POS
+          disabled: true
+        - name: StoreId
+          value: "2019"
+          disabled: true
+        - name: Accept
+          value: text/plain
+        - name: UserToken
+          value: "{{UserToken}}"
+        - name: CompanyName
+          value: garastest
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 17 Jul 2025 13:30:31 GMT
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: Server
+          value: cloudflare
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Cf-Cache-Status
+          value: DYNAMIC
+        - name: Nel
+          value: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+        - name: Report-To
+          value: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=EM35geNybgfMk4Bh64lK17qpFQHH%2BZCQy0iCg66k58TPqiclXJ2udpKE%2BMWONYHSviwpSDxmM%2BWEUsnbNcWFRYE6wjPtBV8wicmST6g4VBiX0zrCE6%2FjJgqKvsc%3D"}]}'
+        - name: Content-Encoding
+          value: br
+        - name: CF-RAY
+          value: 960a181d0a8f73b7-MRS
+        - name: alt-svc
+          value: h3=":443"; ma=86400
+      body:
+        type: json
+        data: |-
+          {
+              "SalesOfferList": {
+                  "SalesOfferList": [
+                      {
+                          "Id": 312834,
+                          "OfferSerial": "#177693-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:24:51 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 5,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312831,
+                          "OfferSerial": "#177690-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:24:19 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 6,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312829,
+                          "OfferSerial": "#177688-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:23:25 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 100,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312828,
+                          "OfferSerial": "#177687-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:22:12 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 13,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312825,
+                          "OfferSerial": "#177684-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:16:34 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 10,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312824,
+                          "OfferSerial": "#177683-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:15:28 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 34,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312823,
+                          "OfferSerial": "#177682-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:14:41 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 12,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312822,
+                          "OfferSerial": "#177681-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:13:43 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 20,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312821,
+                          "OfferSerial": "#177680-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:13:03 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 84,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312819,
+                          "OfferSerial": "#177678-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:11:00 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 6,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312818,
+                          "OfferSerial": "#177677-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "عطية عطية",
+                          "CreationDate": "7/17/2025 12:08:59 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 6,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312817,
+                          "OfferSerial": "#177676-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "عطية عطية",
+                          "CreationDate": "7/17/2025 12:07:53 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 5,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312816,
+                          "OfferSerial": "#177675-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "دميانة  ",
+                          "CreationDate": "7/17/2025 12:06:26 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 6,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312815,
+                          "OfferSerial": "#177674-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:06:07 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 5,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312814,
+                          "OfferSerial": "#177673-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:05:30 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 30,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312813,
+                          "OfferSerial": "#177672-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:04:42 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 10,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312812,
+                          "OfferSerial": "#177671-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:04:08 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 20,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312811,
+                          "OfferSerial": "#177670-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10355,
+                          "ClientName": "مريض عناية ",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "دميانة  ",
+                          "CreationDate": "7/17/2025 12:03:47 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 20,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312810,
+                          "OfferSerial": "#177669-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "جيهان  ",
+                          "CreationDate": "7/17/2025 12:03:09 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 7,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      },
+                      {
+                          "Id": 312809,
+                          "OfferSerial": "#177668-7-2025",
+                          "ContactPersonName": null,
+                          "ContactPersonEmail": null,
+                          "ContactPersonMobile": null,
+                          "ClientId": 10334,
+                          "ClientName": "مستشفى مارمرقس",
+                          "ParentSalesOfferID": null,
+                          "ParentSalesOfferSerial": "",
+                          "CreatorName": "دميانة  ",
+                          "CreationDate": "7/17/2025 12:02:56 PM",
+                          "OfferType": "POS",
+                          "CreationTime": null,
+                          "FinalOfferPrice": 46,
+                          "RemainPrice": 0,
+                          "TeamId": null,
+                          "TeamName": null,
+                          "ChildrenSalesOfferList": []
+                      }
+                  ],
+                  "TotalOffersCount": 164046,
+                  "TotalOffersPrice": 2782060.165
+              },
+              "Result": true,
+              "Errors": [],
+              "PaginationHeader": {
+                  "CurrentPage": 1,
+                  "TotalPages": 8203,
+                  "ItemsPerPage": 20,
+                  "TotalItems": 164046
+              }
+          }

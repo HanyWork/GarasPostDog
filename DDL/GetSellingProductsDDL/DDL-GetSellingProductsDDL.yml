@@ -1,0 +1,63 @@
+info:
+  name: /DDL/GetSellingProductsDDL
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/DDL/GetSellingProductsDDL"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinapltq
+    - name: UserToken
+      value: "{{UserToken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/DDL/GetSellingProductsDDL"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "SellingProductsDDL": [
+              {
+                "ID": 61110750,
+                "Name": "aliquip occaecat anim"
+              },
+              {
+                "ID": 59552166,
+                "Name": "aute velit sed commodo co"
+              }
+            ],
+            "Result": true,
+            "Errors": [
+              {
+                "ErrorMSG": "Lorem sint",
+                "ErrorCode": "eu ad"
+              },
+              {
+                "ErrorMSG": "esse ea ad irure",
+                "ErrorCode": "sed sit"
+              }
+            ]
+          }

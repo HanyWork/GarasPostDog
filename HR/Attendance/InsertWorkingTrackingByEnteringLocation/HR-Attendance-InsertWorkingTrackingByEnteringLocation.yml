@@ -1,0 +1,108 @@
+info:
+  name: /HR/Attendance/InsertWorkingTrackingByEnteringLocation
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/Attendance/InsertWorkingTrackingByEnteringLocation"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: multipart-form
+    data:
+      - name: Id
+        type: text
+        value: <long>
+        disabled: true
+      - name: UserId
+        type: text
+        value: "21"
+      - name: Date
+        type: text
+        value: 2024-5-23
+      - name: TotalHours
+        type: text
+        value: ""
+        disabled: true
+      - name: CheckIn
+        type: text
+        value: 08:00 AM
+      - name: Longitude
+        type: text
+        value: 364,000
+      - name: Latitude
+        type: text
+        value: 288,200
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/InsertWorkingTrackingByEnteringLocation"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: Id
+            type: text
+            value: <long>
+          - name: UserId
+            type: text
+            value: <long>
+          - name: Date
+            type: text
+            value: <dateTime>
+          - name: TotalHours
+            type: text
+            value: "[object Object]"
+          - name: CheckIn
+            type: text
+            value: "[object Object]"
+          - name: Longitude
+            type: text
+            value: <double>
+          - name: Latitude
+            type: text
+            value: <double>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

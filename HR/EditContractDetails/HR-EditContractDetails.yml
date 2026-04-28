@@ -1,0 +1,85 @@
+info:
+  name: /HR/EditContractDetails
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/EditContractDetails"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: marinaplt
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "Id":6,
+          "ContactTypeID":1,
+          "StartDate":"2024-1-21",
+          "EndDate":"2025-1-21",
+          "ProbationPeriod":1,
+          "NoticedByEmployee":1,
+          "NoticedByCompany":1,
+          "IsAllowOverTime":false,
+          "IsAutomatic":false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/EditContractDetails"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<long>",
+            "contactTypeID": "<integer>",
+            "startDate": "<string>",
+            "endDate": "<string>",
+            "probationPeriod": "<integer>",
+            "noticedByEmployee": "<integer>",
+            "noticedByCompany": "<integer>",
+            "isAllowOverTime": "<boolean>",
+            "isAutomatic": "<boolean>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "result": "<boolean>",
+            "errors": [
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              },
+              {
+                "errorMSG": "<string>",
+                "errorCode": "<string>"
+              }
+            ]
+          }

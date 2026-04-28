@@ -1,0 +1,46 @@
+info:
+  name: GetMatrialReleaseIndexList
+  type: http
+  seq: 42
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/InventoryMatrialReleaseForBY/GetMatrialReleaseIndexList"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+    - name: StoreId
+      value: "1"
+      disabled: true
+    - name: StatusList
+      value: Not Finished Yet
+      description: List Of Status
+      disabled: true
+    - name: StoreKeeperUserId
+      value: "1"
+      disabled: true
+    - name: FirstName
+      value: ""
+      disabled: true
+    - name: LastName
+      value: ""
+      disabled: true
+    - name: InsuranceNum
+      value: "121"
+      disabled: true
+    - name: ReleaseDate
+      value: 2024-4-15
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "2"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,54 @@
+info:
+  name: Stmark
+  type: http
+  seq: 48
+
+http:
+  method: POST
+  url: https://hanyadib404.bsite.net/api/Stmark/UploadFormDataAsync
+  headers:
+    - name: UserId
+      value: "1"
+    - name: CompanyName
+      value: garastest
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: chatId
+        type: text
+        value: "201227240954"
+        description: هذا الحقل مطلوب
+      - name: caption
+        type: text
+        value: stmark
+        description: هذا الحقل مطلوب
+      - name: file
+        type: file
+        value:
+          - postman-cloud:///1efd2928-a2ab-4e90-a981-a4227fb531cc
+        description: هذا الحقل مطلوب
+      - name: Name
+        type: text
+        value: test
+        description: هذا الحقل مطلوب
+      - name: NameLab
+        type: text
+        value: "تحليل دم "
+        description: اختياري
+      - name: "Cost "
+        type: text
+        value: "45"
+        description: اختياري
+      - name: fileName
+        type: text
+        value: stmark.rtf
+        description: اختياري وعندما يكتب ينتهي .pdf
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

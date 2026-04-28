@@ -1,0 +1,168 @@
+info:
+  name: /Inventory/InventoryMaterialRequest/GetInventoryItemMatrialRequestInfo
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/InventoryMaterialRequest/GetInventoryItemMatrialRequestInfo"
+  headers:
+    - name: MatrialRequestOrderID
+      value: "355728"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryMaterialRequest/GetInventoryItemMatrialRequestInfo?creator=<long>"
+      method: GET
+      headers:
+        - name: MatrialRequestOrderID
+          value: <long>
+        - name: Accept
+          value: text/plain
+      params:
+        - name: creator
+          value: <long>
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "InventoryItemInfo": {
+              "InventoryMatrialRequestOrderID": "<long>",
+              "FromUserId": "<long>",
+              "FromUserName": "<string>",
+              "UserDept": "<string>",
+              "RequestTypeId": "<long>",
+              "RequestType": "<string>",
+              "ToStoreId": "<integer>",
+              "ToStore": "<string>",
+              "CreationDate": "<string>",
+              "RequestDate": "<string>",
+              "CanCreateRelease": "<boolean>",
+              "CanCreatePR": "<boolean>",
+              "Status": "<string>",
+              "MatrialRequestInfoList": [
+                {
+                  "InventoryMatrialRequestID": "<long>",
+                  "InventoryMatrialRequestItemID": "<long>",
+                  "MatrialRequestItemIsHold": "<boolean>",
+                  "MatrialRequestStatus": "<string>",
+                  "InventoryItemID": "<long>",
+                  "ItemName": "<string>",
+                  "ItemCode": "<string>",
+                  "ReqQTY": "<string>",
+                  "HoldReleaseQTY": "<string>",
+                  "StockBalance": "<double>",
+                  "UOM": "<string>",
+                  "Comment": "<string>",
+                  "ProjectName": "<string>",
+                  "ClientName": "<string>",
+                  "FabOrderName": "<string>",
+                  "ProductSerial": "<string>",
+                  "IDSOrderReleaseList": [
+                    {
+                      "Id": "<long>",
+                      "Qty": "<double>"
+                    },
+                    {
+                      "Id": "<long>",
+                      "Qty": "<double>"
+                    }
+                  ],
+                  "IDSpurchaseRequestList": [
+                    {
+                      "Id": "<long>",
+                      "Qty": "<double>"
+                    },
+                    {
+                      "Id": "<long>",
+                      "Qty": "<double>"
+                    }
+                  ],
+                  "InventoryStoreItemIDsList": [
+                    "<long>",
+                    "<long>"
+                  ],
+                  "ProjectSerial": "<string>",
+                  "ProjectId": "<long>",
+                  "FabricationOrderId": "<long>"
+                },
+                {
+                  "InventoryMatrialRequestID": "<long>",
+                  "InventoryMatrialRequestItemID": "<long>",
+                  "MatrialRequestItemIsHold": "<boolean>",
+                  "MatrialRequestStatus": "<string>",
+                  "InventoryItemID": "<long>",
+                  "ItemName": "<string>",
+                  "ItemCode": "<string>",
+                  "ReqQTY": "<string>",
+                  "HoldReleaseQTY": "<string>",
+                  "StockBalance": "<double>",
+                  "UOM": "<string>",
+                  "Comment": "<string>",
+                  "ProjectName": "<string>",
+                  "ClientName": "<string>",
+                  "FabOrderName": "<string>",
+                  "ProductSerial": "<string>",
+                  "IDSOrderReleaseList": [
+                    {
+                      "Id": "<long>",
+                      "Qty": "<double>"
+                    },
+                    {
+                      "Id": "<long>",
+                      "Qty": "<double>"
+                    }
+                  ],
+                  "IDSpurchaseRequestList": [
+                    {
+                      "Id": "<long>",
+                      "Qty": "<double>"
+                    },
+                    {
+                      "Id": "<long>",
+                      "Qty": "<double>"
+                    }
+                  ],
+                  "InventoryStoreItemIDsList": [
+                    "<long>",
+                    "<long>"
+                  ],
+                  "ProjectSerial": "<string>",
+                  "ProjectId": "<long>",
+                  "FabricationOrderId": "<long>"
+                }
+              ]
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

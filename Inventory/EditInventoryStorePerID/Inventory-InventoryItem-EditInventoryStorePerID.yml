@@ -1,0 +1,115 @@
+info:
+  name: /Inventory/InventoryItem/EditInventoryStorePerID
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItem/EditInventoryStorePerID"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: stmark
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "ID": "2018",
+          "StoreName": "كانتين وبوفية الاسنان",
+          "Active": true,
+          "Location": "الاسنان",
+          "Tel": "133",
+          "HasPos":true,
+          "editInventoryStoreKeeperData": [],
+          "editInventoryStoreLocationData": [
+              {
+                  "Location": "الاسنان",
+                  "Active": true,
+                  "ID": "29"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/InventoryItem/EditInventoryStorePerID"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<integer>",
+            "Active": "<boolean>",
+            "StoreName": "<string>",
+            "Location": "<string>",
+            "Tel": "<string>",
+            "EditInventoryStoreKeeperData": [
+              {
+                "ID": "<integer>",
+                "InventoryStoreID": "<integer>",
+                "UserID": "<integer>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<integer>",
+                "InventoryStoreID": "<integer>",
+                "UserID": "<integer>",
+                "Active": "<boolean>"
+              }
+            ],
+            "editInventoryStoreLocationData": [
+              {
+                "ID": "<integer>",
+                "InventoryStoreID": "<integer>",
+                "Location": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "ID": "<integer>",
+                "InventoryStoreID": "<integer>",
+                "Location": "<string>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

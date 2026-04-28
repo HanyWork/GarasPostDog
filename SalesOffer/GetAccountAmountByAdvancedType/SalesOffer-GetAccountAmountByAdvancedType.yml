@@ -1,0 +1,66 @@
+info:
+  name: /SalesOffer/GetAccountAmountByAdvancedType
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/GetAccountAmountByAdvancedType"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: proauto
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: Year
+      value: "2024"
+    - name: ByEntryDate
+      value: "false"
+    - name: AccountCategoryId
+      value: "1"
+    - name: AdvancedTypeId
+      value: "7"
+      disabled: true
+    - name: BranchId
+      value: "5"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/SalesOffer/GetAccountAmountByAdvancedType"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": "<string>"
+          }

@@ -1,0 +1,7 @@
+info:
+  name: GetAttendanceByDay
+  type: folder
+  seq: 19
+
+request:
+  auth: inherit

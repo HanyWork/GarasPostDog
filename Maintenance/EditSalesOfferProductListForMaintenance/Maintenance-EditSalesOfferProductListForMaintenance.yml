@@ -1,0 +1,187 @@
+info:
+  name: /Maintenance/EditSalesOfferProductListForMaintenance
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Maintenance/EditSalesOfferProductListForMaintenance"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: elite
+  body:
+    type: json
+    data: |-
+      {
+          "offerId": "51558",
+          "AssginTo": "10013",
+          "productList": [
+              {
+                  "SalesOfferProductId": "37866",
+                  "Quantity": 5,
+                  "Active": true,
+                  "InventoryItemId": "22154",
+                  "InventoryItemCategoryId": "2022",
+                  "ItemPrice": 100,
+                  "FinalPrice": 500,
+                  "DiscountPercentage": 0,
+                  "DiscountValue": 0,
+                  "ItemPricingComment": "N/A",
+                  "ProfitPercentage": "0.00000",
+                  "SalesOfferProductAttachments": [],
+                  "ConfirmReceivingComment" : "test"
+              },
+              {
+                  "SalesOfferProductId": "37867",
+                  "Quantity": 5,
+                  "Active": true,
+                  "InventoryItemId": "22154",
+                  "InventoryItemCategoryId": "2022",
+                  "ItemPrice": 100,
+                  "FinalPrice": 500,
+                  "DiscountPercentage": 0,
+                  "DiscountValue": 0,
+                  "ItemPricingComment": "N/A",
+                  "ProfitPercentage": "0.00000",
+                  "SalesOfferProductAttachments": [],
+                  "ConfirmReceivingComment" : "test"
+              },
+              {
+                  "Quantity": 6,
+                  "Active": true,
+                  "InventoryItemId": "22159",
+                  "InventoryItemCategoryId": "2020",
+                  "ItemPrice": 50,
+                  "FinalPrice": 300,
+                  "DiscountPercentage": 0,
+                  "DiscountValue": 0,
+                  "ItemPricingComment": "",
+                  "ProfitPercentage": "0",
+                  "SalesOfferProductAttachments": [],
+                  "ConfirmReceivingComment" : "test"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/EditSalesOfferProductListForMaintenance"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "offerId": "<long>",
+            "productList": [
+              {
+                "SalesOfferProductId": "<long>",
+                "ParentOfferProductId": "<long>",
+                "ProductId": "<long>",
+                "ProductGroupId": "<integer>",
+                "Quantity": "<double>",
+                "ReturnedQty": "<double>",
+                "RemainQty": "<double>",
+                "ReleasedQty": "<double>",
+                "ReleasedPercentage": "<string>",
+                "ProfitPercentage": "<double>",
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "CommercialName": "<string>",
+                "InventoryItemUOM": "<string>",
+                "InventoryItemPartNO": "<string>",
+                "InventoryItemCategoryId": "<integer>",
+                "InventoryItemCategoryName": "<string>",
+                "ItemPrice": "<double>",
+                "ItemPricingComment": "<string>",
+                "ConfirmReceivingQuantity": "<double>",
+                "ConfirmReceivingComment": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "FinalPrice": "<double>",
+                "FinalPriceWithoutTax": "<double>",
+                "TotalTaxValue": "<double>",
+                "Active": "<boolean>"
+              },
+              {
+                "SalesOfferProductId": "<long>",
+                "ParentOfferProductId": "<long>",
+                "ProductId": "<long>",
+                "ProductGroupId": "<integer>",
+                "Quantity": "<double>",
+                "ReturnedQty": "<double>",
+                "RemainQty": "<double>",
+                "ReleasedQty": "<double>",
+                "ReleasedPercentage": "<string>",
+                "ProfitPercentage": "<double>",
+                "InventoryItemId": "<long>",
+                "InventoryItemName": "<string>",
+                "InventoryItemCode": "<string>",
+                "CommercialName": "<string>",
+                "InventoryItemUOM": "<string>",
+                "InventoryItemPartNO": "<string>",
+                "InventoryItemCategoryId": "<integer>",
+                "InventoryItemCategoryName": "<string>",
+                "ItemPrice": "<double>",
+                "ItemPricingComment": "<string>",
+                "ConfirmReceivingQuantity": "<double>",
+                "ConfirmReceivingComment": "<string>",
+                "InvoicePayerClientId": "<long>",
+                "InvoicePayerClientName": "<string>",
+                "DiscountPercentage": "<double>",
+                "DiscountValue": "<double>",
+                "TaxPercentage": "<double>",
+                "TaxValue": "<double>",
+                "FinalPrice": "<double>",
+                "FinalPriceWithoutTax": "<double>",
+                "TotalTaxValue": "<double>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

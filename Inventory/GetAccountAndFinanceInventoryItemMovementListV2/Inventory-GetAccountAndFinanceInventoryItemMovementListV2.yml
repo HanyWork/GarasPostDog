@@ -1,0 +1,163 @@
+info:
+  name: /Inventory/GetAccountAndFinanceInventoryItemMovementListV2
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Inventory/GetAccountAndFinanceInventoryItemMovementListV2"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: marinaplt
+    - name: InventoryItemID
+      value: "2"
+    - name: FromDate
+      value: 2021-1-1
+      disabled: true
+    - name: ToDate
+      value: 2022-6-1
+      disabled: true
+    - name: ClientId
+      value: "1"
+      disabled: true
+    - name: SupplierId
+      value: "1"
+      disabled: true
+    - name: PoId
+      value: "1"
+      disabled: true
+    - name: ProjectId
+      value: "1"
+      disabled: true
+    - name: OperationType
+      value: release
+      disabled: true
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "10"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Inventory/GetAccountAndFinanceInventoryItemMovementListV2"
+      method: GET
+      headers:
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "DateFrom": "<string>",
+            "DateTo": "<string>",
+            "ReleaseQty": "<double>",
+            "NoOfMonth": "<double>",
+            "ReleaseRate": "<double>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "InventoryItemMovementList": [
+              {
+                "DateFilter": "<dateTime>",
+                "Date": "<string>",
+                "CreationDate": "<string>",
+                "StoreName": "<string>",
+                "OrderID": "<long>",
+                "OperationType": "<string>",
+                "Qty": "<double>",
+                "HoldQty": "<double>",
+                "HoldComment": "<string>",
+                "ReqUOM": "<string>",
+                "CumilativeQty": "<double>",
+                "FromUser": "<string>",
+                "FromSupplier": "<string>",
+                "FromDepartment": "<string>",
+                "OrderType": "<string>",
+                "ID": "<long>",
+                "ParentID": "<long>",
+                "POID": "<long>",
+                "ExpDate": "<string>",
+                "ItemSerial": "<string>",
+                "RemainBalance": "<double>",
+                "CurrencyId": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "POInvoicePriceEGP": "<double>",
+                "POInvoiceUnitCostEGP": "<double>",
+                "remainItemCostEGP": "<double>",
+                "remainItemCostOtherCU": "<double>",
+                "ProjectName": "<string>",
+                "ClientName": "<string>",
+                "ClientId": "<long>",
+                "SupplierId": "<long>",
+                "ProjectId": "<long>"
+              },
+              {
+                "DateFilter": "<dateTime>",
+                "Date": "<string>",
+                "CreationDate": "<string>",
+                "StoreName": "<string>",
+                "OrderID": "<long>",
+                "OperationType": "<string>",
+                "Qty": "<double>",
+                "HoldQty": "<double>",
+                "HoldComment": "<string>",
+                "ReqUOM": "<string>",
+                "CumilativeQty": "<double>",
+                "FromUser": "<string>",
+                "FromSupplier": "<string>",
+                "FromDepartment": "<string>",
+                "OrderType": "<string>",
+                "ID": "<long>",
+                "ParentID": "<long>",
+                "POID": "<long>",
+                "ExpDate": "<string>",
+                "ItemSerial": "<string>",
+                "RemainBalance": "<double>",
+                "CurrencyId": "<integer>",
+                "CurrencyName": "<string>",
+                "RateToEGP": "<double>",
+                "POInvoicePriceEGP": "<double>",
+                "POInvoiceUnitCostEGP": "<double>",
+                "remainItemCostEGP": "<double>",
+                "remainItemCostOtherCU": "<double>",
+                "ProjectName": "<string>",
+                "ClientName": "<string>",
+                "ClientId": "<long>",
+                "SupplierId": "<long>",
+                "ProjectId": "<long>"
+              }
+            ],
+            "PaginationHeader": {
+              "CurrentPage": "<integer>",
+              "TotalPages": "<integer>",
+              "ItemsPerPage": "<integer>",
+              "TotalItems": "<integer>"
+            }
+          }

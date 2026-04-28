@@ -1,0 +1,88 @@
+info:
+  name: /Maintenance/GetSalesOfferOfMaintenance
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Maintenance/GetSalesOfferOfMaintenance"
+  headers:
+    - name: OfferId
+      value: "41556"
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: elite
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: StoreId
+      value: "2006"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Maintenance/GetSalesOfferOfMaintenance"
+      method: GET
+      headers:
+        - name: OfferId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "OfferId": "<long>",
+              "StartDate": "<string>",
+              "EndDate": "<string>",
+              "ClientId": "<long>",
+              "WorkerOrder": "<string>",
+              "SalesPersonId": "<long>",
+              "ContactPersonName": "<string>",
+              "ContactPersonMobile": "<string>",
+              "ContactPersonEmail": "<string>",
+              "ProjectLocation": "<string>",
+              "ProductFabricator": "<string>",
+              "Maintenances": [
+                {
+                  "Id": "<long>",
+                  "ProductName": "<string>",
+                  "ProductBrand": "<string>",
+                  "Problem": "<string>",
+                  "Active": "<boolean>"
+                },
+                {
+                  "Id": "<long>",
+                  "ProductName": "<string>",
+                  "ProductBrand": "<string>",
+                  "Problem": "<string>",
+                  "Active": "<boolean>"
+                }
+              ]
+            }
+          }

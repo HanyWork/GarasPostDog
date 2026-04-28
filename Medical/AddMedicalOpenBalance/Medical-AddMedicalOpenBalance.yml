@@ -1,0 +1,72 @@
+info:
+  name: /Medical/AddMedicalOpenBalance
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddMedicalOpenBalance"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "OpeningBalance": 0,
+        "PosNumberId": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Medical/AddMedicalOpenBalance"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "OpeningBalance": -80232045.45474964,
+            "PosNumberId": -18113507
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": false,
+            "Errors": [
+              {
+                "ErrorMSG": "sed sint id tempor",
+                "ErrorCode": "eiusmod fugiat reprehenderit"
+              },
+              {
+                "ErrorMSG": "aliqua dolore",
+                "ErrorCode": "consequat esse"
+              }
+            ],
+            "ID": -45021073
+          }

@@ -1,0 +1,39 @@
+info:
+  name: UpdateTransportationRoute
+  type: http
+  seq: 38
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/TransportationLine/UpdateTransportationRoute"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"Id\": 4,\r
+
+      \  \"TransportationLineId\": 3,\r
+
+      \  \"SupplierId\": 30,\r
+
+      \  \"SupplierContactPersonId\": 31,\r
+
+      \  \"BranchScheduleId\": 10225,\r
+
+      \  \"PeriodTo\": \"2025-07-04T13:58:46.156Z\",\r
+
+      \  \"Active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

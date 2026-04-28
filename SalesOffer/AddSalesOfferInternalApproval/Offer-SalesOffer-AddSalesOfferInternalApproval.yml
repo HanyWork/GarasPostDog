@@ -1,0 +1,136 @@
+info:
+  name: /Offer/SalesOffer/AddSalesOfferInternalApproval
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Offer/SalesOffer/AddSalesOfferInternalApproval"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+          "SalesOfferInternalApporvalList": [
+              {
+                  "Id": "34875",
+                  "SalesOfferId": "41634",
+                  "Type": "Head Of Sales",
+                  "UserId": "1",
+                  "ByUserId": "1",
+                  "Reply": "Approved",
+                  "Date": "2025-03-25",
+                  "Comment": ""
+              },
+              {
+                  "Id": "34874",
+                  "SalesOfferId": "41634",
+                  "Type": "Technical",
+                  "UserId": "1",
+                  "ByUserId": "1",
+                  "Reply": "Approved",
+                  "Date": "2025-03-25",
+                  "Comment": ""
+              },
+              {
+                  "Id": "34873",
+                  "SalesOfferId": "41634",
+                  "Type": "Pricing",
+                  "UserId": "1",
+                  "ByUserId": "1",
+                  "Reply": "Approved",
+                  "Date": "2025-03-25",
+                  "Comment": ""
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Offer/SalesOffer/AddSalesOfferInternalApproval"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "SalesOfferInternalApporvalList": [
+              {
+                "Id": "<long>",
+                "SalesOfferId": "<long>",
+                "Type": "<string>",
+                "UserId": "<string>",
+                "UserName": "<string>",
+                "GroupId": "<long>",
+                "GroupName": "<string>",
+                "ByUserId": "<string>",
+                "ByUserName": "<string>",
+                "Reply": "<string>",
+                "Comment": "<string>",
+                "Date": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              },
+              {
+                "Id": "<long>",
+                "SalesOfferId": "<long>",
+                "Type": "<string>",
+                "UserId": "<string>",
+                "UserName": "<string>",
+                "GroupId": "<long>",
+                "GroupName": "<string>",
+                "ByUserId": "<string>",
+                "ByUserName": "<string>",
+                "Reply": "<string>",
+                "Comment": "<string>",
+                "Date": "<string>",
+                "CreatedBy": "<string>",
+                "ModifiedBy": "<string>",
+                "Active": "<boolean>"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

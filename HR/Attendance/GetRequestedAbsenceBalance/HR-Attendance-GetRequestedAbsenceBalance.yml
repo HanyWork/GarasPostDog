@@ -1,0 +1,64 @@
+info:
+  name: /HR/Attendance/GetRequestedAbsenceBalance
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/HR/Attendance/GetRequestedAbsenceBalance"
+  headers:
+    - name: requestId
+      value: "40"
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: PERITI
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/Attendance/GetRequestedAbsenceBalance"
+      method: GET
+      headers:
+        - name: AttendanceId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "Data": {
+              "HrUserId": "<long>",
+              "UserName": "<string>",
+              "AbsenceTypeId": "<integer>",
+              "AbsenceName": "<string>",
+              "Balance": "<integer>"
+            }
+          }

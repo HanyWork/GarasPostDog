@@ -1,0 +1,7 @@
+info:
+  name: GetTermsCategoryDDL
+  type: folder
+  seq: 79
+
+request:
+  auth: inherit

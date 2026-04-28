@@ -1,0 +1,43 @@
+info:
+  name: EditMedicalExaminationOffer
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Medical/AddMedicalExaminationOffer"
+  headers:
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: periti
+  body:
+    type: json
+    data: "{\r
+
+      \  \"ID\": 1,\r
+
+      \  \"DoctorID\": 11,\r
+
+      \  \"OfferName\": \"Annual Health Checkup Offer\",\r
+
+      \  \"Percentage\": 15.50,\r
+
+      \  \"Amount\": 200.00,\r
+
+      \  \"StartDate\": \"2025-02-01\",\r
+
+      \  \"EndDate\": \"2025-12-31T23:59:59\",\r
+
+      \  \"Active\": true\r
+
+      \  \r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

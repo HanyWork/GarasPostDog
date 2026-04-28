@@ -1,0 +1,7 @@
+info:
+  name: AddGroupRole
+  type: folder
+  seq: 53
+
+request:
+  auth: inherit

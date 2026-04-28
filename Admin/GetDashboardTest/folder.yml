@@ -1,0 +1,7 @@
+info:
+  name: GetDashboardTest
+  type: folder
+  seq: 75
+
+request:
+  auth: inherit

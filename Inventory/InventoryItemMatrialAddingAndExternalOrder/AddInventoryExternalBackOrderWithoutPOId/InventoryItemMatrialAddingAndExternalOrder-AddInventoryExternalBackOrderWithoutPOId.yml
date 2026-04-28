@@ -1,0 +1,110 @@
+info:
+  name: /InventoryItemMatrialAddingAndExternalOrder/AddInventoryExternalBackOrderWithoutPOId
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/Inventory/InventoryItemMatrialAddingAndExternalOrder/AddInventoryExternalBackOrderWithoutPOId"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: garastest
+  body:
+    type: json
+    data: |-
+      {
+          "SupplierID": "1",
+          "InventoryStoreID": "1004",
+          "RecevingData": "12/25/2024",
+          "MatrialAddingOrderItemList": [
+              {
+                  "InventoryItemID": "1",
+                  "QTYUOR": "1",
+                  "QTYUOP": "12",
+                  "Comment": "",
+                  "StoreLocationID": "3"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/InventoryItemMatrialAddingAndExternalOrder/AddInventoryAddingAndExternalBackOrder"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: text/plain
+      body:
+        type: json
+        data: |-
+          {
+            "MatrialAddingOrderItemList": [
+              {
+                "InventoryItemID": "<long>",
+                "POID": "<long>",
+                "QTYUOR": "<double>",
+                "QTYUOP": "<double>",
+                "ExpData": "<string>",
+                "Serial": "<string>",
+                "QIReport": "<long>",
+                "Comment": "<string>",
+                "StoreLocationID": "<integer>",
+                "ParentInventoryStoreItem": "<long>"
+              },
+              {
+                "InventoryItemID": "<long>",
+                "POID": "<long>",
+                "QTYUOR": "<double>",
+                "QTYUOP": "<double>",
+                "ExpData": "<string>",
+                "Serial": "<string>",
+                "QIReport": "<long>",
+                "Comment": "<string>",
+                "StoreLocationID": "<integer>",
+                "ParentInventoryStoreItem": "<long>"
+              }
+            ],
+            "SupplierID": "<long>",
+            "InventoryStoreID": "<integer>",
+            "RecevingData": "<string>",
+            "OrderType": "<string>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "ID": "<long>",
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }

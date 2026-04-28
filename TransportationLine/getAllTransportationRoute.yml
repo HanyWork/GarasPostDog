@@ -1,0 +1,26 @@
+info:
+  name: getAllTransportationRoute
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/api/Transportation/getAllTransportationRoute"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: PageNo
+      value: "1"
+    - name: NoOfItems
+      value: "20"
+    - name: pTransportionlineId
+      value: "15"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

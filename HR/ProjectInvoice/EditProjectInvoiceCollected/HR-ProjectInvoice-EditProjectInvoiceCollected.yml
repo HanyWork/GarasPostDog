@@ -1,0 +1,105 @@
+info:
+  name: /HR/ProjectInvoice/EditProjectInvoiceCollected
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/HR/ProjectInvoice/EditProjectInvoiceCollected"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: text/plain
+    - name: CompanyName
+      value: periti
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: ID
+        type: text
+        value: "2"
+      - name: Amount
+        type: text
+        value: "120"
+      - name: Status
+        type: text
+        value: Collected
+      - name: Comment
+        type: text
+        value: ""
+        disabled: true
+      - name: Date
+        type: text
+        value: 2024-08-16
+      - name: PaymentMethodID
+        type: text
+        value: "6"
+      - name: Attachment
+        type: file
+        value: []
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/HR/ProjectInvoice/EditProjectInvoiceCollected"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: text/plain
+      body:
+        type: multipart-form
+        data:
+          - name: ID
+            type: text
+            value: <long>
+          - name: Amount
+            type: text
+            value: <double>
+          - name: Status
+            type: text
+            value: <string>
+          - name: Comment
+            type: text
+            value: <string>
+          - name: Date
+            type: text
+            value: <string>
+          - name: Attachment
+            type: text
+            value: <string>
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ],
+            "ID": "<long>"
+          }

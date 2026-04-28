@@ -1,0 +1,7 @@
+info:
+  name: WeekDay
+  type: folder
+  seq: 48
+
+request:
+  auth: inherit

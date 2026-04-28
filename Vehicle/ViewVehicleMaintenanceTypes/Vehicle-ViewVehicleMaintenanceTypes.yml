@@ -1,0 +1,156 @@
+info:
+  name: /Vehicle/ViewVehicleMaintenanceTypes
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BaseCoreUrl}}/Vehicle/ViewVehicleMaintenanceTypes"
+  headers:
+    - name: Accept
+      value: text/plain
+    - name: UserToken
+      value: "{{UserToken}}"
+    - name: CompanyName
+      value: proauto
+    - name: ClientVehicleId
+      value: "30386"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/Vehicle/ViewVehicleMaintenanceTypes"
+      method: GET
+      headers:
+        - name: ClientVehicleId
+          value: <long>
+        - name: Accept
+          value: text/plain
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "VehicleMaintenanceTypes": {
+              "VehicleId": "<long>",
+              "VehicleMaintenanceTypeList": [
+                {
+                  "ID": "<long>",
+                  "Name": "<string>",
+                  "VehicleRateId": "<integer>",
+                  "VehicleRateName": "<string>",
+                  "Description": "<string>",
+                  "Comment": "<string>",
+                  "VehiclePriorityLevelId": "<integer>",
+                  "NumberOfUses": "<integer>",
+                  "VehiclePriorityLevelName": "<string>",
+                  "Milage": "<integer>",
+                  "ExpectedDate": "<string>",
+                  "LastJobOrderDate": "<string>",
+                  "IsUsed": "<boolean>",
+                  "VehicleMaintenanceTypeBOM": {
+                    "BOMID": "<long>",
+                    "BOMName": "<string>",
+                    "TotalCostType1": "<double>",
+                    "TotalCostType2": "<double>",
+                    "TotalCostType3": "<double>",
+                    "BOMPartitionItemsNames": [
+                      "<string>",
+                      "<string>"
+                    ]
+                  },
+                  "isForAllModels": "<boolean>",
+                  "VehicleMaintenanceTypeForModelsStrings": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "VehicleMaintenanceTypeForBrandsStrings": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "VehicleMaintenanceTypeServiceSheduleCategories": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "VehicleMaintenanceTypeServiceSheduleCategoriesIds": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "VehicleMaintenanceTypeForModelsIds": [
+                    "<string>",
+                    "<string>"
+                  ]
+                },
+                {
+                  "ID": "<long>",
+                  "Name": "<string>",
+                  "VehicleRateId": "<integer>",
+                  "VehicleRateName": "<string>",
+                  "Description": "<string>",
+                  "Comment": "<string>",
+                  "VehiclePriorityLevelId": "<integer>",
+                  "NumberOfUses": "<integer>",
+                  "VehiclePriorityLevelName": "<string>",
+                  "Milage": "<integer>",
+                  "ExpectedDate": "<string>",
+                  "LastJobOrderDate": "<string>",
+                  "IsUsed": "<boolean>",
+                  "VehicleMaintenanceTypeBOM": {
+                    "BOMID": "<long>",
+                    "BOMName": "<string>",
+                    "TotalCostType1": "<double>",
+                    "TotalCostType2": "<double>",
+                    "TotalCostType3": "<double>",
+                    "BOMPartitionItemsNames": [
+                      "<string>",
+                      "<string>"
+                    ]
+                  },
+                  "isForAllModels": "<boolean>",
+                  "VehicleMaintenanceTypeForModelsStrings": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "VehicleMaintenanceTypeForBrandsStrings": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "VehicleMaintenanceTypeServiceSheduleCategories": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "VehicleMaintenanceTypeServiceSheduleCategoriesIds": [
+                    "<string>",
+                    "<string>"
+                  ],
+                  "VehicleMaintenanceTypeForModelsIds": [
+                    "<string>",
+                    "<string>"
+                  ]
+                }
+              ]
+            },
+            "Result": "<boolean>",
+            "Errors": [
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              },
+              {
+                "ErrorMSG": "<string>",
+                "ErrorCode": "<string>"
+              }
+            ]
+          }
