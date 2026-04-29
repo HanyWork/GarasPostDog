@@ -7,8 +7,55 @@ http:
   method: POST
   url: "{{BaseCoreUrl}}/api/Transportation/CreateHrUserWithAllRoutes"
   headers:
-    - name: company name
+    - name: CompanyName
       value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: HrUserDto.FirstName
+        type: text
+        value: احمد علي
+      - name: HrUserDto.ARFirstName
+        type: text
+        value: احمد علي
+      - name: HrUserDto.LastName
+        type: text
+        value: "-"
+      - name: HrUserDto.ARLastName
+        type: text
+        value: "-"
+      - name: HrUserDto.Email
+        type: text
+        value: "5024"
+      - name: HrUserDto.Mobile
+        type: text
+        value: "015158741254"
+      - name: HrUserDto.Active
+        type: text
+        value: "true"
+      - name: HrUserDto.Gender
+        type: text
+        value: man
+      - name: HrUserDto.MaritalStatusId
+        type: text
+        value: "3"
+      - name: HrUserDto.Latitude
+        type: text
+        value: ""
+        disabled: true
+      - name: HrUserDto.Longtitud
+        type: text
+        value: ""
+        disabled: true
+      - name: HrUserDto.MiddleName
+        type: text
+        value: "-"
+      - name: Data[0].RouteId
+        type: text
+        value: ""
+        disabled: true
   auth: inherit
 
 runtime:
