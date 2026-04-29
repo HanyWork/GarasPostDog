@@ -1,7 +1,7 @@
 info:
   name: getAllTransportationRoute
   type: http
-  seq: 2
+  seq: 47
 
 http:
   method: GET
@@ -11,13 +11,39 @@ http:
       value: "{{CompanyName}}"
     - name: UserToken
       value: "{{UserToken}}"
+    - name: RouteId
+      value: "9"
+      disabled: true
+    - name: Name
+      value: ""
+      disabled: true
+    - name: TransportionlineId
+      value: ""
+      disabled: true
+    - name: SupplierId
+      value: ""
+      disabled: true
+    - name: supplierContactPersonId
+      value: ""
+      disabled: true
+    - name: serialBus
+      value: ""
+      disabled: true
     - name: PageNo
-      value: "1"
+      value: ""
+      disabled: true
     - name: NoOfItems
-      value: "20"
-    - name: pTransportionlineId
-      value: "15"
+      value: ""
+      disabled: true
+    - name: Active
+      value: ""
+      disabled: true
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true

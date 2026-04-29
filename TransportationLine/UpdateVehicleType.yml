@@ -1,7 +1,7 @@
 info:
   name: UpdateVehicleType
   type: http
-  seq: 20
+  seq: 19
 
 http:
   method: POST

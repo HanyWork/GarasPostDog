@@ -1,7 +1,7 @@
 info:
   name: UpdatePriceOfTransportationLine
   type: http
-  seq: 42
+  seq: 41
 
 http:
   method: POST

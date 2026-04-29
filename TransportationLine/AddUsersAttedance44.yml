@@ -1,7 +1,7 @@
 info:
   name: AddUsersAttedance44
   type: http
-  seq: 35
+  seq: 34
 
 http:
   method: POST

@@ -1,7 +1,7 @@
 info:
   name: DeleteTransportationVehicle
   type: http
-  seq: 26
+  seq: 25
 
 http:
   method: POST

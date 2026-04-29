@@ -1,22 +1,25 @@
 info:
-  name: RejectUpdatePrice
+  name: downloadExcelUserWithRoutesTemplete
   type: http
-  seq: 42
+  seq: 48
 
 http:
-  method: POST
-  url: "{{BaseCoreUrl}}/api/Transportation/RejectUpdatePrice"
+  method: GET
+  url: "{{BaseCoreUrl}}/api/Transportation/downloadExcelUserWithRoutesTemplete"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"
     - name: UserToken
       value: "{{UserToken}}"
-    - name: Id
-      value: "1"
   body:
     type: json
     data: ""
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true

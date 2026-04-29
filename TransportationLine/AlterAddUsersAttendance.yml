@@ -1,7 +1,7 @@
 info:
   name: AlterAddUsersAttendance
   type: http
-  seq: 36
+  seq: 35
 
 http:
   method: GET

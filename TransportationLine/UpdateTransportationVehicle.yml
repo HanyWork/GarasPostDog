@@ -1,7 +1,7 @@
 info:
   name: UpdateTransportationVehicle
   type: http
-  seq: 24
+  seq: 23
 
 http:
   method: POST

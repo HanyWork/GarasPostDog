@@ -17,6 +17,11 @@ http:
       value: "2"
   auth: inherit
 
+runtime:
+  variables:
+    - name: CompanyName
+      value: VETANOIA
+
 settings:
   encodeUrl: true
   timeout: 0
