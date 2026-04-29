@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{BaseCoreUrl}}/api/TransportationLine/AddTransportationRoute"
+  url: "{{BaseCoreUrl}}/api/Transportation/AddTransportationRoute"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"
@@ -13,26 +13,29 @@ http:
       value: "{{UserToken}}"
   body:
     type: json
-    data: "{\r
-
-      \  \"TransportationLineId\": 3,\r
-
-      \  \"SupplierId\": 30,\r
-
-      \  \"SupplierContactPersonId\": 31,\r
-
-      \  \"BranchScheduleId\": 10225,\r
-
-      \  \"PeriodFrom\": \"2025-07-02T13:55:46.081Z\",\r
-
-      \  \"HrUserId\":11\r
-
-      \  //\"PeriodTo\":\r
-
-      \ // \"Active\": true\r
-
-      }"
+    data: |-
+      {
+        "NameOfRoute": "سيدي بشر بحري",
+        "TransportationVehicleId": 6,
+       // "TransportationLineId": 157,
+        "TransportationLineName": "-99-عصافرة",
+        "SupplierId": 3,
+        //"SupplierContactPersonId": null,
+        "BranchScheduleId": 4,
+        "PeriodFrom": "2026-04-20",
+        "PeriodTo": null,
+        "ToDate": "2026-04-02T08:00:00.00Z",
+        "FromoDate": "2026-04-02T20:00:00.00Z",
+        "HrUserId": null,
+        "LineCost": 150,
+        "OneWay": true
+      }
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true
