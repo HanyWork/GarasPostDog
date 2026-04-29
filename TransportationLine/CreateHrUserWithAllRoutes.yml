@@ -6,7 +6,15 @@ info:
 http:
   method: POST
   url: "{{BaseCoreUrl}}/api/Transportation/CreateHrUserWithAllRoutes"
+  headers:
+    - name: company name
+      value: "{{CompanyName}}"
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true
