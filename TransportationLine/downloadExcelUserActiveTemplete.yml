@@ -1,18 +1,16 @@
 info:
-  name: getTransportationRoute
+  name: downloadExcelUserActiveTemplete
   type: http
-  seq: 5
+  seq: 49
 
 http:
   method: GET
-  url: "{{BaseCoreUrl}}/api/Transportation/getTransportationRoute"
+  url: "{{BaseCoreUrl}}/api/Transportation/downloadExcelUserActiveTemplete"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"
     - name: UserToken
       value: "{{UserToken}}"
-    - name: RouteId
-      value: "2"
   auth: inherit
 
 runtime:

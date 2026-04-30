@@ -1,18 +1,22 @@
 info:
-  name: getTransportationRoute
+  name: InsertUsersWithRoutesExcel
   type: http
-  seq: 5
+  seq: 50
 
 http:
-  method: GET
-  url: "{{BaseCoreUrl}}/api/Transportation/getTransportationRoute"
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/InsertUsersWithRoutesExcel"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"
     - name: UserToken
       value: "{{UserToken}}"
-    - name: RouteId
-      value: "2"
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: text
+        value: ""
   auth: inherit
 
 runtime:
