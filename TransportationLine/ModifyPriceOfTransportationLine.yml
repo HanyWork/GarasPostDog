@@ -13,23 +13,19 @@ http:
       value: "{{UserToken}}"
   body:
     type: json
-    data: "{\r
-
-      \  \"IncreaseCost\": 12,\r
-
-      \  //\"IsPrecent\": true,\r
-
-      \  \"ApproximateToFiveFlag\": true,\r
-
-      \  //\"ForAllLines\": true\r
-
-      \  \"TransportationLineIds\": [\r
-
-      \    1\r
-
-      \  ]\r
-
-      }"
+    data: |-
+      {
+        "IncreaseCost": 1,
+        "IsPrecent": true,
+        "ApproximateToFiveFlag": true,
+        "ForAllLines": true,
+        "TransportationLineIds": [
+          1
+        ],
+        "CreationDate": "",
+        "CreationBy": 1,
+        "StartDate": ""
+      }
   auth: inherit
 
 settings:
