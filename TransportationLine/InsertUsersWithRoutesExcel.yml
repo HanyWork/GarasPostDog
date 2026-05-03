@@ -15,8 +15,9 @@ http:
     type: multipart-form
     data:
       - name: file
-        type: text
-        value: ""
+        type: file
+        value:
+          - C:\Users\GOLDEN TECH\Downloads\UserWithRoutes (1).xlsx
   auth: inherit
 
 runtime:
