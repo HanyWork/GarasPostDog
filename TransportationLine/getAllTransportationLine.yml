@@ -8,7 +8,7 @@ http:
   url: "{{BaseCoreUrl}}/api/Transportation/getAllTransportationLine"
   headers:
     - name: CompanyName
-      value: "{{CompanyName}}"
+      value: "{{companyname}}"
     - name: UserToken
       value: "{{UserToken}}"
     - name: PageNo
@@ -20,7 +20,7 @@ http:
 runtime:
   variables:
     - name: CompanyName
-      value: VETANOIA
+      value: garastest
 
 settings:
   encodeUrl: true
