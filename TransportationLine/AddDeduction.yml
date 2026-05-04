@@ -13,23 +13,17 @@ http:
       value: "{{UserToken}}"
   body:
     type: json
-    data: "{\r
-
-      \  \"Id\": 0,\r
-
-      \  \"SupplierId\": \"string\",\r
-
-      \  \"Serial\": \"string\",\r
-
-      \  \"TransportationVehicleRouteId\": \"2025-07-16T10:37:32.521Z\",\r
-
-      \  \"Date\": \"2025-07-16T10:37:32.521Z\",\r
-
-      \  \"DeductPerRound\": \"2025-07-16T10:37:32.521Z\",\r
-
-      \  \"Cause\": 0\r
-
-      }"
+    data: |-
+      {
+        "Id": 0,
+        "SupplierId": "string",
+        "Serial": "string",
+        "TransportationVehicleRouteId": "2025-07-16T10:37:32.521Z",
+        "Date": "2025-07-16T10:37:32.521Z",
+        "DeductPerRound": "2025-07-16T10:37:32.521Z",
+        //"Cause": "",
+        "TypeOfDedct":"Normal"    //Advance
+      }
   auth: inherit
 
 settings:

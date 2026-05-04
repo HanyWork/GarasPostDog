@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{BaseCoreUrl}}/api/Transportation/AddUsersAttedance"
+  url: "{{BaseCoreUrl}}/api/Transportation/AddUsersAttedance44"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"
@@ -13,18 +13,13 @@ http:
       value: "{{UserToken}}"
   body:
     type: json
-    data: "{\r
-
-      \  \"Type\": \"Bus\",\r
-
-      \  \"Serial\": \"2\",\r
-
-      \  \"CheckIn\": \"2025-07-17T10:37:32.521Z\",\r
-
-      \  \"CheckOut\": \"2025-07-17T10:37:32.521Z\"\r
-
-      }"
+    data: ""
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true
