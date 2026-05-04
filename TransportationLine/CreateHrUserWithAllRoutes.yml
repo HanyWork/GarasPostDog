@@ -28,10 +28,10 @@ http:
         value: "-"
       - name: HrUserDto.Email
         type: text
-        value: "5024"
+        value: "1000"
       - name: HrUserDto.Mobile
         type: text
-        value: "015158741254"
+        value: "01515874987"
       - name: HrUserDto.Active
         type: text
         value: "true"
@@ -54,7 +54,7 @@ http:
         value: "-"
       - name: Data[0].RouteId
         type: text
-        value: "165"
+        value: "3"
   auth: inherit
 
 runtime:

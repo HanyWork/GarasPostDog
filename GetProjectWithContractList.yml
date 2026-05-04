@@ -1,0 +1,22 @@
+info:
+  name: GetProjectWithContractList
+  type: http
+  seq: 58
+
+http:
+  method: GET
+  url: https://testcoreapi.garassolutions.com/Maintenance/GetProjectWithContractList
+  headers:
+    - name: CompanyName
+      value: marinapltq
+    - name: CurrentPage
+      value: "1"
+    - name: NumberOfItemsPerPage
+      value: "100"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
