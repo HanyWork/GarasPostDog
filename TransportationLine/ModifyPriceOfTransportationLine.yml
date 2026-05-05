@@ -15,18 +15,23 @@ http:
     type: json
     data: |-
       {
-        "IncreaseCost": 1,
-        "IsPrecent": true,
+        "IncreaseCost": 25,
+        "IsPrecent": false,
         "ApproximateToFiveFlag": true,
         "ForAllLines": true,
-        "TransportationLineIds": [
-          1
-        ],
-        "CreationDate": "",
-        "CreationBy": 1,
-        "StartDate": ""
+      //   "TransportationLineIds": [
+      //     1
+      //   ],
+       // "CreationDate": "2026-05-05T00:03:54.059Z",
+       // "CreationBy": 1,
+        "StartDate": "2026-04-05T00:03:54.059Z"
       }
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true

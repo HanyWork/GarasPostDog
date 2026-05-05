@@ -12,11 +12,16 @@ http:
     - name: UserToken
       value: "{{UserToken}}"
     - name: Id
-      value: "4"
+      value: "3"
   body:
     type: json
     data: ""
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true
