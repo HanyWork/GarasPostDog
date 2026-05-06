@@ -1,0 +1,36 @@
+info:
+  name: AddSupplierPayment
+  type: http
+  seq: 53
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/AddSupplierPayment"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "SupplierId": 3,
+        "Payment": 3000,
+        "DatePayment": "2025-03-15",
+        "StartDate": "2025-04-15",
+        "TypeOfDebt": "Normal",    // Advance
+        "NumberOfMonths": 3
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
