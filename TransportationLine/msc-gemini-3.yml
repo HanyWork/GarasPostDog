@@ -1,0 +1,33 @@
+info:
+  name: msc-gemini-3
+  type: http
+  seq: 59
+
+http:
+  method: POST
+  url: http://localhost:9999/v1beta/models/gemini-3:generateContent
+  headers:
+    - name: x-goog-api-key
+      value: change-secret-key-2026
+  body:
+    type: json
+    data: |-
+      {
+        "contents": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "text": "Hello, how are you?"
+              }
+            ]
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
