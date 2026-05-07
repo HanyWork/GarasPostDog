@@ -16,11 +16,11 @@ http:
     data: |-
       {
         "SupplierId": 3,
-        "Payment": 3000,
-        "DatePayment": "2025-03-15",
-        "StartDate": "2025-04-15",
-        "TypeOfDebt": "Normal",    // Advance
-        "NumberOfMonths": 3
+        "Payment": 9000,
+        "DatePayment": "2025-03-20",
+        "StartDate": "2026-04-15",         // not Required
+        "TypeOfDebt": "Advance" ,   // Advance  //Normal
+        "NumberOfMonths": 3             // not Required
       }
   auth: inherit
 

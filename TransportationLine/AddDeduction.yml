@@ -16,12 +16,12 @@ http:
     data: |-
       {
         "SupplierId": 3 ,
-        "Serial":"70000001" ,
-        "TransportationVehicleRouteId": 1,
+        "Serial":"70000003" ,
+        "TransportationVehicleRouteId": 3,
         "DateOfDeduction": "2025-03-16T10:37:32.521Z",
-        "DeductPerRound":50.00,
-        "Cause": "ضرايب",
-        "TypeOfDedct":"Advance"    //Advance   //Normal
+        "DeductPerRound":20.00,
+        "Cause": "تاخير",
+        "TypeOfDedct":"Normal"    //Taxes   //Normal
       }
   auth: inherit
 
