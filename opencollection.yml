@@ -19,9 +19,9 @@ request:
     - name: baseUrl
       value: /
     - name: BaseCoreUrl
-      value: https://localhost:7178
+      value: https://testcoreapi.garassolutions.com
     - name: UserToken
-      value: 14USOB5W79WPZ12r3u4g9A%3d%3d
+      value: fCzRpC9KkusbGd1XHI2f3g%3d%3d
 bundled: false
 extensions:
   bruno:
