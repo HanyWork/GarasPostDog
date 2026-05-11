@@ -12,8 +12,7 @@ http:
     - name: UserToken
       value: "{{UserToken}}"
     - name: Year
-      value: ""
-      disabled: true
+      value: "2026"
     - name: Month
       value: "3"
       disabled: true

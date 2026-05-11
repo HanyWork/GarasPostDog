@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{BaseCoreUrl}}/api/Transportation/AddUsersAttedanceUpdated"
+  url: "{{BaseCoreUrl}}/api/Transportation/AddUsersAttedance44"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"

@@ -1,0 +1,15 @@
+info:
+  name: localocr
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://localhost:7098/api/local/localocr/858
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
