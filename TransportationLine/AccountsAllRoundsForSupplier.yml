@@ -12,11 +12,9 @@ http:
     - name: UserToken
       value: "{{UserToken}}"
     - name: Year
-      value: ""
-      disabled: true
+      value: "2026"
     - name: Month
       value: "3"
-      disabled: true
     - name: RouteId
       value: "9"
       disabled: true
@@ -24,6 +22,8 @@ http:
       value: "1"
     - name: NoOfItems
       value: "20"
+    - name: SupplierId
+      value: "3"
   auth: inherit
 
 runtime:
