@@ -1,0 +1,31 @@
+info:
+  name: mistral.ai
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://api.mistral.ai/v1/ocr
+  headers:
+    - name: Authorization
+      value: Bearer NdTvZqYXJfwyHOQKsirS4YGYhhTPi50n
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "model": "mistral-ocr-latest",
+        "document": {
+          "type": "image_url",
+          "image_url": "https://www.image2url.com/r2/default/images/1778548871897-c2c2858b-bb1f-4c11-827b-aef439853ae8.webp"
+        },
+        "include_image_base64": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
