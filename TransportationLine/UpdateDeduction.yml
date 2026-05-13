@@ -1,0 +1,41 @@
+info:
+  name: UpdateDeduction
+  type: http
+  seq: 61
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/UpdateDeduction"
+  headers:
+    - name: CompanyName
+      value: "{{CompanyName}}"
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        
+        "Id": 1,
+        "SupplierId": null,
+        "TransportationVehicleRouteId": 1,
+        "Serial": "",
+        "DateOfDeduction": "",
+        "DeductPerRound": null,
+        "Cause": null,
+        "CreationDate": null,
+        "CreationBy": null,
+        "TypeOfDedct": ""
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

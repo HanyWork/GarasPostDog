@@ -39,6 +39,9 @@ http:
           //   "Email": "system@system.com",
           // "Password": "4321",
           // "CompanyName": "sanpeter"
+        
+        
+        //https://testcoreapi.garassolutions.com
       }
   auth: inherit
 
