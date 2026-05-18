@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: https://localhost:7098/api/local/localocr/858
+  url: https://localhost:7098/api/local/localocr/969
   auth: inherit
 
 settings:

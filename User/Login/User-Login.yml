@@ -28,17 +28,17 @@ http:
           //  "PASSWORD": "123",
           //  "CompanyName": "PERITI"
 
-          // "Email": "system@system.com",
-          // "Password": "0987",
-          // "CompanyName": "VETANOIA"
+          "Email": "system@system.com",
+          "Password": "4321",
+          "CompanyName": "VETANOIA"
 
       // "Email": "system@system.com",
       //     "Password": "4321",
       //     "CompanyName": "garastest"
 
-        "Email": "system@system.com",
-          "Password": "4321",
-          "CompanyName": "pharma"
+      //   "Email": "system@system.com",
+      //     "Password": "4321",
+      //     "CompanyName": "pharma"
         
           //   "Email": "system@system.com",
           // "Password": "4321",

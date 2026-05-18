@@ -11,17 +11,21 @@ http:
     data:
       - name: bookName
         type: text
-        value: ضد يوليان أسقف هاليكارناسوس ج1
+        value: خواطر فيلسوف في الحياة الروحية - أغسطينوس
       - name: pdf
         type: file
         value:
-          - C:\Users\GOLDEN TECH\Downloads\ضد يوليان أسقف هاليكارناسوس ج1.pdf
+          - C:\Users\Vetanoia09\Downloads\Documents\خواطر فيلسوف في الحياة الروحية - أغسطينوس.pdf
       - name: publishedDate
         type: text
         value: 2020-01-01
       - name: serverIndex
         type: text
         value: "55"
+      - name: author
+        type: text
+        value: أغسطينوس
+        disabled: true
   auth: inherit
 
 runtime:
