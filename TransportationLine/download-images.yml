@@ -1,11 +1,11 @@
 info:
-  name: localocr
+  name: download-images
   type: http
-  seq: 2
+  seq: 55
 
 http:
   method: POST
-  url: https://tempvetanoia.bsite.net/api/local/localocrpython/1109
+  url: https://sto.garassolutions.com/api/BooksOcr/download-images/71
   auth: inherit
 
 settings:

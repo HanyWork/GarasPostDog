@@ -1,0 +1,41 @@
+info:
+  name: msc22
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: http://localhost:7777/v1/chat/completions
+  headers:
+    - name: Authorization
+      value: Bearer change-secret-key-2026
+  body:
+    type: json
+    data: |-
+      {
+        "model": "gpt-4o-mini",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "extract text from image"
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "https://tempvetanoia.bsite.net/images/books/1132/page-6.png"
+                }
+              }
+            ]
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

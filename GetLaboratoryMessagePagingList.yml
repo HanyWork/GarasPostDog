@@ -1,7 +1,7 @@
 info:
   name: GetLaboratoryMessagePagingList
   type: http
-  seq: 50
+  seq: 51
 
 http:
   method: GET

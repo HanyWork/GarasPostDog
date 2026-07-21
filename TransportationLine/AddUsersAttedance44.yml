@@ -16,7 +16,7 @@ http:
 runtime:
   variables:
     - name: CompanyName
-      value: garastest
+      value: pharma
 
 settings:
   encodeUrl: true

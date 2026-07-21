@@ -1,0 +1,32 @@
+info:
+  name: Word_analysis_Gimini
+  type: http
+  seq: 57
+
+http:
+  method: POST
+  url: https://localhost:7149/api/Text/Word_analysis_Gimini
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: uniqueWord
+      value: φράδην
+      disabled: true
+    - name: baseUrl
+      value: http://localhost:9999
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "fron": "151100",
+        "to": "155000",
+        "baseUrl": "http://localhost:9999"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

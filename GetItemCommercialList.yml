@@ -1,7 +1,7 @@
 info:
   name: GetItemCommercialList
   type: http
-  seq: 46
+  seq: 47
 
 http:
   method: GET

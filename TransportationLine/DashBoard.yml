@@ -16,11 +16,12 @@ http:
       disabled: true
     - name: SupplierId
       value: "3"
+      disabled: true
     - name: supplierContactPersonId
       value: ""
       disabled: true
     - name: DateSerach
-      value: 2026-04-25
+      value: 2026-07-20
     - name: serialBus
       value: "4"
       disabled: true
@@ -29,7 +30,7 @@ http:
 runtime:
   variables:
     - name: CompanyName
-      value: VETANOIA
+      value: garastest
 
 settings:
   encodeUrl: true

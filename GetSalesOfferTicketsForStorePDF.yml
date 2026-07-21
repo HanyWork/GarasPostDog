@@ -1,7 +1,7 @@
 info:
   name: GetSalesOfferTicketsForStorePDF
   type: http
-  seq: 49
+  seq: 50
 
 http:
   method: GET

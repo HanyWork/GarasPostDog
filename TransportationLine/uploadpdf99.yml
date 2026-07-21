@@ -5,26 +5,29 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/api/OCR/uploadpdf99"
+  url: "{{baseUrl}}/api/OCR/uploadpdf9999"
   body:
     type: multipart-form
     data:
       - name: bookName
         type: text
-        value: خواطر فيلسوف في الحياة الروحية - أغسطينوس
+        value: " كتاب القديسة مريم في المفهوم الأرثوذكسي - القمص تادرس يعقوب ملطي"
       - name: pdf
         type: file
         value:
-          - C:\Users\Vetanoia09\Downloads\Documents\خواطر فيلسوف في الحياة الروحية - أغسطينوس.pdf
+          - C:\Users\Vetanoia09\Downloads\Documents\[www.christianlib.com] كتاب القديسة مريم في المفهوم الأرثوذكسي - القمص تادرس يعقوب ملطي.pdf
       - name: publishedDate
         type: text
         value: 2020-01-01
       - name: serverIndex
         type: text
-        value: "55"
+        value: "1"
       - name: author
         type: text
-        value: أغسطينوس
+        value: القمص تادرس يعقوب ملطي
+      - name: https://tempveta-001-site1.stempurl.com
+        type: text
+        value: https://tempvetanoia.bsite.net
         disabled: true
   auth: inherit
 

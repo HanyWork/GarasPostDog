@@ -1,0 +1,26 @@
+info:
+  name: TranslateSectionByJobByGiminiGroup
+  type: http
+  seq: 55
+
+http:
+  method: POST
+  url: https://localhost:7149/api/Text/TranslateSectionByJobByGiminiGroup
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "fron": "112630",
+        "to": "113939",
+        "baseUrl": "http://localhost:9999"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

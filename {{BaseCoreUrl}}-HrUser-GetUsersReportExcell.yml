@@ -1,7 +1,7 @@
 info:
   name: "{{BaseCoreUrl}}/HrUser/GetUsersReportExcell"
   type: http
-  seq: 45
+  seq: 46
 
 http:
   method: GET

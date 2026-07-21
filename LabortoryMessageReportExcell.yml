@@ -1,7 +1,7 @@
 info:
   name: LabortoryMessageReportExcell
   type: http
-  seq: 51
+  seq: 52
 
 http:
   method: GET

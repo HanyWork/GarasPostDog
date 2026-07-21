@@ -1,7 +1,7 @@
 info:
   name: EInvoice
   type: folder
-  seq: 35
+  seq: 36
 
 request:
   auth: inherit

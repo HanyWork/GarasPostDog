@@ -5,14 +5,14 @@ info:
 
 http:
   method: GET
-  url: https://testcoreapi.garassolutions.com/Maintenance/GetProjectWithContractList
+  url: https://garascore.garassolutions.com/Maintenance/GetProjectWithContractList
   headers:
     - name: CompanyName
       value: marinapltq
     - name: CurrentPage
       value: "1"
     - name: NumberOfItemsPerPage
-      value: "100"
+      value: "10000"
   auth: inherit
 
 settings:
