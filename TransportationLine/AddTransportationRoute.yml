@@ -15,13 +15,13 @@ http:
     type: json
     data: |-
       {
-        "NameOfRoute": " سيدي بشر قبلي",
-        "TransportationVehicleId": 7,
-        "TransportationLineId": 2,
-        //"TransportationLineName": "مندره",
+        "NameOfRoute": "  test سيدي بشر قبلي",
+        "TransportationVehicleId": 3,
+       // "TransportationLineId": 2,
+        "TransportationLineName": "مندره",
         "SupplierId": 3,
         //"SupplierContactPersonId": null,
-        "BranchScheduleId": 4,
+        //"BranchScheduleId": 4,
         "PeriodFrom": "2026-04-20",
         "PeriodTo": null,
        "ToDate": "2026-04-02T17:00:00.00Z",

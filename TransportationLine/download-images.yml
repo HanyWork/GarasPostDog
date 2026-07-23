@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: https://sto.garassolutions.com/api/BooksOcr/download-images/71
+  url: https://sto.garassolutions.com/api/BooksOcr/download-images/251
   auth: inherit
 
 settings:

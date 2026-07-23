@@ -10,17 +10,17 @@ http:
     - name: UserToken
       value: "{{UserToken}}"
     - name: CompanyName
-      value: periti
+      value: garastest
     - name: currentPage
       value: "1"
     - name: numberOfItemsPerPage
       value: "20"
     - name: userName
       value: a
-      description: this is the Search Key
       disabled: true
     - name: active
       value: "false"
+      disabled: true
     - name: DepId
       value: "2"
       disabled: true
@@ -37,8 +37,7 @@ http:
       value: "true"
       disabled: true
     - name: Email
-      value: U@U
-      disabled: true
+      value: "38"
     - name: mobile
       value: "012"
       disabled: true
