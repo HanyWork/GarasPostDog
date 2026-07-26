@@ -13,23 +13,16 @@ http:
       value: "{{UserToken}}"
   body:
     type: json
-    data: "{\r
-
-      \  \"Id\": 4,\r
-
-      \  \"TransportationLineId\": 3,\r
-
-      \  \"SupplierId\": 30,\r
-
-      \  \"SupplierContactPersonId\": 31,\r
-
-      \  \"BranchScheduleId\": 10225,\r
-
-      \  \"PeriodTo\": \"2025-07-04T13:58:46.156Z\",\r
-
-      \  \"Active\": true\r
-
-      }"
+    data: |-
+      {
+        "Id": 156,
+        "TransportationLineId": 3,
+        "SupplierId": 30,
+        "SupplierContactPersonId": 31,
+        //"BranchScheduleId": 10225,
+        "PeriodTo": "2025-07-04T13:58:46.156Z",
+        "Active": true
+      }
   auth: inherit
 
 settings:
