@@ -1,18 +1,18 @@
 info:
-  name: downloadExcelRoutesTemplete
+  name: getAllUsers
   type: http
-  seq: 14
+  seq: 74
 
 http:
   method: GET
-  url: "{{BaseCoreUrl}}/api/Transportation/DashBoardForAttendenceDuration"
+  url: "{{BaseCoreUrl}}/api/Transportation/getAllUsers"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"
     - name: UserToken
       value: "{{UserToken}}"
     - name: TransportionlineId
-      value: "1"
+      value: "76"
       disabled: true
     - name: SupplierId
       value: "3"
@@ -21,27 +21,14 @@ http:
       value: ""
       disabled: true
     - name: DateSerach
-      value: 2026-03-25
-      disabled: true
+      value: 2026-07-20
     - name: serialBus
-      value: "70000076"
+      value: "4"
       disabled: true
     - name: PageNo
-      value: "1"
-      disabled: true
+      value: "2"
     - name: NoOfItems
-      value: ""
-      disabled: true
-    - name: AttendaceFlag
-      value: "true"
-      disabled: true
-    - name: FromDate
-      value: 2026-07-20
-    - name: ToDate
-      value: 2026-07-21
-    - name: Email
-      value: "38"
-      disabled: true
+      value: "20"
   auth: inherit
 
 runtime:

@@ -19,8 +19,8 @@ http:
     type: json
     data: |-
       {
-        "fron": "305401",
-        "to": "350000",
+        "fron": "660989",
+        "to": "700000",
         "baseUrl": "http://localhost:9999"
       }
   auth: inherit

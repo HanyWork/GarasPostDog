@@ -12,62 +12,54 @@ http:
     - name: UserToken
       value: "{{UserToken}}"
     - name: TransportationVehicleRouteId
-      value: ""
+      value: "1"
     - name: TransportationVehicleRouteDirectionId
       value: ""
       disabled: true
   body:
     type: json
-    data: "{\r
-
-      \    \"Data\": [\r
-
-      \        {\r
-
-      \            \"hrUserId\": 12,\r
-
-      \            \"transportationVehicleRouteDirectionId\": -10035,\r
-
-      \            \"active\": true,\r
-
-      \            \"fromDate\": \"2025-08-04\",\r
-
-      \            //\"toDate\": \"2025-05-21\",\r
-
-      \            \"durationLatitude\": 31.252555,\r
-
-      \            \"durationLongtitud\": 320144788,\r
-
-      \            \"period\": \"Both\"\r
-
-      \        }\r
-
-      \        // },\r
-
-      \        // {\r
-
-      \        //    \"hrUserId\": 71822394,\r
-
-      \        //     \"transportationVehicleRouteDirectionId\": -62361528,\r
-
-      \        //     \"active\": false,\r
-
-      \        //     \"fromDate\": \"2025-08-94\",\r
-
-      \        //     \"toDate\": \"2025-05-21\",\r
-
-      \        //     \"durationLatitude\": 31.252555,\r
-
-      \        //     \"durationLongtitud\": 320144788,\r
-
-      \        //     \"period\": \"AM\"\r
-
-      \        // }\r
-
-      \    ]\r
-
-      }"
+    data: |-
+      {
+          "Data": [
+              {
+                  "hrUserId": 10152,
+                  //"transportationVehicleRouteDirectionId": -10035,
+                  "active": true,
+                  "fromDate": "2025-08-04"
+                  //"toDate": "2025-05-21",
+                  //"durationLatitude": 31.252555,
+                  //"durationLongtitud": 320144788,
+                  //"period": "Both"
+              }
+      //       {
+      //             "hrUserId": 11,
+      //             //"transportationVehicleRouteDirectionId": -10035,
+      //             "active": true,
+      //             "fromDate": "2025-08-04"
+      //             //"toDate": "2025-05-21",
+      //             //"durationLatitude": 31.252555,
+      //             //"durationLongtitud": 320144788,
+      //           //  "period": "Both"
+      //         }
+              // },
+              // {
+              //    "hrUserId": 71822394,
+              //     "transportationVehicleRouteDirectionId": -62361528,
+              //     "active": false,
+              //     "fromDate": "2025-08-94",
+              //     "toDate": "2025-05-21",
+              //     "durationLatitude": 31.252555,
+              //     "durationLongtitud": 320144788,
+              //     "period": "AM"
+              // }
+          ]
+      }
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true

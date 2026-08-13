@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: https://tempvetanoia.bsite.net/api/local/localocrpython/1109
+  url: https://localhost:7098/api/local/localocrNew/2214
   auth: inherit
 
 settings:

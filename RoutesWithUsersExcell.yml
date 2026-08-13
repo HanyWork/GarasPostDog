@@ -1,26 +1,28 @@
 info:
-  name: getAllTransportationVehicle
+  name: RoutesWithUsersExcell
   type: http
-  seq: 13
+  seq: 14
 
 http:
   method: GET
-  url: "{{BaseCoreUrl}}/api/Transportation/getAllTransportationVehicle"
+  url: "{{BaseCoreUrl}}/api/Transportation/RoutesWithUsersExcell"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"
     - name: UserToken
       value: "{{UserToken}}"
-    - name: PageNo
-      value: "1"
-    - name: NoOfItems
-      value: "2"
+    - name: RouteId
+      value: "3"
+      disabled: true
+    - name: SupplierId
+      value: ""
+      disabled: true
   auth: inherit
 
 runtime:
   variables:
     - name: CompanyName
-      value: demo
+      value: garastest
 
 settings:
   encodeUrl: true

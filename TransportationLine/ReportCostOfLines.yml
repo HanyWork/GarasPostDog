@@ -15,8 +15,7 @@ http:
       value: "3"
       disabled: true
     - name: SupplierId
-      value: "31"
-      disabled: true
+      value: "3"
     - name: supplierContactPersonId
       value: ""
       disabled: true
@@ -33,10 +32,15 @@ http:
       value: ""
       disabled: true
     - name: dateFrom
-      value: 2025-09-01
+      value: 2026-08-01
     - name: dateTo
-      value: 2025-09-30
+      value: 2026-08-30
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true

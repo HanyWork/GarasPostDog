@@ -1,0 +1,35 @@
+info:
+  name: msc-Stream
+  type: http
+  seq: 57
+
+http:
+  method: POST
+  url: http://localhost:8000/v1/chat/completions
+  headers:
+    - name: Authorization
+      value: Bearer e2d35a7d126c243be9ba433ead16e7155a5f3d3d439edd1df3ea1eeacb092952
+      disabled: true
+    - name: Content-Type
+      value: application/json
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "model": "auto",
+        "messages": [
+          { "role": "system", "content": "You are a helpful assistant." },
+          { "role": "user", "content": "Hello, how are you?" }
+        ],
+        "stream": true
+      }
+  auth:
+    type: bearer
+    token: Bearer    e2d35a7d126c243be9ba433ead16e7155a5f3d3d439edd1df3ea1eeacb092952
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

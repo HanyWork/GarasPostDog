@@ -15,10 +15,14 @@ http:
       value: "1"
     - name: NoOfItems
       value: "2"
-      disabled: true
     - name: RouteId
-      value: "10009"
+      value: "1"
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: garastest
 
 settings:
   encodeUrl: true

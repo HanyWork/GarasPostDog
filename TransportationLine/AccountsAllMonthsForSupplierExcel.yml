@@ -1,42 +1,39 @@
 info:
-  name: getAllTransportationRoute
+  name: AccountsAllMonthsForSupplierExcel
   type: http
-  seq: 47
+  seq: 71
 
 http:
   method: GET
-  url: "{{BaseCoreUrl}}/api/Transportation/getAllTransportationRoute"
+  url: "{{BaseCoreUrl}}/api/Transportation/AccountsAllMonthsForSupplierExcel"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"
     - name: UserToken
       value: "{{UserToken}}"
-    - name: RouteId
-      value: "158"
+    - name: Id
+      value: ""
       disabled: true
-    - name: Name
-      value: "70000001"
-    - name: TransportionlineId
-      value: "4"
+    - name: RouteId
+      value: "1"
       disabled: true
     - name: SupplierId
+      value: "3"
+      disabled: true
+    - name: FromDate
       value: ""
       disabled: true
-    - name: supplierContactPersonId
+    - name: ToDate
       value: ""
-      disabled: true
-    - name: serialBus
-      value: "70000001"
       disabled: true
     - name: PageNo
-      value: ""
+      value: "1"
       disabled: true
     - name: NoOfItems
-      value: ""
+      value: "1000"
       disabled: true
-    - name: Active
-      value: ""
-      disabled: true
+    - name: Year
+      value: "2026"
   auth: inherit
 
 runtime:
