@@ -1,0 +1,35 @@
+info:
+  name: documen
+  type: http
+  seq: 56
+
+http:
+  method: POST
+  url: http://localhost:5080/api/messages/document?to=201211185781&caption=واضحة
+  headers:
+    - name: file
+      value: ""
+      disabled: true
+  params:
+    - name: to
+      value: "201211185781"
+      type: query
+    - name: caption
+      value: واضحة
+      type: query
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - C:\Users\GOLDEN TECH\Downloads\report.pdf
+        contentType: application/pdf
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,26 @@
+info:
+  name: send text
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: http://localhost:5080/api/messages/text
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "to": "201211185781",
+        "text": "مرحبا"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

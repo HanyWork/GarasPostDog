@@ -1,0 +1,30 @@
+info:
+  name: sendPdf
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: http://localhost:5080/api/messages/document
+  body:
+    type: multipart-form
+    data:
+      - name: to
+        type: text
+        value: "201211185781"
+      - name: file
+        type: file
+        value:
+          - C:\Users\GOLDEN TECH\Downloads\Screenshot 2026-06-17 010252.png
+        contentType: image/png
+      - name: "caption "
+        type: text
+        value: pdf done فثسف
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
