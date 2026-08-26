@@ -1,25 +1,23 @@
 info:
-  name: AddUsersAttedance44
+  name: GetRouteLocation
   type: http
-  seq: 34
+  seq: 75
 
 http:
-  method: POST
-  url: "{{BaseCoreUrl}}/api/Transportation/AddUsersAttedance44"
+  method: GET
+  url: "{{BaseCoreUrl}}/api/Transportation/GetRouteLocation"
   headers:
+    - name: RouteId
+      value: ""
     - name: CompanyName
       value: "{{CompanyName}}"
     - name: UserToken
       value: "{{UserToken}}"
   auth: inherit
 
-runtime:
-  variables:
-    - name: CompanyName
-      value: garastest
-
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: false

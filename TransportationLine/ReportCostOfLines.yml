@@ -16,6 +16,7 @@ http:
       disabled: true
     - name: SupplierId
       value: "3"
+      disabled: true
     - name: supplierContactPersonId
       value: ""
       disabled: true
@@ -40,7 +41,7 @@ http:
 runtime:
   variables:
     - name: CompanyName
-      value: garastest
+      value: vetanoia
 
 settings:
   encodeUrl: true

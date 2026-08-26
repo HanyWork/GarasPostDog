@@ -15,33 +15,36 @@ http:
       value: "{{UserToken}}"
     - name: CompanyName
       value: "{{CompanyName}}"
+    - name: ParentUserId
+      value: "1"
+      disabled: true
   body:
     type: multipart-form
     data:
       - name: FirstName
         type: text
-        value: Gerges382
+        value: Gerges38855qwe
       - name: ARFirstName
         type: text
-        value: ابتثس
+        value: asdasdqweابتثس
       - name: MiddleName
         type: text
-        value: test22
+        value: test22dsfds
       - name: ARMiddleName
         type: text
-        value: عربي
+        value: sdfsdfعربي
       - name: LastName
         type: text
-        value: test6
+        value: test6sdfsd
       - name: ARLastName
         type: text
-        value: عربي
+        value: sdfsعربي
       - name: Email
         type: text
-        value: Test2Gerges82070@gmail.com
+        value: Test2Gedfsdsrges820w70@gmail.com
       - name: Mobile
         type: text
-        value: "015012411272"
+        value: "0150124112734343"
       - name: Active
         type: text
         value: "true"
@@ -59,7 +62,8 @@ http:
         disabled: true
       - name: LandLine
         type: text
-        value: "8154224"
+        value: "815422432"
+        disabled: true
       - name: HrNationalityId
         type: text
         value: ""
@@ -90,11 +94,17 @@ http:
         disabled: true
   auth: inherit
 
+runtime:
+  variables:
+    - name: CompanyName
+      value: transportion
+
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
 
 examples:
   - name: Success

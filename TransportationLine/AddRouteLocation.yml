@@ -1,25 +1,34 @@
 info:
-  name: AddUsersAttedance44
+  name: AddRouteLocation
   type: http
-  seq: 34
+  seq: 76
 
 http:
   method: POST
-  url: "{{BaseCoreUrl}}/api/Transportation/AddUsersAttedance44"
+  url: "{{BaseCoreUrl}}/api/Transportation/AddRouteLocation"
   headers:
     - name: CompanyName
       value: "{{CompanyName}}"
     - name: UserToken
       value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "RouteId": 1,
+        "Latitude": 10.24578578,
+        "Longitude": 14.5785782
+      }
   auth: inherit
 
 runtime:
   variables:
     - name: CompanyName
-      value: garastest
+      value: transportion
 
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: false

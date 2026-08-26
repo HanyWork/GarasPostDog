@@ -13,6 +13,7 @@ http:
       value: "{{UserToken}}"
     - name: TransportionlineId
       value: "1"
+      disabled: true
     - name: SupplierId
       value: "3"
       disabled: true
@@ -21,9 +22,9 @@ http:
       disabled: true
     - name: DateSerach
       value: 2026-03-25
+      disabled: true
     - name: serialBus
       value: "70000076"
-      disabled: true
     - name: PageNo
       value: "1"
       disabled: true
@@ -35,7 +36,7 @@ http:
 runtime:
   variables:
     - name: CompanyName
-      value: garastest
+      value: vetanoia
 
 settings:
   encodeUrl: true

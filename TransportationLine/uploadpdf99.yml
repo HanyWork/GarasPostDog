@@ -11,21 +11,22 @@ http:
     data:
       - name: bookName
         type: text
-        value: سر الروح القدس والميرون المقدس
+        value: شرح قانون الايمان للقديس كيرلس السكندريeng
       - name: pdf
         type: file
         value:
-          - C:\Users\Vetanoia09\Downloads\Documents\كتاب-سر-الروح-القدس-والميرون-المقدس-الأب-أثناسيوس-المقاري.pdf
+          - C:\Users\Vetanoia09\Downloads\Documents\شرح قانون الايمان للقديس كيرلس السكندري - ترجمة د. موريس تاوضروس و د. نصحي عبد الشهيد.pdf
         contentType: application/pdf
       - name: publishedDate
         type: text
         value: 2020-01-01
       - name: serverIndex
         type: text
-        value: "111"
+        value: "11199"
       - name: author
         type: text
-        value: الراهب القس أثناسيوس المقاري
+        value: الأب بيتر فارينجتون
+        disabled: true
       - name: https://tempveta-001-site1.stempurl.com
         type: text
         value: https://tempvetanoia.bsite.net
@@ -35,7 +36,7 @@ http:
 runtime:
   variables:
     - name: baseUrl
-      value: https://localhost:7098
+      value: https://sto.garassolutions.com
 
 settings:
   encodeUrl: true

@@ -21,16 +21,18 @@ http:
       value: ""
       disabled: true
     - name: DateSerach
-      value: 2026-07-20
+      value: 2026-08-12
     - name: serialBus
       value: "4"
       disabled: true
+    - name: RouteId
+      value: "2"
   auth: inherit
 
 runtime:
   variables:
     - name: CompanyName
-      value: demo
+      value: garastest
 
 settings:
   encodeUrl: true
