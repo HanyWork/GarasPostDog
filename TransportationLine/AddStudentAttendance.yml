@@ -1,0 +1,32 @@
+info:
+  name: AddStudentAttendance
+  type: http
+  seq: 58
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/AddStudentAttendance"
+  headers:
+    - name: CompanyName
+      value: transportion
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |
+      {
+        "HrUserId": 1,
+        "RouteId": 76,
+        "CheckInOrCheckOut": false,
+        "Latitude": 34.524524,
+        "Longtitud": 35.785785785,
+        "OccurredAt": "2026-09-08T11:31:15.843Z"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

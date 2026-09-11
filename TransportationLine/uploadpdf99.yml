@@ -5,17 +5,17 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/api/OCR/uploadpdf99"
+  url: "{{baseUrl}}/api/OCR/uploadpdf9999"
   body:
     type: multipart-form
     data:
       - name: bookName
         type: text
-        value: شرح قانون الايمان للقديس كيرلس السكندريeng
+        value: القديسة ماكرينا للقديس غريغوريوس النيصي
       - name: pdf
         type: file
         value:
-          - C:\Users\Vetanoia09\Downloads\Documents\شرح قانون الايمان للقديس كيرلس السكندري - ترجمة د. موريس تاوضروس و د. نصحي عبد الشهيد.pdf
+          - D:\Books\drive\عربية\New folder\done\القديسة ماكرينا للقديس غريغوريوس النيصي.pdf
         contentType: application/pdf
       - name: publishedDate
         type: text
@@ -25,8 +25,7 @@ http:
         value: "11199"
       - name: author
         type: text
-        value: الأب بيتر فارينجتون
-        disabled: true
+        value: غريغوريوس النيصي
       - name: https://tempveta-001-site1.stempurl.com
         type: text
         value: https://tempvetanoia.bsite.net
@@ -36,10 +35,11 @@ http:
 runtime:
   variables:
     - name: baseUrl
-      value: https://sto.garassolutions.com
+      value: https://tempvetanoia.bsite.net
 
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true

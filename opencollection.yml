@@ -21,7 +21,7 @@ request:
     - name: BaseCoreUrl
       value: https://localhost:7178
     - name: UserToken
-      value: JMEW01gn22nSuccLjjUVwA%3d%3d
+      value: pBj8M0yKPXJpTGLgyTtVXQ%3d%3d
 bundled: false
 extensions:
   bruno:

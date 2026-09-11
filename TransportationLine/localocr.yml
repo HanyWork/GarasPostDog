@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: https://localhost:7098/api/local/localocrNew/2214
+  url: https://tempvetanoia.bsite.net/api/local/localocr/2263
   auth: inherit
 
 settings:
@@ -13,3 +13,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true

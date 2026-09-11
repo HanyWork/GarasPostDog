@@ -1,0 +1,31 @@
+info:
+  name: AddBusAttendanceBySupervisor
+  type: http
+  seq: 79
+
+http:
+  method: POST
+  url: "{{BaseCoreUrl}}/api/Transportation/AddBusAttendanceBySupervisor"
+  headers:
+    - name: CompanyName
+      value: transportion
+    - name: UserToken
+      value: "{{UserToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "RouteId": 0,
+        "CheckInOrCheckOut": true,
+        "Latitude": 0,
+        "Longtitud": 0,
+        "OccurredAt": "2026-09-08T09:44:42.253Z"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

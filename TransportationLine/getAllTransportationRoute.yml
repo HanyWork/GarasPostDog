@@ -12,10 +12,11 @@ http:
     - name: UserToken
       value: "{{UserToken}}"
     - name: RouteId
-      value: "158"
+      value: "1"
       disabled: true
     - name: Name
       value: "70000001"
+      disabled: true
     - name: TransportionlineId
       value: "4"
       disabled: true
@@ -42,10 +43,11 @@ http:
 runtime:
   variables:
     - name: CompanyName
-      value: garastest
+      value: transportion
 
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
