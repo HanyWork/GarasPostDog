@@ -1,0 +1,82 @@
+info:
+  name: enhance
+  type: http
+  seq: 58
+
+http:
+  method: POST
+  url: https://wto.garassolutions.com/restore/enhance
+  headers:
+    - name: Accept
+      value: image/webp
+      disabled: true
+    - name: Content-Type
+      value: multipart/form-data
+      disabled: true
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - C:\Users\Vetanoia09\Downloads\page-84.webp
+        contentType: image/webp
+      - name: format
+        type: text
+        value: webp
+      - name: quality
+        type: text
+        value: "92"
+      - name: lossless
+        type: text
+        value: "false"
+      - name: colour
+        type: text
+        value: auto
+      - name: flatten
+        type: text
+        value: auto
+      - name: denoise
+        type: text
+        value: auto
+      - name: repair
+        type: text
+        value: auto
+      - name: strengthen
+        type: text
+        value: auto
+      - name: sharpen
+        type: text
+        value: auto
+      - name: despeckle
+        type: text
+        value: auto
+      - name: deskew
+        type: text
+        value: auto
+      - name: ink_gamma
+        type: text
+        value: "1"
+      - name: sharpen_amount
+        type: text
+        value: "0.6"
+      - name: repair_strength
+        type: text
+        value: "0.5"
+      - name: aggressive_despeckle
+        type: text
+        value: "false"
+      - name: max_scale
+        type: text
+        value: "1"
+      - name: disposition
+        type: text
+        value: attachment
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

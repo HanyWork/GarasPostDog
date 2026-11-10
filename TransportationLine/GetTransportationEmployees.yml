@@ -12,13 +12,14 @@ http:
     - name: UserToken
       value: "{{UserToken}}"
     - name: RouteID
-      value: "10181"
+      value: "2"
     - name: Period
-      value: Both
+      value: Go
     - name: DateSearch
-      value: 2026-09-19
+      value: 2026-09-16
     - name: ParentUserId
       value: "10019"
+      disabled: true
   auth: inherit
 
 settings:

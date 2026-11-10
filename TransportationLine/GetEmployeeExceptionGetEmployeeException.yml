@@ -16,11 +16,17 @@ http:
     - name: NoOfItems
       value: "2"
     - name: HrUserId
-      value: "3"
+      value: "2"
   auth: inherit
+
+runtime:
+  variables:
+    - name: CompanyName
+      value: sanpeter
 
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true

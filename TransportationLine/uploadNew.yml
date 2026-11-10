@@ -1,0 +1,37 @@
+info:
+  name: uploadNew
+  type: http
+  seq: 85
+
+http:
+  method: POST
+  url: https://localhost:44379/api/ocr/uploadNew
+  body:
+    type: multipart-form
+    data:
+      - name: bookName
+        type: text
+        value: لماذا نثق في الكتاب المقدس
+      - name: pdf
+        type: file
+        value:
+          - D:\مراجع كتاب مقدس - ابونا اولوجيوس\مراجع كتاب مقدس - ابونا اولوجيوس\لماذا نثق في الكتاب المقدس.pdf
+        contentType: application/pdf
+      - name: publishedDate
+        type: text
+        value: 2026-01-01
+      - name: serverIndex
+        type: text
+        value: "60"
+      - name: author
+        type: text
+        value: القمص تادرس يعقوب ملطي
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

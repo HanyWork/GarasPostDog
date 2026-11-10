@@ -5,17 +5,28 @@ info:
 
 http:
   method: POST
-  url: https://localhost:7098/api/ocr/uploadpdf77
+  url: https://tempvetanoia.bsite.net/api/ocr/uploadpdf9999
   body:
     type: multipart-form
     data:
       - name: bookName
         type: text
-        value: 01- مقدمة شرح إنجيل القديس يوحنا
+        value: رسائل تفسيرية على الرسالة إلى أهل غلاطية
       - name: pdf
         type: file
         value:
-          - D:\BackUp\01- مقدمة شرح إنجيل القديس يوحنا.pdf
+          - D:\مراجع كتاب مقدس - ابونا اولوجيوس\مراجع كتاب مقدس - ابونا اولوجيوس\رسائل تفسيرية على الرسالة إلى أهل غلاطية.pdf
+        contentType: application/pdf
+      - name: publishedDate
+        type: text
+        value: 2026-01-01
+      - name: serverIndex
+        type: text
+        value: "60"
+      - name: author
+        type: text
+        value: القمص تادرس يعقوب ملطي
+        disabled: true
   auth: inherit
 
 settings:
@@ -23,3 +34,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true

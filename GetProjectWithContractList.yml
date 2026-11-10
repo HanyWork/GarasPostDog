@@ -13,6 +13,11 @@ http:
       value: "1"
     - name: NumberOfItemsPerPage
       value: "10000"
+    - name: MaintenanceForid
+      value: "51611"
+      disabled: true
+    - name: ClientId
+      value: "1"
   auth: inherit
 
 settings:
@@ -20,3 +25,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true

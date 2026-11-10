@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: https://tempvetanoia.bsite.net/api/local/localocr/2263
+  url: https://sto.garassolutions.com/api/local/localocr/7396
   auth: inherit
 
 settings:
